@@ -1,3 +1,6 @@
+#ifndef _LCOM_DRIVERS_H_
+#define _LCOM_DRIVERS_H_
+
 #include <lcom/lcf.h>
 
 #include <stdint.h>
@@ -5,7 +8,8 @@
 
 #include "i8042.h"
 #include "i8254.h"
-#include "i7265.h"
+#include "iVBE.h"
+#include "iUART.h"
 #include <stdbool.h>
 
 #define min(a,b) (((a) < (b)) ? (a) : (b))
@@ -75,8 +79,14 @@ t_gph vg_get_info();
 
 uint32_t direct_color(t_gph gph, int x, int y, uint32_t first, uint32_t step);
 
+// uart
+int uart_subscribe_int(uint8_t *bit_no);
+int uart_unsubscribe_int();
+void uart_ih();
+
 // utils
 int (util_get_LSB)(uint16_t val, uint8_t *lsb);
 int (util_get_MSB)(uint16_t val, uint8_t *msb);
 int (util_sys_inb)(int port, uint8_t *value);
-int wait_for_esc();
+
+#endif
