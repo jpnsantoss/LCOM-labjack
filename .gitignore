@@ -1,4 +1,5 @@
 *.o
 *.a
 a.out
-proj
+trace.txt
+output.txt
