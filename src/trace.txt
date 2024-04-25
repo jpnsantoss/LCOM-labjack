@@ -1,0 +1,683 @@
+@lcflib.a:2019, lcf_start
+  proj_main_loop(argc, argv)
+> proj_main_loop(0, [NULL])
+  @/home/lcom/labs/src/lib/drivers/dvr_keyboard.c:12, kbd_subscribe_int
+    sys_irqsetpolicy(IRQ_KEYBOARD, IRQ_REENABLE | IRQ_EXCLUSIVE, &hook_id_keyboard)
+  > sys_irqsetpolicy(1, 3, addr: 0x822e8d8 [1])
+  < sys_irqsetpolicy(1, 3, addr: 0x822e8d8 [10]) -> (ret: 0)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:28, uart_write
+    sys_outb(base_addr + offset, in)
+  > sys_outb(0x3f9, 0x05 = 0b00000101)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:28, uart_write
+    sys_outb(base_addr + offset, in)
+  > sys_outb(0x3fb, 0x1f = 0b00011111)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:57, uart_set_bit_rate
+    util_get_LSB(UART_BASE_BIT_RATE / rate, &lsb)
+  > util_get_LSB(0x000c, addr: 0xeffff6fd)
+  < util_get_LSB(0x000c, addr: 0xeffff6fd [0x0c]) -> (ret: 0)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:58, uart_set_bit_rate
+    util_get_MSB(UART_BASE_BIT_RATE / rate, &msb)
+  > util_get_MSB(0x000c, addr: 0xeffff6fc)
+  < util_get_MSB(0x000c, addr: 0xeffff6fc [0x00]) -> (ret: 0)
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fb, addr: 0xeffff6d4)
+  < sys_inb(0x3fb, addr: 0xeffff6d4 [0x1f = 0b00011111])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:28, uart_write
+    sys_outb(base_addr + offset, in)
+  > sys_outb(0x3fb, 0x9f = 0b10011111)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:28, uart_write
+    sys_outb(base_addr + offset, in)
+  > sys_outb(0x3f8, 0x0c = 0b00001100)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:28, uart_write
+    sys_outb(base_addr + offset, in)
+  > sys_outb(0x3f9, 0x00 = 0b00000000)
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fb, addr: 0xeffff6d4)
+  < sys_inb(0x3fb, addr: 0xeffff6d4 [0x9f = 0b10011111])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:28, uart_write
+    sys_outb(base_addr + offset, in)
+  > sys_outb(0x3fb, 0x1f = 0b00011111)
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff704)
+  < sys_inb(0x3fd, addr: 0xeffff704 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:11, uart_subscribe_int
+    sys_irqsetpolicy(IRQ_COM1, IRQ_REENABLE | IRQ_EXCLUSIVE, &hook_id_uart)
+  > sys_irqsetpolicy(3, 3, addr: 0x822e8e0 [4])
+  < sys_irqsetpolicy(3, 3, addr: 0x822e8e0 [11]) -> (ret: 0)
+  @proj.c:51, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a4)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @proj.c:61, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+      sys_inb(port, &res)
+    > sys_inb(0x64, addr: 0xeffff658)
+    < sys_inb(0x64, addr: 0xeffff658 [0x1d = 0b00011101])
+    @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+      sys_inb(port, &res)
+    > sys_inb(0x60, addr: 0xeffff658)
+    < sys_inb(0x60, addr: 0xeffff658 [0x9c = 0b10011100])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d4)
+  < sys_inb(0x3fd, addr: 0xeffff6d4 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:28, uart_write
+    sys_outb(base_addr + offset, in)
+  > sys_outb(0x3f8, 0xfa = 0b11111010)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:108, uart_wb_byte
+    printf("b\n")
+    "b"
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @proj.c:51, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a4)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @proj.c:61, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+      sys_inb(port, &res)
+    > sys_inb(0x64, addr: 0xeffff658)
+    < sys_inb(0x64, addr: 0xeffff658 [0x1d = 0b00011101])
+    @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+      sys_inb(port, &res)
+    > sys_inb(0x60, addr: 0xeffff658)
+    < sys_inb(0x60, addr: 0xeffff658 [0x1d = 0b00011101])
+  @proj.c:51, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a4)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @proj.c:61, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+      sys_inb(port, &res)
+    > sys_inb(0x64, addr: 0xeffff658)
+    < sys_inb(0x64, addr: 0xeffff658 [0x1d = 0b00011101])
+    @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+      sys_inb(port, &res)
+    > sys_inb(0x60, addr: 0xeffff658)
+    < sys_inb(0x60, addr: 0xeffff658 [0x2e = 0b00101110])
+  @proj.c:51, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a4)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @proj.c:61, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+      sys_inb(port, &res)
+    > sys_inb(0x64, addr: 0xeffff658)
+    < sys_inb(0x64, addr: 0xeffff658 [0x1d = 0b00011101])
+    @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+      sys_inb(port, &res)
+    > sys_inb(0x60, addr: 0xeffff658)
+    < sys_inb(0x60, addr: 0xeffff658 [0xae = 0b10101110])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d4)
+  < sys_inb(0x3fd, addr: 0xeffff6d4 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:28, uart_write
+    sys_outb(base_addr + offset, in)
+  > sys_outb(0x3f8, 0xfa = 0b11111010)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:108, uart_wb_byte
+    printf("b\n")
+    "b"
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @proj.c:51, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a4)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @proj.c:61, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+      sys_inb(port, &res)
+    > sys_inb(0x64, addr: 0xeffff658)
+    < sys_inb(0x64, addr: 0xeffff658 [0x1d = 0b00011101])
+    @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+      sys_inb(port, &res)
+    > sys_inb(0x60, addr: 0xeffff658)
+    < sys_inb(0x60, addr: 0xeffff658 [0x9d = 0b10011101])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d4)
+  < sys_inb(0x3fd, addr: 0xeffff6d4 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:28, uart_write
+    sys_outb(base_addr + offset, in)
+  > sys_outb(0x3f8, 0xfa = 0b11111010)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:108, uart_wb_byte
+    printf("b\n")
+    "b"
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @proj.c:51, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a4)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @proj.c:61, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+      sys_inb(port, &res)
+    > sys_inb(0x64, addr: 0xeffff658)
+    < sys_inb(0x64, addr: 0xeffff658 [0x1d = 0b00011101])
+    @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+      sys_inb(port, &res)
+    > sys_inb(0x60, addr: 0xeffff658)
+    < sys_inb(0x60, addr: 0xeffff658 [0x01 = 0b00000001])
+  @proj.c:51, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a4)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @proj.c:61, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+      sys_inb(port, &res)
+    > sys_inb(0x64, addr: 0xeffff658)
+    < sys_inb(0x64, addr: 0xeffff658 [0x1d = 0b00011101])
+    @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+      sys_inb(port, &res)
+    > sys_inb(0x60, addr: 0xeffff658)
+    < sys_inb(0x60, addr: 0xeffff658 [0x81 = 0b10000001])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d4)
+  < sys_inb(0x3fd, addr: 0xeffff6d4 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:28, uart_write
+    sys_outb(base_addr + offset, in)
+  > sys_outb(0x3f8, 0xfa = 0b11111010)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:108, uart_wb_byte
+    printf("b\n")
+    "b"
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:18, uart_unsubscribe_int
+    sys_irqrmpolicy(&hook_id_uart)
+  > sys_irqrmpolicy(addr:   < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @proj.c:61, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+      sys_inb(port, &res)
+    > sys_inb(0x64, addr: 0xeffff658)
+    < sys_inb(0x64, addr: 0xeffff658 [0x1d = 0b00011101])
+    @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+      sys_inb(port, &res)
+    > sys_inb(0x60, addr: 0xeffff658)
+    < sys_inb(0x60, addr: 0xeffff658 [0x01 = 0b00000001])
+  @proj.c:51, proj_main_loop
+    driver_receive(ANY, &msg, &ipc_status)
+  > driver_receive(ANY, addr: 0xeffff760, addr: 0xeffff7a4)
+  < driver_receive(<[HARDWARE: 0b0000000000000000000000000000000000000000000000000000000000000010]>)
+  @proj.c:61, proj_main_loop
+    kbc_ih()
+    @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+      sys_inb(port, &res)
+    > sys_inb(0x64, addr: 0xeffff658)
+    < sys_inb(0x64, addr: 0xeffff658 [0x1d = 0b00011101])
+    @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+      sys_inb(port, &res)
+    > sys_inb(0x60, addr: 0xeffff658)
+    < sys_inb(0x60, addr: 0xeffff658 [0x81 = 0b10000001])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d4)
+  < sys_inb(0x3fd, addr: 0xeffff6d4 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:28, uart_write
+    sys_outb(base_addr + offset, in)
+  > sys_outb(0x3f8, 0xfa = 0b11111010)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:108, uart_wb_byte
+    printf("b\n")
+    "b"
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/utils.c:27, util_sys_inb
+    sys_inb(port, &res)
+  > sys_inb(0x3fd, addr: 0xeffff6d8)
+  < sys_inb(0x3fd, addr: 0xeffff6d8 [0x60 = 0b01100000])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    micros_to_ticks(UART_DELAY)
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:98, uart_read_byte
+    tickdelay(micros_to_ticks(UART_DELAY))
+  > tickdelay(1 [16.7 ms])
+  @/home/lcom/labs/src/lib/drivers/dvr_uart.c:18, uart_unsubscribe_int
+    sys_irqrmpolicy(&hook_id_uart)
+  > sys_irqrmpolicy(addr: 0x822e8e0 [11])
+  < sys_irqrmpolicy(addr: 0x822e8e0 [11]) -> (ret: 0)
+  @/home/lcom/labs/src/lib/drivers/dvr_keyboard.c:19, kbd_unsubscribe_int
+    sys_irqrmpolicy(&hook_id_keyboard)
+  > sys_irqrmpolicy(addr: 0x822e8d8 [10])
+  < sys_irqrmpolicy(addr: 0x822e8d8 [10]) -> (ret: 0)
+< proj_main_loop(0, [NULL]) -> (ret: 0)

@@ -11,7 +11,7 @@ int kbc_read_status(uint8_t *output)
 int kbc_read_output(uint8_t port, uint8_t *output, bool mouse)
 {
 	uint8_t status;
-	int attemps = 10;
+	int attemps = MAX_TRIES;
 
 	while (attemps > 0)
 	{
@@ -39,7 +39,7 @@ int kbc_read_output(uint8_t port, uint8_t *output, bool mouse)
 int kbc_write_input(uint8_t port, uint8_t input)
 {
 	uint8_t status;
-	int attemps = 10;
+	int attemps = MAX_TRIES;
 
 	while (attemps > 0)
 	{
@@ -60,7 +60,7 @@ int kbc_write_input(uint8_t port, uint8_t input)
 int kbc_write(uint8_t intent, bool mouse)
 {
 	uint8_t command;
-	uint8_t attemps = 10;
+	uint8_t attemps = MAX_TRIES;
 	uint8_t response;
 
 	if (mouse)

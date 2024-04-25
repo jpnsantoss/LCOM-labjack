@@ -1,9 +1,10 @@
-// IMPORTANT: you must include the following line in all your C files
 #include <lcom/lcf.h>
+#include "labjack.h"
 
 // Any header files included below this line should have been created by you
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[])
+{
   // sets the language of LCF messages (can be either EN-US or PT-PT)
   lcf_set_language("EN-US");
 
@@ -27,7 +28,52 @@ int main(int argc, char *argv[]) {
   return 0;
 }
 
+int counter = 0;
+extern uint8_t scancode;
+
 //chamado pela lcom_run
-int (proj_main_loop)(int argc, char **argv){
-	return 0;
+int (proj_main_loop)(int argc, char **argv)
+{
+	uint8_t bit_no_kb = 0, bit_no_uart = 1;
+	int ipc_status;
+	message msg;
+	
+	counter = 0;
+
+	if (kbd_subscribe_int(&bit_no_kb)) return 1;
+	
+	if (uart_setup(UART_DEFAULT_BIT_RATE)) return 1;
+
+	if (uart_subscribe_int(&bit_no_uart)) return 1;
+
+	while (scancode != KEYBOARD_ESC)
+	{
+    	if (driver_receive(ANY, &msg, &ipc_status))
+      		continue;
+
+    	if (!is_ipc_notify(ipc_status))
+			continue;
+
+		if (_ENDPOINT_P(msg.m_source) != HARDWARE)
+			continue;
+
+    	if (msg.m_notify.interrupts & bit_no_kb) {
+			kbc_ih();
+			if (scancode & MAKECODE_BIT)
+			{
+				uint8_t msg[3] = {1, 2, 3};
+				uart_write_msg(1, msg);
+			}
+		}
+
+		if (msg.m_notify.interrupts & bit_no_uart)
+		{
+			uart_ih();
+		}
+			
+	}
+
+	if (uart_unsubscribe_int()) return 1;
+	
+	return kbd_unsubscribe_int();
 }

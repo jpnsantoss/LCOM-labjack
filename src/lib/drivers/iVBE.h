@@ -1,5 +1,5 @@
-#ifndef _LCOM_iVBE_H_
-#define _LCOM_iVBE_H_
+#ifndef _LCOM_IVBE_H_
+#define _LCOM_IVBE_H_
 
 #include <lcom/lcf.h>
 
@@ -16,4 +16,4 @@
 #define DIRECT_COLOR 0x06
 #define INDEXED_COLOR 0x105
 
-#endif /* _LCOM_iVBE_H */
+#endif /* _LCOM_IVBE_H */
