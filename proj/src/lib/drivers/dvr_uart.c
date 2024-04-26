@@ -18,17 +18,17 @@ int (uart_unsubscribe_int)()
 	return sys_irqrmpolicy(&hook_id_uart);
 }
 
-int uart_read(int base_addr, uint8_t offset, uint8_t *out)
+int (uart_read)(int base_addr, uint8_t offset, uint8_t *out)
 {
 	return util_sys_inb(base_addr + offset, out);
 }
 
-int uart_write(int base_addr, uint8_t offset, uint8_t in)
+int (uart_write)(int base_addr, uint8_t offset, uint8_t in)
 {
 	return sys_outb(base_addr + offset, in);
 }
 
-int	uart_DL_access(int com_num, bool enable)
+int	(uart_DL_access)(int com_num, bool enable)
 {
 	uint8_t response;
 	int base_addr = com_num != 2 ? UART_COM1 : UART_COM2;
@@ -46,7 +46,7 @@ int	uart_DL_access(int com_num, bool enable)
 	return uart_write(base_addr, UART_LCR, response);
 }
 
-int	uart_set_bit_rate(int com_num, int rate)
+int	(uart_set_bit_rate)(int com_num, int rate)
 {
 	uint8_t lsb, msb;
 
@@ -65,7 +65,7 @@ int	uart_set_bit_rate(int com_num, int rate)
 	return uart_DL_access(1, false);
 }
 
-int uart_write_byte(int base_addr, uint8_t byte)
+int (uart_write_byte)(int base_addr, uint8_t byte)
 {
 	uint8_t response;
 	int attemps = MAX_TRIES;
@@ -83,7 +83,7 @@ int uart_write_byte(int base_addr, uint8_t byte)
 	return 1;
 }
 
-int uart_read_byte(int base_addr, uint8_t *out)
+int (uart_read_byte)(int base_addr, uint8_t *out)
 {
 	uint8_t response;
 	int attemps = MAX_TRIES;
@@ -101,18 +101,18 @@ int uart_read_byte(int base_addr, uint8_t *out)
 	return 1;
 }
 
-int uart_wb_byte(int base_addr, uint8_t byte)
+int (uart_wb_byte)(int base_addr, uint8_t byte)
 {
 	uint8_t response;
 
 	if (uart_write_byte(base_addr, byte)) return 1;
-	printf("b\n");
+	//printf("b\n");
 	if (uart_read_byte(base_addr, &response)) return 1;
-	printf("c\n");
+	//printf("c\n");
 	return response != SPROTO_OK;
 }
 
-int uart_write_msg(int com_num, uint8_t *msg)
+int (uart_write_msg)(int com_num, uint8_t msg)
 {
 	int base_addr = com_num != 2 ? UART_COM1 : UART_COM2;
 	uint8_t response;
@@ -121,10 +121,7 @@ int uart_write_msg(int com_num, uint8_t *msg)
 
 	if (uart_wb_byte(base_addr, SPROTO_BEGIN)) return 1;
 
-	for (uint8_t i = 0; i < SPROTO_MSG_SIZE; i++)
-	{
-		if (uart_wb_byte(base_addr, msg[i])) return 1;
-	}
+	if (uart_wb_byte(base_addr, msg)) return 1;
 
 	if (uart_wb_byte(base_addr, SPROTO_END)) return 1;
 
@@ -132,7 +129,7 @@ int uart_write_msg(int com_num, uint8_t *msg)
 	return response != SPROTO_OK;
 }
 
-int uart_reset(int base_addr)
+int (uart_reset)(int base_addr)
 {
 	uint8_t content;
 
@@ -145,10 +142,10 @@ int uart_reset(int base_addr)
 }
 
 static uint8_t output = 0;
-static int bytes[5];
+static int bytes[3];
 static uint8_t idx = 0;
 
-int uart_parse_byte()
+int (uart_parse_byte)()
 {
 	if (idx == 0 && output == SPROTO_BEGIN)
 	{
@@ -156,7 +153,7 @@ int uart_parse_byte()
 		idx++;
 		return 0;
 	}
-	if (idx == 4 && output == SPROTO_END)
+	if (idx == 2 && output == SPROTO_END)
 	{
 		bytes[idx] = output;
 		idx = 0;
@@ -200,8 +197,8 @@ void (uart_ih)()
 		case 1:
 			uart_write_byte(UART_COM1, SPROTO_OK);
 			
-			printf("BEGIN: %d\n\n%d\n%d\n%d\nEND:%d\n", 
-				bytes[0], bytes[1], bytes[2], bytes[3], bytes[4]);
+			printf("BEGIN: %d\n\n%d\n\nEND:%d\n", 
+				bytes[0], bytes[1], bytes[2]);
 			
 			// TODO: Handle content in bytes
 			
@@ -209,9 +206,11 @@ void (uart_ih)()
 	}
 }
 
-int uart_setup(int bit_rate)
+int (uart_setup)(int bit_rate)
 {
 	uint8_t cmd;
+
+	if (uart_set_bit_rate(1, UART_DEFAULT_BIT_RATE)) return 1;
 
 	cmd = UART_IER_ENABLE_INT_DATA | UART_IER_ENABLE_INT_LSR;
 	if (uart_write(UART_COM1, UART_IER, cmd)) return 1;
@@ -219,7 +218,6 @@ int uart_setup(int bit_rate)
 	cmd = UART_LCR_8BITCHAR | UART_LCR_2STOP | UART_LCR_PARTIY_EVEN;
 	if (uart_write(UART_COM1, UART_LCR, cmd)) return 1;
 
-	if (uart_set_bit_rate(1, UART_DEFAULT_BIT_RATE)) return 1;
-
+	printf("aaa, %x\n", cmd);
 	return uart_reset(UART_COM1);
 }

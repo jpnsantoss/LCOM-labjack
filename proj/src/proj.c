@@ -61,8 +61,7 @@ int (proj_main_loop)(int argc, char **argv)
 			kbc_ih();
 			if (scancode & MAKECODE_BIT)
 			{
-				uint8_t msg[3] = {1, 2, 3};
-				uart_write_msg(1, msg);
+				uart_write_msg(1, 1);
 			}
 		}
 
