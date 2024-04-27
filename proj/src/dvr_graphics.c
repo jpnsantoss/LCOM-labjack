@@ -1,6 +1,9 @@
 #include <lcom/lcf.h>
 #include "dvr_graphics.h"
 #include <math.h>
+#include "io.h"
+
+uint8_t output;
 
 int (set_graphic_mode)(uint16_t submode){
     reg86_t reg86;
@@ -70,4 +73,88 @@ int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color) {
   if (memcpy(&frame_buffer[index], &color, BytesPerPixel) == NULL) return 1;
 
   return 0;
+}
+
+void clear_screen() {
+    uint32_t color = 0x000000; // Cor preta (ou qualquer outra cor desejada)
+
+    // Iterar sobre todos os pixels do frame buffer e definir sua cor como a cor de fundo
+    for (int y = 0; y < mode_info.YResolution; y++) {
+        for (int x = 0; x < mode_info.XResolution; x++) {
+            // Calcular o índice do pixel no frame buffer
+            vg_draw_pixel(x, y, color);
+            
+        }
+    }
+}
+
+int (move_xpm_mouse)(xpm_map_t xpm, uint16_t x, uint16_t y){
+    uint8_t bit_no = 0;
+	int ipc_status, r;
+	message msg;
+	struct packet pp;
+	int bytes[3];
+	int index = 0;
+
+	if (kbc_write(0xF4, true))
+		return 1;
+
+	if (mouse_subscribe_int(&bit_no))
+		return 1;
+
+int count=0;
+    while (count<1000)
+	{
+    	if (driver_receive(ANY, &msg, &ipc_status))
+      		continue;
+
+    	if (!is_ipc_notify(ipc_status))
+			continue;
+
+		if (_ENDPOINT_P(msg.m_source) != HARDWARE)
+			continue;
+
+    	if (!(msg.m_notify.interrupts & bit_no))
+			continue;
+      count++;
+		mouse_ih();
+
+		if (index == 0 && (output & BIT(3)))
+		{
+			bytes[index] = output;
+			index++;
+		}
+		else if (index > 0)
+		{
+			bytes[index] = output;
+			index++;
+		}
+		if (index == 3)
+		{
+			mouse_fill_packet(bytes, &pp);
+			mouse_print_packet(&pp);
+			
+      x += pp.delta_x;
+      y -= pp.delta_y;
+
+      if (x < 0 || x>mode_info.XResolution) {
+        x = 0;
+        break;
+      } 
+      if (y < 0 || y>mode_info.YResolution) {
+        y = 0;
+        break;
+      }
+
+      clear_screen();
+      r=print_xpm(xpm, x, y);
+      if(r!=OK){return r;}
+
+			index = 0;
+		}
+
+    }
+
+return mouse_unsubscribe_int() || kbc_write(0xF5, true);
+
 }

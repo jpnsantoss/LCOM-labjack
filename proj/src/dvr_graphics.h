@@ -12,5 +12,6 @@ int (set_graphic_mode)(uint16_t submode);
 int (set_frame_buffer)(uint16_t mode);
 int (print_xpm)(xpm_map_t xpm, uint16_t x, uint16_t y);
 int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color);
+int (move_xpm_mouse)(xpm_map_t xpm, uint16_t x, uint16_t y);
 
 #endif

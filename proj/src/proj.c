@@ -1,6 +1,7 @@
 #include <lcom/lcf.h>
 #include "labjack.h"
 #include "dvr_graphics.h"
+#include "io.h"
 
 // Any header files included below this line should have been created by you
 
@@ -31,6 +32,7 @@ int main(int argc, char *argv[])
 
 int counter = 0;
 extern uint8_t scancode;
+extern int output;
 
 //chamado pela lcom_run
 int (proj_main_loop)(int argc, char **argv)
@@ -42,7 +44,13 @@ int r= set_frame_buffer(0x105);
   r = print_xpm(penguin, 56, 76);
   if(r!=OK){return r;}
  
-  sleep(5);
+  sleep(1);
+    
+    // Mover a imagem com o mouse
+    r = move_xpm_mouse(penguin, 50, 50);
+    if (r != OK) {
+        return r;
+    }
   r=vg_exit();
   return 0;
 }
