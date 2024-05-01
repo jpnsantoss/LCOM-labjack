@@ -1,5 +1,6 @@
 
 .PATH: ${.CURDIR}/lib/drivers
+.PATH: ${.CURDIR}/lib/labjack
 
 # name of the program (Minix service)
 PROG=proj
