@@ -82,12 +82,12 @@ void vg_clear_screen();
 uint32_t direct_color(t_gph gph, int x, int y, uint32_t first, uint32_t step);
 
 // uart
-int uart_setup(int bit_rate);
+int (uart_setup)(int bit_rate);
 int (uart_subscribe_int)(uint8_t *bit_no);
 int (uart_unsubscribe_int)();
 void (uart_ih)();
-int	uart_set_bit_rate(int com_num, int rate);
-int uart_write_msg(int com_num, uint8_t *msg);
+int	(uart_set_bit_rate)(int com_num, int rate);
+int (uart_write_msg)(int com_num, uint8_t msg);
 
 // utils
 int (util_get_LSB)(uint16_t val, uint8_t *lsb);
