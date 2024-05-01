@@ -48,13 +48,13 @@ int (proj_main_loop)(int argc, char **argv)
 
 	while (scancode != KEYBOARD_ESC)
 	{
-    if (driver_receive(ANY, &msg, &ipc_status)) continue;
+    	if (driver_receive(ANY, &msg, &ipc_status)) continue;
 
-    if (!is_ipc_notify(ipc_status)) continue;
+    	if (!is_ipc_notify(ipc_status)) continue;
 
 		if (_ENDPOINT_P(msg.m_source) != HARDWARE) continue;
 
-    if (msg.m_notify.interrupts & bit_no_kb)
+    	if (msg.m_notify.interrupts & bit_no_kb)
 		{
 			kbc_ih();
 			if (scancode == 0xad) {
