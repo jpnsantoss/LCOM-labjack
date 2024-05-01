@@ -34,7 +34,7 @@ extern uint8_t scancode;
 //chamado pela lcom_run
 int (proj_main_loop)(int argc, char **argv)
 {
-	uint8_t bit_no_kb = 0, bit_no_uart = 1;
+	uint8_t bit_no_kb, bit_no_uart;
 	int ipc_status;
 	message msg;
 	
@@ -48,28 +48,26 @@ int (proj_main_loop)(int argc, char **argv)
 
 	while (scancode != KEYBOARD_ESC)
 	{
-    	if (driver_receive(ANY, &msg, &ipc_status))
-      		continue;
+    if (driver_receive(ANY, &msg, &ipc_status)) continue;
 
-    	if (!is_ipc_notify(ipc_status))
-			continue;
+    if (!is_ipc_notify(ipc_status)) continue;
 
-		if (_ENDPOINT_P(msg.m_source) != HARDWARE)
-			continue;
+		if (_ENDPOINT_P(msg.m_source) != HARDWARE) continue;
 
-    	if (msg.m_notify.interrupts & bit_no_kb) {
+    if (msg.m_notify.interrupts & bit_no_kb)
+		{
 			kbc_ih();
-			if (scancode & MAKECODE_BIT)
-			{
+			if (scancode == 0xad) {
 				uart_write_msg(1, 1);
+				printf("KEY %x\n", scancode);
 			}
 		}
 
 		if (msg.m_notify.interrupts & bit_no_uart)
 		{
 			uart_ih();
+			//printf("%d", IRQ_COM1);
 		}
-			
 	}
 
 	if (uart_unsubscribe_int()) return 1;

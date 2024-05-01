@@ -7,6 +7,9 @@
   "editor.wordWrap": "bounded",
   "editor.wordWrapColumn": 100,
   "files.associations": {
-		"drivers.h": "c"
+		"*.embeddedhtml": "html",
+		"drivers.h": "c",
+		"string.h": "c",
+		"lcf.h": "c"
 	},
 }
