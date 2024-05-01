@@ -127,3 +127,16 @@ uint32_t direct_color(t_gph gph, int x, int y, uint32_t first, uint32_t step)
 
 	return red << gph.red_field_pos | green << gph.green_field_pos | blue << gph.blue_field_pos;
 }
+
+void vg_clear_screen()
+{
+    uint32_t color = 0x000000; // Cor preta (ou qualquer outra cor desejada)
+
+    // Iterar sobre todos os pixels do frame buffer e definir sua cor como a cor de fundo
+    for (int y = 0; y < gph.y_res; y++) {
+        for (int x = 0; x < gph.x_res; x++) {
+            // Calcular o índice do pixel no frame buffer
+            vg_draw_pixel(x, y, color); 
+        }
+    }
+}
