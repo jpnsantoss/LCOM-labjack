@@ -1,6 +1,15 @@
 
-.PATH: ${.CURDIR}/lib/drivers
-.PATH: ${.CURDIR}/lib/labjack
+.PATH: ${.CURDIR}/drivers
+.PATH: ${.CURDIR}/drivers/graphics
+.PATH: ${.CURDIR}/drivers/input
+.PATH: ${.CURDIR}/drivers/rtc
+.PATH: ${.CURDIR}/drivers/serial_port
+.PATH: ${.CURDIR}/drivers/timer
+.PATH: ${.CURDIR}/containers
+.PATH: ${.CURDIR}/xpm
+.PATH: ${.CURDIR}/models/card
+.PATH: ${.CURDIR}/models/game
+.PATH: ${.CURDIR}/models/player
 
 # name of the program (Minix service)
 PROG=proj

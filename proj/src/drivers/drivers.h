@@ -6,11 +6,11 @@
 #include <stdint.h>
 #include <stdio.h>
 
-#include "i8042.h"
-#include "i8254.h"
-#include "iVBE.h"
-#include "iUART.h"
-#include "serial_proto.h"
+#include "input/i8042.h"
+#include "timer/i8254.h"
+#include "graphics/iVBE.h"
+#include "serial_port/iUART.h"
+#include "serial_port/serial_proto.h"
 #include <stdbool.h>
 
 #define min(a,b) (((a) < (b)) ? (a) : (b))

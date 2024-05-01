@@ -1,4 +1,4 @@
-#include "drivers.h"
+#include "../drivers.h"
 
 static t_gph gph;
 
@@ -133,8 +133,8 @@ void vg_clear_screen()
     uint32_t color = 0x000000; // Cor preta (ou qualquer outra cor desejada)
 
     // Iterar sobre todos os pixels do frame buffer e definir sua cor como a cor de fundo
-    for (int y = 0; y < gph.y_res; y++) {
-        for (int x = 0; x < gph.x_res; x++) {
+    for (uint32_t y = 0; y < gph.y_res; y++) {
+        for (uint32_t x = 0; x < gph.x_res; x++) {
             // Calcular o índice do pixel no frame buffer
             vg_draw_pixel(x, y, color); 
         }
