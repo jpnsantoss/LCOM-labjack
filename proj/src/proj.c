@@ -31,8 +31,7 @@ int main(int argc, char *argv[])
 int counter = 0;
 extern uint8_t scancode;
 
-//chamado pela lcom_run
-int (proj_main_loop)(int argc, char **argv)
+int labjack_loop()
 {
 	uint8_t bit_no_kb, bit_no_uart;
 	int ipc_status;
@@ -48,19 +47,19 @@ int (proj_main_loop)(int argc, char **argv)
 
 	while (scancode != KEYBOARD_ESC)
 	{
-    if (driver_receive(ANY, &msg, &ipc_status)) continue;
+    	if (driver_receive(ANY, &msg, &ipc_status)) continue;
 
-    if (!is_ipc_notify(ipc_status)) continue;
+    	if (!is_ipc_notify(ipc_status)) continue;
 
 		if (_ENDPOINT_P(msg.m_source) != HARDWARE) continue;
 
-    if (msg.m_notify.interrupts & bit_no_kb)
+    	if (msg.m_notify.interrupts & bit_no_kb)
 		{
 			kbc_ih();
-			if (scancode == 0xad) {
+			/*if (scancode == 0xad) {
 				uart_write_msg(1, 1);
 				printf("KEY %x\n", scancode);
-			}
+			}*/
 		}
 
 		if (msg.m_notify.interrupts & bit_no_uart)
@@ -73,4 +72,23 @@ int (proj_main_loop)(int argc, char **argv)
 	if (uart_unsubscribe_int()) return 1;
 	
 	return kbd_unsubscribe_int();
+}
+
+
+
+//chamado pela lcom_run
+int (proj_main_loop)(int argc, char **argv)
+{
+	//return labjack_loop();
+	queue_t *queue = queue_create(2);
+	queue_push(queue, strdup("a"));
+	queue_push(queue, strdup("b"));
+	printf("%s\n", queue_at(queue, 0));
+	printf("%s\n", queue_at(queue, 1));
+	queue_pop(queue);
+	printf("%s\n", queue_at(queue, 0));
+	queue_push(queue, strdup("c"));
+	printf("%s\n", queue_at(queue, 0));
+	printf("%s\n", queue_at(queue, 1));
+	return 0;
 }
