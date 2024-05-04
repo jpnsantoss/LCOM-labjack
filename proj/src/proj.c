@@ -40,10 +40,10 @@ int labjack_loop()
 	counter = 0;
 
 	if (kbd_subscribe_int(&bit_no_kb)) return 1;
-	
-	if (uart_setup(UART_DEFAULT_BIT_RATE)) return 1;
 
 	if (uart_subscribe_int(&bit_no_uart)) return 1;
+
+	if (uart_setup(UART_DEFAULT_BIT_RATE)) return 1;
 
 	while (scancode != KEYBOARD_ESC)
 	{
@@ -56,19 +56,20 @@ int labjack_loop()
     	if (msg.m_notify.interrupts & bit_no_kb)
 		{
 			kbc_ih();
-			/*if (scancode == 0xad) {
+			if (scancode == 0xad) {
 				uart_write_msg(1, 1);
 				printf("KEY %x\n", scancode);
-			}*/
+			}
 		}
 
 		if (msg.m_notify.interrupts & bit_no_uart)
 		{
 			uart_ih();
-			//printf("%d", IRQ_COM1);
+			printf("%d", IRQ_COM1);
 		}
 	}
 
+	if (uart_disable()) return 1;
 	if (uart_unsubscribe_int()) return 1;
 	
 	return kbd_unsubscribe_int();
@@ -79,8 +80,8 @@ int labjack_loop()
 //chamado pela lcom_run
 int (proj_main_loop)(int argc, char **argv)
 {
-	//return labjack_loop();
-	queue_t *queue = queue_create(2);
+	return labjack_loop();
+	/*queue_t *queue = queue_create(2);
 	queue_push(queue, strdup("a"));
 	queue_push(queue, strdup("b"));
 	printf("%s\n", queue_at(queue, 0));
@@ -89,6 +90,6 @@ int (proj_main_loop)(int argc, char **argv)
 	printf("%s\n", queue_at(queue, 0));
 	queue_push(queue, strdup("c"));
 	printf("%s\n", queue_at(queue, 0));
-	printf("%s\n", queue_at(queue, 1));
+	printf("%s\n", queue_at(queue, 1));*/
 	return 0;
 }

@@ -89,6 +89,8 @@ int (uart_unsubscribe_int)();
 void (uart_ih)();
 int	(uart_set_bit_rate)(int com_num, int rate);
 int (uart_write_msg)(int com_num, uint8_t msg);
+int (uart_disable)();
+int (uart_reset)(int base_addr);
 
 // utils
 int (util_get_LSB)(uint16_t val, uint8_t *lsb);
