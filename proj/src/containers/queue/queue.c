@@ -1,6 +1,7 @@
 #include "queue.h"
+#include <rand.h>
 
-queue_t	*queue_create(size_t size)
+queue_t *queue_create(size_t size)
 {
 	queue_t	*queue;
 
@@ -22,28 +23,28 @@ queue_t	*queue_create(size_t size)
 	return queue;
 }
 
-size_t	queue_size(queue_t *queue)
+size_t queue_size(queue_t *queue)
 {
 	if (!queue) return 0;
 
 	return queue->base_size;
 }
 
-int	queue_full(queue_t *queue)
+int queue_full(queue_t *queue)
 {
 	if (!queue) return 0;
 
 	return queue->base_size == queue->curr_size;
 }
 
-int	queue_empty(queue_t *queue)
+int queue_empty(queue_t *queue)
 {
 	if (!queue) return 0;
 
 	return queue->curr_size == 0;
 }
 
-void	queue_delete(queue_t **queue)
+void queue_delete(queue_t **queue)
 {
 	if ((*queue)->front_pos < (*queue)->end_pos)
 	{
@@ -62,7 +63,7 @@ void	queue_delete(queue_t **queue)
 	*queue = NULL;
 }
 
-void	*queue_at(queue_t *queue, size_t pos)
+void *queue_at(queue_t *queue, size_t pos)
 {
 	size_t	f_pos;
 
@@ -75,7 +76,20 @@ void	*queue_at(queue_t *queue, size_t pos)
 	return excedent >= 0 ? queue->content[excedent] : queue->content[f_pos];
 }
 
-void	*queue_pop(queue_t *queue)
+void **queue_at_ref(queue_t *queue, size_t pos)
+{
+	size_t	f_pos;
+
+	if (pos >= queue->curr_size) return NULL;
+
+	f_pos = queue->front_pos + pos;
+	if (queue->front_pos < queue->end_pos) return queue->content + f_pos;
+
+	long excedent = queue->front_pos + pos - queue->base_size;
+	return excedent >= 0 ? queue->content + excedent : queue->content + f_pos;
+}
+
+void *queue_pop(queue_t *queue)
 {
 	if (queue_empty(queue)) return NULL;
 
@@ -87,7 +101,7 @@ void	*queue_pop(queue_t *queue)
 	return result;
 }
 
-int	queue_push(queue_t *queue, void *content)
+int queue_push(queue_t *queue, void *content)
 {
 	if (queue_full(queue) || content == NULL) return -1;
 
@@ -102,4 +116,16 @@ int	queue_push(queue_t *queue, void *content)
 	queue->end_pos = queue->end_pos == queue->base_size - 1 ? 0 : queue->end_pos + 1;
 	queue->content[queue->end_pos] = content;
 	return 0;
+}
+
+void queue_shuffle(queue_t *queue)
+{
+    for (size_t i = queue->curr_size; i > 1; i--) 
+    {
+        int k = rand() % (i + 1);
+
+        void *tmp = queue_at(queue, k);
+        *queue_at_ref(queue, k) = queue_at(queue, i);
+        *queue_at_ref(queue, i) = tmp;
+    }
 }
