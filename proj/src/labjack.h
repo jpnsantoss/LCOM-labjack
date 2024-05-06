@@ -3,4 +3,6 @@
 
 #include "drivers/drivers.h"
 
+int	game_loop();
+
 #endif
