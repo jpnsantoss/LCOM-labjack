@@ -56,10 +56,10 @@ int labjack_loop()
     	if (msg.m_notify.interrupts & bit_no_kb)
 		{
 			kbc_ih();
-			if (scancode == 0xad) {
+			/*if (scancode == 0xad) {
 				uart_write_msg(1, 1);
 				printf("KEY %x\n", scancode);
-			}
+			}*/
 		}
 
 		if (msg.m_notify.interrupts & bit_no_uart)
