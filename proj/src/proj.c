@@ -31,16 +31,11 @@ int main(int argc, char *argv[])
 //chamado pela lcom_run
 int (proj_main_loop)(int argc, char **argv)
 {
-	return game_loop();
-	/*queue_t *queue = queue_create(2);
-	queue_push(queue, strdup("a"));
-	queue_push(queue, strdup("b"));
-	printf("%s\n", queue_at(queue, 0));
-	printf("%s\n", queue_at(queue, 1));
-	queue_pop(queue);
-	printf("%s\n", queue_at(queue, 0));
-	queue_push(queue, strdup("c"));
-	printf("%s\n", queue_at(queue, 0));
-	printf("%s\n", queue_at(queue, 1));*/
-	return 0;
+	game_t *game;
+
+	if (driver_init(game)) return 1;
+
+	if (game_run(game)) return 1;
+
+	return driver_dispose();
 }

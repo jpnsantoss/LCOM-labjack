@@ -3,19 +3,12 @@
 int counter = 0;
 extern uint8_t scancode;
 
-int game_loop()
+int game_run(game_t *game)
 {
-	uint8_t bit_no_kb, bit_no_uart;
 	int ipc_status;
 	message msg;
 	
 	counter = 0;
-
-	if (kbd_subscribe_int(&bit_no_kb)) return 1;
-
-	if (uart_subscribe_int(&bit_no_uart)) return 1;
-
-	if (uart_setup(UART_DEFAULT_BIT_RATE)) return 1;
 
 	while (scancode != KEYBOARD_ESC)
 	{
@@ -25,7 +18,7 @@ int game_loop()
 
 		if (_ENDPOINT_P(msg.m_source) != HARDWARE) continue;
 
-    	if (msg.m_notify.interrupts & bit_no_kb)
+    	if (msg.m_notify.interrupts & game->bit_no_kb)
 		{
 			kbc_ih();
 			/*if (scancode == 0xad) {
@@ -34,15 +27,12 @@ int game_loop()
 			}*/
 		}
 
-		if (msg.m_notify.interrupts & bit_no_uart)
+		if (msg.m_notify.interrupts & game->bit_no_uart)
 		{
 			uart_ih();
 			printf("%d", IRQ_COM1);
 		}
 	}
 
-	if (uart_disable()) return 1;
-	if (uart_unsubscribe_int()) return 1;
-	
-	return kbd_unsubscribe_int();
+	return 0;
 }
