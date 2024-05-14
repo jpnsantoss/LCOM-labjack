@@ -46,6 +46,18 @@ int	vg_map_memory(uint16_t mode)
    	return gph.video_mem == MAP_FAILED;
 }
 
+int (vg_flush_buffer)()
+{
+	memcpy(gph.video_mem, gph.frame_buffer, gph.x_res * gph.y_res * gph.bytes_per_pixel);
+	return 0;
+}
+
+int (vg_clean)()
+{
+	free(gph.frame_buffer);
+	return vg_exit();
+}
+
 int	vg_enter_graphic_mode(uint16_t mode)
 {
 	reg86_t r;
@@ -65,7 +77,7 @@ int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color)
 	
 	uint64_t pos = (gph.x_res * y + x) * gph.bytes_per_pixel;
 
-	return memcpy(gph.video_mem + pos, &color, gph.bytes_per_pixel) == 0;
+	return memcpy(gph.frame_buffer + pos, &color, gph.bytes_per_pixel) == 0;
 }
 
 int (vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color)

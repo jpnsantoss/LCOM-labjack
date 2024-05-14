@@ -82,6 +82,8 @@ int (vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color);
 int	vg_print_xpm(xpm_map_t xpm, uint16_t x, uint16_t y);
 t_gph vg_get_info();
 void vg_clear_screen();
+int (vg_clean)();
+int (vg_flush_buffer)();
 
 uint32_t direct_color(t_gph gph, int x, int y, uint32_t first, uint32_t step);
 

@@ -5,11 +5,12 @@ extern uint8_t scancode;
 
 int game_run(game_t *game)
 {
-	int16_t x = 600, y = 500;
+	int x = 600, y = 500;
 	int ipc_status;
 	message msg;
 	
 	counter = 0;
+	t_gph gph = vg_get_info();
 
 	while (scancode != KEYBOARD_ESC)
 	{
@@ -35,8 +36,16 @@ int game_run(game_t *game)
 			if (mouse_read_packet(&info))
 			{
 				x += info.delta_x;
-				y += info.delta_y;
-				cursor_draw(x, y);
+				y -= info.delta_y;
+				//printf("%d, %d ", x, y);
+
+				if (x < 0) x = 0;
+				if (x >= (int)gph.x_res) x = gph.x_res - 1;
+				if (y < 0) y = 0;
+				if (y >= (int)gph.y_res) y = gph.y_res - 1;
+
+				//printf("to %d, %d\n", x, y);
+				draw_screen(x, y);
 			}
 		}
 

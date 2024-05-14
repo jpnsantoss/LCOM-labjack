@@ -34,5 +34,5 @@ int driver_dispose()
 
 	if (timer_unsubscribe_int()) return 1;
 
-	return vg_exit();
+	return vg_clean();
 }
