@@ -31,11 +31,11 @@ int main(int argc, char *argv[])
 //chamado pela lcom_run
 int (proj_main_loop)(int argc, char **argv)
 {
-	game_t *game;
+	game_t game;
 
-	if (driver_init(game)) return 1;
+	if (driver_init(&game)) return 1;
 
-	if (game_run(game)) return 1;
+	if (game_run(&game)) return 1;
 
 	return driver_dispose();
 }

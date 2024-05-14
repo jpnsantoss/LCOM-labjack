@@ -1,5 +1,4 @@
 #include "queue.h"
-#include <rand.h>
 
 queue_t *queue_create(size_t size)
 {

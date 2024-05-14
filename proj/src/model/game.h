@@ -19,7 +19,7 @@ typedef struct game_s {
 	uint8_t bit_no_timer;
 	uint8_t bit_no_rtc;
 
-	game_state_t state = MAIN_MENU;
+	game_state_t state;
 	queue_t *cards;
 } game_t;
 
