@@ -6,9 +6,9 @@ int driver_init(game_t *game)
 
 	if (vg_enter_graphic_mode(0x105)) return 1;
 
-	if (kbd_subscribe_int(&game->bit_no_kb)) return 1;
-
 	if (kbc_write(MOUSE_DATA_REPORT_ENABLE, true)) return 1;
+	
+	if (kbd_subscribe_int(&game->bit_no_kb)) return 1;
 
 	if (timer_subscribe_int(&game->bit_no_timer)) return 1;
 
@@ -28,9 +28,9 @@ int driver_dispose()
 	
 	if (mouse_unsubscribe_int()) return 1;
 
-	if (kbc_write(MOUSE_DATA_REPORT_DISABLE, true)) return 1;
-
 	if (kbd_unsubscribe_int()) return 1;
+	
+	if (kbc_write(MOUSE_DATA_REPORT_DISABLE, true)) return 1;
 
 	if (timer_unsubscribe_int()) return 1;
 

@@ -25,6 +25,7 @@ typedef enum s_colormode {
 
 typedef struct s_gph {
 	uint8_t *video_mem;
+	uint8_t *frame_buffer;
 
 	unsigned x_res;
 	unsigned y_res;
@@ -41,6 +42,8 @@ typedef struct s_gph {
 	bool direct_color;
 } t_gph;
 
+typedef struct packet mouse_info_t;
+
 // timer
 int (timer_subscribe_int)(uint8_t *bit_no);
 int (timer_unsubscribe_int)();
@@ -56,7 +59,7 @@ int mouse_unsubscribe_int();
 void (mouse_ih)();
 
 void mouse_fill_packet(int *bytes, struct packet *pp);
-int mouse_read_packet();
+int mouse_read_packet(mouse_info_t *info);
 
 // keyboard
 int kbd_subscribe_int(uint8_t *bit_no);

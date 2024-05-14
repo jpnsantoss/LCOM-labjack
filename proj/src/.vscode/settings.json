@@ -10,6 +10,11 @@
 		"*.embeddedhtml": "html",
 		"drivers.h": "c",
 		"string.h": "c",
-		"lcf.h": "c"
+		"lcf.h": "c",
+		"labjack.h": "c",
+		"controller.h": "c",
+		"cursor.h": "c",
+		"pixmap.h": "c",
+		"stddef.h": "c"
 	},
 }

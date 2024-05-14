@@ -41,6 +41,7 @@ int	vg_map_memory(uint16_t mode)
 		return 1;
 	
 	gph.video_mem = vm_map_phys(SELF, (void *)mr.mr_base, screen_size);
+	gph.frame_buffer = (uint8_t *) malloc(screen_size);
 
    	return gph.video_mem == MAP_FAILED;
 }

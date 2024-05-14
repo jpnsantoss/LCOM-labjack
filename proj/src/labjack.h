@@ -6,5 +6,6 @@
 #include "controller/controller.h"
 
 int	game_run(game_t *game);
+int cursor_draw(int x, int y);
 
 #endif

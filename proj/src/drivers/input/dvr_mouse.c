@@ -26,7 +26,7 @@ void (mouse_ih)()
 	kbc_read_output(OUT_BUF, &output, true);
 }
 
-int mouse_read_packet()
+int mouse_read_packet(mouse_info_t *info)
 {
 	if (idx == 0 && (output & BIT(3)))
 	{
@@ -34,19 +34,18 @@ int mouse_read_packet()
 		idx++;
 		return 0;
 	}
+	if (idx == 3)
+	{
+		if (info == NULL) return 0;
+		mouse_fill_packet(bytes, info);
+		idx = 0;
+		return 1;
+	}
 	if (idx > 0)
 	{
 		bytes[idx] = output;
 		idx++;
 		return 0;
-	}
-	if (idx == 3)
-	{
-		struct packet pp;
-		mouse_fill_packet(bytes, &pp);
-		mouse_print_packet(&pp);
-		idx = 0;
-		return 1;
 	}
 	return 0;
 }
