@@ -11,7 +11,7 @@
 #include "graphics/iVBE.h"
 #include "serial_port/iUART.h"
 #include "serial_port/serial_proto.h"
-#include "../containers/queue/queue.h"
+#include "../data_structures/queue.h"
 #include <stdbool.h>
 
 #define min(a,b) (((a) < (b)) ? (a) : (b))

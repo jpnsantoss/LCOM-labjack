@@ -5,11 +5,8 @@
 .PATH: ${.CURDIR}/drivers/rtc
 .PATH: ${.CURDIR}/drivers/serial_port
 .PATH: ${.CURDIR}/drivers/timer
-.PATH: ${.CURDIR}/containers/queue
+.PATH: ${.CURDIR}/data_structures
 .PATH: ${.CURDIR}/model
-.PATH: ${.CURDIR}/controller
-.PATH: ${.CURDIR}/loop
-.PATH: ${.CURDIR}/viewer
 
 # name of the program (Minix service)
 PROG=proj
@@ -17,7 +14,7 @@ PROG=proj
 # source code files to be compiled
 SRCS = proj.c 
 SRCS += dvr_graphics.c dvr_kbc.c dvr_keyboard.c dvr_mouse.c dvr_timer.c dvr_uart.c utils.c
-SRCS += queue.c driver.c loop.c drawer.c
+SRCS += queue.c ev_listener.c
 
 # additional compilation flags
 # "-Wall -Wextra -Werror -I . -std=c11 -Wno-unused-parameter" are already set
