@@ -4,9 +4,7 @@
 #include <lcom/lcf.h>
 #include "../data_structures/queue.h"
 
-typedef struct game_s {
-	int 		x;
-	int			y;
+typedef struct {
 	queue_t *cards;
 } game_t;
 

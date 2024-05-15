@@ -2,6 +2,13 @@
 #define _LCOM_APP_H_
 
 #include <lcom/lcf.h>
+#include "game.h"
+
+typedef struct {
+	int 		x;
+	int			y;
+	game_t	game;
+} app_t;
 
 typedef struct {
   uint8_t kb;
@@ -11,7 +18,7 @@ typedef struct {
   uint8_t rtc;
 } bit_no_t;
 
-typedef enum app_state_s {
+typedef enum {
 	MAIN_MENU,
 	PAUSE_MENU,
 	GAME_BETTING,
@@ -19,7 +26,7 @@ typedef enum app_state_s {
 	GAME_OVER
 } app_state_t;
 
-typedef enum interrupt_type_s {
+typedef enum {
 	TIMER,
 	KEYBOARD,
 	MOUSE,
@@ -27,8 +34,8 @@ typedef enum interrupt_type_s {
 	UART
 } interrupt_type_t;
 
-typedef struct ev_listener_s {
-	app_state_t				app_state;
+typedef struct {
+	app_state_t				state;
 	interrupt_type_t	interrupt;
 } ev_listener_t;
 

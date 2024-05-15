@@ -5,6 +5,17 @@
 #include "../model/game.h"
 #include "../model/app.h"
 
-int	handle_interrupt(game_t *game, ev_listener_t event);
+typedef struct {
+  app_state_t state;
+  void(*handle)(app_t *app, interrupt_type_t interrupt);
+} state_handler_t;
+
+void handle_interrupt(app_t *app, ev_listener_t listener);
+
+void handle_general(app_t *app, interrupt_type_t interrupt);
+void handle_main_menu(app_t *app, interrupt_type_t interrupt);
+void handle_game_betting(app_t *app, interrupt_type_t interrupt);
+
+extern state_handler_t listeners[];
 
 #endif

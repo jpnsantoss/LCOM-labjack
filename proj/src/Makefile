@@ -8,6 +8,7 @@
 .PATH: ${.CURDIR}/data_structures
 .PATH: ${.CURDIR}/ev_listener
 .PATH: ${.CURDIR}/model
+.PATH: ${.CURDIR}/sprite
 
 # name of the program (Minix service)
 PROG=proj
@@ -15,7 +16,7 @@ PROG=proj
 # source code files to be compiled
 SRCS = proj.c 
 SRCS += dvr_graphics.c dvr_kbc.c dvr_keyboard.c dvr_mouse.c dvr_timer.c dvr_uart.c utils.c
-SRCS += queue.c ev_listener.c
+SRCS += queue.c ev_listener.c sprite.c
 
 # additional compilation flags
 # "-Wall -Wextra -Werror -I . -std=c11 -Wno-unused-parameter" are already set

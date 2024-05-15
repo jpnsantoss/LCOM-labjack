@@ -52,11 +52,11 @@ int (proj_main_loop)(int argc, char **argv)
 {
   app_state_t app_state = MAIN_MENU;
   bit_no_t bit_no;
-	game_t game;
+	app_t app;
 
-  if (vg_map_memory(0x105)) return 1;
+  if (vg_map_memory(0x14C)) return 1;
 
-	if (vg_enter_graphic_mode(0x105)) return 1;
+	if (vg_enter_graphic_mode(0x14C)) return 1;
 
 	if (kbc_write(MOUSE_DATA_REPORT_ENABLE, true)) return 1;
 	
@@ -70,8 +70,8 @@ int (proj_main_loop)(int argc, char **argv)
 	message msg;
 	
 	counter = 0;
-	game.x = 600;
-	game.y = 500;
+	app.x = 600;
+	app.y = 500;
 
 	while (scancode != KEYBOARD_ESC)
 	{
@@ -85,7 +85,7 @@ int (proj_main_loop)(int argc, char **argv)
 
     ev_listener_t listener = { app_state, interrupt };
 
-    handle_interrupt(&game, listener);
+    handle_interrupt(&app, listener);
 	}
 
   if (mouse_unsubscribe_int()) return 1;

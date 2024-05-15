@@ -1,11 +1,25 @@
 #include "ev_listener.h"
 
-int	handle_interrupt(game_t *game, ev_listener_t event)
+state_handler_t listeners[] = {
+  { MAIN_MENU, handle_main_menu },
+  { GAME_BETTING, handle_game_betting },
+};
+
+void handle_interrupt(app_t *app, ev_listener_t listener)
+{
+	listeners[listener.state].handle(app, listener.interrupt);
+	handle_general(app, listener.interrupt);
+}
+
+#include "../assets/cursor.xpm"
+#include <lcom/pixmap.h>
+#include "../sprite/sprite.h"
+void handle_general(app_t *app, interrupt_type_t interrupt)
 {
 	t_gph gph = vg_get_info();
 	mouse_info_t info;
 
-	switch (event.interrupt)
+	switch (interrupt)
 	{
 		case KEYBOARD:
 			kbc_ih();
@@ -14,17 +28,20 @@ int	handle_interrupt(game_t *game, ev_listener_t event)
 			mouse_ih();
 			if (mouse_read_packet(&info))
 			{
-				game->x += info.delta_x;
-				game->y -= info.delta_y;
+				app->x += info.delta_x;
+				app->y -= info.delta_y;
 				//printf("%d, %d ", x, y);
 
-				if (game->x < 0) game->x = 0;
-				if (game->x >= (int)gph.x_res) game->x = gph.x_res - 1;
-				if (game->y < 0) game->y = 0;
-				if (game->y >= (int)gph.y_res) game->y = gph.y_res - 1;
+				if (app->x < 0) app->x = 0;
+				if (app->x >= (int)gph.x_res) app->x = gph.x_res - 1;
+				if (app->y < 0) app->y = 0;
+				if (app->y >= (int)gph.y_res) app->y = gph.y_res - 1;
 
-				//printf("to %d, %d\n", x, y);
-				//draw_screen(game->x, game->y);
+				vg_clear_screen();
+				sprite_t *sprite = sprite_create(cursor, app->x, app->y);
+				sprite_draw(sprite);
+				sprite_delete(sprite);
+				vg_flush_buffer();
 			}
 			break;
 		case UART:
@@ -35,5 +52,19 @@ int	handle_interrupt(game_t *game, ev_listener_t event)
 		case RTC:
 			break;
 	}
-	return 0;
+}
+
+void handle_main_menu(app_t *app, interrupt_type_t interrupt)
+{
+  if (interrupt == TIMER) {
+    // Handle the interrupt here
+  }
+}
+
+// Function to handle the interrupts in the game start
+void handle_game_betting(app_t *app, interrupt_type_t interrupt)
+{
+  if (interrupt == MOUSE) {
+    // Handle the interrupt here
+  }
 }

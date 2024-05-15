@@ -21,6 +21,7 @@
 		"pixmap.h": "c",
 		"stddef.h": "c",
 		"queue.h": "c",
-		"game.h": "c"
+		"game.h": "c",
+		"*.xpm": "c"
 	},
 }
