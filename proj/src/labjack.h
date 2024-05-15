@@ -3,5 +3,6 @@
 
 #include "drivers/drivers.h"
 #include "model/game.h"
+#include "model/app.h"
 
 #endif

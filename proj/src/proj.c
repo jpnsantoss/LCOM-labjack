@@ -1,17 +1,9 @@
 #include <lcom/lcf.h>
 #include "labjack.h"
-#include "ev_listener.h"
+#include "ev_listener/ev_listener.h"
 
 int counter = 0;
 extern uint8_t scancode;
-
-typedef struct {
-  uint8_t kb;
-  uint8_t mouse;
-  uint8_t uart;
-  uint8_t timer;
-  uint8_t rtc;
-} bit_no_t;
 
 // Any header files included below this line should have been created by you
 
@@ -40,28 +32,27 @@ int main(int argc, char *argv[])
   return 0;
 }
 
-interrupt_type_t get_interrupt_type(message msg, bit_no_t bit_no) {
-  if (msg.m_notify.interrupts & BIT(bit_no.kb)) {
-    return KEYBOARD;
-  } else if (msg.m_notify.interrupts & BIT(bit_no.mouse)) {
-    return MOUSE;
-  } else if (msg.m_notify.interrupts & BIT(bit_no.uart)) {
-    return UART;
-  } else if (msg.m_notify.interrupts & BIT(bit_no.timer)) {
-    return TIMER;
-  } else if (msg.m_notify.interrupts & BIT(bit_no.rtc)) {
-    return RTC;
-  } else {
-    return -1; // Invalid interrupt type
-  }
+interrupt_type_t get_interrupt_type(message msg, bit_no_t bit_no)
+{
+  if (msg.m_notify.interrupts & bit_no.kb) return KEYBOARD;
+  
+	if (msg.m_notify.interrupts & bit_no.mouse) return MOUSE;
+  
+	if (msg.m_notify.interrupts & bit_no.uart) return UART;
+  
+	if (msg.m_notify.interrupts & bit_no.timer) return TIMER;
+  
+	if (msg.m_notify.interrupts & bit_no.rtc) return RTC;
+  
+	return -1; // Invalid interrupt type
 }
 
 //chamado pela lcom_run
 int (proj_main_loop)(int argc, char **argv)
 {
-
   app_state_t app_state = MAIN_MENU;
   bit_no_t bit_no;
+	game_t game;
 
   if (vg_map_memory(0x105)) return 1;
 
@@ -79,6 +70,8 @@ int (proj_main_loop)(int argc, char **argv)
 	message msg;
 	
 	counter = 0;
+	game.x = 600;
+	game.y = 500;
 
 	while (scancode != KEYBOARD_ESC)
 	{
@@ -92,7 +85,7 @@ int (proj_main_loop)(int argc, char **argv)
 
     ev_listener_t listener = { app_state, interrupt };
 
-    handle_interrupt(listener);
+    handle_interrupt(&game, listener);
 	}
 
   if (mouse_unsubscribe_int()) return 1;

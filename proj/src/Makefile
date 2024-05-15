@@ -6,6 +6,7 @@
 .PATH: ${.CURDIR}/drivers/serial_port
 .PATH: ${.CURDIR}/drivers/timer
 .PATH: ${.CURDIR}/data_structures
+.PATH: ${.CURDIR}/ev_listener
 .PATH: ${.CURDIR}/model
 
 # name of the program (Minix service)
