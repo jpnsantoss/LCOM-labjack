@@ -30,7 +30,6 @@ typedef enum interrupt_type_s {
 typedef struct ev_listener_s {
 	app_state_t				app_state;
 	interrupt_type_t	interrupt;
-	
 } ev_listener_t;
 
 #endif
