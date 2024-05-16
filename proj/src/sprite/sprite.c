@@ -45,3 +45,20 @@ int	sprite_draw(sprite_t *sprite)
 	}
 	return 0;
 }
+
+int sprite_move(sprite_t *sprite, int x, int y)
+{
+	if (x == 0 && y == 0) return 1;
+
+	x += sprite->x;
+	y += sprite->y;
+
+	vbe_mode_info_t* mode_info = get_mode_info();
+
+	if (x < 0 || y < 0 || x + sprite->img.width >= mode_info->XResolution || y + sprite->img.height >= mode_info->YResolution) return 1;
+
+	sprite->x = x;
+	sprite->y = y;
+
+	return 0;
+}

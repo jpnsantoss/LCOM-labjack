@@ -26,23 +26,11 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
 			break;
 		case MOUSE:
 			mouse_ih();
-			if (mouse_read_packet(&info))
-			{
-				app->x += info.delta_x;
-				app->y -= info.delta_y;
-				//printf("%d, %d ", x, y);
-
-				if (app->x < 0) app->x = 0;
-				if (app->x >= (int)gph.x_res) app->x = gph.x_res - 1;
-				if (app->y < 0) app->y = 0;
-				if (app->y >= (int)gph.y_res) app->y = gph.y_res - 1;
-
-				vg_clear_screen();
-				sprite_t *sprite = sprite_create(cursor, app->x, app->y);
-				sprite_draw(sprite);
-				sprite_delete(sprite);
-				vg_flush_buffer();
-			}
+				// vg_clear_screen();
+				// sprite_t *sprite = sprite_create(cursor, app->x, app->y);
+				// sprite_draw(sprite);
+				// sprite_delete(sprite);
+				// vg_flush_buffer();
 			break;
 		case UART:
 			uart_ih();

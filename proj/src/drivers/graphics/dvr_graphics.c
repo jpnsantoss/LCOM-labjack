@@ -111,3 +111,33 @@ void vg_clear_screen()
         }
     }
 }
+
+int vg_draw_state() {
+	switch(get_state()) {
+		case MAIN_MENU:
+			break;
+		case GAME_BETTING:
+			break;
+		case GAME_PLAYING:
+			break;
+		case GAME_OVER:
+			break;
+		default:
+			break;
+	}
+}
+
+int vg_draw_screen() {
+	vg_clear_screen();
+	vg_draw_state();
+
+	vg_flush_buffer();
+}
+
+int vg_get_width() {
+	return gph.x_res;
+}
+
+int vg_get_height() {
+	return gph.y_res;
+}

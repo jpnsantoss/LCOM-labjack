@@ -13,6 +13,7 @@
 #include "serial_port/serial_proto.h"
 #include "../data_structures/queue.h"
 #include <stdbool.h>
+#include "../state/state.h"
 
 #define min(a,b) (((a) < (b)) ? (a) : (b))
 #define MAX_TRIES 10
@@ -27,8 +28,8 @@ typedef struct s_gph {
 	uint8_t *video_mem;
 	uint8_t *frame_buffer;
 
-	unsigned x_res;
-	unsigned y_res;
+	int x_res;
+	int y_res;
 	unsigned bits_per_pixel;
 	unsigned bytes_per_pixel;
 

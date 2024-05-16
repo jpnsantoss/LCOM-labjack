@@ -3,6 +3,7 @@
 
 #include <lcom/lcf.h>
 #include "game.h"
+#include "../state/state.h"
 
 typedef struct {
 	int 		x;
@@ -18,13 +19,6 @@ typedef struct {
   uint8_t rtc;
 } bit_no_t;
 
-typedef enum {
-	MAIN_MENU,
-	PAUSE_MENU,
-	GAME_BETTING,
-	GAME_PLAYING,
-	GAME_OVER
-} app_state_t;
 
 typedef enum {
 	TIMER,

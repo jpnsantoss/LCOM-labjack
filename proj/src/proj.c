@@ -50,7 +50,6 @@ interrupt_type_t get_interrupt_type(message msg, bit_no_t bit_no)
 //chamado pela lcom_run
 int (proj_main_loop)(int argc, char **argv)
 {
-  app_state_t app_state = MAIN_MENU;
   bit_no_t bit_no;
 	app_t app;
 
@@ -83,7 +82,7 @@ int (proj_main_loop)(int argc, char **argv)
     
     interrupt_type_t interrupt = get_interrupt_type(msg, bit_no);
 
-    ev_listener_t listener = { app_state, interrupt };
+    ev_listener_t listener = { get_state(), interrupt };
 
     handle_interrupt(&app, listener);
 	}
