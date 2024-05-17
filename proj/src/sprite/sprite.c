@@ -53,9 +53,12 @@ int sprite_move(sprite_t *sprite, int x, int y)
 	x += sprite->x;
 	y += sprite->y;
 
-	vbe_mode_info_t* mode_info = get_mode_info();
+	vbe_mode_info_t mode_info;
 
-	if (x < 0 || y < 0 || x + sprite->img.width >= mode_info->XResolution || y + sprite->img.height >= mode_info->YResolution) return 1;
+	if (vbe_get_mode_info(VG_MODE, &mode_info))
+		return 1;
+
+	if (x < 0 || y < 0 || x + sprite->img.width >= mode_info.XResolution || y + sprite->img.height >= mode_info.YResolution) return 1;
 
 	sprite->x = x;
 	sprite->y = y;

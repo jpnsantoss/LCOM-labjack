@@ -1,6 +1,8 @@
 #include <lcom/lcf.h>
 #include "labjack.h"
 #include "ev_listener/ev_listener.h"
+#include "drivers/drivers.h"
+#include "state/state.h"
 
 int counter = 0;
 extern uint8_t scancode;
@@ -32,6 +34,18 @@ int main(int argc, char *argv[])
   return 0;
 }
 
+int close_app() {
+  if (mouse_unsubscribe_int()) return 1;
+
+	if (kbd_unsubscribe_int()) return 1;
+	
+	if (kbc_write(MOUSE_DATA_REPORT_DISABLE, true)) return 1;
+
+	if (timer_unsubscribe_int()) return 1;
+
+	return vg_clean();
+}
+
 interrupt_type_t get_interrupt_type(message msg, bit_no_t bit_no)
 {
   if (msg.m_notify.interrupts & bit_no.kb) return KEYBOARD;
@@ -53,24 +67,19 @@ int (proj_main_loop)(int argc, char **argv)
   bit_no_t bit_no;
 	app_t app;
 
-  if (vg_map_memory(0x14C)) return 1;
+  vg_init_mode();
+  if(timer_set_frequency(0, TIMER_ACTUAL_FREQ)) return 1;
 
-	if (vg_enter_graphic_mode(0x14C)) return 1;
+  if (timer_subscribe_int(&bit_no.timer)) return 1;
 
-	if (kbc_write(MOUSE_DATA_REPORT_ENABLE, true)) return 1;
-	
-	if (kbd_subscribe_int(&bit_no.kb)) return 1;
+  if (mouse_init(&bit_no.mouse)) return 1;
 
-	if (timer_subscribe_int(&bit_no.timer)) return 1;
-
-	if (mouse_subscribe_int(&bit_no.mouse)) return 1;
+  if (kbd_subscribe_int(&bit_no.kb)) return 1;
 
 	int ipc_status;
 	message msg;
 	
 	counter = 0;
-	app.x = 600;
-	app.y = 500;
 
 	while (scancode != KEYBOARD_ESC)
 	{
@@ -87,13 +96,6 @@ int (proj_main_loop)(int argc, char **argv)
     handle_interrupt(&app, listener);
 	}
 
-  if (mouse_unsubscribe_int()) return 1;
-
-	if (kbd_unsubscribe_int()) return 1;
-	
-	if (kbc_write(MOUSE_DATA_REPORT_DISABLE, true)) return 1;
-
-	if (timer_unsubscribe_int()) return 1;
-
-	return vg_clean();
+  return close_app();
+  
 }

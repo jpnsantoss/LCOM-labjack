@@ -28,8 +28,8 @@ typedef struct s_gph {
 	uint8_t *video_mem;
 	uint8_t *frame_buffer;
 
-	int x_res;
-	int y_res;
+	unsigned x_res;
+	unsigned y_res;
 	unsigned bits_per_pixel;
 	unsigned bytes_per_pixel;
 
@@ -58,6 +58,7 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq);
 int mouse_subscribe_int(uint8_t *bit_no);
 int mouse_unsubscribe_int();
 void (mouse_ih)();
+int mouse_init(uint8_t *bit_no);
 
 void mouse_fill_packet(int *bytes, struct packet *pp);
 int mouse_read_packet(mouse_info_t *info);
@@ -73,8 +74,8 @@ int kbc_read_output(uint8_t port, uint8_t *output, bool mouse);
 int kbc_write(uint8_t intent, bool mouse);
 
 // graphics
+int	vg_init_mode();
 int	vg_enter_graphic_mode(uint16_t mode);
-
 int	vg_map_memory(uint16_t mode);
 int (vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, 
 					uint16_t height, uint32_t color);
@@ -85,6 +86,8 @@ t_gph vg_get_info();
 void vg_clear_screen();
 int (vg_clean)();
 int (vg_flush_buffer)();
+unsigned vg_get_width();
+unsigned vg_get_height();
 
 uint32_t direct_color(t_gph gph, int x, int y, uint32_t first, uint32_t step);
 

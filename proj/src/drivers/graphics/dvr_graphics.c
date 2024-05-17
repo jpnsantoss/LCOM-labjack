@@ -7,6 +7,14 @@ t_gph vg_get_info()
 	return gph;
 }
 
+int vg_init_mode()
+{
+	if (vg_enter_graphic_mode(VG_MODE)) return 1;
+	if (vg_map_memory(VG_MODE)) return 1;
+
+	return 0;
+}
+
 int	vg_map_memory(uint16_t mode)
 {
 	struct minix_mem_range mr;
@@ -112,32 +120,10 @@ void vg_clear_screen()
     }
 }
 
-int vg_draw_state() {
-	switch(get_state()) {
-		case MAIN_MENU:
-			break;
-		case GAME_BETTING:
-			break;
-		case GAME_PLAYING:
-			break;
-		case GAME_OVER:
-			break;
-		default:
-			break;
-	}
-}
-
-int vg_draw_screen() {
-	vg_clear_screen();
-	vg_draw_state();
-
-	vg_flush_buffer();
-}
-
-int vg_get_width() {
+unsigned vg_get_width() {
 	return gph.x_res;
 }
 
-int vg_get_height() {
+unsigned vg_get_height() {
 	return gph.y_res;
 }

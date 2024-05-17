@@ -16,8 +16,7 @@ void handle_interrupt(app_t *app, ev_listener_t listener)
 #include "../sprite/sprite.h"
 void handle_general(app_t *app, interrupt_type_t interrupt)
 {
-	t_gph gph = vg_get_info();
-	mouse_info_t info;
+	// mouse_info_t info;
 
 	switch (interrupt)
 	{
