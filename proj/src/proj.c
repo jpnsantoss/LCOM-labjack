@@ -3,6 +3,7 @@
 #include "ev_listener/ev_listener.h"
 #include "drivers/drivers.h"
 #include "state/state.h"
+#include "model/app.h"
 
 int counter = 0;
 extern uint8_t scancode;
@@ -65,7 +66,7 @@ interrupt_type_t get_interrupt_type(message msg, bit_no_t bit_no)
 int (proj_main_loop)(int argc, char **argv)
 {
   bit_no_t bit_no;
-	app_t app;
+	app_t *app = app_init();
 
   vg_init_mode();
   if(timer_set_frequency(0, TIMER_ACTUAL_FREQ)) return 1;
@@ -93,7 +94,9 @@ int (proj_main_loop)(int argc, char **argv)
 
     ev_listener_t listener = { get_state(), interrupt };
 
-    handle_interrupt(&app, listener);
+    handle_interrupt(app, listener);
+
+    if(get_state() == EXIT) break;
 	}
 
   return close_app();

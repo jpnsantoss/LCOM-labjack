@@ -1,6 +1,7 @@
 #include "drawer.h"
 #include "../state/state.h"
-int draw_state() {
+#include "../model/app.h"
+void draw_state() {
 	switch(get_state()) {
 		case MAIN_MENU:
 			break;
@@ -15,11 +16,11 @@ int draw_state() {
 	}
 }
 
-int draw_screen() {
+void draw_screen(app_t *app) {
 	vg_clear_screen();
-	vg_draw_state();
+	draw_state();
 
-  vg_print_xpm(cursor, mouse_get_x(), mouse_get_y());
+  sprite_draw(app->cursor);
 
 	vg_flush_buffer();
 }

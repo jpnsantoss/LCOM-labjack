@@ -4,10 +4,15 @@
 #include <lcom/lcf.h>
 #include "game.h"
 #include "../state/state.h"
+#include "../sprite/sprite.h"
+#include "../drivers/drivers.h"
 
 typedef struct {
-	int 		x;
-	int			y;
+	sprite_t *cursor;
+	// sprite_t *background;
+	// sprite_t *main_menu;
+	// sprite_t *game_betting;
+	// sprite_t *game;
 	game_t	game;
 } app_t;
 
@@ -32,5 +37,7 @@ typedef struct {
 	app_state_t				state;
 	interrupt_type_t	interrupt;
 } ev_listener_t;
+
+app_t *app_init();
 
 #endif

@@ -1,5 +1,5 @@
 /* XPM */
-static const char *cursor[] = {
+static const char *cursor_xpm[] = {
 "16 24 66 1",
 " 	c None",
 ".	c #000000",

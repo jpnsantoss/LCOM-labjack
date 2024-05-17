@@ -3,9 +3,9 @@
 
 #include "../drivers/drivers.h"
 #include "../assets/cursor.xpm"
+#include "../model/app.h"
 
-int draw_state();
-
-int draw_screen();
+void draw_state();
+void draw_screen(app_t *app);
 
 #endif

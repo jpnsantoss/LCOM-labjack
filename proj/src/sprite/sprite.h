@@ -12,5 +12,6 @@ typedef struct {
 sprite_t *sprite_create(xpm_map_t map, uint32_t x, uint32_t y);
 void			sprite_delete(sprite_t *sprite);
 int				sprite_draw(sprite_t *sprite);
+int				sprite_move(sprite_t *sprite, int x, int y);
 
 #endif

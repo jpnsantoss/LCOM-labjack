@@ -23,6 +23,10 @@
 		"queue.h": "c",
 		"game.h": "c",
 		"*.xpm": "c",
-		"drawer.h": "c"
+		"drawer.h": "c",
+		"sprite.h": "c",
+		"state.h": "c",
+		"ev_listener.h": "c",
+		"app.h": "c"
 	},
 }

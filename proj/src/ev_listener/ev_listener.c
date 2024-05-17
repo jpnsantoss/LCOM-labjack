@@ -1,4 +1,6 @@
 #include "ev_listener.h"
+#include "../drivers/drivers.h"
+#include "../drawer/drawer.h"
 
 state_handler_t listeners[] = {
   { MAIN_MENU, handle_main_menu },
@@ -11,12 +13,9 @@ void handle_interrupt(app_t *app, ev_listener_t listener)
 	handle_general(app, listener.interrupt);
 }
 
-#include "../assets/cursor.xpm"
-#include <lcom/pixmap.h>
-#include "../sprite/sprite.h"
 void handle_general(app_t *app, interrupt_type_t interrupt)
 {
-	// mouse_info_t info;
+	mouse_info_t info;
 
 	switch (interrupt)
 	{
@@ -25,16 +24,17 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
 			break;
 		case MOUSE:
 			mouse_ih();
-				// vg_clear_screen();
-				// sprite_t *sprite = sprite_create(cursor, app->x, app->y);
-				// sprite_draw(sprite);
-				// sprite_delete(sprite);
-				// vg_flush_buffer();
+			// mouseSync();
+			if(mouse_read_packet(&info))
+			{
+				sprite_move(app->cursor, info.delta_x, -info.delta_y);
+			}
 			break;
 		case UART:
 			uart_ih();
 			break;
 		case TIMER:
+			draw_screen(app);
 			break;
 		case RTC:
 			break;
