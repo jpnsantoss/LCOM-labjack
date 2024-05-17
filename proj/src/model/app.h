@@ -39,5 +39,6 @@ typedef struct {
 } ev_listener_t;
 
 app_t *app_init();
+void updateCursorPos(mouse_info_t *mouse_info);
 
 #endif

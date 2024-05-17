@@ -27,7 +27,9 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
 			// mouseSync();
 			if(mouse_read_packet(&info))
 			{
-				sprite_move(app->cursor, info.delta_x, -info.delta_y);
+				printf("dx: %d, dy: %d\n", info.delta_x, info.delta_y);
+				printf("rb: %d, mb: %d, lb: %d\n", info.rb, info.mb, info.lb);
+				updateCursorPos(&info);
 			}
 			break;
 		case UART:

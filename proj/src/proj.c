@@ -66,7 +66,6 @@ interrupt_type_t get_interrupt_type(message msg, bit_no_t bit_no)
 int (proj_main_loop)(int argc, char **argv)
 {
   bit_no_t bit_no;
-	app_t *app = app_init();
 
   vg_init_mode();
   if(timer_set_frequency(0, TIMER_ACTUAL_FREQ)) return 1;
@@ -77,6 +76,7 @@ int (proj_main_loop)(int argc, char **argv)
 
   if (kbd_subscribe_int(&bit_no.kb)) return 1;
 
+	app_t *app = app_init();
 	int ipc_status;
 	message msg;
 	
