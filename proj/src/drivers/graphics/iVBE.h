@@ -3,6 +3,8 @@
 
 #include <lcom/lcf.h>
 
+#define VG_MODE 0x14c
+
 #define AH_FAIL 0x01
 #define AH_NOSUPPORT 0x02
 #define AH_INVALID 0x03

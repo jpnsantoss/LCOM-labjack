@@ -4,7 +4,7 @@
 #include <lcom/lcf.h>
 
 typedef struct queue_s {
-	void 		**content;
+	void 	**content;
 	size_t	base_size;
 	size_t	curr_size;
 	size_t	front_pos;

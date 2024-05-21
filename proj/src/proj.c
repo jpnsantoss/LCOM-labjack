@@ -1,5 +1,11 @@
 #include <lcom/lcf.h>
 #include "labjack.h"
+#include "ev_listener/ev_listener.h"
+#include "drivers/drivers.h"
+#include "state/state.h"
+#include "model/app.h"
+
+int counter = 0;
 
 // Any header files included below this line should have been created by you
 
@@ -28,14 +34,69 @@ int main(int argc, char *argv[])
   return 0;
 }
 
+int close_app() {
+  if (mouse_unsubscribe_int()) return 1;
+
+	if (kbd_unsubscribe_int()) return 1;
+	
+	if (kbc_write(MOUSE_DATA_REPORT_DISABLE, true)) return 1;
+
+	if (timer_unsubscribe_int()) return 1;
+
+	return vg_clean();
+}
+
+interrupt_type_t get_interrupt_type(message msg, bit_no_t bit_no)
+{
+  if (msg.m_notify.interrupts & bit_no.kb) return KEYBOARD;
+  
+	if (msg.m_notify.interrupts & bit_no.mouse) return MOUSE;
+  
+	if (msg.m_notify.interrupts & bit_no.uart) return UART;
+  
+	if (msg.m_notify.interrupts & bit_no.timer) return TIMER;
+  
+	if (msg.m_notify.interrupts & bit_no.rtc) return RTC;
+  
+	return -1; // Invalid interrupt type
+}
+
 //chamado pela lcom_run
 int (proj_main_loop)(int argc, char **argv)
 {
-	game_t game;
+  bit_no_t bit_no;
 
-	if (driver_init(&game)) return 1;
+  vg_init_mode();
+  if(timer_set_frequency(0, TIMER_ACTUAL_FREQ)) return 1;
 
-	if (game_run(&game)) return 1;
+  if (timer_subscribe_int(&bit_no.timer)) return 1;
 
-	return driver_dispose();
+  if (mouse_init(&bit_no.mouse)) return 1;
+
+  if (kbd_subscribe_int(&bit_no.kb)) return 1;
+
+	app_t *app = app_init();
+	int ipc_status;
+	message msg;
+	
+	counter = 0;
+
+	while (get_state() != EXIT)
+	{
+    if (driver_receive(ANY, &msg, &ipc_status)) continue;
+
+    if (!is_ipc_notify(ipc_status)) continue;
+
+		if (_ENDPOINT_P(msg.m_source) != HARDWARE) continue;
+    
+    interrupt_type_t interrupt = get_interrupt_type(msg, bit_no);
+
+    ev_listener_t listener = { get_state(), interrupt };
+
+    handle_interrupt(app, listener);
+
+	}
+
+  return close_app();
+  
 }

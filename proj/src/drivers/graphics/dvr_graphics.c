@@ -7,6 +7,14 @@ t_gph vg_get_info()
 	return gph;
 }
 
+int vg_init_mode()
+{
+	if (vg_enter_graphic_mode(VG_MODE)) return 1;
+	if (vg_map_memory(VG_MODE)) return 1;
+
+	return 0;
+}
+
 int	vg_map_memory(uint16_t mode)
 {
 	struct minix_mem_range mr;
@@ -72,8 +80,7 @@ int	vg_enter_graphic_mode(uint16_t mode)
 
 int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color)
 {	
-	if (x >= gph.x_res || y >= gph.y_res)
-		return 1;
+	if (x >= gph.x_res || y >= gph.y_res) return 1;
 	
 	uint64_t pos = (gph.x_res * y + x) * gph.bytes_per_pixel;
 
@@ -100,47 +107,6 @@ int (vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width,
 	return 0;
 }
 
-int	vg_print_xpm(xpm_map_t xpm, uint16_t x, uint16_t y)
-{
-	xpm_image_t img;
-
-	uint8_t *sprite = xpm_load(xpm, XPM_INDEXED, &img);
-	for (int j = 0; j < img.height; j++)
-	{
-		for (int i = 0; i < img.width; i++)
-		{
-			if (vg_draw_pixel(x + i, y + j, *sprite))
-				return 1;
-			sprite++;
-		}
-	}
-	return 0;
-}
-
-// Pattern auxiliary method 
-uint32_t direct_aux(uint32_t first, uint32_t mask_size, uint32_t field_pos)
-{
-	return ((1 << mask_size) - 1) & (first >> field_pos);
-}
-
-// Pattern auxiliary method 
-uint32_t direct_color(t_gph gph, int x, int y, uint32_t first, uint32_t step)
-{
-	uint32_t red = direct_aux(first, gph.red_mask_size, gph.red_field_pos);
-	red += y * step;
-	red %= 1 << gph.red_mask_size;
-
-	uint32_t green = direct_aux(first, gph.green_mask_size, gph.green_field_pos);
-	green += x * step;
-	green %= 1 << gph.green_mask_size;
-
-	uint32_t blue = direct_aux(first, gph.blue_mask_size, gph.blue_field_pos);
-	blue += (x + y) * step;
-	blue %= 1 << gph.blue_mask_size;
-
-	return red << gph.red_field_pos | green << gph.green_field_pos | blue << gph.blue_field_pos;
-}
-
 void vg_clear_screen()
 {
     uint32_t color = 0x000000; // Cor preta (ou qualquer outra cor desejada)
@@ -152,4 +118,12 @@ void vg_clear_screen()
             vg_draw_pixel(x, y, color); 
         }
     }
+}
+
+unsigned vg_get_width() {
+	return gph.x_res;
+}
+
+unsigned vg_get_height() {
+	return gph.y_res;
 }

@@ -3,14 +3,14 @@
 
 #include <lcom/lcf.h>
 
-typedef enum card_type_e {
+typedef enum {
 	CLUBS,
 	HEARTS,
 	SPADES,
 	DIAMONDS
 } card_type_t;
 
-typedef struct card_s {
+typedef struct {
 	char					*name;
 	int						value;
 	card_type_t 	type;
