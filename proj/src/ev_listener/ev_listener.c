@@ -24,19 +24,25 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
 	{
 		case KEYBOARD:
 			kbc_ih();
-			if(scancode == KEYBOARD_ESC) set_state(EXIT);
+			if (scancode == KEYBOARD_ESC) set_state(EXIT);
+			if (scancode == 0xad)
+			{
+				uart_write_msg(1, 1);
+				printf("X\n");
+			}
 			break;
 		case MOUSE:
 			mouse_ih();
 			// mouseSync();
-			if(mouse_read_packet(&info))
+			if (mouse_read_packet(&info))
 			{
-				printf("dx: %d, dy: %d\n", info.delta_x, info.delta_y);
-				printf("rb: %d, mb: %d, lb: %d\n", info.rb, info.mb, info.lb);
+				//printf("dx: %d, dy: %d\n", info.delta_x, info.delta_y);
+				//printf("rb: %d, mb: %d, lb: %d\n", info.rb, info.mb, info.lb);
 				updateCursorPos(&info);
 			}
 			break;
 		case UART:
+			printf("UART IH\n");
 			uart_ih();
 			break;
 		case TIMER:

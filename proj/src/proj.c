@@ -36,7 +36,11 @@ int main(int argc, char *argv[])
 
 int close_app()
 {
-  if (mouse_unsubscribe_int()) return 1;
+	if (uart_disable()) return 1;
+
+	if (uart_unsubscribe_int()) return 1;
+
+	if (mouse_unsubscribe_int()) return 1;
 
 	if (kbd_unsubscribe_int()) return 1;
 	
@@ -50,17 +54,21 @@ int close_app()
 //chamado pela lcom_run
 int (proj_main_loop)(int argc, char **argv)
 {
-  bit_no_t bit_no;
+  	bit_no_t bit_no;
 
-  vg_init_mode();
+  	vg_init_mode();
 
-  if (timer_subscribe_int(&bit_no.timer)) return 1;
+  	if (timer_subscribe_int(&bit_no.timer)) return 1;
 
 	if (timer_set_frequency(0, TIMER_ACTUAL_FREQ)) return 1;
 
-  if (mouse_init(&bit_no.mouse)) return 1;
+	if (uart_subscribe_int(&bit_no.uart)) return 1;
+	
+	if (uart_setup(UART_DEFAULT_BIT_RATE)) return 1;
+	
+ 	if (mouse_init(&bit_no.mouse)) return 1;
 
-  if (kbd_subscribe_int(&bit_no.kb)) return 1;
+  	if (kbd_subscribe_int(&bit_no.kb)) return 1;
 
 	app_t *app = app_init();
 	int ipc_status;
@@ -76,7 +84,7 @@ int (proj_main_loop)(int argc, char **argv)
 
 		if (_ENDPOINT_P(msg.m_source) != HARDWARE) continue;
 
-    app_state_t state = get_state();
+    	app_state_t state = get_state();
 
 		if (msg.m_notify.interrupts & bit_no.mouse)
 		{
@@ -104,5 +112,5 @@ int (proj_main_loop)(int argc, char **argv)
 		}
 	}
 
-  return close_app();
+  	return close_app();
 }
