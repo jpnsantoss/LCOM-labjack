@@ -8,9 +8,8 @@ uint8_t idx = 0;
 int mouse_init(uint8_t *bit_no)
 {
 	if (kbc_write(MOUSE_DATA_REPORT_ENABLE, true)) return 1;
-	if (kbc_write(0xEA, true)) return 1;
 
-	if(mouse_subscribe_int(bit_no)) return 1;
+	if (mouse_subscribe_int(bit_no)) return 1;
 
 	return 0;
 }

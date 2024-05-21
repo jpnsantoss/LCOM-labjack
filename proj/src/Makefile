@@ -22,7 +22,7 @@ SRCS += queue.c ev_listener.c sprite.c state.c app.c drawer.c
 
 # additional compilation flags
 # "-Wall -Wextra -Werror -I . -std=c11 -Wno-unused-parameter" are already set
-CFLAGS += -pedantic -D_LCOM_OPTIMIZED_
+CFLAGS += -pedantic
 
 # list of library dependencies (for Lab 2, only LCF library)
 DPADD += ${LIBLCF}

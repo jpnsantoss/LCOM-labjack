@@ -51,7 +51,7 @@ int	vg_map_memory(uint16_t mode)
 	gph.video_mem = vm_map_phys(SELF, (void *)mr.mr_base, screen_size);
 	gph.frame_buffer = (uint8_t *) malloc(screen_size);
 
-   	return gph.video_mem == MAP_FAILED;
+  return gph.video_mem == MAP_FAILED;
 }
 
 int (vg_flush_buffer)()
@@ -109,15 +109,8 @@ int (vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width,
 
 void vg_clear_screen()
 {
-    uint32_t color = 0x000000; // Cor preta (ou qualquer outra cor desejada)
-
-    // Iterar sobre todos os pixels do frame buffer e definir sua cor como a cor de fundo
-    for (uint32_t y = 0; y < gph.y_res; y++) {
-        for (uint32_t x = 0; x < gph.x_res; x++) {
-            // Calcular o índice do pixel no frame buffer
-            vg_draw_pixel(x, y, color); 
-        }
-    }
+	uint32_t screen_size = gph.x_res * gph.y_res * gph.bytes_per_pixel;
+	memset(gph.frame_buffer, 0, screen_size);
 }
 
 unsigned vg_get_width() {

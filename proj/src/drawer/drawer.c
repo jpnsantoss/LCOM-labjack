@@ -22,6 +22,7 @@ void draw_screen(app_t *app) {
 	draw_state();
 
   sprite_draw(app->cursor);
+	vg_draw_rectangle(10, 10, 200, 200, 0xffffff);
 
 	vg_flush_buffer();
 }
