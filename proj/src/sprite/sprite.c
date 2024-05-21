@@ -61,3 +61,15 @@ int sprite_move(sprite_t *sprite, uint32_t x, uint32_t y)
 
 	return 0;
 }
+
+int sprite_colides(sprite_t *sprite1, sprite_t *sprite2)
+{
+	int x2_s1 = sprite1->x + sprite1->img.width;
+	int y2_s1 = sprite1->y + sprite1->img.height;
+
+	int x2_s2 = sprite2->x + sprite2->img.width;
+	int y2_s2 = sprite2->y + sprite2->img.height;
+
+	return  x2_s1 > sprite2->x && sprite1->x < x2_s2 && y2_s1 > sprite2->y && sprite1->y < y2_s2;
+	// s1_x2 > s2_x && s1_x < s2_x2 && s1_y2 > s2_y && s1_y < s2_y2
+}
