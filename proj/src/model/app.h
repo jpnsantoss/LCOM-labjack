@@ -36,6 +36,7 @@ typedef enum {
 typedef struct {
 	app_state_t				state;
 	interrupt_type_t	interrupt;
+	
 } ev_listener_t;
 
 app_t *app_init();

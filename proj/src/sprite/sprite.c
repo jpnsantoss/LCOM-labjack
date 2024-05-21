@@ -50,19 +50,11 @@ int	sprite_draw(sprite_t *sprite)
 	return 0;
 }
 
-int sprite_move(sprite_t *sprite, int x, int y)
+int sprite_move(sprite_t *sprite, uint32_t x, uint32_t y)
 {
-	if (x == 0 && y == 0) return 1;
+	t_gph gph = vg_get_info();
 
-	x += sprite->x;
-	y += sprite->y;
-
-	vbe_mode_info_t mode_info;
-
-	if (vbe_get_mode_info(VG_MODE, &mode_info))
-		return 1;
-
-	if (x < 0 || y < 0 || x + sprite->img.width >= mode_info.XResolution || y + sprite->img.height >= mode_info.YResolution) return 1;
+	if (x >= gph.x_res || y >= gph.y_res) return 1;
 
 	sprite->x = x;
 	sprite->y = y;
