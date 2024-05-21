@@ -60,7 +60,7 @@ int mouse_unsubscribe_int();
 void (mouse_ih)();
 int mouse_init(uint8_t *bit_no);
 
-void mouse_fill_packet(int *bytes, struct packet *pp);
+void mouse_fill_packet(uint8_t *bytes, struct packet *pp);
 int mouse_read_packet(mouse_info_t *info);
 
 // keyboard

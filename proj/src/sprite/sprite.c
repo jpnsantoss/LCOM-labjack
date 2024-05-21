@@ -37,6 +37,12 @@ int	sprite_draw(sprite_t *sprite)
 			uint32_t color = 0;
       memcpy(&color, map, gph.bytes_per_pixel);
 
+			if (color == xpm_transparency_color(sprite->img.type))
+			{
+				map += gph.bytes_per_pixel;
+				continue;
+			}
+
 			if (vg_draw_pixel(sprite->x + i, sprite->y + j, color)) return 1;
 			map += gph.bytes_per_pixel;
 		}

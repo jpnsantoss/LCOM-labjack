@@ -3,6 +3,7 @@
 #include "../drawer/drawer.h"
 
 extern uint8_t scancode;
+extern int timer_counter;
 
 state_handler_t listeners[] = {
   { MAIN_MENU, handle_main_menu },
@@ -39,7 +40,11 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
 			uart_ih();
 			break;
 		case TIMER:
-			draw_screen(app);
+			timer_int_handler();
+			if (timer_counter % 60) {
+				timer_counter = 0;
+				draw_screen(app);
+			}
 			break;
 		case RTC:
 			break;

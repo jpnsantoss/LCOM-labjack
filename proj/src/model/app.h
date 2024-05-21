@@ -9,7 +9,7 @@
 
 typedef struct {
 	sprite_t *cursor;
-	// sprite_t *background;
+	sprite_t *background;
 	// sprite_t *main_menu;
 	// sprite_t *game_betting;
 	// sprite_t *game;

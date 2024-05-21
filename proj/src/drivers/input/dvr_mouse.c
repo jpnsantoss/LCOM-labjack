@@ -2,7 +2,7 @@
 
 int hook_id_mouse = 2;
 uint8_t output = 0;
-int bytes[3];
+uint8_t bytes[3] = {0, 0, 0};
 uint8_t idx = 0;
 
 int mouse_init(uint8_t *bit_no)
@@ -59,7 +59,7 @@ int mouse_read_packet(mouse_info_t *info)
 	return 0;
 }
 
-void mouse_fill_packet(int *bytes, struct packet *pp)
+void mouse_fill_packet(uint8_t *bytes, struct packet *pp)
 {
 	for (int i = 0 ; i < 3 ; i++) {
 		pp->bytes[i] = bytes[i];
