@@ -2,6 +2,8 @@
 #include "../drivers/drivers.h"
 #include "../drawer/drawer.h"
 
+extern uint8_t scancode;
+
 state_handler_t listeners[] = {
   { MAIN_MENU, handle_main_menu },
   { GAME_BETTING, handle_game_betting },
@@ -21,6 +23,7 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
 	{
 		case KEYBOARD:
 			kbc_ih();
+			if(scancode == KEYBOARD_ESC) set_state(EXIT);
 			break;
 		case MOUSE:
 			mouse_ih();

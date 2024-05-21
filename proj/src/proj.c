@@ -6,7 +6,6 @@
 #include "model/app.h"
 
 int counter = 0;
-extern uint8_t scancode;
 
 // Any header files included below this line should have been created by you
 
@@ -82,7 +81,7 @@ int (proj_main_loop)(int argc, char **argv)
 	
 	counter = 0;
 
-	while (scancode != KEYBOARD_ESC)
+	while (get_state() != EXIT)
 	{
     if (driver_receive(ANY, &msg, &ipc_status)) continue;
 
@@ -96,7 +95,6 @@ int (proj_main_loop)(int argc, char **argv)
 
     handle_interrupt(app, listener);
 
-    if(get_state() == EXIT) break;
 	}
 
   return close_app();

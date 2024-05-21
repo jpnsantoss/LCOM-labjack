@@ -4,6 +4,7 @@
 void draw_state() {
 	switch(get_state()) {
 		case MAIN_MENU:
+		
 			break;
 		case GAME_BETTING:
 			break;

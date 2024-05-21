@@ -11,7 +11,6 @@ typedef struct {
 } state_handler_t;
 
 void handle_interrupt(app_t *app, ev_listener_t listener);
-
 void handle_general(app_t *app, interrupt_type_t interrupt);
 void handle_main_menu(app_t *app, interrupt_type_t interrupt);
 void handle_game_betting(app_t *app, interrupt_type_t interrupt);
