@@ -1,12 +1,18 @@
 #include "app.h"
 #include "../assets/cursor.xpm"
 #include "../assets/background.xpm"
+#include "../assets/start.xpm"
+#include "../assets/exit.xpm"
 
 app_t app;
 
 app_t *app_init() {
     app.cursor = sprite_create((xpm_map_t) cursor_xpm, vg_get_width() / 2, vg_get_height() / 2);
 		app.background = sprite_create((xpm_map_t) background_xpm, 0, 0);
+        app.play_button = sprite_create((xpm_map_t) start_xpm, (vg_get_width() / 2) - 55, 720);
+        app.exit_button = sprite_create((xpm_map_t) exit_xpm, (vg_get_width() / 2) + 35, 720);
+    //app.exit_button = sprite_create((xpm_map_t) exit_xpm, (vg_get_width() / 2) + 35, 720);
+
     return &app;
 }
 

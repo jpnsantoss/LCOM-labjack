@@ -1,6 +1,7 @@
 #include "ev_listener.h"
 #include "../drivers/drivers.h"
 #include "../drawer/drawer.h"
+#include "../sprite/sprite.h"
 
 extern uint8_t scancode;
 extern int timer_counter;
@@ -39,6 +40,7 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
 				//printf("dx: %d, dy: %d\n", info.delta_x, info.delta_y);
 				//printf("rb: %d, mb: %d, lb: %d\n", info.rb, info.mb, info.lb);
 				updateCursorPos(&info);
+				
 			}
 			break;
 		case UART:
@@ -55,9 +57,26 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
 
 void handle_main_menu(app_t *app, interrupt_type_t interrupt)
 {
-  if (interrupt == TIMER) {
-    // Handle the interrupt here
+	mouse_info_t info;
+  if (interrupt == MOUSE) {
+	mouse_ih();
+    if (mouse_read_packet(&info))
+			{
+
+				if(sprite_colides(app->cursor, app->play_button) && info.lb){
+					set_state(GAME_BETTING);
+				}
+
+				else if(sprite_colides(app->cursor, app->exit_button) && info.lb){
+					set_state(EXIT);
+				}	
+
+				else if (info.lb){
+					set_state(EXIT);
+				}
+			}
   }
+
 }
 
 // Function to handle the interrupts in the game start
