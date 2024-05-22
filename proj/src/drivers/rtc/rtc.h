@@ -17,18 +17,8 @@
 #define M   2
 #define S   0  
 #define Y   9
-#define M   8
+#define MIN 8
 #define D   7
-
-
-typedef struct {
-    uint8_t year;
-    uint8_t month;
-    uint8_t day;
-    uint8_t hours;
-    uint8_t minutes;
-    uint8_t seconds;
-} datetime_info;
 
 uint8_t to_bin(uint8_t bcd_number);
 int update_time_rtc();
@@ -37,5 +27,14 @@ int subscribe_int_rtc();
 int unsubscribe_int_rtc();
 int output_rtc(uint8_t command, uint8_t *output);
 int updating_rtc();
+
+typedef struct {
+    uint8_t hours;
+    uint8_t minutes;
+    uint8_t seconds;
+    uint8_t year;
+    uint8_t month;
+    uint8_t day;
+} datetime;
 
 #endif

@@ -1,33 +1,72 @@
 #include "rtc.h"
 
-datetime_info time_info;
+datetime time_info;
 int rtc_hook_id = 5; 
 uint8_t bin_mode;   
 
 
 uint8_t to_bin(uint8_t inbcd) {
-    return ((inbcd & 0xF)+(inbcd >> 4) * 10);
+    uint8_t units = inbcd & 0x0F;
+    uint8_t tens = (inbcd >> 4) * 10;
+    return units + tens;
 }
 
 int update_time_rtc() {
 
-    uint8_t output;
+    uint8_t out;
 
     if (updating_rtc() != 0) return 1;
-    if (output_rtc(Y, &output) != 0) return 1;
-    time_info.year = bin_mode ? output : to_bin(output);
-    if (output_rtc(M, &output) != 0) return 1;
-    time_info.month = bin_mode ? output : to_bin(output);   
-    if (output_rtc(D, &output) != 0) return 1;
-    time_info.day = bin_mode ? output : to_bin(output);
-    if (output_rtc(H, &output) != 0) return 1;
-    time_info.hours = bin_mode ? output : to_bin(output);
-    if (output_rtc(M, &output) != 0) return 1;
-    time_info.minutes = bin_mode ? output : to_bin(output);
-    if (output_rtc(S, &output) != 0) return 1;
-    time_info.seconds = bin_mode ? output : to_bin(output);
-    return 0;
+
+    if (output_rtc(Y, &out) != 0) return 1;
+
+    if (bin_mode) {
+        time_info.year = out;
+    } else {
+        time_info.year = to_bin(out);
+    }
+
+    if (output_rtc(M, &out) != 0) return 1;
+
+    if (bin_mode) {
+        time_info.month = out;
+    } else {
+        time_info.month = to_bin(out);
+    }  
+
+    if (output_rtc(D, &out) != 0) return 1;
+
+    if (bin_mode) {
+        time_info.day = out;
+    } else {
+        time_info.day = to_bin(out);
+    }
+
+    if (output_rtc(H, &out) != 0) return 1;
+
+    if (bin_mode) {
+        time_info.hours = out;
+    } else {
+        time_info.hours = to_bin(out);
+    }
+
+    if (output_rtc(MIN, &out) != 0) return 1;
+
+    if (bin_mode) {
+        time_info.minutes = out;
+    } else {
+        time_info.minutes = to_bin(out);
+    }
+
+    if (output_rtc(S, &out) != 0) return 1;
+
+    if (bin_mode) {
+        time_info.seconds = out;
+    } else {
+        time_info.seconds = to_bin(out);
+    }
     
+    return 0;
+
 }
 
 void setup_rtc() {
