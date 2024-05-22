@@ -3,6 +3,7 @@
 
 void draw_state(app_t *app)
 {
+	card_t *card;
 	switch(app->state)
 	{
 		case MAIN_MENU:
@@ -10,6 +11,10 @@ void draw_state(app_t *app)
 			sprite_draw(app->exit_button);
 			break;
 		case GAME_BETTING:
+			card = (card_t *) queue_pop(app->game.cards);
+			if (card == NULL) break;
+			sprite_move(card->sprite_base, 200, 200);
+			sprite_draw(card->sprite_base);
 			break;
 		case GAME_PLAYING:
 			break;

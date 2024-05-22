@@ -2,6 +2,8 @@
 #define _LCOM_EV_LISTENER_H_
 
 #include "../drivers/drivers.h"
+#include "../drawer/drawer.h"
+#include "../sprite/sprite.h"
 #include "../model/game/game.h"
 #include "../model/app/app.h"
 

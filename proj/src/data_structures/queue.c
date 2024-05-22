@@ -102,7 +102,7 @@ void *queue_pop(queue_t *queue)
 
 int queue_push(queue_t *queue, void *content)
 {
-	if (queue_full(queue) || content == NULL) return -1;
+	if (queue_full(queue) || content == NULL) return 1;
 
 	if (queue_empty(queue))
 	{

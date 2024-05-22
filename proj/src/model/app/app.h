@@ -2,9 +2,9 @@
 #define _LCOM_APP_H_
 
 #include <lcom/lcf.h>
-#include "../game/game.h"
 #include "../../sprite/sprite.h"
 #include "../../drivers/drivers.h"
+#include "../game/game.h"
 
 typedef enum {
 	MAIN_MENU,
@@ -33,7 +33,6 @@ typedef struct {
   uint8_t timer;
   uint8_t rtc;
 } bit_no_t;
-
 
 typedef enum {
 	TIMER,

@@ -1,7 +1,4 @@
 #include "ev_listener.h"
-#include "../drivers/drivers.h"
-#include "../drawer/drawer.h"
-#include "../sprite/sprite.h"
 
 extern uint8_t scancode;
 extern int timer_counter;
@@ -69,6 +66,14 @@ void handle_main_menu(app_t *app, interrupt_type_t interrupt)
 		if (sprite_colides(app->cursor, app->play_button) && info->lb)
 		{
 			app->state = GAME_BETTING;
+			
+			if (game_init(&app->game))
+			{
+				app->state = EXIT;
+				panic("Invalid game initialization.");
+				return;
+			}
+			vg_set_redraw();
 		}
 		else if (sprite_colides(app->cursor, app->exit_button) && info->lb)
 		{

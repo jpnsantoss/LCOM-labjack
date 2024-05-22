@@ -55,6 +55,7 @@ int sprite_move(sprite_t *sprite, uint32_t x, uint32_t y)
 	t_gph gph = vg_get_info();
 
 	if (x >= gph.x_res || y >= gph.y_res) return 1;
+	if (sprite == NULL) return 1;
 
 	sprite->x = x;
 	sprite->y = y;
