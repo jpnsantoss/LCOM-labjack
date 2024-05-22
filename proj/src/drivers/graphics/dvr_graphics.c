@@ -60,10 +60,16 @@ int (vg_flush_buffer)()
 	return 0;
 }
 
-int (vg_clean)()
+int (vg_flip)()
 {
-	free(gph.frame_buffer);
-	return vg_exit();
+	reg86_t r;
+	memset(&r, 0, sizeof(reg86_t));
+	r.intno = 0x10;
+	r.ah = 0x4F;
+	r.al = 0x02;
+	r.bx = 
+
+	return sys_int86(&r);
 }
 
 int	vg_enter_graphic_mode(uint16_t mode)
@@ -84,7 +90,7 @@ int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color)
 	
 	uint64_t pos = (gph.x_res * y + x) * gph.bytes_per_pixel;
 
-	return memcpy(gph.frame_buffer + pos, &color, gph.bytes_per_pixel) == 0;
+	return memcpy(gph.video_mem + pos, &color, gph.bytes_per_pixel) == 0;
 }
 
 int (vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color)

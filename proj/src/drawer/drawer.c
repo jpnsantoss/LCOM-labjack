@@ -25,9 +25,9 @@ void draw_screen(app_t *app)
 {
 	//vg_clear_screen();
 
-	sprite_draw(app->background);
-	draw_state(app);
+	//sprite_draw(app->background);
+	//draw_state(app);
   sprite_draw(app->cursor);
 
-	vg_flush_buffer();
+	//vg_flush_buffer();
 }

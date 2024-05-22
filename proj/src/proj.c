@@ -53,9 +53,9 @@ int (proj_main_loop)(int argc, char **argv)
 
   	vg_init_mode();
 
-  	if (timer_subscribe_int(&bit_no.timer)) return 1;
+  if (timer_subscribe_int(&bit_no.timer)) return 1;
 
-	if (timer_set_frequency(0, TIMER_ACTUAL_FREQ)) return 1;
+	//if (timer_set_frequency(0, 15)) return 1;
 
 	if (uart_subscribe_int(&bit_no.uart)) return 1;
 	
@@ -63,7 +63,7 @@ int (proj_main_loop)(int argc, char **argv)
 	
  	if (mouse_init(&bit_no.mouse)) return 1;
 
-  	if (kbd_subscribe_int(&bit_no.kb)) return 1;
+  if (kbd_subscribe_int(&bit_no.kb)) return 1;
 
 	app_t *app = app_init();
 	int ipc_status;

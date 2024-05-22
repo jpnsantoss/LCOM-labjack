@@ -24,10 +24,10 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
 		case KEYBOARD:
 			kbc_ih();
 			if (scancode == KEYBOARD_ESC) set_state(EXIT);
+
 			if (scancode == 0xad)
 			{
-				sprite_move(app->play_button, app->play_button->x + 30, app->play_button->y + 30);
-				//uart_write_msg(1, 1);
+				uart_write_msg(1, 1);
 				printf("X\n");
 			}
 			break;
@@ -43,12 +43,12 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
 					return;
 				}
 				
-				mouse_print_packet(info);
+				//mouse_print_packet(info);
 				updateCursorPos(info);
 			}
 			break;
 		case UART:
-			printf("UART IH\n");
+			//printf("UART IH\n");
 			uart_ih();
 			break;
 		case TIMER:
