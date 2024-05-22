@@ -107,6 +107,12 @@ int (vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width,
 	return 0;
 }
 
+/*int (vg_draw_border)(uint16_t x, uint16_t y, uint16_t width, 
+					uint16_t height, uint32_t color)
+{
+
+}*/
+
 void vg_clear_screen()
 {
 	uint32_t screen_size = gph.x_res * gph.y_res * gph.bytes_per_pixel;

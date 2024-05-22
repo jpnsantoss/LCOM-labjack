@@ -59,26 +59,25 @@ int mouse_read_packet()
 		idx++;
 		return 0;
 	}
-	if (idx == 3)
-	{
-		if (current_packet == NULL) return 0;
-		mouse_fill_packet(bytes, current_packet);
-		isPacketFull = 1;
-		idx = 0;
-		return 1;
-	}
-	if (idx > 0)
+	if (idx > 0 && idx < 3)
 	{
 		bytes[idx] = output;
 		idx++;
-		return 0;
+	}
+	if (idx == 3)
+	{
+		idx = 0;
+		if (current_packet == NULL) return 0;
+		mouse_fill_packet(bytes, current_packet);
+		isPacketFull = 1;
+		return 1;
 	}
 	return 0;
 }
 
 void mouse_fill_packet(uint8_t *bytes, struct packet *pp)
 {
-	for (int i = 0 ; i < 3 ; i++) {
+	for (int i = 0; i < 3; i++) {
 		pp->bytes[i] = bytes[i];
 	}
 	pp->lb = bytes[0] & MOUSE_CTRL_LB;

@@ -26,7 +26,8 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
 			if (scancode == KEYBOARD_ESC) set_state(EXIT);
 			if (scancode == 0xad)
 			{
-				uart_write_msg(1, 1);
+				sprite_move(app->play_button, app->play_button->x + 30, app->play_button->y + 30);
+				//uart_write_msg(1, 1);
 				printf("X\n");
 			}
 			break;
@@ -41,8 +42,8 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
 					printf("null????\n");
 					return;
 				}
-				//printf("dx: %d, dy: %d\n", info->delta_x, info->delta_y);
-				//printf("rb: %d, mb: %d, lb: %d\n", info->rb, info->mb, info->lb);
+				
+				mouse_print_packet(info);
 				updateCursorPos(info);
 			}
 			break;
@@ -62,12 +63,12 @@ void handle_main_menu(app_t *app, interrupt_type_t interrupt)
 {
 	mouse_info_t *info = mouse_get_info();
 
-  	if (interrupt == MOUSE && info != NULL)
+  if (interrupt == MOUSE && info != NULL)
 	{
 		if(sprite_colides(app->cursor, app->play_button) && info->lb)
 		{
 			set_state(GAME_BETTING);
-		}		
+		}
 		else if(sprite_colides(app->cursor, app->exit_button) && info->lb)
 		{
 			set_state(EXIT);
@@ -81,5 +82,5 @@ void handle_game_betting(app_t *app, interrupt_type_t interrupt)
 	if (interrupt == MOUSE)
 	{
 		// Handle the interrupt here
-  	}
+  }
 }

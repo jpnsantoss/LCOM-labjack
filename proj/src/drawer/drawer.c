@@ -21,8 +21,6 @@ void draw_state(app_t *app)
 	}
 }
 
-bool first = true;
-
 void draw_screen(app_t *app)
 {
 	//vg_clear_screen();
