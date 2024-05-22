@@ -24,8 +24,7 @@ int main(int argc, char *argv[])
 
   // handles control over to LCF
   // [LCF handles command line arguments and invokes the right function]
-  if (lcf_start(argc, argv))
-    return 1;
+  if (lcf_start(argc, argv)) return 1;
 
   // LCF clean up tasks
   // [must be the last statement before return]
@@ -38,13 +37,9 @@ int close_app()
 {
 	if (uart_disable()) return 1;
 
-	if (uart_unsubscribe_int()) return 1;
-
-	if (mouse_unsubscribe_int()) return 1;
+	if (mouse_disable()) return 1;
 
 	if (kbd_unsubscribe_int()) return 1;
-	
-	if (kbc_write(MOUSE_DATA_REPORT_DISABLE, true)) return 1;
 
 	if (timer_unsubscribe_int()) return 1;
 
@@ -78,9 +73,9 @@ int (proj_main_loop)(int argc, char **argv)
 
 	while (get_state() != EXIT)
 	{
-    if (driver_receive(ANY, &msg, &ipc_status)) continue;
+    	if (driver_receive(ANY, &msg, &ipc_status)) continue;
 
-    if (!is_ipc_notify(ipc_status)) continue;
+    	if (!is_ipc_notify(ipc_status)) continue;
 
 		if (_ENDPOINT_P(msg.m_source) != HARDWARE) continue;
 
