@@ -19,7 +19,7 @@ sprite_t *sprite_create(xpm_map_t map, uint32_t x, uint32_t y)
 	return sprite;
 }
 
-void sprite_delete(sprite_t *sprite)
+void sprite_destroy(sprite_t *sprite)
 {
 	free(sprite->map);
 	sprite->img.bytes = NULL;
