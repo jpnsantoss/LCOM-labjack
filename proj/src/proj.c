@@ -43,7 +43,7 @@ int close_app()
 
 	if (timer_unsubscribe_int()) return 1;
 
-	return vg_clean();
+	return vg_exit();
 }
 
 //chamado pela lcom_run

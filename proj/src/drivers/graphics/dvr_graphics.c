@@ -43,31 +43,31 @@ int	vg_map_memory(uint16_t mode)
 	unsigned int screen_size = gph.x_res * gph.y_res * gph.bytes_per_pixel;
 	
 	mr.mr_base = (phys_bytes) mode_info.PhysBasePtr;
-	mr.mr_limit = mr.mr_base + screen_size;
+	mr.mr_limit = mr.mr_base + 3 * screen_size;
 
 	if(sys_privctl(SELF, SYS_PRIV_ADD_MEM, &mr))
 		return 1;
 	
-	gph.video_mem = vm_map_phys(SELF, (void *)mr.mr_base, screen_size);
-	gph.frame_buffer = (uint8_t *) malloc(screen_size);
+	for (int i = 0; i < 2; i++)
+	{
+		gph.buffer[i] = vm_map_phys(SELF, (void *) (mr.mr_base + i * screen_size), screen_size);
+		if (gph.buffer[i] == NULL) return 1;
+	}
 
-  return gph.video_mem == MAP_FAILED;
-}
-
-int (vg_flush_buffer)()
-{
-	memcpy(gph.video_mem, gph.frame_buffer, gph.x_res * gph.y_res * gph.bytes_per_pixel);
-	return 0;
+  return 0;
 }
 
 int (vg_flip)()
 {
 	reg86_t r;
 	memset(&r, 0, sizeof(reg86_t));
+
 	r.intno = 0x10;
 	r.ah = 0x4F;
-	r.al = 0x02;
-	r.bx = 
+	r.al = 0x07;
+	r.bl = 0x00;
+	r.cx = 0;
+	r.dx = gph.selectedNum * gph.y_res;
 
 	return sys_int86(&r);
 }
@@ -90,7 +90,7 @@ int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color)
 	
 	uint64_t pos = (gph.x_res * y + x) * gph.bytes_per_pixel;
 
-	return memcpy(gph.video_mem + pos, &color, gph.bytes_per_pixel) == 0;
+	return memcpy(gph.buffer[gph.selectedNum] + pos, &color, gph.bytes_per_pixel) == 0;
 }
 
 int (vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color)
@@ -119,11 +119,6 @@ int (vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width,
 
 }*/
 
-void vg_clear_screen()
-{
-	uint32_t screen_size = gph.x_res * gph.y_res * gph.bytes_per_pixel;
-	memset(gph.frame_buffer, 0, screen_size);
-}
 
 unsigned vg_get_width() {
 	return gph.x_res;

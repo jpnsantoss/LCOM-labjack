@@ -25,8 +25,7 @@ typedef enum s_colormode {
 } t_colormode;
 
 typedef struct s_gph {
-	uint8_t *video_mem;
-	uint8_t *frame_buffer;
+	uint8_t *buffer[2];
 	int selectedNum;
 
 	unsigned x_res;
@@ -86,9 +85,7 @@ int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color);
 int (vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color);
 int	vg_print_xpm(xpm_map_t xpm, uint16_t x, uint16_t y);
 t_gph vg_get_info();
-void vg_clear_screen();
 int (vg_flip)();
-int (vg_flush_buffer)();
 unsigned vg_get_width();
 unsigned vg_get_height();
 
