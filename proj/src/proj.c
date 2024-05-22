@@ -55,7 +55,7 @@ int (proj_main_loop)(int argc, char **argv)
 
   if (timer_subscribe_int(&bit_no.timer)) return 1;
 
-	//if (timer_set_frequency(0, 15)) return 1;
+	if (timer_set_frequency(0, 30)) return 1;
 
 	if (uart_setup(UART_DEFAULT_BIT_RATE)) return 1;
 

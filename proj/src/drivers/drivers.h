@@ -25,7 +25,8 @@ typedef enum s_colormode {
 } t_colormode;
 
 typedef struct s_gph {
-	uint8_t *buffer[2];
+	uint8_t *frame_buffer[2];
+	bool needs_redraw[2];
 	int selectedNum;
 
 	unsigned x_res;
@@ -83,13 +84,13 @@ int (vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width,
 					uint16_t height, uint32_t color);
 int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color);
 int (vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color);
-int	vg_print_xpm(xpm_map_t xpm, uint16_t x, uint16_t y);
+
 t_gph vg_get_info();
 int (vg_flip)();
 unsigned vg_get_width();
 unsigned vg_get_height();
-
-uint32_t direct_color(t_gph gph, int x, int y, uint32_t first, uint32_t step);
+void vg_set_redraw();
+int vg_has_redraw();
 
 // uart
 int (uart_setup)(int bit_rate);

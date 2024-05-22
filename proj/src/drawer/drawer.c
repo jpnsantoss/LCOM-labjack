@@ -23,11 +23,11 @@ void draw_state(app_t *app)
 
 void draw_screen(app_t *app)
 {
-	//vg_clear_screen();
+	if (!vg_has_redraw()) return;
 
 	sprite_draw(app->background);
 	draw_state(app);
   sprite_draw(app->cursor);
 
-	//vg_flush_buffer();
+	vg_flip();
 }

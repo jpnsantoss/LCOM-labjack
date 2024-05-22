@@ -37,21 +37,18 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
 			if (mouse_read_packet())
 			{
 				mouse_info_t *info = mouse_get_info();
-				if (info == NULL)
-				{
-					printf("null????\n");
-					return;
-				}
+				if (info == NULL) return;
 				
-				//mouse_print_packet(info);
+				mouse_print_packet(info);
 				updateCursorPos(info);
+				vg_set_redraw();
 			}
 			break;
 		case UART:
 			uart_ih();
 			break;
 		case TIMER:
-			//draw_screen(app);
+			draw_screen(app);
 			break;
 		case RTC:
 			break;
