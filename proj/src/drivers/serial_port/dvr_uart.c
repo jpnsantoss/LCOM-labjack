@@ -103,20 +103,21 @@ int (uart_read_byte)(int base_addr, uint8_t *out)
 
 int (uart_wb_byte)(int base_addr, uint8_t byte)
 {
-	uint8_t response;
+	//uint8_t response;
 
 	if (uart_write_byte(base_addr, byte)) return 1;
 	
-	if (uart_read_byte(base_addr, &response)) return 1;
+	//if (uart_read_byte(base_addr, &response)) return 1;
+	printf("byte: %x\n", byte);
 	
-	if (response != SPROTO_OK) uart_reset(base_addr);
-	return response != SPROTO_OK;
+	//if (response != SPROTO_OK) uart_reset(base_addr);
+	return 0/*response != SPROTO_OK*/;
 }
 
 int (uart_write_msg)(int com_num, uint8_t msg)
 {
 	int base_addr = com_num != 2 ? UART_COM1 : UART_COM2;
-	uint8_t response;
+	//uint8_t response;
 
 	if (com_num < 1 || com_num > 2) return 1;
 
@@ -126,8 +127,8 @@ int (uart_write_msg)(int com_num, uint8_t msg)
 
 	if (uart_wb_byte(base_addr, SPROTO_END)) return 1;
 
-	if (uart_read_byte(base_addr, &response)) return 1;
-	return response != SPROTO_OK;
+	//if (uart_read_byte(base_addr, &response)) return 1;
+	return 0/*response != SPROTO_OK*/;
 }
 
 int (uart_reset)(int base_addr)
@@ -217,7 +218,7 @@ int (uart_setup)(int bit_rate)
 
 	if (uart_set_bit_rate(1, UART_DEFAULT_BIT_RATE)) return 1;
 	
-	cmd = UART_LCR_8BITCHAR | UART_LCR_1STOP | UART_LCR_PARITY_ODD;
+	cmd = UART_LCR_8BITCHAR | UART_LCR_1STOP | UART_LCR_PARITY_NONE;
 	if (uart_write(UART_COM1, UART_LCR, cmd)) return 1;
 
 	return uart_reset(UART_COM1);

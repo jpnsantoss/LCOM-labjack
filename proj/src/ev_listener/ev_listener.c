@@ -48,11 +48,10 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
 			}
 			break;
 		case UART:
-			//printf("UART IH\n");
 			uart_ih();
 			break;
 		case TIMER:
-			draw_screen(app);
+			//draw_screen(app);
 			break;
 		case RTC:
 			break;

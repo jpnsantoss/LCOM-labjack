@@ -57,9 +57,9 @@ int (proj_main_loop)(int argc, char **argv)
 
 	//if (timer_set_frequency(0, 15)) return 1;
 
-	if (uart_subscribe_int(&bit_no.uart)) return 1;
-	
 	if (uart_setup(UART_DEFAULT_BIT_RATE)) return 1;
+
+	if (uart_subscribe_int(&bit_no.uart)) return 1;
 	
  	if (mouse_init(&bit_no.mouse)) return 1;
 
@@ -88,6 +88,7 @@ int (proj_main_loop)(int argc, char **argv)
 
 		if (msg.m_notify.interrupts & bit_no.uart)
 		{
+			printf("UART IH\n");
 			handle_interrupt(app, (ev_listener_t) {state, UART});
 		}
 

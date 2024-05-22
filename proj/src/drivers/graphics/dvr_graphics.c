@@ -10,6 +10,7 @@ t_gph vg_get_info()
 int vg_init_mode()
 {
 	if (vg_enter_graphic_mode(VG_MODE)) return 1;
+	
 	if (vg_map_memory(VG_MODE)) return 1;
 
 	return 0;
@@ -23,8 +24,7 @@ int	vg_map_memory(uint16_t mode)
 	memset(&mode_info, 0, sizeof(vbe_mode_info_t));
 	memset(&gph, 0, sizeof(t_gph));
 
-	if (vbe_get_mode_info(mode, &mode_info))
-		return 1;
+	if (vbe_get_mode_info(mode, &mode_info)) return 1;
 	
 	gph.x_res = mode_info.XResolution;
 	gph.y_res = mode_info.YResolution;
@@ -48,7 +48,7 @@ int	vg_map_memory(uint16_t mode)
 	if(sys_privctl(SELF, SYS_PRIV_ADD_MEM, &mr))
 		return 1;
 	
-	for (int i = 0; i < 2; i++)
+	for (uint32_t i = 0; i < 2; i++)
 	{
 		gph.buffer[i] = vm_map_phys(SELF, (void *) (mr.mr_base + i * screen_size), screen_size);
 		if (gph.buffer[i] == NULL) return 1;
@@ -68,6 +68,8 @@ int (vg_flip)()
 	r.bl = 0x00;
 	r.cx = 0;
 	r.dx = gph.selectedNum * gph.y_res;
+
+	gph.selectedNum = !gph.selectedNum;
 
 	return sys_int86(&r);
 }
@@ -118,7 +120,6 @@ int (vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width,
 {
 
 }*/
-
 
 unsigned vg_get_width() {
 	return gph.x_res;
