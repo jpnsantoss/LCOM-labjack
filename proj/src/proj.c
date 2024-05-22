@@ -1,7 +1,7 @@
 #include <lcom/lcf.h>
 #include "drivers/drivers.h"
-#include "model/game.h"
-#include "model/app.h"
+#include "model/game/game.h"
+#include "model/app/app.h"
 #include "ev_listener/ev_listener.h"
 
 int counter = 0;

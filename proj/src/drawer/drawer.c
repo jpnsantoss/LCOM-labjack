@@ -1,5 +1,5 @@
 #include "drawer.h"
-#include "../model/app.h"
+#include "../model/app/app.h"
 
 void draw_state(app_t *app)
 {

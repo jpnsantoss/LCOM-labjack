@@ -2,8 +2,8 @@
 #define _LCOM_EV_LISTENER_H_
 
 #include "../drivers/drivers.h"
-#include "../model/game.h"
-#include "../model/app.h"
+#include "../model/game/game.h"
+#include "../model/app/app.h"
 
 typedef void(*handler)(app_t *, interrupt_type_t);
 
