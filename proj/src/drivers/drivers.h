@@ -11,7 +11,9 @@
 #include "graphics/iVBE.h"
 #include "serial_port/iUART.h"
 #include "serial_port/serial_proto.h"
+#include "../data_structures/queue.h"
 #include <stdbool.h>
+#include "../state/state.h"
 
 #define min(a,b) (((a) < (b)) ? (a) : (b))
 #define MAX_TRIES 10
@@ -23,7 +25,9 @@ typedef enum s_colormode {
 } t_colormode;
 
 typedef struct s_gph {
-	uint8_t *video_mem;
+	uint8_t *frame_buffer[2];
+	bool needs_redraw[2];
+	int selectedNum;
 
 	unsigned x_res;
 	unsigned y_res;
@@ -40,6 +44,8 @@ typedef struct s_gph {
 	bool direct_color;
 } t_gph;
 
+typedef struct packet mouse_info_t;
+
 // timer
 int (timer_subscribe_int)(uint8_t *bit_no);
 int (timer_unsubscribe_int)();
@@ -53,9 +59,12 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq);
 int mouse_subscribe_int(uint8_t *bit_no);
 int mouse_unsubscribe_int();
 void (mouse_ih)();
+int mouse_init(uint8_t *bit_no);
+int mouse_disable();
 
-void mouse_fill_packet(int *bytes, struct packet *pp);
+void mouse_fill_packet(uint8_t *bytes, struct packet *pp);
 int mouse_read_packet();
+mouse_info_t *mouse_get_info();
 
 // keyboard
 int kbd_subscribe_int(uint8_t *bit_no);
@@ -68,18 +77,20 @@ int kbc_read_output(uint8_t port, uint8_t *output, bool mouse);
 int kbc_write(uint8_t intent, bool mouse);
 
 // graphics
+int	vg_init_mode();
 int	vg_enter_graphic_mode(uint16_t mode);
-
 int	vg_map_memory(uint16_t mode);
 int (vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, 
 					uint16_t height, uint32_t color);
 int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color);
 int (vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color);
-int	vg_print_xpm(xpm_map_t xpm, uint16_t x, uint16_t y);
-t_gph vg_get_info();
-void vg_clear_screen();
 
-uint32_t direct_color(t_gph gph, int x, int y, uint32_t first, uint32_t step);
+t_gph vg_get_info();
+int (vg_flip)();
+unsigned vg_get_width();
+unsigned vg_get_height();
+void vg_set_redraw();
+int vg_has_redraw();
 
 // uart
 int (uart_setup)(int bit_rate);
@@ -88,6 +99,8 @@ int (uart_unsubscribe_int)();
 void (uart_ih)();
 int	(uart_set_bit_rate)(int com_num, int rate);
 int (uart_write_msg)(int com_num, uint8_t msg);
+int (uart_disable)();
+int (uart_reset)(int base_addr);
 
 // utils
 int (util_get_LSB)(uint16_t val, uint8_t *lsb);

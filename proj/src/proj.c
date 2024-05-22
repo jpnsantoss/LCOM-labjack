@@ -1,5 +1,11 @@
 #include <lcom/lcf.h>
 #include "labjack.h"
+#include "ev_listener/ev_listener.h"
+#include "drivers/drivers.h"
+#include "state/state.h"
+#include "model/app.h"
+
+int counter = 0;
 
 // Any header files included below this line should have been created by you
 
@@ -18,8 +24,7 @@ int main(int argc, char *argv[])
 
   // handles control over to LCF
   // [LCF handles command line arguments and invokes the right function]
-  if (lcf_start(argc, argv))
-    return 1;
+  if (lcf_start(argc, argv)) return 1;
 
   // LCF clean up tasks
   // [must be the last statement before return]
@@ -28,25 +33,45 @@ int main(int argc, char *argv[])
   return 0;
 }
 
-int counter = 0;
-extern uint8_t scancode;
+int close_app()
+{
+	if (uart_disable()) return 1;
+
+	if (mouse_disable()) return 1;
+
+	if (kbd_unsubscribe_int()) return 1;
+
+	if (timer_unsubscribe_int()) return 1;
+
+	return vg_exit();
+}
 
 //chamado pela lcom_run
 int (proj_main_loop)(int argc, char **argv)
 {
-	uint8_t bit_no_kb, bit_no_uart;
+  	bit_no_t bit_no;
+
+  	vg_init_mode();
+
+  if (timer_subscribe_int(&bit_no.timer)) return 1;
+
+	if (timer_set_frequency(0, 30)) return 1;
+
+	if (uart_setup(UART_DEFAULT_BIT_RATE)) return 1;
+
+	if (uart_subscribe_int(&bit_no.uart)) return 1;
+	
+ 	if (mouse_init(&bit_no.mouse)) return 1;
+
+  if (kbd_subscribe_int(&bit_no.kb)) return 1;
+
+	app_t *app = app_init();
 	int ipc_status;
 	message msg;
 	
 	counter = 0;
 
-	if (kbd_subscribe_int(&bit_no_kb)) return 1;
-	
-	if (uart_setup(UART_DEFAULT_BIT_RATE)) return 1;
-
-	if (uart_subscribe_int(&bit_no_uart)) return 1;
-
-	while (scancode != KEYBOARD_ESC)
+	while (get_state() != EXIT)
 	{
     if (driver_receive(ANY, &msg, &ipc_status)) continue;
 
@@ -54,23 +79,34 @@ int (proj_main_loop)(int argc, char **argv)
 
 		if (_ENDPOINT_P(msg.m_source) != HARDWARE) continue;
 
-    if (msg.m_notify.interrupts & bit_no_kb)
+    	app_state_t state = get_state();
+
+		if (msg.m_notify.interrupts & bit_no.mouse)
 		{
-			kbc_ih();
-			if (scancode == 0xad) {
-				uart_write_msg(1, 1);
-				printf("KEY %x\n", scancode);
-			}
+			handle_interrupt(app, (ev_listener_t) {state, MOUSE});
 		}
 
-		if (msg.m_notify.interrupts & bit_no_uart)
+		if (msg.m_notify.interrupts & bit_no.uart)
 		{
-			uart_ih();
-			//printf("%d", IRQ_COM1);
+			printf("UART IH\n");
+			handle_interrupt(app, (ev_listener_t) {state, UART});
+		}
+
+		if (msg.m_notify.interrupts & bit_no.rtc)
+		{
+			handle_interrupt(app, (ev_listener_t) {state, RTC});
+		}
+
+		if (msg.m_notify.interrupts & bit_no.kb)
+		{
+			handle_interrupt(app, (ev_listener_t) {state, KEYBOARD});
+		}
+
+		if (msg.m_notify.interrupts & bit_no.timer)
+		{
+			handle_interrupt(app, (ev_listener_t) {state, TIMER});
 		}
 	}
 
-	if (uart_unsubscribe_int()) return 1;
-	
-	return kbd_unsubscribe_int();
+  	return close_app();
 }

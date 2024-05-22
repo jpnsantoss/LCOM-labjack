@@ -35,8 +35,7 @@ int	(uart_DL_access)(int com_num, bool enable)
 
 	if (com_num < 1 || com_num > 2) return 1;
 
-	int retv = uart_read(base_addr, UART_LCR, &response);
-	if (retv) return 1;
+	if (uart_read(base_addr, UART_LCR, &response)) return 1;
 
 	if (enable) 
 		response |= UART_LCR_DLAB;
@@ -49,13 +48,13 @@ int	(uart_DL_access)(int com_num, bool enable)
 int	(uart_set_bit_rate)(int com_num, int rate)
 {
 	uint8_t lsb, msb;
-
+	uint16_t d_rate = UART_BASE_BIT_RATE / rate;
 	int base_address = com_num != 2 ? UART_COM1 : UART_COM2;
 
 	if (com_num < 1 || com_num > 2) return 1;
 
-	if (util_get_LSB(UART_BASE_BIT_RATE / rate, &lsb)) return 1;
-	if (util_get_MSB(UART_BASE_BIT_RATE / rate, &msb)) return 1;
+	if (util_get_LSB(d_rate, &lsb)) return 1;
+	if (util_get_MSB(d_rate, &msb)) return 1;
 
 	if (uart_DL_access(1, true)) return 1;
 
@@ -70,7 +69,7 @@ int (uart_write_byte)(int base_addr, uint8_t byte)
 	uint8_t response;
 	int attemps = UART_MAX_TRIES;
 	
-	while (1)
+	while (attemps)
 	{
 		if (uart_read(base_addr, UART_LSR, &response)) return 1;
 
@@ -78,7 +77,6 @@ int (uart_write_byte)(int base_addr, uint8_t byte)
 			return uart_write(base_addr, UART_THR, byte);
 
 		attemps--;
-		if (attemps < 0) break;
 		tickdelay(micros_to_ticks(UART_DELAY));
 	}
 	return 1;
@@ -89,7 +87,7 @@ int (uart_read_byte)(int base_addr, uint8_t *out)
 	uint8_t response;
 	int attemps = UART_MAX_TRIES;
 	
-	while (1)
+	while (attemps)
 	{
 		if (uart_read(base_addr, UART_LSR, &response)) return 1;
 
@@ -97,26 +95,29 @@ int (uart_read_byte)(int base_addr, uint8_t *out)
 			return uart_read(base_addr, UART_RBR, out);
 		
 		attemps--;
-		if (attemps < 0) break;
 		tickdelay(micros_to_ticks(UART_DELAY));
 	}
+	uart_reset(base_addr);
 	return 1;
 }
 
 int (uart_wb_byte)(int base_addr, uint8_t byte)
 {
-	uint8_t response;
+	//uint8_t response;
 
 	if (uart_write_byte(base_addr, byte)) return 1;
 	
-	if (uart_read_byte(base_addr, &response)) return 1;
-	return response != SPROTO_OK;
+	//if (uart_read_byte(base_addr, &response)) return 1;
+	printf("byte: %x\n", byte);
+	
+	//if (response != SPROTO_OK) uart_reset(base_addr);
+	return 0/*response != SPROTO_OK*/;
 }
 
 int (uart_write_msg)(int com_num, uint8_t msg)
 {
 	int base_addr = com_num != 2 ? UART_COM1 : UART_COM2;
-	uint8_t response;
+	//uint8_t response;
 
 	if (com_num < 1 || com_num > 2) return 1;
 
@@ -126,8 +127,8 @@ int (uart_write_msg)(int com_num, uint8_t msg)
 
 	if (uart_wb_byte(base_addr, SPROTO_END)) return 1;
 
-	if (uart_read_byte(base_addr, &response)) return 1;
-	return response != SPROTO_OK;
+	//if (uart_read_byte(base_addr, &response)) return 1;
+	return 0/*response != SPROTO_OK*/;
 }
 
 int (uart_reset)(int base_addr)
@@ -176,20 +177,16 @@ void (uart_ih)()
 {
 	uint8_t response;
 
-	if (uart_read(UART_COM1, UART_IIR, &response)) return;
+	if (uart_read(UART_COM1, UART_LSR, &response)) return;
 
-	if (response & UART_IIR_INT_NONE) return;
+	if (!(response & UART_LSR_HAS_DATA)) return;
 
-	response &= UART_IIR_INT_MASK;
-
-	if (response == UART_IIR_INT_INVALID_DATA)
+	if (response & UART_LSR_ERR)
 	{
-		uart_reset(UART_COM1);
+		idx = 0;
 		uart_write_byte(UART_COM1, SPROTO_KO);
 		return;
 	}
-
-	if (response != UART_IIR_INT_RECEIVED_DATA) return;
 
 	if (uart_read(UART_COM1, UART_RBR, &output)) return;
 
@@ -217,13 +214,19 @@ int (uart_setup)(int bit_rate)
 {
 	uint8_t cmd;
 
-	cmd = UART_IER_ENABLE_INT_DATA | UART_IER_ENABLE_INT_LSR;
-	if (uart_write(UART_COM1, UART_IER, cmd)) return 1;
-
-	cmd = UART_LCR_8BITCHAR | UART_LCR_2STOP | UART_LCR_PARTIY_EVEN;
-	if (uart_write(UART_COM1, UART_LCR, cmd)) return 1;
+	if (uart_write(UART_COM1, UART_IER, UART_IER_ENABLE_INT_DATA)) return 1;
 
 	if (uart_set_bit_rate(1, UART_DEFAULT_BIT_RATE)) return 1;
+	
+	cmd = UART_LCR_8BITCHAR | UART_LCR_1STOP | UART_LCR_PARITY_NONE;
+	if (uart_write(UART_COM1, UART_LCR, cmd)) return 1;
 
 	return uart_reset(UART_COM1);
+}
+
+int (uart_disable)()
+{
+	if (uart_write(UART_COM1, UART_IER, 0)) return 1;
+
+	return uart_unsubscribe_int();
 }

@@ -7,9 +7,26 @@
   "editor.wordWrap": "bounded",
   "editor.wordWrapColumn": 100,
   "files.associations": {
+		"*.js": "javascript",
+		"*.tpl": "php",
+		"*.pcss": "css",
+		".env*": "dotenv",
 		"*.embeddedhtml": "html",
 		"drivers.h": "c",
 		"string.h": "c",
-		"lcf.h": "c"
+		"lcf.h": "c",
+		"labjack.h": "c",
+		"controller.h": "c",
+		"cursor.h": "c",
+		"pixmap.h": "c",
+		"stddef.h": "c",
+		"queue.h": "c",
+		"game.h": "c",
+		"*.xpm": "c",
+		"drawer.h": "c",
+		"sprite.h": "c",
+		"state.h": "c",
+		"ev_listener.h": "c",
+		"app.h": "c"
 	},
 }

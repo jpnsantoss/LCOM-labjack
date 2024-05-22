@@ -1,0 +1,7 @@
+{
+	"files.associations": {
+		"*.embeddedhtml": "html",
+		"labjack.h": "c",
+		"lcf.h": "c"
+	}
+}
