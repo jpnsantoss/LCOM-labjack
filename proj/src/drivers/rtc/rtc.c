@@ -10,9 +10,10 @@ uint8_t to_bin(uint8_t inbcd) {
 }
 
 int update_time_rtc() {
-    
-    if (updating_rtc() != 0) return 1;
+
     uint8_t output;
+
+    if (updating_rtc() != 0) return 1;
     if (output_rtc(Y, &output) != 0) return 1;
     time_info.year = bin_mode ? output : to_bin(output);
     if (output_rtc(M, &output) != 0) return 1;
@@ -26,6 +27,7 @@ int update_time_rtc() {
     if (output_rtc(S, &output) != 0) return 1;
     time_info.seconds = bin_mode ? output : to_bin(output);
     return 0;
+    
 }
 
 void setup_rtc() {
@@ -45,7 +47,7 @@ int unsubscribe_int_rtc() {
 }
 
 int output_rtc(uint8_t cmd, uint8_t *output) {
-        if (output == NULL){ printf("failed to read undefined value"); return 1; }
+        if (output == NULL) return 1;
         uint32_t bits32;                   
         if(sys_inb(cmd, &bits32)!=0) return 1;  
         *output = 0xFF & bits32;    
