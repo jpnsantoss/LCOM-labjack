@@ -5,9 +5,13 @@ int rtc_hook_id = 5;
 uint8_t bin_mode;   
 
 
+uint8_t to_bin(uint8_t inbcd) {
+    return ((inbcd & 0xF)+(inbcd >> 4) * 10);
+}
+
 int update_time_rtc() {
     
-    if (rtc_is_updating() != 0) return 1;
+    if (updating_rtc() != 0) return 1;
     uint8_t output;
     if (output_rtc(Y, &output) != 0) return 1;
     time_info.year = bin_mode ? output : to_bin(output);
@@ -55,7 +59,4 @@ int updating_rtc(){
 	return ISUPDATING & ts;
 }
 
-uint8_t to_bin(uint8_t inbcd) {
-    return ((inbcd >> 4) * 10) + (inbcd & 0xF);
-}
 

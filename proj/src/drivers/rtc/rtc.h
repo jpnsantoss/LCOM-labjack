@@ -5,14 +5,13 @@
 #include <lcom/lcf.h>
 
 #define ISUPDATING 0x10000000
-#define ISBIN  0x100
+#define ISBIN           0x100
 
+#define UPDATE_REG       10
+#define COUNT_REG        11
 #define INPUT_REG      0x70
 #define OUTPUT_REG     0x71
-#define RTC_IRQ_LINE   8
-
-#define UPDATE_REG 10
-#define COUNT_REG   11
+#define RTC_IRQ_LINE      8
 
 #define H   4 
 #define M   2
@@ -32,12 +31,11 @@ typedef struct {
 } datetime_info;
 
 uint8_t to_bin(uint8_t bcd_number);
+int update_time_rtc();
 void setup_rtc();
 int subscribe_int_rtc();
 int unsubscribe_int_rtc();
 int output_rtc(uint8_t command, uint8_t *output);
 int updating_rtc();
-int is_bin_rtc();
-int update_time_rtc();
 
 #endif
