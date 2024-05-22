@@ -39,7 +39,6 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
 				mouse_info_t *info = mouse_get_info();
 				if (info == NULL) return;
 				
-				mouse_print_packet(info);
 				updateCursorPos(info);
 				vg_set_redraw();
 			}
