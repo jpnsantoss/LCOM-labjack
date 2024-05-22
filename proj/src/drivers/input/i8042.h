@@ -20,8 +20,6 @@
 #define STAT_REG 0x64
 #define OUT_BUF 0x60
 
-#define KEYBOARD_ESC 0x81
-
 #define READ_CMD    0x20
 #define WRITE_CMD   0x60
 #define WRITE_CMD_MOUSE 0xD4

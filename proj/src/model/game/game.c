@@ -60,6 +60,8 @@ int game_init(game_t *game)
 
 void game_destroy(game_t *game)
 {
+	if (game == NULL) return;
+
 	player_destroy(&game->main_player);
 	player_destroy(&game->other_player);
 

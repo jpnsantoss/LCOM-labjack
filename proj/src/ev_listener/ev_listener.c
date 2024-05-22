@@ -2,6 +2,7 @@
 
 extern uint8_t scancode;
 extern int timer_counter;
+int state_changed = 0;
 
 handler listeners[] = {
   handle_main_menu,
@@ -16,6 +17,11 @@ void handle_interrupt(app_t *app, interrupt_type_t interrupt)
 	handle_general(app, interrupt);
 	handler hd = listeners[app->state];
 	if (hd == NULL) return;
+	if (state_changed) 
+	{
+		state_changed = 0;
+		return;
+	}
 
 	hd(app, interrupt);
 }
@@ -26,13 +32,25 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
 	{
 		case KEYBOARD:
 			kbc_ih();
-			if (scancode == KEYBOARD_ESC) app->state = EXIT;
+			if (scancode == KB_ESC && app->state != MAIN_MENU)
+			{
+				app->state = MAIN_MENU;
+				state_changed = 1;
+				vg_set_redraw();
+			}
 
-			if (scancode == 0xad)
+			if (scancode == KB_X || scancode == KB_C)
+			{
+				player_give_card(app->game.cards, &app->game.main_player,
+					scancode == KB_C);
+				vg_set_redraw();
+			}
+
+			if (scancode == KB_Y)
 			{
 				uart_write_msg(1, 1);
-				printf("X\n");
 			}
+
 			break;
 		case MOUSE:
 			mouse_ih();
@@ -42,7 +60,7 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
 				mouse_info_t *info = mouse_get_info();
 				if (info == NULL) return;
 				
-				updateCursorPos(app, info);
+				app_update_cursor_pos(app, info);
 				vg_set_redraw();
 			}
 			break;
@@ -61,25 +79,39 @@ void handle_main_menu(app_t *app, interrupt_type_t interrupt)
 {
 	mouse_info_t *info = mouse_get_info();
 
-  if (interrupt == MOUSE && info != NULL)
+	switch (interrupt)
 	{
-		if (sprite_colides(app->cursor, app->play_button) && info->lb)
-		{
-			app->state = GAME_BETTING;
-			
-			if (game_init(&app->game))
+		case KEYBOARD:
+			if (scancode == KB_ESC) app->state = EXIT;
+			return;
+	
+		case MOUSE:
+			if (info == NULL) return;
+
+			if (sprite_colides(app->cursor, app->play_button) && info->lb)
 			{
-				app->state = EXIT;
-				panic("Invalid game initialization.");
+				app->state = GAME_BETTING;
+			
+				if (game_init(&app->game))
+				{
+					app->state = EXIT;
+					game_destroy(&app->game);
+					return;
+				} 
+
+				vg_set_redraw();
 				return;
 			}
-			vg_set_redraw();
-		}
-		else if (sprite_colides(app->cursor, app->exit_button) && info->lb)
-		{
-			app->state = EXIT;
-		}
-	}
+
+			if (sprite_colides(app->cursor, app->exit_button) && info->lb)
+			{
+				app->state = EXIT;
+				return;
+			}
+			return;
+		default:
+			return;
+	}	
 }
 
 void handle_game_playing(app_t *app, interrupt_type_t interrupt)

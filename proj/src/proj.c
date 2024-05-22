@@ -105,6 +105,6 @@ int (proj_main_loop)(int argc, char **argv)
 		}
 	}
 
-	free(app);
+	app_destroy(app);
   return close_app();
 }

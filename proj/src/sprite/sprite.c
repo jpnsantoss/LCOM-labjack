@@ -35,7 +35,7 @@ int	sprite_draw(sprite_t *sprite)
 		for (int i = 0; i < sprite->img.width; i++)
 		{
 			uint32_t color = 0;
-      memcpy(&color, map, gph.bytes_per_pixel);
+			memcpy(&color, map, gph.bytes_per_pixel);
 
 			if (color == xpm_transparency_color(sprite->img.type))
 			{
@@ -44,6 +44,31 @@ int	sprite_draw(sprite_t *sprite)
 			}
 
 			if (vg_draw_pixel(sprite->x + i, sprite->y + j, color)) return 1;
+			map += gph.bytes_per_pixel;
+		}
+	}
+	return 0;
+}
+
+int	sprite_draw_rotate(sprite_t *sprite)
+{
+	t_gph gph = vg_get_info();
+	uint8_t *map = sprite->img.bytes;
+
+	for (int j = 0; j < sprite->img.height; j++)
+	{
+		for (int i = 0; i < sprite->img.width; i++)
+		{
+			uint32_t color = 0;
+			memcpy(&color, map, gph.bytes_per_pixel);
+
+			if (color == xpm_transparency_color(sprite->img.type))
+			{
+				map += gph.bytes_per_pixel;
+				continue;
+			}
+
+			if (vg_draw_pixel(sprite->x + j, sprite->y + i, color)) return 1;
 			map += gph.bytes_per_pixel;
 		}
 	}

@@ -10,6 +10,10 @@ app_t *app_init()
 	if (app == NULL) return NULL;
 
 	app->state = MAIN_MENU;
+	app->game.cards = NULL;
+	app->game.main_player.cards = NULL;
+	app->game.other_player.cards = NULL;
+	
   app->cursor = sprite_create((xpm_map_t) cursor_xpm, vg_get_width() / 2, vg_get_height() / 2);
 	app->background = sprite_create((xpm_map_t) background_xpm, 0, 0);
   app->play_button = sprite_create((xpm_map_t) start_xpm, (vg_get_width() / 2) - 55, 720);
@@ -18,9 +22,18 @@ app_t *app_init()
   return app;
 }
 
-void updateCursorPos(app_t *app, mouse_info_t *mouse_info) {
+void app_update_cursor_pos(app_t *app, mouse_info_t *mouse_info)
+{
     int new_x = app->cursor->x + mouse_info->delta_x;
     int new_y = app->cursor->y - mouse_info->delta_y;
 
     sprite_move(app->cursor, new_x, new_y);
+}
+
+void app_destroy(app_t *app)
+{
+	if (app == NULL) return;
+
+	game_destroy(&app->game);
+	free(app);
 }

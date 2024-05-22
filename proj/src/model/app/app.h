@@ -6,6 +6,23 @@
 #include "../../drivers/drivers.h"
 #include "../game/game.h"
 
+#define KB_ESC 0x81
+#define KB_ENTER 0x9c
+#define KB_X 0xad
+#define KB_Y 0x95
+#define KB_C 0xae
+
+#define KB_0 0x8b
+#define KB_1 0x82
+#define KB_2 0x83
+#define KB_3 0x84
+#define KB_4 0x85
+#define KB_5 0x86
+#define KB_6 0x87
+#define KB_7 0x88
+#define KB_8 0x89
+#define KB_9 0x8a
+
 typedef enum {
 	MAIN_MENU,
 	GAME_BETTING,
@@ -43,6 +60,7 @@ typedef enum {
 } interrupt_type_t;
 
 app_t *app_init();
-void updateCursorPos(app_t *app, mouse_info_t *mouse_info);
+void 	app_destroy(app_t *app);
+void 	app_update_cursor_pos(app_t *app, mouse_info_t *mouse_info);
 
 #endif
