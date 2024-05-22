@@ -44,6 +44,6 @@ typedef enum {
 } interrupt_type_t;
 
 app_t *app_init();
-void updateCursorPos(mouse_info_t *mouse_info);
+void updateCursorPos(app_t *app, mouse_info_t *mouse_info);
 
 #endif

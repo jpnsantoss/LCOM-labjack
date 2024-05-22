@@ -45,7 +45,7 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
 				mouse_info_t *info = mouse_get_info();
 				if (info == NULL) return;
 				
-				updateCursorPos(info);
+				updateCursorPos(app, info);
 				vg_set_redraw();
 			}
 			break;
@@ -68,7 +68,7 @@ void handle_main_menu(app_t *app, interrupt_type_t interrupt)
 	{
 		if (sprite_colides(app->cursor, app->play_button) && info->lb)
 		{
-			app->state = GAME_PLAYING;
+			app->state = GAME_BETTING;
 		}
 		else if (sprite_colides(app->cursor, app->exit_button) && info->lb)
 		{

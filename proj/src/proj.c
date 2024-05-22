@@ -45,12 +45,13 @@ int close_app()
 	return vg_exit();
 }
 
-//chamado pela lcom_run
 int (proj_main_loop)(int argc, char **argv)
 {
-  	bit_no_t bit_no;
+  bit_no_t bit_no;
+	int ipc_status;
+	message msg;
 
-  	vg_init_mode();
+  vg_init_mode();
 
   if (timer_subscribe_int(&bit_no.timer)) return 1;
 
@@ -65,8 +66,7 @@ int (proj_main_loop)(int argc, char **argv)
   if (kbd_subscribe_int(&bit_no.kb)) return 1;
 
 	app_t *app = app_init();
-	int ipc_status;
-	message msg;
+	if (app == NULL) close_app();
 	
 	counter = 0;
 
@@ -105,5 +105,6 @@ int (proj_main_loop)(int argc, char **argv)
 		}
 	}
 
-  	return close_app();
+	free(app);
+  return close_app();
 }
