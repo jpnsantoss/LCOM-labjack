@@ -1,10 +1,9 @@
 #include "drawer.h"
-#include "../state/state.h"
 #include "../model/app.h"
 
 void draw_state(app_t *app)
 {
-	switch(get_state())
+	switch(app->state)
 	{
 		case MAIN_MENU:
 			sprite_draw(app->play_button);

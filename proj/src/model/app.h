@@ -3,9 +3,16 @@
 
 #include <lcom/lcf.h>
 #include "game.h"
-#include "../state/state.h"
 #include "../sprite/sprite.h"
 #include "../drivers/drivers.h"
+
+typedef enum {
+	MAIN_MENU,
+	GAME_BETTING,
+	GAME_PLAYING,
+	GAME_OVER,
+	EXIT
+} app_state_t;
 
 typedef struct {
 	sprite_t *cursor;
@@ -16,6 +23,7 @@ typedef struct {
 	// sprite_t *game_betting;
 	// sprite_t *game;
 	game_t	game;
+	app_state_t state;
 } app_t;
 
 typedef struct {
@@ -34,12 +42,6 @@ typedef enum {
 	RTC,
 	UART
 } interrupt_type_t;
-
-typedef struct {
-	app_state_t				state;
-	interrupt_type_t	interrupt;
-	
-} ev_listener_t;
 
 app_t *app_init();
 void updateCursorPos(mouse_info_t *mouse_info);

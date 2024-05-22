@@ -6,15 +6,21 @@
 extern uint8_t scancode;
 extern int timer_counter;
 
-state_handler_t listeners[] = {
-  { MAIN_MENU, handle_main_menu },
-  { GAME_BETTING, handle_game_betting },
+handler listeners[] = {
+  handle_main_menu,
+  handle_game_betting,
+	handle_game_playing,
+	handle_game_over,
+	NULL
 };
 
-void handle_interrupt(app_t *app, ev_listener_t listener)
+void handle_interrupt(app_t *app, interrupt_type_t interrupt)
 {
-	handle_general(app, listener.interrupt);
-	listeners[listener.state].handle(app, listener.interrupt);
+	handle_general(app, interrupt);
+	handler hd = listeners[app->state];
+	if (hd == NULL) return;
+
+	hd(app, interrupt);
 }
 
 void handle_general(app_t *app, interrupt_type_t interrupt)
@@ -23,7 +29,7 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
 	{
 		case KEYBOARD:
 			kbc_ih();
-			if (scancode == KEYBOARD_ESC) set_state(EXIT);
+			if (scancode == KEYBOARD_ESC) app->state = EXIT;
 
 			if (scancode == 0xad)
 			{
@@ -60,19 +66,46 @@ void handle_main_menu(app_t *app, interrupt_type_t interrupt)
 
   if (interrupt == MOUSE && info != NULL)
 	{
-		if(sprite_colides(app->cursor, app->play_button) && info->lb)
+		if (sprite_colides(app->cursor, app->play_button) && info->lb)
 		{
-			set_state(GAME_BETTING);
+			app->state = GAME_PLAYING;
 		}
-		else if(sprite_colides(app->cursor, app->exit_button) && info->lb)
+		else if (sprite_colides(app->cursor, app->exit_button) && info->lb)
 		{
-			set_state(EXIT);
+			app->state = EXIT;
 		}
 	}
 }
 
+void handle_game_playing(app_t *app, interrupt_type_t interrupt)
+{
+	if (interrupt == MOUSE)
+	{
+		// Handle the interrupt here
+  }
+}
+
+
 // Function to handle the interrupts in the game start
 void handle_game_betting(app_t *app, interrupt_type_t interrupt)
+{
+	if (interrupt == MOUSE)
+	{
+		// Handle the interrupt here
+  }
+}
+
+// Function to handle the interrupts in the game start
+void handle_exit(app_t *app, interrupt_type_t interrupt)
+{
+	if (interrupt == MOUSE)
+	{
+		// Handle the interrupt here
+  }
+}
+
+// Function to handle the interrupts in the game start
+void handle_game_over(app_t *app, interrupt_type_t interrupt)
 {
 	if (interrupt == MOUSE)
 	{

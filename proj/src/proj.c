@@ -1,9 +1,8 @@
 #include <lcom/lcf.h>
-#include "labjack.h"
-#include "ev_listener/ev_listener.h"
 #include "drivers/drivers.h"
-#include "state/state.h"
+#include "model/game.h"
 #include "model/app.h"
+#include "ev_listener/ev_listener.h"
 
 int counter = 0;
 
@@ -71,7 +70,7 @@ int (proj_main_loop)(int argc, char **argv)
 	
 	counter = 0;
 
-	while (get_state() != EXIT)
+	while (app->state != EXIT)
 	{
     if (driver_receive(ANY, &msg, &ipc_status)) continue;
 
@@ -79,32 +78,30 @@ int (proj_main_loop)(int argc, char **argv)
 
 		if (_ENDPOINT_P(msg.m_source) != HARDWARE) continue;
 
-    	app_state_t state = get_state();
-
 		if (msg.m_notify.interrupts & bit_no.mouse)
 		{
-			handle_interrupt(app, (ev_listener_t) {state, MOUSE});
+			handle_interrupt(app, MOUSE);
 		}
 
 		if (msg.m_notify.interrupts & bit_no.uart)
 		{
 			printf("UART IH\n");
-			handle_interrupt(app, (ev_listener_t) {state, UART});
+			handle_interrupt(app, UART);
 		}
 
 		if (msg.m_notify.interrupts & bit_no.rtc)
 		{
-			handle_interrupt(app, (ev_listener_t) {state, RTC});
+			handle_interrupt(app, RTC);
 		}
 
 		if (msg.m_notify.interrupts & bit_no.kb)
 		{
-			handle_interrupt(app, (ev_listener_t) {state, KEYBOARD});
+			handle_interrupt(app, KEYBOARD);
 		}
 
 		if (msg.m_notify.interrupts & bit_no.timer)
 		{
-			handle_interrupt(app, (ev_listener_t) {state, TIMER});
+			handle_interrupt(app, TIMER);
 		}
 	}
 
