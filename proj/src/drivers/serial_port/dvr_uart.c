@@ -225,5 +225,7 @@ int (uart_setup)(int bit_rate)
 
 int (uart_disable)()
 {
-	return uart_write(UART_COM1, UART_IER, 0);
+	if (uart_write(UART_COM1, UART_IER, 0)) return 1;
+
+	return uart_unsubscribe_int();
 }

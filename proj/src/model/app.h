@@ -9,7 +9,9 @@
 
 typedef struct {
 	sprite_t *cursor;
-	// sprite_t *background;
+	sprite_t *background;
+	sprite_t *play_button;
+	sprite_t *exit_button;
 	// sprite_t *main_menu;
 	// sprite_t *game_betting;
 	// sprite_t *game;
@@ -36,6 +38,7 @@ typedef enum {
 typedef struct {
 	app_state_t				state;
 	interrupt_type_t	interrupt;
+	
 } ev_listener_t;
 
 app_t *app_init();

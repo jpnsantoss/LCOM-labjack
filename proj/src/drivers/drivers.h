@@ -25,8 +25,8 @@ typedef enum s_colormode {
 } t_colormode;
 
 typedef struct s_gph {
-	uint8_t *video_mem;
-	uint8_t *frame_buffer;
+	uint8_t *buffer[2];
+	int selectedNum;
 
 	unsigned x_res;
 	unsigned y_res;
@@ -59,9 +59,11 @@ int mouse_subscribe_int(uint8_t *bit_no);
 int mouse_unsubscribe_int();
 void (mouse_ih)();
 int mouse_init(uint8_t *bit_no);
+int mouse_disable();
 
-void mouse_fill_packet(int *bytes, struct packet *pp);
-int mouse_read_packet(mouse_info_t *info);
+void mouse_fill_packet(uint8_t *bytes, struct packet *pp);
+int mouse_read_packet();
+mouse_info_t *mouse_get_info();
 
 // keyboard
 int kbd_subscribe_int(uint8_t *bit_no);
@@ -83,9 +85,7 @@ int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color);
 int (vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color);
 int	vg_print_xpm(xpm_map_t xpm, uint16_t x, uint16_t y);
 t_gph vg_get_info();
-void vg_clear_screen();
-int (vg_clean)();
-int (vg_flush_buffer)();
+int (vg_flip)();
 unsigned vg_get_width();
 unsigned vg_get_height();
 

@@ -6,8 +6,8 @@ sprite_t *sprite_create(xpm_map_t map, uint32_t x, uint32_t y)
 	sprite_t *sprite = (sprite_t *) malloc(sizeof(sprite_t));
 	if (sprite == NULL) return NULL;
 
-	(void)xpm_load(map,  XPM_8_8_8_8, &sprite->img);
-	if (sprite->img.bytes == NULL)
+	sprite->map = (uint8_t *) xpm_load(map,  XPM_8_8_8_8, &sprite->img);
+	if (sprite->map == NULL)
 	{
 		free(sprite);
 		return NULL;
@@ -21,47 +21,56 @@ sprite_t *sprite_create(xpm_map_t map, uint32_t x, uint32_t y)
 
 void sprite_delete(sprite_t *sprite)
 {
-	free(sprite->img.bytes);
+	free(sprite->map);
 	sprite->img.bytes = NULL;
 }
 
 int	sprite_draw(sprite_t *sprite)
 {
+	t_gph gph = vg_get_info();
 	uint8_t *map = sprite->img.bytes;
 
 	for (int j = 0; j < sprite->img.height; j++)
 	{
 		for (int i = 0; i < sprite->img.width; i++)
 		{
-			if (*map == xpm_transparency_color(sprite->img.type))
-			{
-				map++;
-				continue;
-			} 
+			uint32_t color = 0;
+      memcpy(&color, map, gph.bytes_per_pixel);
 
-			if (vg_draw_pixel(sprite->x + i, sprite->y + j, *map)) return 1;
-			map++;
+			if (color == xpm_transparency_color(sprite->img.type))
+			{
+				map += gph.bytes_per_pixel;
+				continue;
+			}
+
+			if (vg_draw_pixel(sprite->x + i, sprite->y + j, color)) return 1;
+			map += gph.bytes_per_pixel;
 		}
 	}
 	return 0;
 }
 
-int sprite_move(sprite_t *sprite, int x, int y)
+int sprite_move(sprite_t *sprite, uint32_t x, uint32_t y)
 {
-	if (x == 0 && y == 0) return 1;
+	t_gph gph = vg_get_info();
 
-	x += sprite->x;
-	y += sprite->y;
-
-	vbe_mode_info_t mode_info;
-
-	if (vbe_get_mode_info(VG_MODE, &mode_info))
-		return 1;
-
-	if (x < 0 || y < 0 || x + sprite->img.width >= mode_info.XResolution || y + sprite->img.height >= mode_info.YResolution) return 1;
+	if (x >= gph.x_res || y >= gph.y_res) return 1;
 
 	sprite->x = x;
 	sprite->y = y;
 
 	return 0;
+}
+
+int sprite_colides(sprite_t *sprite1, sprite_t *sprite2)
+{
+	int x2_s1 = sprite1->x + sprite1->img.width;
+	int y2_s1 = sprite1->y + sprite1->img.height;
+
+	int x2_s2 = sprite2->x + sprite2->img.width;
+	int y2_s2 = sprite2->y + sprite2->img.height;
+
+	return  x2_s1 > (int)sprite2->x && (int)sprite1->x < x2_s2 
+		&& y2_s1 > (int)sprite2->y && (int)sprite1->y < y2_s2;
+	// s1_x2 > s2_x && s1_x < s2_x2 && s1_y2 > s2_y && s1_y < s2_y2
 }

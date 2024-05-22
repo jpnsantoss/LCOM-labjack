@@ -24,8 +24,7 @@ int main(int argc, char *argv[])
 
   // handles control over to LCF
   // [LCF handles command line arguments and invokes the right function]
-  if (lcf_start(argc, argv))
-    return 1;
+  if (lcf_start(argc, argv)) return 1;
 
   // LCF clean up tasks
   // [must be the last statement before return]
@@ -34,44 +33,35 @@ int main(int argc, char *argv[])
   return 0;
 }
 
-int close_app() {
-  if (mouse_unsubscribe_int()) return 1;
+int close_app()
+{
+	if (uart_disable()) return 1;
+
+	if (mouse_disable()) return 1;
 
 	if (kbd_unsubscribe_int()) return 1;
-	
-	if (kbc_write(MOUSE_DATA_REPORT_DISABLE, true)) return 1;
 
 	if (timer_unsubscribe_int()) return 1;
 
-	return vg_clean();
-}
-
-interrupt_type_t get_interrupt_type(message msg, bit_no_t bit_no)
-{
-  if (msg.m_notify.interrupts & bit_no.kb) return KEYBOARD;
-  
-	if (msg.m_notify.interrupts & bit_no.mouse) return MOUSE;
-  
-	if (msg.m_notify.interrupts & bit_no.uart) return UART;
-  
-	if (msg.m_notify.interrupts & bit_no.timer) return TIMER;
-  
-	if (msg.m_notify.interrupts & bit_no.rtc) return RTC;
-  
-	return -1; // Invalid interrupt type
+	return vg_exit();
 }
 
 //chamado pela lcom_run
 int (proj_main_loop)(int argc, char **argv)
 {
-  bit_no_t bit_no;
+  	bit_no_t bit_no;
 
-  vg_init_mode();
-  if(timer_set_frequency(0, TIMER_ACTUAL_FREQ)) return 1;
+  	vg_init_mode();
 
   if (timer_subscribe_int(&bit_no.timer)) return 1;
 
-  if (mouse_init(&bit_no.mouse)) return 1;
+	//if (timer_set_frequency(0, 15)) return 1;
+
+	if (uart_subscribe_int(&bit_no.uart)) return 1;
+	
+	if (uart_setup(UART_DEFAULT_BIT_RATE)) return 1;
+	
+ 	if (mouse_init(&bit_no.mouse)) return 1;
 
   if (kbd_subscribe_int(&bit_no.kb)) return 1;
 
@@ -88,15 +78,34 @@ int (proj_main_loop)(int argc, char **argv)
     if (!is_ipc_notify(ipc_status)) continue;
 
 		if (_ENDPOINT_P(msg.m_source) != HARDWARE) continue;
-    
-    interrupt_type_t interrupt = get_interrupt_type(msg, bit_no);
 
-    ev_listener_t listener = { get_state(), interrupt };
+    	app_state_t state = get_state();
 
-    handle_interrupt(app, listener);
+		if (msg.m_notify.interrupts & bit_no.mouse)
+		{
+			handle_interrupt(app, (ev_listener_t) {state, MOUSE});
+		}
 
+		if (msg.m_notify.interrupts & bit_no.uart)
+		{
+			handle_interrupt(app, (ev_listener_t) {state, UART});
+		}
+
+		if (msg.m_notify.interrupts & bit_no.rtc)
+		{
+			handle_interrupt(app, (ev_listener_t) {state, RTC});
+		}
+
+		if (msg.m_notify.interrupts & bit_no.kb)
+		{
+			handle_interrupt(app, (ev_listener_t) {state, KEYBOARD});
+		}
+
+		if (msg.m_notify.interrupts & bit_no.timer)
+		{
+			handle_interrupt(app, (ev_listener_t) {state, TIMER});
+		}
 	}
 
-  return close_app();
-  
+  	return close_app();
 }
