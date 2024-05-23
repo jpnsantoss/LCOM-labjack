@@ -13,7 +13,6 @@
 #include "serial_port/serial_proto.h"
 #include "../data_structures/queue.h"
 #include <stdbool.h>
-#include "../state/state.h"
 
 #define min(a,b) (((a) < (b)) ? (a) : (b))
 #define MAX_TRIES 10

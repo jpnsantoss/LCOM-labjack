@@ -27,6 +27,8 @@
 		"sprite.h": "c",
 		"state.h": "c",
 		"ev_listener.h": "c",
-		"app.h": "c"
+		"app.h": "c",
+		"player.h": "c",
+		"card.h": "c"
 	},
 }

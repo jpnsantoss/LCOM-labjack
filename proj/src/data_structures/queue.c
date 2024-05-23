@@ -43,7 +43,7 @@ int queue_empty(queue_t *queue)
 	return queue->curr_size == 0;
 }
 
-void queue_delete(queue_t **queue)
+void queue_destroy(queue_t **queue, void (*f)(void *))
 {
 	if ((*queue)->front_pos < (*queue)->end_pos)
 	{
@@ -102,7 +102,7 @@ void *queue_pop(queue_t *queue)
 
 int queue_push(queue_t *queue, void *content)
 {
-	if (queue_full(queue) || content == NULL) return -1;
+	if (queue_full(queue) || content == NULL) return 1;
 
 	if (queue_empty(queue))
 	{

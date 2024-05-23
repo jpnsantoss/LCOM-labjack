@@ -1,16 +1,16 @@
 #include "drawer.h"
-#include "../state/state.h"
-#include "../model/app.h"
+#include "../model/app/app.h"
 
 void draw_state(app_t *app)
 {
-	switch(get_state())
+	switch(app->state)
 	{
 		case MAIN_MENU:
 			sprite_draw(app->play_button);
 			sprite_draw(app->exit_button);
 			break;
 		case GAME_BETTING:
+			player_draw(&app->game.main_player);
 			break;
 		case GAME_PLAYING:
 			break;
