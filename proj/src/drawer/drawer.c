@@ -15,6 +15,9 @@ void draw_state(app_t *app)
 			game_draw_deck(&app->game);
 			break;
 		case GAME_PLAYING:
+			player_draw(&app->game.main_player);
+			game_draw_deck(&app->game);
+			draw_button_set(app->buttons_game_playing);
 			break;
 		case GAME_OVER:
 			break;

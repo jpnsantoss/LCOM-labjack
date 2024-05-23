@@ -35,7 +35,7 @@ typedef struct {
 	sprite_t	*cursor;
 	sprite_t	*background;
 	queue_t 	*buttons_main_menu;
-	queue_t		*buttons_game_betting;
+	queue_t		*buttons_game_playing;
 	queue_t		*buttons_game_over;
 	
 	game_t		game;
@@ -61,5 +61,7 @@ typedef enum {
 app_t *app_init();
 void 	app_destroy(app_t *app);
 void 	app_update_cursor_pos(app_t *app, mouse_info_t *mouse_info);
+int		app_buttons_main_menu_init(queue_t **queue);
+int		app_buttons_game_playing_init(queue_t **queue);
 
 #endif

@@ -10,7 +10,7 @@ typedef struct {
 	uint8_t			*map;
 } sprite_t;
 
-sprite_t *sprite_create(xpm_map_t map, uint32_t x, uint32_t y);
+sprite_t *sprite_create(xpm_map_t map);
 void			sprite_destroy(sprite_t *sprite);
 void			sprite_queue_destroy(void *sprite);
 int				sprite_draw(sprite_t *sprite);

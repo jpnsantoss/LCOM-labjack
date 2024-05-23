@@ -31,7 +31,6 @@ int game_init(game_t *game)
 		return 1;
 	}
 
-	game->current_bet = 0;
 	game->card_played_count = 0;
 	game->extra_deck_count = 0;
 	game->is_multiplayer = 0;
@@ -76,7 +75,7 @@ int game_draw_deck(game_t *game)
 {
 	if (game == NULL) return 1;
 
-	sprite_t *back = sprite_create(game->card_theme ? back_blue_1_xpm : back_red_1_xpm, 0, 0);
+	sprite_t *back = sprite_create(game->card_theme ? back_blue_1_xpm : back_red_1_xpm);
 	if (back == NULL) return 1;
 
 	for (size_t i = 0; i < MIN(game->cards->curr_size, GAME_DECK_DRAW_AMOUNT); i++)

@@ -126,9 +126,16 @@ void handle_game_playing(app_t *app, interrupt_type_t interrupt)
 // Function to handle the interrupts in the game start
 void handle_game_betting(app_t *app, interrupt_type_t interrupt)
 {
-	if (interrupt == MOUSE)
+	if (interrupt == KEYBOARD)
 	{
-		// Handle the interrupt here
+		if (scancode == KB_ENTER)
+		{
+			if (app->game.main_player.bet > app->game.main_player.coins) return;
+
+			app->game.main_player.coins -= app->game.main_player.bet;
+			app->state = GAME_PLAYING;
+			vg_set_redraw();
+		}
   }
 }
 

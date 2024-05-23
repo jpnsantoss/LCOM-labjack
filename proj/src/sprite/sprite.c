@@ -1,7 +1,7 @@
 #include "sprite.h"
 #include "../drivers/drivers.h"
 
-sprite_t *sprite_create(xpm_map_t map, uint32_t x, uint32_t y)
+sprite_t *sprite_create(xpm_map_t map)
 {
 	sprite_t *sprite = (sprite_t *) malloc(sizeof(sprite_t));
 	if (sprite == NULL) return NULL;
@@ -13,8 +13,8 @@ sprite_t *sprite_create(xpm_map_t map, uint32_t x, uint32_t y)
 		return NULL;
 	}
 
-	sprite->x = x;
-	sprite->y = y;
+	sprite->x = 0;
+	sprite->y = 0;
 
 	return sprite;
 }

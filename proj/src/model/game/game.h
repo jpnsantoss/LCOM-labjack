@@ -17,8 +17,6 @@
 
 typedef struct {
 	queue_t 	*cards;
-
-	uint32_t 	current_bet;
 	
 	uint32_t	round_count;
 	uint32_t	card_played_count;
