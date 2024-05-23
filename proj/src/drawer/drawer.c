@@ -3,6 +3,8 @@
 
 void draw_state(app_t *app)
 {
+	if (app == NULL) return;
+
 	switch(app->state)
 	{
 		case MAIN_MENU:
@@ -23,7 +25,7 @@ void draw_state(app_t *app)
 
 void draw_screen(app_t *app)
 {
-	if (!vg_has_redraw()) return;
+	if (!vg_has_redraw() || app == NULL) return;
 
 	sprite_draw(app->background);
 	draw_state(app);
@@ -34,6 +36,8 @@ void draw_screen(app_t *app)
 
 void draw_button_set(queue_t *buttons)
 {
+	if (buttons == NULL) return;
+	
 	uint32_t pos = vg_get_width() / 2 - buttons->curr_size * 0.5 * (64 + 30);
 	for (size_t i = 0; i < buttons->curr_size; i++)
 	{

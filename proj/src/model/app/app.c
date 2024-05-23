@@ -31,15 +31,23 @@ app_t *app_init()
 	if (sprite == NULL) return NULL;
 	queue_push(app->buttons_main_menu, sprite);
 
+	app->buttons_game_betting = queue_create(4);
+	if (app->buttons_game_betting == NULL) return NULL;
+
+	app->buttons_game_over == queue_create(2);
+	if (app->buttons_game_over == NULL) return NULL; 
+
   return app;
 }
 
 void app_update_cursor_pos(app_t *app, mouse_info_t *mouse_info)
 {
-    int new_x = app->cursor->x + mouse_info->delta_x;
-    int new_y = app->cursor->y - mouse_info->delta_y;
+	if (app == NULL || mouse_info == NULL) return;
 
-    sprite_move(app->cursor, new_x, new_y);
+  int new_x = app->cursor->x + mouse_info->delta_x;
+  int new_y = app->cursor->y - mouse_info->delta_y;
+  
+	sprite_move(app->cursor, new_x, new_y);
 }
 
 void app_destroy(app_t *app)

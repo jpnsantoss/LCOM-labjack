@@ -35,7 +35,8 @@ typedef struct {
 	sprite_t	*cursor;
 	sprite_t	*background;
 	queue_t 	*buttons_main_menu;
-	queue_t		*strings;
+	queue_t		*buttons_game_betting;
+	queue_t		*buttons_game_over;
 	
 	game_t		game;
 	app_state_t state;
