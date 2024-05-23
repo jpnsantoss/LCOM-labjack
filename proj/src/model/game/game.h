@@ -10,8 +10,8 @@
 #include "../../assets/cards/back_red_1.xpm"
 
 #define GAME_DECK_SIZE 52
-#define GAME_DECK_AMOUNT 4
-#define GAME_DECK_DRAW_AMOUNT 10
+#define GAME_DECK_AMOUNT 2
+#define GAME_DECK_DRAW_AMOUNT 4
 #define GAME_DECK_DRAW_X 650
 #define GAME_DECK_DRAW_Y 250
 

@@ -19,6 +19,11 @@ sprite_t *sprite_create(xpm_map_t map, uint32_t x, uint32_t y)
 	return sprite;
 }
 
+void sprite_queue_destroy(void *sprite)
+{
+	sprite_destroy((sprite_t *) sprite);
+}
+
 void sprite_destroy(sprite_t *sprite)
 {
 	free(sprite->map);
@@ -90,6 +95,8 @@ int sprite_move(sprite_t *sprite, uint32_t x, uint32_t y)
 
 int sprite_colides(sprite_t *sprite1, sprite_t *sprite2)
 {
+	if (sprite1 == NULL || sprite2 == NULL) return 1;
+
 	int x2_s1 = sprite1->x + sprite1->img.width;
 	int y2_s1 = sprite1->y + sprite1->img.height;
 

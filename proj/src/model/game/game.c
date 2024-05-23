@@ -81,8 +81,8 @@ int game_draw_deck(game_t *game)
 
 	for (size_t i = 0; i < MIN(game->cards->curr_size, GAME_DECK_DRAW_AMOUNT); i++)
 	{
-		uint32_t x = GAME_DECK_DRAW_X + i * back->img.width * 0.01;
-		uint32_t y = GAME_DECK_DRAW_Y + i * back->img.height * 0.1;
+		uint32_t x = GAME_DECK_DRAW_X + (i + 1) * back->img.width * 0.02;
+		uint32_t y = GAME_DECK_DRAW_Y - (i + 1) * back->img.height * 0.1;
 		sprite_move(back, x, y);
 		if (sprite_draw(back)) return 1;
 	}
