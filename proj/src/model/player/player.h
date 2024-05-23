@@ -7,14 +7,12 @@
 #include "../card/card.h"
 
 #define PLAYER_STARTING_COINS 100
-#define PLAYER_MAX_DECK_SIZE 20
-#define PLAYER_DRAW_DECK_Y_OFFSET 0.1
-#define PLAYER_DRAW_DECK_X_OFFSET 0.5
-#define PLAYER_DRAW_DECK_DOUBLE_X_OFFSET 5
-#define PLAYER_DRAW_DECK_DOUBLE_Y_OFFSET 5
+#define PLAYER_MAX_DECK_SIZE 15
 
 typedef struct {
 	uint32_t coins;
+	uint32_t bet;
+
 	queue_t *cards;
 } player_t;
 

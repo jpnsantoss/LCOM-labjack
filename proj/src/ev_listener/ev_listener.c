@@ -88,7 +88,7 @@ void handle_main_menu(app_t *app, interrupt_type_t interrupt)
 		case MOUSE:
 			if (info == NULL) return;
 
-			if (sprite_colides(app->cursor, app->play_button) && info->lb)
+			if (sprite_colides(app->cursor, queue_at(app->buttons_main_menu, 0)) && info->lb)
 			{
 				app->state = GAME_BETTING;
 			
@@ -103,7 +103,7 @@ void handle_main_menu(app_t *app, interrupt_type_t interrupt)
 				return;
 			}
 
-			if (sprite_colides(app->cursor, app->exit_button) && info->lb)
+			if (sprite_colides(app->cursor, queue_at(app->buttons_main_menu, 1)) && info->lb)
 			{
 				app->state = EXIT;
 				return;
@@ -126,18 +126,16 @@ void handle_game_playing(app_t *app, interrupt_type_t interrupt)
 // Function to handle the interrupts in the game start
 void handle_game_betting(app_t *app, interrupt_type_t interrupt)
 {
-	if (interrupt == MOUSE)
+	if (interrupt == KEYBOARD)
 	{
-		// Handle the interrupt here
-  }
-}
+		if (scancode == KB_ENTER)
+		{
+			if (app->game.main_player.bet > app->game.main_player.coins) return;
 
-// Function to handle the interrupts in the game start
-void handle_exit(app_t *app, interrupt_type_t interrupt)
-{
-	if (interrupt == MOUSE)
-	{
-		// Handle the interrupt here
+			app->game.main_player.coins -= app->game.main_player.bet;
+			app->state = GAME_PLAYING;
+			vg_set_redraw();
+		}
   }
 }
 

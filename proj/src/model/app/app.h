@@ -32,14 +32,13 @@ typedef enum {
 } app_state_t;
 
 typedef struct {
-	sprite_t *cursor;
-	sprite_t *background;
-	sprite_t *play_button;
-	sprite_t *exit_button;
-	// sprite_t *main_menu;
-	// sprite_t *game_betting;
-	// sprite_t *game;
-	game_t	game;
+	sprite_t	*cursor;
+	sprite_t	*background;
+	queue_t 	*buttons_main_menu;
+	queue_t		*buttons_game_playing;
+	queue_t		*buttons_game_over;
+	
+	game_t		game;
 	app_state_t state;
 } app_t;
 
@@ -62,5 +61,7 @@ typedef enum {
 app_t *app_init();
 void 	app_destroy(app_t *app);
 void 	app_update_cursor_pos(app_t *app, mouse_info_t *mouse_info);
+int		app_buttons_main_menu_init(queue_t **queue);
+int		app_buttons_game_playing_init(queue_t **queue);
 
 #endif

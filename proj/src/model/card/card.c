@@ -16,7 +16,7 @@ int card_base_init()
 	{
 		for (int value = 0; value < CARD_VALUE_NUM; value++)
 		{
-			sprite_t *sprite = sprite_create(card_xpm[type][value], 0, 0);
+			sprite_t *sprite = sprite_create(card_xpm[type][value]);
 			if (sprite == NULL) return 1;
 			card_sprites[type][value] = sprite;
 			loaded_card_ammount += 1;

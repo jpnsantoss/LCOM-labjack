@@ -31,11 +31,11 @@ int game_init(game_t *game)
 		return 1;
 	}
 
-	game->current_bet = 0;
 	game->card_played_count = 0;
 	game->extra_deck_count = 0;
 	game->is_multiplayer = 0;
 	game->playing_id = 0;
+	game->card_theme = 0;
 
 	game->cards = queue_create(GAME_DECK_AMOUNT * GAME_DECK_SIZE);
 	if (game->cards == NULL) 
@@ -69,4 +69,22 @@ void game_destroy(game_t *game)
 	{
 		queue_destroy(&game->cards, card_queue_destroy);
 	}
+}
+
+int game_draw_deck(game_t *game)
+{
+	if (game == NULL) return 1;
+
+	sprite_t *back = sprite_create(game->card_theme ? back_blue_1_xpm : back_red_1_xpm);
+	if (back == NULL) return 1;
+
+	for (size_t i = 0; i < MIN(game->cards->curr_size, GAME_DECK_DRAW_AMOUNT); i++)
+	{
+		uint32_t x = GAME_DECK_DRAW_X + (i + 1) * back->img.width * 0.02;
+		uint32_t y = GAME_DECK_DRAW_Y - (i + 1) * back->img.height * 0.1;
+		sprite_move(back, x, y);
+		if (sprite_draw(back)) return 1;
+	}
+
+	return 0;
 }
