@@ -53,11 +53,11 @@ void player_draw(player_t *player)
 int	player_give_card(queue_t *deck, player_t *player, int is_double)
 {
 	if (deck == NULL || deck->curr_size == 0) return 1;
-	if (player->cards == NULL) return 1;
+	if (player == NULL || player->cards == NULL) return 1;
 
 	card_t *card = queue_pop(deck);
-	card->is_double = is_double;
 	if (card == NULL) return 1;
+	card->is_double = is_double;
 
 	return queue_push(player->cards, card);
 }
