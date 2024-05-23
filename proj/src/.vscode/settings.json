@@ -29,6 +29,7 @@
 		"ev_listener.h": "c",
 		"app.h": "c",
 		"player.h": "c",
-		"card.h": "c"
+		"card.h": "c",
+		"math.h": "c"
 	},
 }

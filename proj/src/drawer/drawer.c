@@ -11,6 +11,7 @@ void draw_state(app_t *app)
 			break;
 		case GAME_BETTING:
 			player_draw(&app->game.main_player);
+			game_draw_deck(&app->game);
 			break;
 		case GAME_PLAYING:
 			break;

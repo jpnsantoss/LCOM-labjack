@@ -22,30 +22,24 @@ void player_draw(player_t *player)
 {
 	if (player == NULL) return;
 
-	uint32_t doubleCount = 0;
-	int isLastDouble = 0;
 	for (size_t i = 0; i < player->cards->curr_size; i++)
 	{
 		card_t *card = queue_at(player->cards, i);
 		if (card == NULL) continue;
 
-		uint32_t x = 200 + i * card->sprite_base->img.width * PLAYER_DRAW_DECK_X_OFFSET
-			+ doubleCount * PLAYER_DRAW_DECK_DOUBLE_X_OFFSET * isLastDouble;
-		uint32_t y = 700 - i * card->sprite_base->img.height * PLAYER_DRAW_DECK_Y_OFFSET
-			- doubleCount * PLAYER_DRAW_DECK_DOUBLE_X_OFFSET * isLastDouble;
+		uint32_t x = 400 + i * card->sprite_base->img.width * PLAYER_DRAW_DECK_X_OFFSET;
+		uint32_t y = 600 - i * card->sprite_base->img.height * 0.1
+			+ card->is_double * i * card->sprite_base->img.height * 0.09;
 
 		sprite_move(card->sprite_base, x, y);
 
 		if (card->is_double)
 		{
-			doubleCount++;
-			isLastDouble = 1;
 			sprite_draw_rotate(card->sprite_base);
 		}
 		else
 		{
 			sprite_draw(card->sprite_base);
-			isLastDouble = 0;
 		}		
 	}
 }
