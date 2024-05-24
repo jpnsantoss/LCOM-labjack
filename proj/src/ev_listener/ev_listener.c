@@ -1,4 +1,14 @@
 #include "ev_listener.h"
+#include "../assets/charxpms/0.xpm"
+#include "../assets/charxpms/1.xpm"
+#include "../assets/charxpms/2.xpm"
+#include "../assets/charxpms/3.xpm"
+#include "../assets/charxpms/5.xpm"
+#include "../assets/charxpms/6.xpm"
+#include "../assets/charxpms/7.xpm"
+#include "../assets/charxpms/8.xpm"
+#include "../assets/charxpms/9.xpm"
+
 
 extern uint8_t scancode;
 extern int timer_counter;
@@ -9,6 +19,7 @@ handler listeners[] = {
   handle_game_betting,
 	handle_game_playing,
 	handle_game_over,
+	handle_bet_value,
 	NULL
 };
 
@@ -54,13 +65,18 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
 			break;
 		case MOUSE:
 			mouse_ih();
-			// mouseSync();
+
 			if (mouse_read_packet())
 			{
 				mouse_info_t *info = mouse_get_info();
 				if (info == NULL) return;
 				
-				app_update_cursor_pos(app, info);
+				uint32_t new_x = app->cursor.x + info->delta_x;
+  			uint32_t new_y = app->cursor.y - info->delta_y;
+
+				cursor_move(&app->cursor, new_x, new_y);
+				app->cursor.state = POINTER;
+				
 				vg_set_redraw();
 			}
 			break;
@@ -71,24 +87,21 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
 			draw_screen(app);
 			break;
 		case RTC:
+			rtc_ih();
 			break;
 	}
 }
 
 void handle_main_menu(app_t *app, interrupt_type_t interrupt)
 {
-	mouse_info_t *info = mouse_get_info();
-
 	switch (interrupt)
 	{
 		case KEYBOARD:
 			if (scancode == KB_ESC) app->state = EXIT;
 			return;
-	
-		case MOUSE:
-			if (info == NULL) return;
 
-			if (sprite_colides(app->cursor, queue_at(app->buttons_main_menu, 0)) && info->lb)
+		case MOUSE:
+			if (cursor_collision(&app->cursor, queue_at(app->buttons_main_menu, 0)))
 			{
 				app->state = GAME_BETTING;
 			
@@ -103,12 +116,12 @@ void handle_main_menu(app_t *app, interrupt_type_t interrupt)
 				return;
 			}
 
-			if (sprite_colides(app->cursor, queue_at(app->buttons_main_menu, 1)) && info->lb)
+			if (cursor_collision(&app->cursor, queue_at(app->buttons_main_menu, 1)))
 			{
 				app->state = EXIT;
 				return;
 			}
-			return;
+			break;
 		default:
 			return;
 	}	
@@ -118,7 +131,25 @@ void handle_game_playing(app_t *app, interrupt_type_t interrupt)
 {
 	if (interrupt == MOUSE)
 	{
-		// Handle the interrupt here
+		if (cursor_collision(&app->cursor, queue_at(app->buttons_game_playing, 0)))
+		{
+
+		}
+
+		if (cursor_collision(&app->cursor, queue_at(app->buttons_game_playing, 1)))
+		{
+			
+		}
+
+		if (cursor_collision(&app->cursor, queue_at(app->buttons_game_playing, 2)))
+		{
+			
+		}
+
+		if (cursor_collision(&app->cursor, queue_at(app->buttons_game_playing, 3)))
+		{
+			
+		}
   }
 }
 
@@ -126,6 +157,7 @@ void handle_game_playing(app_t *app, interrupt_type_t interrupt)
 // Function to handle the interrupts in the game start
 void handle_game_betting(app_t *app, interrupt_type_t interrupt)
 {
+	mouse_info_t *info = mouse_get_info();
 	if (interrupt == KEYBOARD)
 	{
 		if (scancode == KB_ENTER)
@@ -137,6 +169,26 @@ void handle_game_betting(app_t *app, interrupt_type_t interrupt)
 			vg_set_redraw();
 		}
   }
+
+	if(interrupt == MOUSE)
+	{
+		if (info == NULL) return;
+
+		if (app->cursor.state == HAND)
+			{
+				app->cursor.state = POINTER;
+				vg_set_redraw();
+			}
+    
+    if (app->cursor.x >= 470 && app->cursor.x <= 690 
+			&& app->cursor.y >= 785 && app->cursor.y <= 840 
+			&& info->lb)
+		{
+    	app->state = BET_VALUE;
+      
+			vg_set_redraw();
+    }
+	}
 }
 
 // Function to handle the interrupts in the game start
@@ -145,5 +197,40 @@ void handle_game_over(app_t *app, interrupt_type_t interrupt)
 	if (interrupt == MOUSE)
 	{
 		// Handle the interrupt here
+  }
+}
+
+void handle_bet_value(app_t *app, interrupt_type_t interrupt)
+{
+	const xpm_map_t number_xpm[10] = {
+		number_1_xpm, number_2_xpm, number_3_xpm,
+		number_5_xpm, number_5_xpm, number_6_xpm, number_7_xpm,
+		number_8_xpm, number_9_xpm, number_0_xpm
+	};
+
+  switch (interrupt)
+	{
+    case KEYBOARD:
+			if (scancode >= 0x82 && scancode <= 0x8b)
+			{
+				sprite_t *sprite = sprite_create(number_xpm[scancode - 0x82]);
+        if (sprite == NULL) return;
+        queue_push(app->xpms_numbers, sprite);
+        vg_set_redraw();
+			}
+
+	  	if (scancode == 0x9c) // enter
+			{ 
+        while (!queue_empty(app->xpms_numbers)) queue_pop(app->xpms_numbers);
+        app->state = GAME_PLAYING;
+
+        vg_set_redraw();
+      }
+
+			return;
+    case MOUSE:
+
+    default:
+      return;
   }
 }

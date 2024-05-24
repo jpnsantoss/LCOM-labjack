@@ -2,7 +2,8 @@
 #define _LCOM_APP_H_
 
 #include <lcom/lcf.h>
-#include "../../sprite/sprite.h"
+#include "../sprite/sprite.h"
+#include "../cursor/cursor.h"
 #include "../../drivers/drivers.h"
 #include "../game/game.h"
 
@@ -28,15 +29,18 @@ typedef enum {
 	GAME_BETTING,
 	GAME_PLAYING,
 	GAME_OVER,
+	BET_VALUE,
 	EXIT
 } app_state_t;
 
 typedef struct {
-	sprite_t	*cursor;
+	cursor_t	cursor;
+
 	sprite_t	*background;
 	queue_t 	*buttons_main_menu;
 	queue_t		*buttons_game_playing;
 	queue_t		*buttons_game_over;
+	queue_t		*xpms_numbers;
 	
 	game_t		game;
 	app_state_t state;

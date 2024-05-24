@@ -4,29 +4,31 @@
 #include <minix/sysutil.h>
 #include <lcom/lcf.h>
 
-#define ISUPDATING 0x10000000
-#define ISBIN           0x100
+#define RTC_IS_UPDATING	BIT(7)
+#define RTC_IS_BIN      BIT(2)
 
-#define UPDATE_REG       10
-#define COUNT_REG        11
-#define INPUT_REG      0x70
-#define OUTPUT_REG     0x71
-#define RTC_IRQ_LINE      8
+#define RTC_UPDATE_REG  0x10
+#define RTC_COUNT_REG   0x11
+#define RTC_INPUT_REG   0x70
+#define RTC_OUTPUT_REG	0x71
+#define IRQ_RTC      		8
 
-#define H   4 
-#define M   2
-#define S   0  
-#define Y   9
-#define MIN 8
-#define D   7
+#define RTC_H   4 
+#define RTC_M   2
+#define RTC_S   0  
+#define RTC_Y   9
+#define RTC_MIN 8
+#define RTC_D   7
 
-uint8_t to_bin(uint8_t bcd_number);
-int update_time_rtc();
-void setup_rtc();
-int subscribe_int_rtc();
-int unsubscribe_int_rtc();
-int output_rtc(uint8_t command, uint8_t *output);
-int updating_rtc();
+int rtc_setup();
+int rtc_subscribe_int(uint8_t *bit_no);
+int rtc_unsubscribe_int();
+
+uint8_t rtc_to_bin(uint8_t bcd_number);
+int rtc_output(uint8_t command, uint8_t *output);
+
+int rtc_ih();
+int rtc_updating();
 
 typedef struct {
     uint8_t hours;

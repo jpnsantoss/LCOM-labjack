@@ -1,5 +1,5 @@
 /* XPM */
-static char * 1553051_green_number_numbers_study_zero_icon_xpm[] = {
+static const char *number_0_xpm[] = {
 "64 64 289 2",
 "  	c None",
 ". 	c #470000",

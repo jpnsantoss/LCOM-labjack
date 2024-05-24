@@ -1,5 +1,4 @@
 #include "sprite.h"
-#include "../drivers/drivers.h"
 
 sprite_t *sprite_create(xpm_map_t map)
 {

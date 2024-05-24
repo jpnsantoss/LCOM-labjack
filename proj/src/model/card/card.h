@@ -2,7 +2,7 @@
 #define _LCOM_CARD_H_
 
 #include <lcom/lcf.h>
-#include "../../sprite/sprite.h"
+#include "../sprite/sprite.h"
 #include "../../assets/cards/cards.h"
 #include "../../data_structures/queue.h"
 
