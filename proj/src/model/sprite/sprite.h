@@ -2,6 +2,7 @@
 #define _LCOM_SPRITE_H_
 
 #include <lcom/lcf.h>
+#include "../../drivers/drivers.h"
 
 typedef struct {
 	uint32_t		x;

@@ -2,7 +2,6 @@
 #define DRAWER_H
 
 #include "../drivers/drivers.h"
-#include "../assets/cursor.xpm"
 #include "../model/app/app.h"
 
 void draw_state(app_t *app);
