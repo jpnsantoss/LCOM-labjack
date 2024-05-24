@@ -15,7 +15,7 @@ void draw_state(app_t *app)
 			game_draw_deck(&app->game);
 			vg_draw_border(470, 785, 220, 55, 0xffffff);
 			break;
-		case BET_VALUE:
+		case GAME_BET_VALUE:
 			player_draw(&app->game.main_player);
 			game_draw_deck(&app->game);
 			vg_draw_border(470, 785, 220, 55, 0xff0000);

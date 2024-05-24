@@ -29,7 +29,7 @@ typedef enum {
 	GAME_BETTING,
 	GAME_PLAYING,
 	GAME_OVER,
-	BET_VALUE,
+	GAME_BET_VALUE,
 	EXIT
 } app_state_t;
 

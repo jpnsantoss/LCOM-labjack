@@ -176,7 +176,7 @@ void handle_game_betting(app_t *app, interrupt_type_t interrupt)
     
 		if (cursor_box_colides(&app->cursor, 470, 785, 690, 840))
 		{
-			app->state = BET_VALUE;
+			app->state = GAME_BET_VALUE;
       
 			vg_set_redraw();
 		}
