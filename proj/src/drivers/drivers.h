@@ -27,8 +27,8 @@ typedef enum s_colormode {
 } t_colormode;
 
 typedef struct s_gph {
-	uint8_t *frame_buffer[2];
-	bool needs_redraw[2];
+	uint8_t *frame_buffer[3];
+	bool needs_redraw;
 	int selectedNum;
 
 	unsigned x_res;
