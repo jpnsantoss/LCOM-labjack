@@ -17,5 +17,6 @@ size_t	stack_size(my_stack_t *stack);
 int			stack_full(my_stack_t *stack);
 int			stack_empty(my_stack_t *stack);
 void		stack_destroy(my_stack_t **stack, void (*f)(void *));
+void 		*stack_at(my_stack_t *stack, size_t pos);
 
 #endif

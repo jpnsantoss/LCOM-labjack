@@ -3,6 +3,7 @@
 #include "../assets/charxpms/1.xpm"
 #include "../assets/charxpms/2.xpm"
 #include "../assets/charxpms/3.xpm"
+#include "../assets/charxpms/4.xpm"
 #include "../assets/charxpms/5.xpm"
 #include "../assets/charxpms/6.xpm"
 #include "../assets/charxpms/7.xpm"
@@ -13,6 +14,7 @@
 extern uint8_t scancode;
 extern int timer_counter;
 int state_changed = 0;
+uint32_t last = 0;
 
 handler listeners[] = {
   handle_main_menu,
@@ -196,25 +198,35 @@ void handle_bet_value(app_t *app, interrupt_type_t interrupt)
 {
 	const xpm_map_t number_xpm[10] = {
 		number_1_xpm, number_2_xpm, number_3_xpm,
-		number_5_xpm, number_5_xpm, number_6_xpm, number_7_xpm,
+		number_4_xpm, number_5_xpm, number_6_xpm, number_7_xpm,
 		number_8_xpm, number_9_xpm, number_0_xpm
 	};
 
   switch (interrupt)
 	{
+	
     case KEYBOARD:
 			if (scancode >= 0x82 && scancode <= 0x8b)
 			{
 				sprite_t *sprite = sprite_create(number_xpm[scancode - 0x82]);
         if (sprite == NULL) return;
-        queue_push(app->xpms_numbers, sprite);
-        vg_set_redraw();
+        stack_push(app->xpms_numbers, sprite);
+				last = scancode - 0x82;
 				app->game.main_player.bet = app->game.main_player.bet * 10 + (scancode - 0x82);
+				vg_set_redraw();
 			}
 
-	  	if (scancode == 0x9c) // enter
+			else if(scancode == 0x0E){
+				stack_pop(app->xpms_numbers);
+				if(app->game.main_player.bet>0){
+					app->game.main_player.bet = (app->game.main_player.bet - last)/10;
+				}
+				vg_set_redraw();
+			}
+
+	  	else if (scancode == 0x9c) // enter
 			{ 
-        while (!queue_empty(app->xpms_numbers)) queue_pop(app->xpms_numbers);
+        while (!stack_empty(app->xpms_numbers)) stack_pop(app->xpms_numbers);
         app->state = GAME_PLAYING;
 
         vg_set_redraw();

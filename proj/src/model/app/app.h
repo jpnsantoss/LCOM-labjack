@@ -40,7 +40,7 @@ typedef struct {
 	queue_t 	*buttons_main_menu;
 	queue_t		*buttons_game_playing;
 	queue_t		*buttons_game_over;
-	queue_t		*xpms_numbers;
+	my_stack_t		*xpms_numbers;
 	
 	game_t		game;
 	app_state_t state;
