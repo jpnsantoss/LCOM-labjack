@@ -109,10 +109,12 @@ int (vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color)
 	return 0;
 }
 
-int(vg_draw_vline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color) {
+int(vg_draw_vline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color)
+{
   for (uint16_t i = 0; i < len; i++)
-    if (vg_draw_pixel(x, y + i, color))
-      return 1;
+	{
+    if (vg_draw_pixel(x, y + i, color)) return 1;
+	}
   return 0;
 }
 
@@ -128,33 +130,38 @@ int (vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width,
 }
 
 int(vg_draw_border)(uint16_t x, uint16_t y, uint16_t width,
-                    uint16_t height, uint32_t color) {
+                    uint16_t height, uint32_t color)
+{
+  for (int i = 0; i < 4; i++)
+	{
+    if (vg_draw_hline(x, y + i, width, color)) return 1;
+  }
 
-  for (int i = 0; i < 4; i++) {
-    if (vg_draw_hline(x, y + i, width, color))
-      return 1;
+  for (int i = 0; i < 4; i++)
+	{
+    if (vg_draw_hline(x, y + height - 1 + i, width, color)) return 1;
   }
-  for (int i = 0; i < 4; i++) {
-    if (vg_draw_hline(x, y + height - 1 + i, width, color))
-      return 1;
+
+  for (int i = 0; i < 4; i++)
+	{
+    if (vg_draw_vline(x + i, y, height, color)) return 1;
   }
-  for (int i = 0; i < 4; i++) {
-    if (vg_draw_vline(x + i, y, height, color))
-      return 1;
-  }
-  for (int i = 0; i < 4; i++) {
-    if (vg_draw_vline(x + width - 1 + i, y, height, color))
-      return 1;
+
+  for (int i = 0; i < 4; i++)
+	{
+    if (vg_draw_vline(x + width - 1 + i, y, height, color)) return 1;
   }
 
   return 0;
 }
 
-unsigned vg_get_width() {
+unsigned vg_get_width()
+{
 	return gph.x_res;
 }
 
-unsigned vg_get_height() {
+unsigned vg_get_height()
+{
 	return gph.y_res;
 }
 
