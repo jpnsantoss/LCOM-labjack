@@ -72,3 +72,12 @@ int stack_push(my_stack_t *stack, void *content)
 	stack->content[stack->end_pos] = content;
 	return 0;
 }
+
+void *stack_at(my_stack_t *stack, size_t pos)
+{
+    if (pos >= stack->curr_size) return NULL;
+
+    size_t f_pos = stack->curr_size - pos;
+    return stack->content[f_pos];
+}
+

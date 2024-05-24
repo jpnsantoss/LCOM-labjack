@@ -12,6 +12,7 @@
 #include "serial_port/iUART.h"
 #include "serial_port/serial_proto.h"
 #include "../data_structures/queue.h"
+#include "../data_structures/stack.h"
 #include <stdbool.h>
 
 #include "rtc/rtc.h"

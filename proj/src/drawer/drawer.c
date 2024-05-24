@@ -78,14 +78,15 @@ void draw_button_set(queue_t *buttons)
 	}
 }
 
-void draw_number(queue_t *xpms_numbers)
+void draw_number(my_stack_t *xpms_numbers)
 {
 	if (xpms_numbers == NULL) return;
 	
 	uint32_t pos = (vg_get_width() / 2) - 100;
-	for (size_t i = 0; i < xpms_numbers->curr_size; i++)
+	for (size_t i = xpms_numbers->curr_size; i > 0; i--)
 	{
-		sprite_t *sprite = queue_at(xpms_numbers, i);
+		size_t index = i - 1;
+		sprite_t *sprite = stack_at(xpms_numbers, index);
 		if (sprite == NULL) return;
 		
 		sprite_move(sprite, pos, 793);

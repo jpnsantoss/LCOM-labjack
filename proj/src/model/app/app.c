@@ -27,7 +27,7 @@ app_t *app_init()
 
 	if (app_buttons_game_playing_init(&app->buttons_game_playing)) return NULL; 
 
-	app->xpms_numbers = queue_create(6);
+	app->xpms_numbers = stack_create(6);
 	if (app->xpms_numbers == NULL) return NULL;
 
   return app;
@@ -85,7 +85,7 @@ void app_destroy(app_t *app)
 
 	queue_destroy(&app->buttons_main_menu, sprite_queue_destroy);
 	queue_destroy(&app->buttons_game_playing, sprite_queue_destroy);
-	queue_destroy(&app->xpms_numbers, sprite_queue_destroy);
+	stack_destroy(&app->xpms_numbers, sprite_queue_destroy);
 	game_destroy(&app->game);
 	cursor_destroy(&app->cursor);
 	free(app);

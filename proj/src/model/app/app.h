@@ -34,16 +34,16 @@ typedef enum {
 } app_state_t;
 
 typedef struct {
-	cursor_t	cursor;
+	cursor_t		cursor;
 
-	sprite_t	*background;
-	queue_t 	*buttons_main_menu;
-	queue_t		*buttons_game_playing;
-	queue_t		*buttons_game_over;
-	queue_t		*xpms_numbers;
-
-	game_t		game;
-	app_state_t state;
+	sprite_t		*background;
+	queue_t 		*buttons_main_menu;
+	queue_t			*buttons_game_playing;
+	queue_t			*buttons_game_over;
+	my_stack_t 	*xpms_numbers;
+	
+	game_t			game;
+	app_state_t	state;
 } app_t;
 
 typedef struct {
