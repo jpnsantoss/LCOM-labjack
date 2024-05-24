@@ -190,6 +190,7 @@ void handle_bet_value(app_t *app, interrupt_type_t interrupt)
         if (sprite == NULL) return;
         queue_push(app->xpms_numbers, sprite);
         vg_set_redraw();
+		app->game.main_player.bet = app->game.main_player.bet * 10 + (scancode - 0x82);
 			}
 
 	  	if (scancode == 0x9c) // enter

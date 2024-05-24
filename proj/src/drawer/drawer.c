@@ -65,15 +65,15 @@ void draw_number(queue_t *xpms_numbers)
 {
 	if (xpms_numbers == NULL) return;
 	
-	uint32_t pos = (vg_get_width() / 2) - 110;
+	uint32_t pos = (vg_get_width() / 2) - 100;
 	for (size_t i = 0; i < xpms_numbers->curr_size; i++)
 	{
 		sprite_t *sprite = queue_at(xpms_numbers, i);
 		if (sprite == NULL) return;
 		
-		sprite_move(sprite, pos, 780);
+		sprite_move(sprite, pos, 793);
 		if (sprite_draw(sprite)) return;
 
-		pos += 40;
+		pos += 27;
 	}
 }
