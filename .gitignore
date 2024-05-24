@@ -1,5 +1,6 @@
 *.o
 *.a
 a.out
+src/proj
 trace.txt
 output.txt
