@@ -39,7 +39,7 @@ void draw_screen(app_t *app)
 
 	sprite_draw(app->background);
 	draw_state(app);
-  sprite_draw(app->cursor);
+  cursor_draw(&app->cursor);
 
 	vg_flip();
 }

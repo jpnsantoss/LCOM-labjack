@@ -65,13 +65,18 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
 			break;
 		case MOUSE:
 			mouse_ih();
-			// mouseSync();
+
 			if (mouse_read_packet())
 			{
 				mouse_info_t *info = mouse_get_info();
 				if (info == NULL) return;
 				
-				app_update_cursor_pos(app, info);
+				uint32_t new_x = app->cursor.x + info->delta_x;
+  			uint32_t new_y = app->cursor.y - info->delta_y;
+
+				cursor_move(&app->cursor, new_x, new_y);
+				app->cursor.state = POINTER;
+				
 				vg_set_redraw();
 			}
 			break;
@@ -89,18 +94,14 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
 
 void handle_main_menu(app_t *app, interrupt_type_t interrupt)
 {
-	mouse_info_t *info = mouse_get_info();
-
 	switch (interrupt)
 	{
 		case KEYBOARD:
 			if (scancode == KB_ESC) app->state = EXIT;
 			return;
-	
-		case MOUSE:
-			if (info == NULL) return;
 
-			if (sprite_colides(app->cursor, queue_at(app->buttons_main_menu, 0)) && info->lb)
+		case MOUSE:
+			if (cursor_collision(&app->cursor, queue_at(app->buttons_main_menu, 0)))
 			{
 				app->state = GAME_BETTING;
 			
@@ -115,12 +116,12 @@ void handle_main_menu(app_t *app, interrupt_type_t interrupt)
 				return;
 			}
 
-			if (sprite_colides(app->cursor, queue_at(app->buttons_main_menu, 1)) && info->lb)
+			if (cursor_collision(&app->cursor, queue_at(app->buttons_main_menu, 1)))
 			{
 				app->state = EXIT;
 				return;
 			}
-			return;
+			break;
 		default:
 			return;
 	}	
@@ -130,7 +131,25 @@ void handle_game_playing(app_t *app, interrupt_type_t interrupt)
 {
 	if (interrupt == MOUSE)
 	{
-		// Handle the interrupt here
+		if (cursor_collision(&app->cursor, queue_at(app->buttons_game_playing, 0)))
+		{
+
+		}
+
+		if (cursor_collision(&app->cursor, queue_at(app->buttons_game_playing, 1)))
+		{
+			
+		}
+
+		if (cursor_collision(&app->cursor, queue_at(app->buttons_game_playing, 2)))
+		{
+			
+		}
+
+		if (cursor_collision(&app->cursor, queue_at(app->buttons_game_playing, 3)))
+		{
+			
+		}
   }
 }
 
@@ -154,13 +173,21 @@ void handle_game_betting(app_t *app, interrupt_type_t interrupt)
 	if(interrupt == MOUSE)
 	{
 		if (info == NULL) return;
+
+		if (app->cursor.state == HAND)
+			{
+				app->cursor.state = POINTER;
+				vg_set_redraw();
+			}
     
-      if (app->cursor->x >= 470 && app->cursor->x <= 690 && app->cursor->y >= 785 && app->cursor->y <= 840 && info->lb) {
-
-        app->state = BET_VALUE;
-
-        vg_set_redraw();
-      }
+    if (app->cursor.x >= 470 && app->cursor.x <= 690 
+			&& app->cursor.y >= 785 && app->cursor.y <= 840 
+			&& info->lb)
+		{
+    	app->state = BET_VALUE;
+      
+			vg_set_redraw();
+    }
 	}
 }
 

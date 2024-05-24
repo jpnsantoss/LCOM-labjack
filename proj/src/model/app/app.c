@@ -1,5 +1,5 @@
 #include "app.h"
-#include "../../assets/cursor.xpm"
+
 #include "../../assets/background.xpm"
 #include "../../assets/buttons/start.xpm"
 #include "../../assets/buttons/exit.xpm"
@@ -18,8 +18,8 @@ app_t *app_init()
 	app->game.main_player.cards = NULL;
 	app->game.other_player.cards = NULL;
 
-  app->cursor = sprite_create((xpm_map_t) cursor_xpm);
-	sprite_move(app->cursor, vg_get_width() / 2, vg_get_height() / 2);
+	if (cursor_init(&app->cursor)) return NULL;
+
 	app->background = sprite_create((xpm_map_t) background_xpm);
 
 	if (app_buttons_main_menu_init(&app->buttons_main_menu)) return NULL;
@@ -44,7 +44,6 @@ int app_buttons_game_playing_init(queue_t** queue)
 	if (sprite == NULL) return 1;
 	queue_push(*queue, sprite);
 
-	
 	sprite = sprite_create((xpm_map_t) stand_xpm);
 	if (sprite == NULL) return 1;
 	queue_push(*queue, sprite);
@@ -79,16 +78,6 @@ int	app_buttons_main_menu_init(queue_t** queue)
 	return 0;
 }
 
-void app_update_cursor_pos(app_t *app, mouse_info_t *mouse_info)
-{
-	if (app == NULL || mouse_info == NULL) return;
-
-  int new_x = app->cursor->x + mouse_info->delta_x;
-  int new_y = app->cursor->y - mouse_info->delta_y;
-  
-	sprite_move(app->cursor, new_x, new_y);
-}
-
 void app_destroy(app_t *app)
 {
 	if (app == NULL) return;
@@ -97,5 +86,6 @@ void app_destroy(app_t *app)
 	queue_destroy(&app->buttons_game_playing, sprite_queue_destroy);
 	queue_destroy(&app->xpms_numbers, sprite_queue_destroy);
 	game_destroy(&app->game);
+	cursor_destroy(&app->cursor);
 	free(app);
 }
