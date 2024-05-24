@@ -7,7 +7,6 @@ typedef struct {
 	void 	**content;
 	size_t	base_size;
 	size_t	curr_size;
-	size_t	front_pos;
 	size_t	end_pos;
 } my_stack_t;
 
