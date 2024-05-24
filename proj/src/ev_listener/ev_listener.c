@@ -19,7 +19,6 @@ handler listeners[] = {
   handle_game_betting,
 	handle_game_playing,
 	handle_game_over,
-	handle_bet_value,
 	NULL
 };
 
@@ -103,7 +102,7 @@ void handle_main_menu(app_t *app, interrupt_type_t interrupt)
 		case MOUSE:
 			if (cursor_sprite_colides(&app->cursor, queue_at(app->buttons_main_menu, 0)))
 			{
-				app->state = GAME_BETTING;
+				app->state = GAME_BET;
 			
 				if (game_init(&app->game))
 				{
@@ -133,7 +132,7 @@ void handle_game_playing(app_t *app, interrupt_type_t interrupt)
 	{
 		if (cursor_sprite_colides(&app->cursor, queue_at(app->buttons_game_playing, 0)))
 		{
-
+			
 		}
 
 		if (cursor_sprite_colides(&app->cursor, queue_at(app->buttons_game_playing, 1)))
@@ -165,20 +164,26 @@ void handle_game_betting(app_t *app, interrupt_type_t interrupt)
 			if (app->game.main_player.bet > app->game.main_player.coins) return;
 
 			app->game.main_player.coins -= app->game.main_player.bet;
-			app->state = GAME_PLAYING;
+			app->state = GAME_PLAY;
 			vg_set_redraw();
 		}
+
+		if (app->game.input_select) handle_bet_value(app, interrupt);
   }
 
 	if(interrupt == MOUSE)
 	{
 		if (info == NULL) return;
     
-		if (cursor_box_colides(&app->cursor, 470, 785, 690, 840))
+		if (!app->game.input_select && cursor_box_colides(&app->cursor, 470, 785, 690, 840))
 		{
-			app->state = GAME_BET_VALUE;
+    	app->game.input_select = 1;
       
 			vg_set_redraw();
+		}
+		else 
+		{
+			handle_bet_value(app, interrupt);
 		}
 	}
 }
@@ -209,13 +214,14 @@ void handle_bet_value(app_t *app, interrupt_type_t interrupt)
         if (sprite == NULL) return;
         queue_push(app->xpms_numbers, sprite);
         vg_set_redraw();
+
 				app->game.main_player.bet = app->game.main_player.bet * 10 + (scancode - 0x82);
 			}
 
 	  	if (scancode == 0x9c) // enter
 			{ 
         while (!queue_empty(app->xpms_numbers)) queue_pop(app->xpms_numbers);
-        app->state = GAME_PLAYING;
+        app->state = GAME_PLAY;
 
         vg_set_redraw();
       }

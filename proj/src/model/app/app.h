@@ -26,11 +26,11 @@
 
 typedef enum {
 	MAIN_MENU,
-	GAME_BETTING,
-	GAME_PLAYING,
+	GAME_BET,
+	GAME_PLAY,
 	GAME_OVER,
-	GAME_BET_VALUE,
-	EXIT
+	EXIT,
+	EXIT_CONFIRMATION
 } app_state_t;
 
 typedef struct {

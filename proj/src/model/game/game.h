@@ -23,8 +23,10 @@ typedef struct {
 	uint32_t	extra_deck_count;
 
 	uint8_t		playing_id;
-	uint8_t		is_multiplayer;
+	uint8_t		multiplayer;
 	uint8_t		card_theme;
+
+	uint8_t		input_select;
 
 	player_t 	main_player;
 	player_t 	other_player;
