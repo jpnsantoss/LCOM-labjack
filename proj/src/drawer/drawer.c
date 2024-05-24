@@ -10,18 +10,13 @@ void draw_state(app_t *app)
 		case MAIN_MENU:
 			draw_button_set(app->buttons_main_menu);
 			break;
-		case GAME_BETTING:
+		case GAME_BET:
 			player_draw(&app->game.main_player);
 			game_draw_deck(&app->game);
-			vg_draw_border(470, 785, 220, 55, 0xffffff);
+			vg_draw_border(470, 785, 220, 55, app->game.input_select ? 0xff0000 : 0xffffff);
+			if (app->game.input_select) draw_number(app->xpms_numbers);
 			break;
-		case GAME_BET_VALUE:
-			player_draw(&app->game.main_player);
-			game_draw_deck(&app->game);
-			vg_draw_border(470, 785, 220, 55, 0xff0000);
-			draw_number(app->xpms_numbers);
-			break;
-		case GAME_PLAYING:
+		case GAME_PLAY:
 			player_draw(&app->game.main_player);
 			game_draw_deck(&app->game);
 			draw_button_set(app->buttons_game_playing);

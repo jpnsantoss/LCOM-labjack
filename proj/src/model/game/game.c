@@ -33,7 +33,8 @@ int game_init(game_t *game)
 
 	game->card_played_count = 0;
 	game->extra_deck_count = 0;
-	game->is_multiplayer = 0;
+	game->multiplayer = 0;
+	game->input_select = 0;
 	game->playing_id = 0;
 	game->card_theme = 0;
 
