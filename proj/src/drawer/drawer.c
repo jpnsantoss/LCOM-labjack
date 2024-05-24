@@ -13,6 +13,13 @@ void draw_state(app_t *app)
 		case GAME_BETTING:
 			player_draw(&app->game.main_player);
 			game_draw_deck(&app->game);
+			vg_draw_border(470, 785, 220, 55, 0xffffff);
+			break;
+		case BET_VALUE:
+			player_draw(&app->game.main_player);
+			game_draw_deck(&app->game);
+			vg_draw_border(470, 785, 220, 55, 0xff0000);
+			draw_number(app->xpms_numbers);
 			break;
 		case GAME_PLAYING:
 			player_draw(&app->game.main_player);
@@ -51,5 +58,22 @@ void draw_button_set(queue_t *buttons)
 		if (sprite_draw(sprite)) return;
 
 		pos += (64 + 30);
+	}
+}
+
+void draw_number(queue_t *xpms_numbers)
+{
+	if (xpms_numbers == NULL) return;
+	
+	uint32_t pos = (vg_get_width() / 2) - 110;
+	for (size_t i = 0; i < xpms_numbers->curr_size; i++)
+	{
+		sprite_t *sprite = queue_at(xpms_numbers, i);
+		if (sprite == NULL) return;
+		
+		sprite_move(sprite, pos, 780);
+		if (sprite_draw(sprite)) return;
+
+		pos += 40;
 	}
 }

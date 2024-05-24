@@ -28,6 +28,7 @@ typedef enum {
 	GAME_BETTING,
 	GAME_PLAYING,
 	GAME_OVER,
+	BET_VALUE,
 	EXIT
 } app_state_t;
 
@@ -37,6 +38,7 @@ typedef struct {
 	queue_t 	*buttons_main_menu;
 	queue_t		*buttons_game_playing;
 	queue_t		*buttons_game_over;
+	queue_t		*xpms_numbers;
 	
 	game_t		game;
 	app_state_t state;
@@ -63,5 +65,6 @@ void 	app_destroy(app_t *app);
 void 	app_update_cursor_pos(app_t *app, mouse_info_t *mouse_info);
 int		app_buttons_main_menu_init(queue_t **queue);
 int		app_buttons_game_playing_init(queue_t **queue);
+int 	xpms_numbers_init(queue_t** queue);
 
 #endif

@@ -16,6 +16,7 @@ void handle_game_playing(app_t *app, interrupt_type_t interrupt);
 void handle_game_betting(app_t *app, interrupt_type_t interrupt);
 void handle_exit(app_t *app, interrupt_type_t interrupt);
 void handle_game_over(app_t *app, interrupt_type_t interrupt);
+void handle_bet_value(app_t *app, interrupt_type_t interrupt);
 
 extern handler listeners[];
 

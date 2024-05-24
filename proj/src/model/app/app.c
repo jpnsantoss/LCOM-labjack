@@ -26,7 +26,19 @@ app_t *app_init()
 
 	if (app_buttons_game_playing_init(&app->buttons_game_playing)) return NULL; 
 
+	if (xpms_numbers_init(&app->xpms_numbers)) return NULL; 
+
   return app;
+}
+
+int xpms_numbers_init(queue_t** queue)
+{	
+	
+	if (queue == NULL) return 1;
+	*queue = queue_create(10);
+	if (*queue == NULL) return 1;
+
+	return 0;
 }
 
 int app_buttons_game_playing_init(queue_t** queue)
