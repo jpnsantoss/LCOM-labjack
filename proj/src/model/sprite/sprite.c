@@ -49,7 +49,7 @@ int	sprite_draw(sprite_t *sprite)
 				continue;
 			}
 
-			if (vg_draw_pixel(sprite->x + i, sprite->y + j, color)) return 1;
+			vg_draw_pixel(sprite->x + i, sprite->y + j, color);
 			map += gph.bytes_per_pixel;
 		}
 	}
@@ -74,7 +74,7 @@ int	sprite_draw_rotate(sprite_t *sprite)
 				continue;
 			}
 
-			if (vg_draw_pixel(sprite->x + j, sprite->y + i, color)) return 1;
+			vg_draw_pixel(sprite->x + j, sprite->y + i, color);
 			map += gph.bytes_per_pixel;
 		}
 	}
