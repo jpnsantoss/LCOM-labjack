@@ -101,7 +101,7 @@ void handle_main_menu(app_t *app, interrupt_type_t interrupt)
 			return;
 
 		case MOUSE:
-			if (cursor_collision(&app->cursor, queue_at(app->buttons_main_menu, 0)))
+			if (cursor_sprite_colides(&app->cursor, queue_at(app->buttons_main_menu, 0)))
 			{
 				app->state = GAME_BETTING;
 			
@@ -116,7 +116,7 @@ void handle_main_menu(app_t *app, interrupt_type_t interrupt)
 				return;
 			}
 
-			if (cursor_collision(&app->cursor, queue_at(app->buttons_main_menu, 1)))
+			if (cursor_sprite_colides(&app->cursor, queue_at(app->buttons_main_menu, 1)))
 			{
 				app->state = EXIT;
 				return;
@@ -131,22 +131,22 @@ void handle_game_playing(app_t *app, interrupt_type_t interrupt)
 {
 	if (interrupt == MOUSE)
 	{
-		if (cursor_collision(&app->cursor, queue_at(app->buttons_game_playing, 0)))
+		if (cursor_sprite_colides(&app->cursor, queue_at(app->buttons_game_playing, 0)))
 		{
 
 		}
 
-		if (cursor_collision(&app->cursor, queue_at(app->buttons_game_playing, 1)))
-		{
-			
-		}
-
-		if (cursor_collision(&app->cursor, queue_at(app->buttons_game_playing, 2)))
+		if (cursor_sprite_colides(&app->cursor, queue_at(app->buttons_game_playing, 1)))
 		{
 			
 		}
 
-		if (cursor_collision(&app->cursor, queue_at(app->buttons_game_playing, 3)))
+		if (cursor_sprite_colides(&app->cursor, queue_at(app->buttons_game_playing, 2)))
+		{
+			
+		}
+
+		if (cursor_sprite_colides(&app->cursor, queue_at(app->buttons_game_playing, 3)))
 		{
 			
 		}
@@ -173,21 +173,13 @@ void handle_game_betting(app_t *app, interrupt_type_t interrupt)
 	if(interrupt == MOUSE)
 	{
 		if (info == NULL) return;
-
-		if (app->cursor.state == HAND)
-			{
-				app->cursor.state = POINTER;
-				vg_set_redraw();
-			}
     
-    if (app->cursor.x >= 470 && app->cursor.x <= 690 
-			&& app->cursor.y >= 785 && app->cursor.y <= 840 
-			&& info->lb)
+		if (cursor_box_colides(&app->cursor, 470, 785, 690, 840))
 		{
-    	app->state = BET_VALUE;
+			app->state = BET_VALUE;
       
 			vg_set_redraw();
-    }
+		}
 	}
 }
 
@@ -217,7 +209,7 @@ void handle_bet_value(app_t *app, interrupt_type_t interrupt)
         if (sprite == NULL) return;
         queue_push(app->xpms_numbers, sprite);
         vg_set_redraw();
-		app->game.main_player.bet = app->game.main_player.bet * 10 + (scancode - 0x82);
+				app->game.main_player.bet = app->game.main_player.bet * 10 + (scancode - 0x82);
 			}
 
 	  	if (scancode == 0x9c) // enter

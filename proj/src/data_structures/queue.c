@@ -128,3 +128,8 @@ void queue_shuffle(queue_t *queue)
         *queue_at_ref(queue, i) = tmp;
     }
 }
+
+void		queue_destroy_nothing(void *ptr)
+{
+	(void)ptr;
+}

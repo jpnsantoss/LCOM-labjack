@@ -25,7 +25,8 @@ typedef struct {
 int		cursor_init(cursor_t *cursor);
 int		cursor_move(cursor_t *cursor, uint32_t x, uint32_t y);
 int		cursor_draw(cursor_t *cursor);
-int		cursor_collision(cursor_t *cursor, sprite_t *sprite);
+int		cursor_sprite_colides(cursor_t *cursor, sprite_t *sprite);
+int		cursor_box_colides(cursor_t *cursor, uint32_t x, uint32_t y, uint32_t x2, uint32_t y2);
 void	cursor_destroy(cursor_t *cursor);
 
 #endif
