@@ -82,6 +82,7 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
 			draw_screen(app);
 			break;
 		case RTC:
+			rtc_ih();
 			break;
 	}
 }
@@ -150,23 +151,16 @@ void handle_game_betting(app_t *app, interrupt_type_t interrupt)
 		}
   }
 
-	if(interrupt == MOUSE){
-		 if (info == NULL)
-        return;
+	if(interrupt == MOUSE)
+	{
+		if (info == NULL) return;
     
       if (app->cursor->x >= 470 && app->cursor->x <= 690 && app->cursor->y >= 785 && app->cursor->y <= 840 && info->lb) {
 
         app->state = BET_VALUE;
 
-        if (game_init(&app->game)) {
-          app->state = EXIT;
-          game_destroy(&app->game);
-          return;
-        }
-
         vg_set_redraw();
       }
-
 	}
 }
 
@@ -179,95 +173,34 @@ void handle_game_over(app_t *app, interrupt_type_t interrupt)
   }
 }
 
-void handle_bet_value(app_t *app, interrupt_type_t interrupt) {
-  switch (interrupt) {
+void handle_bet_value(app_t *app, interrupt_type_t interrupt)
+{
+	const xpm_map_t number_xpm[10] = {
+		number_1_xpm, number_2_xpm, number_3_xpm,
+		number_5_xpm, number_5_xpm, number_6_xpm, number_7_xpm,
+		number_8_xpm, number_9_xpm, number_0_xpm
+	};
+
+  switch (interrupt)
+	{
     case KEYBOARD:
-      if (scancode == 0x8b)
-      {
-        sprite_t *sprite = sprite_create((xpm_map_t) numero_0_xpm);
+			if (scancode >= 0x82 && scancode <= 0x8b)
+			{
+				sprite_t *sprite = sprite_create(number_xpm[scancode - 0x82]);
         if (sprite == NULL) return;
         queue_push(app->xpms_numbers, sprite);
         vg_set_redraw();
-      }
-	  else if (scancode == 0x82)
-      {
-        sprite_t *sprite = sprite_create((xpm_map_t) numero_1_xpm);
-        if (sprite == NULL) return;
-        queue_push(app->xpms_numbers, sprite);
-        vg_set_redraw();
-      }
-	  if (scancode == 0x83)
-      {
-        sprite_t *sprite = sprite_create((xpm_map_t) numero_2_xpm);
-        if (sprite == NULL) return;
-        queue_push(app->xpms_numbers, sprite);
-        vg_set_redraw();
-      }
-	  if (scancode == 0x84)
-      {
-        sprite_t *sprite = sprite_create((xpm_map_t) numero_3_xpm);
-        if (sprite == NULL) return;
-        queue_push(app->xpms_numbers, sprite);
-        vg_set_redraw();
-      }
-	  else if (scancode == 0x85)
-      {
-        sprite_t *sprite = sprite_create((xpm_map_t) numero_5_xpm);
-        if (sprite == NULL) return;
-        queue_push(app->xpms_numbers, sprite);
-        vg_set_redraw();
-      }
-	  if (scancode == 0x86)
-      {
-        sprite_t *sprite = sprite_create((xpm_map_t) numero_5_xpm);
-        if (sprite == NULL) return;
-        queue_push(app->xpms_numbers, sprite);
-        vg_set_redraw();
-      }
-	  if (scancode == 0x87)
-      {
-        sprite_t *sprite = sprite_create((xpm_map_t) numero_6_xpm);
-        if (sprite == NULL) return;
-        queue_push(app->xpms_numbers, sprite);
-        vg_set_redraw();
-      }
-	  else if (scancode == 0x88)
-      {
-        sprite_t *sprite = sprite_create((xpm_map_t) numero_7_xpm);
-        if (sprite == NULL) return;
-        queue_push(app->xpms_numbers, sprite);
-        vg_set_redraw();
-      }
-	  if (scancode == 0x89)
-      {
-        sprite_t *sprite = sprite_create((xpm_map_t) numero_8_xpm);
-        if (sprite == NULL) return;
-        queue_push(app->xpms_numbers, sprite);
-        vg_set_redraw();
-      }
-	  if (scancode == 0x8a)
-      {
-        sprite_t *sprite = sprite_create((xpm_map_t) numero_9_xpm);
-        if (sprite == NULL) return;
-        queue_push(app->xpms_numbers, sprite);
-        vg_set_redraw();
-      }
-	  if (scancode == 0x9c) { // enter
-        while (!queue_empty(app->xpms_numbers)) {
-          queue_pop(app->xpms_numbers);
-        }
-        app->state = GAME_BETTING;
+			}
 
-        if (game_init(&app->game)) {
-          app->state = EXIT;
-          game_destroy(&app->game);
-          return;
-        }
+	  	if (scancode == 0x9c) // enter
+			{ 
+        while (!queue_empty(app->xpms_numbers)) queue_pop(app->xpms_numbers);
+        app->state = GAME_PLAYING;
 
         vg_set_redraw();
-        return;
       }
 
+			return;
     case MOUSE:
 
     default:

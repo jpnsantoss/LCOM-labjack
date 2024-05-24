@@ -65,6 +65,5 @@ void 	app_destroy(app_t *app);
 void 	app_update_cursor_pos(app_t *app, mouse_info_t *mouse_info);
 int		app_buttons_main_menu_init(queue_t **queue);
 int		app_buttons_game_playing_init(queue_t **queue);
-int 	xpms_numbers_init(queue_t** queue);
 
 #endif

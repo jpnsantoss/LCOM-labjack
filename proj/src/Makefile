@@ -18,9 +18,10 @@
 PROG=proj
 
 # source code files to be compiled
-SRCS = proj.c 
-SRCS += dvr_graphics.c dvr_kbc.c dvr_keyboard.c dvr_mouse.c dvr_timer.c dvr_uart.c utils.c
-SRCS += queue.c ev_listener.c sprite.c app.c drawer.c player.c card.c game.c
+SRCS = proj.c
+SRCS += dvr_graphics.c dvr_kbc.c dvr_keyboard.c dvr_mouse.c dvr_timer.c dvr_uart.c dvr_rtc.c utils.c
+SRCS += queue.c ev_listener.c drawer.c sprite.c
+SRCS += app.c player.c card.c game.c
 
 # additional compilation flags
 # "-Wall -Wextra -Werror -I . -std=c11 -Wno-unused-parameter" are already set

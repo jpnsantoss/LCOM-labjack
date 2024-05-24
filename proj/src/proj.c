@@ -42,6 +42,8 @@ int close_app()
 
 	if (timer_unsubscribe_int()) return 1;
 
+	if (rtc_unsubscribe_int()) return 1;
+
 	return vg_exit();
 }
 
@@ -65,6 +67,8 @@ int (proj_main_loop)(int argc, char **argv)
 
   if (kbd_subscribe_int(&bit_no.kb)) return 1;
 
+	if (rtc_subscribe_int(&bit_no.rtc)) return 1;
+
 	app_t *app = app_init();
 	if (app == NULL) close_app();
 	
@@ -85,7 +89,6 @@ int (proj_main_loop)(int argc, char **argv)
 
 		if (msg.m_notify.interrupts & bit_no.uart)
 		{
-			printf("UART IH\n");
 			handle_interrupt(app, UART);
 		}
 

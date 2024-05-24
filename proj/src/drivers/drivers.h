@@ -14,6 +14,8 @@
 #include "../data_structures/queue.h"
 #include <stdbool.h>
 
+#include "rtc/rtc.h"
+
 #define min(a,b) (((a) < (b)) ? (a) : (b))
 #define MAX_TRIES 10
 
