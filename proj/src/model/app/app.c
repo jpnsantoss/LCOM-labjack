@@ -21,6 +21,7 @@ app_t *app_init()
 	if (cursor_init(&app->cursor)) return NULL;
 
 	app->background = sprite_create((xpm_map_t) background_xpm);
+	if (app->background == NULL) return NULL;
 
 	if (app_buttons_main_menu_init(&app->buttons_main_menu)) return NULL;
 

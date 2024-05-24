@@ -49,13 +49,6 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
 				vg_set_redraw();
 			}
 
-			if (scancode == KB_X || scancode == KB_C)
-			{
-				player_give_card(app->game.cards, &app->game.main_player,
-					scancode == KB_C);
-				vg_set_redraw();
-			}
-
 			if (scancode == KB_Y)
 			{
 				uart_write_msg(1, 1);

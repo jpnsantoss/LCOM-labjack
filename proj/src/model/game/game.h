@@ -6,7 +6,6 @@
 #include "../../data_structures/queue.h"
 #include "../player/player.h"
 #include "../card/card.h"
-#include "../../assets/cards/back_blue_1.xpm"
 #include "../../assets/cards/back_red_1.xpm"
 
 #define GAME_DECK_SIZE 52
@@ -16,7 +15,10 @@
 #define GAME_DECK_DRAW_Y 250
 
 typedef struct {
+	sprite_t	*card_back;
+
 	queue_t 	*cards;
+	queue_t		*dealer;
 	
 	uint32_t	round_count;
 	uint32_t	card_played_count;
@@ -35,5 +37,8 @@ typedef struct {
 int		game_init(game_t *game);
 void	game_destroy(game_t *game);
 int 	game_draw_deck(game_t *game);
+int		game_draw_dealer(game_t *game);
+int		game_give_card(queue_t *deck, queue_t *receiver);
+
 
 #endif

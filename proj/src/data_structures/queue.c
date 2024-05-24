@@ -26,7 +26,7 @@ size_t queue_size(queue_t *queue)
 {
 	if (!queue) return 0;
 
-	return queue->base_size;
+	return queue->curr_size;
 }
 
 int queue_full(queue_t *queue)

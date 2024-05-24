@@ -5,7 +5,7 @@ sprite_t *sprite_create(xpm_map_t map)
 	sprite_t *sprite = (sprite_t *) malloc(sizeof(sprite_t));
 	if (sprite == NULL) return NULL;
 
-	sprite->map = (uint8_t *) xpm_load(map,  XPM_8_8_8_8, &sprite->img);
+	sprite->map = (uint8_t *) xpm_load(map, XPM_8_8_8_8, &sprite->img);
 	if (sprite->map == NULL)
 	{
 		free(sprite);
@@ -31,6 +31,8 @@ void sprite_destroy(sprite_t *sprite)
 
 int	sprite_draw(sprite_t *sprite)
 {
+	if (sprite == NULL) return 1;
+	
 	t_gph gph = vg_get_info();
 	uint8_t *map = sprite->img.bytes;
 

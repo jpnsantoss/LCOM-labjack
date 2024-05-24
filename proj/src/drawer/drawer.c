@@ -1,9 +1,35 @@
 #include "drawer.h"
 #include "../model/app/app.h"
+#include "../assets/charxpms/0.xpm"
+#include "../assets/charxpms/1.xpm"
+#include "../assets/charxpms/2.xpm"
+#include "../assets/charxpms/3.xpm"
+#include "../assets/charxpms/5.xpm"
+#include "../assets/charxpms/6.xpm"
+#include "../assets/charxpms/7.xpm"
+#include "../assets/charxpms/8.xpm"
+#include "../assets/charxpms/9.xpm"
+
+
+#include "../assets/charxpms/s.xpm"
+#include "../assets/charxpms/a.xpm"
+#include "../assets/charxpms/d.xpm"
+#include "../assets/charxpms/l.xpm"
+#include "../assets/charxpms/o.xpm"
 
 void draw_state(app_t *app)
 {
 	if (app == NULL) return;
+
+	if (app->state != MAIN_MENU && app->state != GAME_OVER)
+	{
+		player_draw(&app->game.main_player);
+
+		if (app->game.multiplayer) player_draw(&app->game.main_player);
+		
+		game_draw_deck(&app->game);
+		game_draw_dealer(&app->game);
+	}
 
 	switch(app->state)
 	{
@@ -11,14 +37,10 @@ void draw_state(app_t *app)
 			draw_button_set(app->buttons_main_menu);
 			break;
 		case GAME_BET:
-			player_draw(&app->game.main_player);
-			game_draw_deck(&app->game);
 			vg_draw_border(470, 785, 220, 55, app->game.input_select ? 0xff0000 : 0xffffff);
 			if (app->game.input_select) draw_number(app->xpms_numbers);
 			break;
 		case GAME_PLAY:
-			player_draw(&app->game.main_player);
-			game_draw_deck(&app->game);
 			draw_button_set(app->buttons_game_playing);
 			break;
 		case GAME_OVER:
@@ -71,4 +93,20 @@ void draw_number(queue_t *xpms_numbers)
 
 		pos += 27;
 	}
+}
+
+void draw_char(char a)
+{
+	const xpm_map_t number_xpm[10] = {
+		number_1_xpm, number_2_xpm, number_3_xpm,
+		number_5_xpm, number_5_xpm, number_6_xpm, number_7_xpm,
+		number_8_xpm, number_9_xpm, number_0_xpm
+	};
+
+	const xpm_map_t alphabet_xpm[26] = {
+		letter_a_xpm, NULL, NULL, letter_d_xpm, NULL, NULL, NULL, NULL, NULL, NULL, NULL, letter_l_xpm, NULL, NULL, letter_o_xpm, NULL, NULL, NULL, letter_s_xpm, NULL, NULL, NULL, NULL, NULL, NULL
+	};
+
+	(void)number_xpm;
+	(void)alphabet_xpm;
 }
