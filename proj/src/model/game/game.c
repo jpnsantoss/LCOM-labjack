@@ -37,6 +37,7 @@ int game_init(game_t *game)
 	game->input_select = 0;
 	game->playing_id = 0;
 	game->card_theme = 0;
+	game->round_count = 0;
 
 	game->card_back = sprite_create((xpm_map_t) back_red_1_xpm);
 	if (game->card_back == NULL) return 1;
