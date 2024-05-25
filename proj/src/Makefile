@@ -12,6 +12,7 @@
 .PATH: ${.CURDIR}/model/app
 .PATH: ${.CURDIR}/model/player
 .PATH: ${.CURDIR}/model/sprite
+.PATH: ${.CURDIR}/model/animation
 .PATH: ${.CURDIR}/model/cursor
 .PATH: ${.CURDIR}/drawer
 
@@ -25,7 +26,7 @@ SRCS += dvr_graphics.c dvr_kbc.c dvr_keyboard.c dvr_mouse.c dvr_timer.c dvr_rtc.
 # data_structs
 SRCS += queue.c stack.c ev_listener.c
 # models
-SRCS += sprite.c app.c drawer.c player.c card.c game.c cursor.c
+SRCS += sprite.c app.c drawer.c player.c card.c game.c cursor.c animation.c
 
 # additional compilation flags
 # "-Wall -Wextra -Werror -I . -std=c11 -Wno-unused-parameter" are already set

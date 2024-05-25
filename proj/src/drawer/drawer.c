@@ -35,6 +35,7 @@ void draw_state(app_t *app)
 	{
 		case MAIN_MENU:
 			draw_button_set(app->buttons_main_menu);
+			animation_draw(app->card_loop);
 			break;
 		case GAME_BET:
 			vg_draw_border(470, 785, 220, 55, app->game.input_select ? 0xff0000 : 0xffffff);

@@ -3,6 +3,7 @@
 
 #include <lcom/lcf.h>
 #include "../sprite/sprite.h"
+#include "../animation/animation.h"
 #include "../cursor/cursor.h"
 #include "../../drivers/drivers.h"
 #include "../game/game.h"
@@ -41,6 +42,8 @@ typedef struct {
 	queue_t			*buttons_game_playing;
 	queue_t			*buttons_game_over;
 	my_stack_t 	*xpms_numbers;
+
+	animation_t *card_loop;
 	
 	game_t			game;
 	app_state_t	state;

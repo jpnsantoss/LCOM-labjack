@@ -24,14 +24,14 @@ queue_t *queue_create(size_t size)
 
 size_t queue_size(queue_t *queue)
 {
-	if (!queue) return 0;
+	if (queue == NULL) return 0;
 
 	return queue->curr_size;
 }
 
 int queue_full(queue_t *queue)
 {
-	if (!queue) return 0;
+	if (queue == NULL) return 0;
 
 	return queue->base_size == queue->curr_size;
 }
@@ -45,6 +45,8 @@ int queue_empty(queue_t *queue)
 
 void queue_destroy(queue_t **queue, void (*f)(void *))
 {
+	if (queue == NULL || *queue == NULL || f == NULL) return;
+
 	if ((*queue)->front_pos < (*queue)->end_pos)
 	{
 		for (size_t i = (*queue)->front_pos; i <= (*queue)->end_pos; i++)
@@ -119,14 +121,16 @@ int queue_push(queue_t *queue, void *content)
 
 void queue_shuffle(queue_t *queue)
 {
-    for (size_t i = queue->curr_size; i > 1; i--) 
-    {
-        int k = rand() % (i + 1);
+	if (queue == NULL) return;
 
-        void *tmp = queue_at(queue, k);
-        *queue_at_ref(queue, k) = queue_at(queue, i);
-        *queue_at_ref(queue, i) = tmp;
-    }
+  for (size_t i = queue->curr_size; i > 1; i--) 
+  {
+    int k = rand() % (i + 1);
+
+    void *tmp = queue_at(queue, k);
+    *queue_at_ref(queue, k) = queue_at(queue, i);
+    *queue_at_ref(queue, i) = tmp;
+  }
 }
 
 void		queue_destroy_nothing(void *ptr)

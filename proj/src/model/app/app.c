@@ -30,6 +30,15 @@ app_t *app_init()
 	app->xpms_numbers = stack_create(6);
 	if (app->xpms_numbers == NULL) return NULL;
 
+	sprite_t *sprite = sprite_create(hand_xpm);
+	app->card_loop = animation_create(true, 30, 600);
+	if (app->card_loop == NULL) return NULL;
+
+	for (int i = 0; i < 600; i++)
+	{
+		if (animation_add_frame(app->card_loop, sprite, 200 + i, 200)) exit(0);
+	}
+	
   return app;
 }
 
