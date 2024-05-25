@@ -2,7 +2,7 @@
 
 animation_t *animation_create(uint8_t loop, uint32_t frame_rate, uint32_t frame_amount)
 {
-	if (frame_rate < 1) return NULL;
+	if (frame_rate < 1 && frame_rate > 30) return NULL;
 
 	animation_t *anim = (animation_t *) malloc(sizeof(animation_t *));
 	if (anim == NULL) return NULL;
@@ -37,9 +37,14 @@ int animation_add_frame(animation_t *animation, sprite_t *sprite, uint32_t x, ui
 {
 	if (animation == NULL || sprite == NULL) return 1;
 
+	uint32_t *xp = malloc(sizeof(uint32_t));
+	uint32_t *yp = malloc(sizeof(uint32_t));
+	*xp = x;
+	*yp = y;
+
 	return queue_push(animation->frames, sprite) 
-		|| queue_push(animation->x, &x)
-		|| queue_push(animation->y, &y);
+		|| queue_push(animation->x, xp)
+		|| queue_push(animation->y, yp);
 }
 
 void animation_run(animation_t *animation)
@@ -47,7 +52,6 @@ void animation_run(animation_t *animation)
 	if (animation == NULL || animation->frames == NULL) return;
 
 	animation->frame_counter += 1;
-	//if (animation->frame_counter % (30 / animation->frame_rate) != 0) return;
 
 	uint8_t is_last_frame = animation->frame_index + 1 == animation->frames->curr_size;
 
@@ -62,8 +66,8 @@ int animation_draw(animation_t *animation)
 {
 	if (animation == NULL) return 1;
 
-	int *x = queue_at(animation->x, animation->frame_index);
-	int *y = queue_at(animation->y, animation->frame_index);
+	uint32_t *x = queue_at(animation->x, animation->frame_index);
+	uint32_t *y = queue_at(animation->y, animation->frame_index);
 	sprite_t *sprite = queue_at(animation->frames, animation->frame_index);
 	if (x == NULL || y == NULL || sprite == NULL) return 1;
 
@@ -76,7 +80,7 @@ void animation_destroy(animation_t *animation)
 	if (animation == NULL) return;
 
 	queue_destroy(&animation->frames, queue_destroy_nothing);
-	queue_destroy(&animation->x, queue_destroy_nothing);
-	queue_destroy(&animation->y, queue_destroy_nothing);
+	queue_destroy(&animation->x, free);
+	queue_destroy(&animation->y, free);
 	free(animation);
 }

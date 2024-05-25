@@ -73,7 +73,7 @@ void draw_button_set(queue_t *buttons)
 		sprite_t *sprite = queue_at(buttons, i);
 		if (sprite == NULL) return;
 		
-		sprite_move(sprite, pos, vg_get_height() - 85);
+		sprite_move(sprite, pos, vg_get_height() - 93);
 		if (sprite_draw(sprite)) return;
 
 		pos += (64 + 30);

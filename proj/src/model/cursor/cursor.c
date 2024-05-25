@@ -25,6 +25,8 @@ int cursor_move(cursor_t *cursor, uint32_t x, uint32_t y)
 {
 	if (cursor == NULL) return 1;
 
+	if (x >= vg_get_width() || y >= vg_get_height()) return 1;
+
 	cursor->x = x;
 	cursor->y = y;
 
