@@ -7,6 +7,7 @@
 #include "../../assets/buttons/double.xpm"
 #include "../../assets/buttons/stand.xpm"
 #include "../../assets/buttons/surrender.xpm"
+#include "../../assets/buttons/bet.xpm"
 
 app_t *app_init()
 {
@@ -22,6 +23,10 @@ app_t *app_init()
 
 	app->background = sprite_create((xpm_map_t) background_xpm);
 	if (app->background == NULL) return NULL;
+
+	app->button_bet = sprite_create((xpm_map_t) bet_xpm);
+	if (app->button_bet == NULL) return NULL;
+	sprite_move(app->button_bet, 590, vg_get_height() - 93);
 
 	if (app_buttons_main_menu_init(&app->buttons_main_menu)) return NULL;
 
@@ -96,6 +101,7 @@ void app_destroy(app_t *app)
 	queue_destroy(&app->buttons_game_playing, sprite_queue_destroy);
 	stack_destroy(&app->xpms_numbers, sprite_queue_destroy);
 	sprite_destroy(app->background);
+	sprite_destroy(app->button_bet);
 	game_destroy(&app->game);
 	cursor_destroy(&app->cursor);
 	free(app);

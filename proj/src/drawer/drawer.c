@@ -38,7 +38,8 @@ void draw_state(app_t *app)
 			animation_draw(app->card_loop);
 			break;
 		case GAME_BET:
-			vg_draw_border(470, 785, 220, 55,
+			sprite_draw(app->button_bet);
+			vg_draw_border(440, 785, 220, 55,
 				app->game.input_select ? 0xe69f58 : 0xffffff, 4);
 			if (app->game.input_select) draw_number(app->xpms_numbers);
 			break;

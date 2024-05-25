@@ -41,7 +41,8 @@ typedef struct {
 	queue_t 		*buttons_main_menu;
 	queue_t			*buttons_game_playing;
 	queue_t			*buttons_game_over;
-	my_stack_t 	*xpms_numbers;
+	sprite_t		*button_bet;
+	my_stack_t	*xpms_numbers;
 
 	animation_t *card_loop;
 	
