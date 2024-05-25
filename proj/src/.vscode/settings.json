@@ -34,6 +34,7 @@
 		"stack.h": "c",
 		"letters.h": "c",
 		"font.h": "c",
-		"chars.h": "c"
+		"chars.h": "c",
+		"cards.h": "c"
 	},
 }

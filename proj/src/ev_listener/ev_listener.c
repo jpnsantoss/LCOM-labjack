@@ -234,7 +234,7 @@ void handle_bet_value(app_t *app, interrupt_type_t interrupt)
 				vg_set_redraw();
 			}
 
-	  	if (scancode == KB_ENTER) // enter
+	  	if (scancode == KB_ENTER)
 			{
 				handle_bet_value_check(app);
       }
