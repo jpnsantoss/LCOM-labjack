@@ -66,12 +66,6 @@ int game_init(game_t *game)
 		return 1;
 	}
 
-	game_give_card(game->cards, game->dealer);
-	game_give_card(game->cards, game->dealer);
-
-	game_give_card(game->cards, game->main_player.cards);
-	game_give_card(game->cards, game->main_player.cards);
-
 	return 0;
 }
 
@@ -82,10 +76,8 @@ void game_destroy(game_t *game)
 	player_destroy(&game->main_player);
 	player_destroy(&game->other_player);
 
-	if (game->cards != NULL)
-	{
-		queue_destroy(&game->cards, card_queue_destroy);
-	}
+	if (game->cards != NULL) queue_destroy(&game->cards, card_queue_destroy);
+	if (game->dealer != NULL) queue_destroy(&game->dealer, card_queue_destroy);
 }
 
 int	game_give_card(queue_t *deck, queue_t *receiver)

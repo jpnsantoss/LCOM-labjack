@@ -26,7 +26,6 @@ void sprite_queue_destroy(void *sprite)
 void sprite_destroy(sprite_t *sprite)
 {
 	free(sprite->map);
-	sprite->img.bytes = NULL;
 }
 
 int	sprite_draw(sprite_t *sprite)

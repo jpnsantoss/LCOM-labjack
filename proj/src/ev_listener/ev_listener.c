@@ -10,7 +10,6 @@
 #include "../assets/charxpms/8.xpm"
 #include "../assets/charxpms/9.xpm"
 
-
 extern uint8_t scancode;
 extern int timer_counter;
 int state_changed = 0;
@@ -44,18 +43,6 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
 	{
 		case KEYBOARD:
 			kbc_ih();
-			if (scancode == KB_ESC && app->state != MAIN_MENU)
-			{
-				app->state = MAIN_MENU;
-				state_changed = 1;
-				vg_set_redraw();
-			}
-
-			if (scancode == KB_Y)
-			{
-				uart_write_msg(1, 1);
-			}
-
 			break;
 		case MOUSE:
 			mouse_ih();
@@ -114,6 +101,7 @@ void handle_main_menu(app_t *app, interrupt_type_t interrupt)
 			if (cursor_sprite_colides(&app->cursor, queue_at(app->buttons_main_menu, 1)))
 			{
 				app->state = EXIT;
+				game_destroy(&app->game);
 				return;
 			}
 			break;
@@ -124,6 +112,15 @@ void handle_main_menu(app_t *app, interrupt_type_t interrupt)
 
 void handle_game_playing(app_t *app, interrupt_type_t interrupt)
 {
+	if (interrupt == KEYBOARD)
+	{
+		if (scancode == KB_ESC)
+		{
+			app->state = MAIN_MENU;
+			vg_set_redraw();
+		}
+	}
+
 	if (interrupt == MOUSE)
 	{
 		if (cursor_sprite_colides(&app->cursor, queue_at(app->buttons_game_playing, 0)))
@@ -155,25 +152,31 @@ void handle_game_betting(app_t *app, interrupt_type_t interrupt)
 	mouse_info_t *info = mouse_get_info();
 	if (interrupt == KEYBOARD)
 	{
-		if (scancode == KB_ENTER)
+		vg_set_redraw();
+		
+		if (app->game.input_select) handle_bet_value(app, interrupt);
+		
+		if (scancode == KB_ESC)
 		{
-			if (app->game.main_player.bet > app->game.main_player.coins) return;
-
-			app->game.main_player.coins -= app->game.main_player.bet;
-			app->state = GAME_PLAY;
-			vg_set_redraw();
+			if (!app->game.input_select)
+			{
+				app->state = MAIN_MENU;
+				game_destroy(&app->game);
+				return;
+			}
+			app->game.input_select = false;
 		}
 
-		if (app->game.input_select) handle_bet_value(app, interrupt);
+		if (scancode == KB_ENTER) app->game.input_select = true;
   }
 
-	if(interrupt == MOUSE)
+	if (interrupt == MOUSE)
 	{
 		if (info == NULL) return;
     
 		if (!app->game.input_select && cursor_box_colides(&app->cursor, 470, 785, 690, 840))
 		{
-    	app->game.input_select = 1;
+    	app->game.input_select = true;
       
 			vg_set_redraw();
 		}
@@ -187,6 +190,16 @@ void handle_game_betting(app_t *app, interrupt_type_t interrupt)
 // Function to handle the interrupts in the game start
 void handle_game_over(app_t *app, interrupt_type_t interrupt)
 {
+	if (interrupt == KEYBOARD)
+	{
+		if (scancode == KB_ESC)
+		{
+			app->state = MAIN_MENU;
+			game_destroy(&app->game);
+			vg_set_redraw();
+		}
+	}
+
 	if (interrupt == MOUSE)
 	{
 		// Handle the interrupt here
@@ -203,7 +216,6 @@ void handle_bet_value(app_t *app, interrupt_type_t interrupt)
 
   switch (interrupt)
 	{
-	
     case KEYBOARD:
 			if (scancode >= 0x82 && scancode <= 0x8b)
 			{
@@ -217,20 +229,39 @@ void handle_bet_value(app_t *app, interrupt_type_t interrupt)
 				vg_set_redraw();
 			}
 
-			else if(scancode == 0x0E){
-				stack_pop(app->xpms_numbers);
-				if(app->game.main_player.bet>0){
-					app->game.main_player.bet = (app->game.main_player.bet - last)/10;
+			if (scancode == 0x0E)
+			{
+				sprite_t *sprite = stack_pop(app->xpms_numbers);
+				if (sprite != NULL) sprite_destroy(sprite);
+
+				if(app->game.main_player.bet > 0)
+				{
+					app->game.main_player.bet = (app->game.main_player.bet - last) / 10;
 				}
 				vg_set_redraw();
 			}
 
-	  	else if (scancode == 0x9c) // enter
-			{ 
+	  	if (scancode == 0x9c) // enter
+			{
+				stack_destroy(&app->xpms_numbers, sprite_queue_destroy);
+				app->xpms_numbers = stack_create(6);
+				vg_set_redraw();
 
-        while (!stack_empty(app->xpms_numbers)) stack_pop(app->xpms_numbers);
-        app->state = GAME_PLAY;
-        vg_set_redraw();
+				if (app->game.main_player.bet > app->game.main_player.coins)
+				{
+					app->game.main_player.bet = 0;
+					return;
+				}
+				
+				app->game.main_player.coins -= app->game.main_player.bet;
+				app->state = GAME_PLAY;
+				app->game.input_select = false;
+
+				game_give_card(app->game.cards, app->game.dealer);
+				game_give_card(app->game.cards, app->game.dealer);
+
+				game_give_card(app->game.cards, app->game.main_player.cards);
+				game_give_card(app->game.cards, app->game.main_player.cards);
       }
 
 			return;

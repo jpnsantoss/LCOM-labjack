@@ -129,27 +129,17 @@ int (vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width,
 	return 0;
 }
 
-int(vg_draw_border)(uint16_t x, uint16_t y, uint16_t width,
-                    uint16_t height, uint32_t color)
+int vg_draw_border(uint16_t x, uint16_t y, uint16_t width, uint16_t height, 		uint32_t color, uint8_t thickness)
 {
-  for (int i = 0; i < 4; i++)
+  for (int i = 0; i < thickness; i++)
 	{
     if (vg_draw_hline(x, y + i, width, color)) return 1;
-  }
 
-  for (int i = 0; i < 4; i++)
-	{
-    if (vg_draw_hline(x, y + height - 1 + i, width, color)) return 1;
-  }
+    if (vg_draw_hline(x, y + height - 1 - i, width, color)) return 1;
 
-  for (int i = 0; i < 4; i++)
-	{
     if (vg_draw_vline(x + i, y, height, color)) return 1;
-  }
 
-  for (int i = 0; i < 4; i++)
-	{
-    if (vg_draw_vline(x + width - 1 + i, y, height, color)) return 1;
+    if (vg_draw_vline(x + width - 1 - i, y, height, color)) return 1;
   }
 
   return 0;

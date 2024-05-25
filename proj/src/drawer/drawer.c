@@ -25,7 +25,7 @@ void draw_state(app_t *app)
 	{
 		player_draw(&app->game.main_player);
 
-		if (app->game.multiplayer) player_draw(&app->game.main_player);
+		// TODO: Draw player info if multiplayer.
 		
 		game_draw_deck(&app->game);
 		game_draw_dealer(&app->game);
@@ -38,7 +38,8 @@ void draw_state(app_t *app)
 			animation_draw(app->card_loop);
 			break;
 		case GAME_BET:
-			vg_draw_border(470, 785, 220, 55, app->game.input_select ? 0xff0000 : 0xffffff);
+			vg_draw_border(470, 785, 220, 55,
+				app->game.input_select ? 0xe69f58 : 0xffffff, 4);
 			if (app->game.input_select) draw_number(app->xpms_numbers);
 			break;
 		case GAME_PLAY:
@@ -95,20 +96,4 @@ void draw_number(my_stack_t *xpms_numbers)
 
 		pos += 27;
 	}
-}
-
-void draw_char(char a)
-{
-	const xpm_map_t number_xpm[10] = {
-		number_1_xpm, number_2_xpm, number_3_xpm,
-		number_5_xpm, number_5_xpm, number_6_xpm, number_7_xpm,
-		number_8_xpm, number_9_xpm, number_0_xpm
-	};
-
-	const xpm_map_t alphabet_xpm[26] = {
-		letter_a_xpm, NULL, NULL, letter_d_xpm, NULL, NULL, NULL, NULL, NULL, NULL, NULL, letter_l_xpm, NULL, NULL, letter_o_xpm, NULL, NULL, NULL, letter_s_xpm, NULL, NULL, NULL, NULL, NULL, NULL
-	};
-
-	(void)number_xpm;
-	(void)alphabet_xpm;
 }
