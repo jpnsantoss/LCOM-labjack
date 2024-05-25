@@ -10,6 +10,7 @@
 
 #define KB_ESC 0x81
 #define KB_ENTER 0x9c
+#define KB_BACKSPC 0x0e
 #define KB_X 0xad
 #define KB_Y 0x95
 #define KB_C 0xae

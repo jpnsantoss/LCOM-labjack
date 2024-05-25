@@ -92,9 +92,9 @@ void draw_number(my_stack_t *xpms_numbers)
 		sprite_t *sprite = stack_at(xpms_numbers, index);
 		if (sprite == NULL) return;
 		
-		sprite_move(sprite, pos, 793);
+		sprite_move(sprite, pos, 795);
 		if (sprite_draw(sprite)) return;
 
-		pos += 27;
+		pos += 20;
 	}
 }

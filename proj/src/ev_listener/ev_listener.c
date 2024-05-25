@@ -209,19 +209,19 @@ void handle_bet_value(app_t *app, interrupt_type_t interrupt)
   switch (interrupt)
 	{
     case KEYBOARD:
-			if (scancode >= 0x82 && scancode <= 0x8b)
+			if (scancode >= KB_1 && scancode <= KB_0)
 			{
-				sprite_t *sprite = sprite_create(number_xpm[scancode - 0x82]);
+				sprite_t *sprite = sprite_create(number_xpm[scancode - KB_1]);
         if (sprite == NULL) return;
 
         stack_push(app->xpms_numbers, sprite);
-				last = scancode - 0x82;
+				last = scancode == KB_0 ? 0 : scancode - KB_1 + 1;
 
-				app->game.main_player.bet = app->game.main_player.bet * 10 + (scancode - 0x82);
+				app->game.main_player.bet = app->game.main_player.bet * 10 + last;
 				vg_set_redraw();
 			}
 
-			if (scancode == 0x0E)
+			if (scancode == KB_BACKSPC)
 			{
 				sprite_t *sprite = stack_pop(app->xpms_numbers);
 				if (sprite != NULL) sprite_destroy(sprite);
@@ -230,10 +230,11 @@ void handle_bet_value(app_t *app, interrupt_type_t interrupt)
 				{
 					app->game.main_player.bet = (app->game.main_player.bet - last) / 10;
 				}
+
 				vg_set_redraw();
 			}
 
-	  	if (scancode == 0x9c) // enter
+	  	if (scancode == KB_ENTER) // enter
 			{
 				handle_bet_value_check(app);
       }
