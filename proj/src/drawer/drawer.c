@@ -95,19 +95,3 @@ void draw_number(my_stack_t *xpms_numbers)
 		pos += 27;
 	}
 }
-
-void draw_char(char a)
-{
-	const xpm_map_t number_xpm[10] = {
-		number_1_xpm, number_2_xpm, number_3_xpm,
-		number_5_xpm, number_5_xpm, number_6_xpm, number_7_xpm,
-		number_8_xpm, number_9_xpm, number_0_xpm
-	};
-
-	const xpm_map_t alphabet_xpm[26] = {
-		letter_a_xpm, NULL, NULL, letter_d_xpm, NULL, NULL, NULL, NULL, NULL, NULL, NULL, letter_l_xpm, NULL, NULL, letter_o_xpm, NULL, NULL, NULL, letter_s_xpm, NULL, NULL, NULL, NULL, NULL, NULL
-	};
-
-	(void)number_xpm;
-	(void)alphabet_xpm;
-}
