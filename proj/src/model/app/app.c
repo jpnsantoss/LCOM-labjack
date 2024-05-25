@@ -86,6 +86,7 @@ void app_destroy(app_t *app)
 	queue_destroy(&app->buttons_main_menu, sprite_queue_destroy);
 	queue_destroy(&app->buttons_game_playing, sprite_queue_destroy);
 	stack_destroy(&app->xpms_numbers, sprite_queue_destroy);
+	sprite_destroy(app->background);
 	game_destroy(&app->game);
 	cursor_destroy(&app->cursor);
 	free(app);
