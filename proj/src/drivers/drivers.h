@@ -10,7 +10,6 @@
 #include "timer/i8254.h"
 #include "graphics/iVBE.h"
 #include "serial_port/iUART.h"
-#include "serial_port/serial_proto.h"
 #include "../data_structures/queue.h"
 #include "../data_structures/stack.h"
 #include <stdbool.h>
@@ -97,15 +96,19 @@ void vg_set_redraw();
 int vg_has_redraw();
 
 // uart
-int (uart_setup)(int bit_rate);
 int (uart_subscribe_int)(uint8_t *bit_no);
 int (uart_unsubscribe_int)();
-void (uart_ih)();
-int	(uart_set_bit_rate)(int com_num, int rate);
-int (uart_write_msg)(int com_num, uint8_t msg);
+int (uart_read)(int base_addr, uint8_t offset, uint8_t *out);
+int (uart_write)(int base_addr, uint8_t offset, uint8_t in);
+int	(uart_DL_access)(int base_addr, int enable);
+int	(uart_set_bit_rate)(int base_addr, int rate);
+int (uart_fifo_read)(int base_addr);
+int (uart_fifo_write)(int base_addr);
+int (uart_send_byte)(uint8_t byte);
+int (uart_get_byte)(uint8_t *byte);
+int (uart_ih)();
+int (uart_init)(uint8_t *bit_no, int bit_rate);
 int (uart_disable)();
-int (uart_reset)(int base_addr);
-
 // utils
 int (util_get_LSB)(uint16_t val, uint8_t *lsb);
 int (util_get_MSB)(uint16_t val, uint8_t *msb);

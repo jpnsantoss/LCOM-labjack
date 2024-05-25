@@ -92,12 +92,16 @@ void **queue_at_ref(queue_t *queue, size_t pos)
 
 void *queue_pop(queue_t *queue)
 {
+	if (queue == NULL) return NULL;
+	
 	if (queue_empty(queue)) return NULL;
 
 	void *result = queue->content[queue->front_pos];
 
 	queue->curr_size -= 1;
-	queue->front_pos = queue->front_pos == queue->base_size - 1 ? 0 : queue->front_pos + 1;
+	if (queue->front_pos == queue->base_size - 1) queue->front_pos = 0;
+	else if (queue->curr_size == 0) queue->front_pos = queue->end_pos;
+	else queue->front_pos = queue->front_pos + 1;
 
 	return result;
 }

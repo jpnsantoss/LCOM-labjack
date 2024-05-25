@@ -60,7 +60,7 @@ int (proj_main_loop)(int argc, char **argv)
 
 	if (timer_set_frequency(0, 30)) return 1;
 
-	if (uart_setup(UART_DEFAULT_BIT_RATE)) return 1;
+	if (uart_init(&bit_no.uart, UART_MAX_BIT_RATE)) return 1;
 
 	if (uart_subscribe_int(&bit_no.uart)) return 1;
 	
