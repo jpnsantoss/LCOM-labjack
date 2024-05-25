@@ -37,7 +37,8 @@ void draw_state(app_t *app)
 			draw_button_set(app->buttons_main_menu);
 			break;
 		case GAME_BET:
-			vg_draw_border(470, 785, 220, 55, app->game.input_select ? 0xff0000 : 0xffffff);
+			vg_draw_border(470, 785, 220, 55,
+				app->game.input_select ? 0xe69f58 : 0xffffff, 4);
 			if (app->game.input_select) draw_number(app->xpms_numbers);
 			break;
 		case GAME_PLAY:
