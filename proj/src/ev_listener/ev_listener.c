@@ -10,7 +10,6 @@
 #include "../assets/charxpms/8.xpm"
 #include "../assets/charxpms/9.xpm"
 
-
 extern uint8_t scancode;
 extern int timer_counter;
 int state_changed = 0;
@@ -152,18 +151,9 @@ void handle_game_playing(app_t *app, interrupt_type_t interrupt)
 void handle_game_betting(app_t *app, interrupt_type_t interrupt)
 {
 	mouse_info_t *info = mouse_get_info();
-	if (interrupt == KEYBOARD)
+	if (interrupt == KEYBOARD && app->game.input_select)
 	{
-		if (scancode == KB_ENTER)
-		{
-			if (app->game.main_player.bet > app->game.main_player.coins) return;
-
-			app->game.main_player.coins -= app->game.main_player.bet;
-			app->state = GAME_PLAY;
-			vg_set_redraw();
-		}
-
-		if (app->game.input_select) handle_bet_value(app, interrupt);
+		handle_bet_value(app, interrupt);
   }
 
 	if(interrupt == MOUSE)
@@ -202,7 +192,6 @@ void handle_bet_value(app_t *app, interrupt_type_t interrupt)
 
   switch (interrupt)
 	{
-	
     case KEYBOARD:
 			if (scancode >= 0x82 && scancode <= 0x8b)
 			{
@@ -216,19 +205,34 @@ void handle_bet_value(app_t *app, interrupt_type_t interrupt)
 				vg_set_redraw();
 			}
 
-			else if(scancode == 0x0E){
-				stack_pop(app->xpms_numbers);
-				if(app->game.main_player.bet>0){
-					app->game.main_player.bet = (app->game.main_player.bet - last)/10;
+			if(scancode == 0x0E)
+			{
+				sprite_t *sprite = stack_pop(app->xpms_numbers);
+				if (sprite != NULL) sprite_destroy(sprite);
+
+				if(app->game.main_player.bet > 0)
+				{
+					app->game.main_player.bet = (app->game.main_player.bet - last) / 10;
 				}
 				vg_set_redraw();
 			}
 
-	  	else if (scancode == 0x9c) // enter
-			{ 
+	  	if (scancode == 0x9c) // enter
+			{
+				stack_destroy(&app->xpms_numbers, sprite_queue_destroy);
+				app->xpms_numbers = stack_create(6);
 
-        while (!stack_empty(app->xpms_numbers)) stack_pop(app->xpms_numbers);
-        app->state = GAME_PLAY;
+				if (app->game.main_player.bet > app->game.main_player.coins) return;
+				
+				app->game.main_player.coins -= app->game.main_player.bet;
+				app->state = GAME_PLAY;
+
+				game_give_card(app->game.cards, app->game.dealer);
+				game_give_card(app->game.cards, app->game.dealer);
+
+				game_give_card(app->game.cards, app->game.main_player.cards);
+				game_give_card(app->game.cards, app->game.main_player.cards);
+        
         vg_set_redraw();
       }
 

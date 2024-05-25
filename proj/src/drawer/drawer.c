@@ -25,7 +25,7 @@ void draw_state(app_t *app)
 	{
 		player_draw(&app->game.main_player);
 
-		if (app->game.multiplayer) player_draw(&app->game.main_player);
+		// TODO: Draw player info if multiplayer.
 		
 		game_draw_deck(&app->game);
 		game_draw_dealer(&app->game);

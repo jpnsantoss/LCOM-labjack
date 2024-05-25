@@ -66,12 +66,6 @@ int game_init(game_t *game)
 		return 1;
 	}
 
-	game_give_card(game->cards, game->dealer);
-	game_give_card(game->cards, game->dealer);
-
-	game_give_card(game->cards, game->main_player.cards);
-	game_give_card(game->cards, game->main_player.cards);
-
 	return 0;
 }
 
