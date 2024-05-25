@@ -1,14 +1,4 @@
 #include "ev_listener.h"
-#include "../assets/charxpms/0.xpm"
-#include "../assets/charxpms/1.xpm"
-#include "../assets/charxpms/2.xpm"
-#include "../assets/charxpms/3.xpm"
-#include "../assets/charxpms/4.xpm"
-#include "../assets/charxpms/5.xpm"
-#include "../assets/charxpms/6.xpm"
-#include "../assets/charxpms/7.xpm"
-#include "../assets/charxpms/8.xpm"
-#include "../assets/charxpms/9.xpm"
 
 extern uint8_t scancode;
 extern int timer_counter;
@@ -174,7 +164,8 @@ void handle_game_betting(app_t *app, interrupt_type_t interrupt)
 	{
 		if (info == NULL) return;
     
-		if (!app->game.input_select && cursor_box_colides(&app->cursor, 470, 785, 690, 840))
+		if (!app->game.input_select && 
+			cursor_box_colides(&app->cursor, 420, 785, 600, 840))
 		{
     	app->game.input_select = true;
       
@@ -206,6 +197,7 @@ void handle_game_over(app_t *app, interrupt_type_t interrupt)
   }
 }
 
+#include "../assets/charxpms/chars.h"
 void handle_bet_value(app_t *app, interrupt_type_t interrupt)
 {
 	const xpm_map_t number_xpm[10] = {
@@ -243,31 +235,42 @@ void handle_bet_value(app_t *app, interrupt_type_t interrupt)
 
 	  	if (scancode == 0x9c) // enter
 			{
-				stack_destroy(&app->xpms_numbers, sprite_queue_destroy);
-				app->xpms_numbers = stack_create(6);
-				vg_set_redraw();
-
-				if (app->game.main_player.bet > app->game.main_player.coins)
-				{
-					app->game.main_player.bet = 0;
-					return;
-				}
-				
-				app->game.main_player.coins -= app->game.main_player.bet;
-				app->state = GAME_PLAY;
-				app->game.input_select = false;
-
-				game_give_card(app->game.cards, app->game.dealer);
-				game_give_card(app->game.cards, app->game.dealer);
-
-				game_give_card(app->game.cards, app->game.main_player.cards);
-				game_give_card(app->game.cards, app->game.main_player.cards);
+				handle_bet_value_check(app);
       }
 
 			return;
     case MOUSE:
-
+			if (cursor_sprite_colides(&app->cursor, app->button_bet))
+			{
+				handle_bet_value_check(app);
+			}
+			return;
     default:
       return;
   }
+}
+
+void handle_bet_value_check(app_t *app)
+{
+	stack_destroy(&app->xpms_numbers, sprite_queue_destroy);
+	app->xpms_numbers = stack_create(6);
+	vg_set_redraw();
+
+	if (app->game.main_player.bet == 0) return;
+	
+	if (app->game.main_player.bet > app->game.main_player.coins)
+	{
+		app->game.main_player.bet = 0;
+		return;
+	}
+				
+	app->game.main_player.coins -= app->game.main_player.bet;
+	app->state = GAME_PLAY;
+	app->game.input_select = false;
+
+	game_give_card(app->game.cards, app->game.dealer);
+	game_give_card(app->game.cards, app->game.dealer);
+
+	game_give_card(app->game.cards, app->game.main_player.cards);
+	game_give_card(app->game.cards, app->game.main_player.cards);
 }

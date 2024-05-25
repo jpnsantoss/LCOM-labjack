@@ -26,7 +26,7 @@ app_t *app_init()
 
 	app->button_bet = sprite_create((xpm_map_t) bet_xpm);
 	if (app->button_bet == NULL) return NULL;
-	sprite_move(app->button_bet, 590, vg_get_height() - 93);
+	sprite_move(app->button_bet, 620, vg_get_height() - 93);
 
 	if (app_buttons_main_menu_init(&app->buttons_main_menu)) return NULL;
 
@@ -41,7 +41,7 @@ app_t *app_init()
 
 	for (int i = 0; i < 30; i++)
 	{
-		if (animation_add_frame(app->card_loop, sprite, 200 + i, 200)) exit(0);
+		if (animation_add_frame(app->card_loop, sprite, 200 + i * 5, 200)) exit(0);
 	}
 	
   return app;
