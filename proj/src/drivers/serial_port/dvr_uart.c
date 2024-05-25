@@ -138,24 +138,28 @@ int (uart_ih)()
 	uint8_t response;
 	uint8_t status;
 
-	if (uart_read(UART_COM1, UART_IIR, &response)) return 1;
+	if (uart_read(UART_COM1, UART_IIR, &response)) return 0;
 
-	if (response & UART_IIR_NO_INTS) return 1;
+	if (response & UART_IIR_NO_INTS) return 0;
 
 	switch (response & UART_IIR_INT_MASK)
 	{
 		case UART_IIR_INT_RBR_FULL:
-			return uart_fifo_read(UART_COM1);
-		case UART_IIR_INT_THR_EMPTY:
-			return uart_fifo_write(UART_COM1);
-		case UART_IIR_INT_CHAR_TIMEOUT:
-			return uart_fifo_read(UART_COM1);
-		case UART_IIR_INT_LSR_STATUS:
-			return uart_read(UART_COM1, UART_LSR, &status);
-		default:
+			uart_fifo_read(UART_COM1);
 			return 1;
+		case UART_IIR_INT_THR_EMPTY:
+			uart_fifo_write(UART_COM1);
+			return 1;
+		case UART_IIR_INT_CHAR_TIMEOUT:
+			uart_fifo_read(UART_COM1);
+			return 1;
+		case UART_IIR_INT_LSR_STATUS:
+			uart_read(UART_COM1, UART_LSR, &status);
+			return 0;
+		default:
+			return 0;
 	}
-	return 1;
+	return 0;
 }
 
 int (uart_init)(uint8_t *bit_no, int bit_rate)

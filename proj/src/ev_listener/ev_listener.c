@@ -4,6 +4,7 @@ extern uint8_t scancode;
 extern int timer_counter;
 int state_changed = 0;
 uint32_t last = 0;
+uint8_t uart_response = 0xff;
 
 handler listeners[] = {
   handle_main_menu,
@@ -52,7 +53,10 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
 			}
 			break;
 		case UART:
-			uart_ih();
+			if (uart_ih())
+			{
+				if (uart_get_byte(&uart_response)) uart_response = 0xff;
+			}
 			break;
 		case TIMER:
 			draw_screen(app);
@@ -69,6 +73,10 @@ void handle_main_menu(app_t *app, interrupt_type_t interrupt)
 	switch (interrupt)
 	{
 		case KEYBOARD:
+			if (scancode == KB_0)
+			{
+				uart_send_byte(1);
+			}
 			if (scancode == KB_ESC) app->state = EXIT;
 			return;
 
@@ -93,6 +101,14 @@ void handle_main_menu(app_t *app, interrupt_type_t interrupt)
 				app->state = EXIT;
 				game_destroy(&app->game);
 				return;
+			}
+			break;
+		case UART:
+			if (uart_response == 1)
+			{
+				uart_response = 0xff;
+				cursor_move(&app->cursor, app->cursor.x + 10, app->cursor.y);
+				vg_set_redraw();
 			}
 			break;
 		default:
