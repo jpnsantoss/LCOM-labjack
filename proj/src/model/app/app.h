@@ -8,6 +8,9 @@
 #include "../../drivers/drivers.h"
 #include "../game/game.h"
 
+#include "../../assets/background.xpm"
+#include "../../assets/buttons/buttons.h"
+
 #define KB_ESC 0x81
 #define KB_ENTER 0x9c
 #define KB_BACKSPC 0x0e

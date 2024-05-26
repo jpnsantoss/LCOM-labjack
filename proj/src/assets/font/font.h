@@ -1,5 +1,5 @@
-#ifndef CHARS_H
-#define CHARS_H
+#ifndef _LCOM_ASSETS_FONT_H_
+#define _LCOM_ASSETS_FONT_H_
 
 #include "a.xpm"
 // #include "b.xpm"

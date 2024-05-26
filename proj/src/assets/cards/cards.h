@@ -1,5 +1,5 @@
-#ifndef CARDS_H
-#define CARDS_H
+#ifndef _LCOM_ASSETS_CARDS_H_
+#define _LCOM_ASSETS_CARDS_H_
 
 // Include all card XPM files
 #include "c1.xpm"

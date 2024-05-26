@@ -1,117 +1,12 @@
 #ifndef _LCOM_DRIVERS_H_
 #define _LCOM_DRIVERS_H_
 
-#include <lcom/lcf.h>
-
-#include <stdint.h>
-#include <stdio.h>
-
-#include "input/i8042.h"
-#include "timer/i8254.h"
-#include "graphics/iVBE.h"
-#include "serial_port/iUART.h"
-#include "../data_structures/queue.h"
-#include "../data_structures/stack.h"
-#include <stdbool.h>
-
+#include "graphics/graphics.h"
+#include "input/input.h"
 #include "rtc/rtc.h"
+#include "serial_port/serial_port.h"
+#include "timer/timer.h"
 
-#define min(a,b) (((a) < (b)) ? (a) : (b))
-#define MAX_TRIES 10
-
-typedef enum s_colormode {
-	indexed,
-	direct,
-	unknown
-} t_colormode;
-
-typedef struct s_gph {
-	uint8_t *frame_buffer[3];
-	bool needs_redraw;
-	int selectedNum;
-
-	unsigned x_res;
-	unsigned y_res;
-	unsigned bits_per_pixel;
-	unsigned bytes_per_pixel;
-
-	unsigned red_mask_size;
-	unsigned red_field_pos;
-	unsigned green_mask_size;
-	unsigned green_field_pos;
-	unsigned blue_mask_size;
-	unsigned blue_field_pos;
-
-	bool direct_color;
-} t_gph;
-
-typedef struct packet mouse_info_t;
-
-// timer
-int (timer_subscribe_int)(uint8_t *bit_no);
-int (timer_unsubscribe_int)();
-void (timer_int_handler)();
-
-int (timer_get_conf)(uint8_t timer, uint8_t *st);
-int (timer_display_conf)(uint8_t timer, uint8_t st, enum timer_status_field field);
-int (timer_set_frequency)(uint8_t timer, uint32_t freq);
-
-// mouse
-int mouse_subscribe_int(uint8_t *bit_no);
-int mouse_unsubscribe_int();
-void (mouse_ih)();
-int mouse_init(uint8_t *bit_no);
-int mouse_disable();
-
-void mouse_fill_packet(uint8_t *bytes, struct packet *pp);
-int mouse_read_packet();
-mouse_info_t *mouse_get_info();
-
-// keyboard
-int kbd_subscribe_int(uint8_t *bit_no);
-int kbd_unsubscribe_int();
-void (kbc_ih)();
-
-// kbc
-int kbc_write_input(uint8_t port, uint8_t input);
-int kbc_read_output(uint8_t port, uint8_t *output, bool mouse);
-int kbc_write(uint8_t intent, bool mouse);
-
-// graphics
-int	vg_init_mode();
-int	vg_enter_graphic_mode(uint16_t mode);
-int	vg_map_memory(uint16_t mode);
-int (vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, 
-					uint16_t height, uint32_t color);
-int (vg_draw_pixel)(uint16_t x, uint16_t y, uint32_t color);
-int (vg_draw_hline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color);
-int(vg_draw_vline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color);
-int vg_draw_border(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color, uint8_t thickness);
-
-t_gph vg_get_info();
-int (vg_flip)();
-unsigned vg_get_width();
-unsigned vg_get_height();
-void vg_set_redraw();
-int vg_has_redraw();
-
-// uart
-int (uart_subscribe_int)(uint8_t *bit_no);
-int (uart_unsubscribe_int)();
-int (uart_read)(int base_addr, uint8_t offset, uint8_t *out);
-int (uart_write)(int base_addr, uint8_t offset, uint8_t in);
-int	(uart_DL_access)(int base_addr, int enable);
-int	(uart_set_bit_rate)(int base_addr, int rate);
-int (uart_fifo_read)(int base_addr);
-int (uart_fifo_write)(int base_addr);
-int (uart_send_byte)(uint8_t byte);
-int (uart_get_byte)(uint8_t *byte);
-int (uart_ih)();
-int (uart_init)(uint8_t *bit_no, int bit_rate);
-int (uart_disable)();
-// utils
-int (util_get_LSB)(uint16_t val, uint8_t *lsb);
-int (util_get_MSB)(uint16_t val, uint8_t *msb);
-int (util_sys_inb)(int port, uint8_t *value);
+#include "../data_structures/stack.h"
 
 #endif

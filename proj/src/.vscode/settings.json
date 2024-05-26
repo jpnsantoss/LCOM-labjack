@@ -35,6 +35,8 @@
 		"letters.h": "c",
 		"font.h": "c",
 		"chars.h": "c",
-		"cards.h": "c"
+		"cards.h": "c",
+		"graphics.h": "c",
+		"serial_port.h": "c"
 	},
 }

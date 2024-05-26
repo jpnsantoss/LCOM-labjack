@@ -1,4 +1,4 @@
-#include "../drivers.h"
+#include "input.h"
 
 int hook_id_mouse = 2;
 uint8_t output = 0;

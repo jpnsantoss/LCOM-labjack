@@ -1,10 +1,10 @@
 
-.PATH: ${.CURDIR}/drivers
 .PATH: ${.CURDIR}/drivers/graphics
 .PATH: ${.CURDIR}/drivers/input
 .PATH: ${.CURDIR}/drivers/rtc
 .PATH: ${.CURDIR}/drivers/serial_port
 .PATH: ${.CURDIR}/drivers/timer
+.PATH: ${.CURDIR}/drivers/utils
 .PATH: ${.CURDIR}/data_structures
 .PATH: ${.CURDIR}/ev_listener
 .PATH: ${.CURDIR}/model/card

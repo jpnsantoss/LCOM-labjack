@@ -1,14 +1,5 @@
 #include "app.h"
 
-#include "../../assets/background.xpm"
-#include "../../assets/buttons/start.xpm"
-#include "../../assets/buttons/exit.xpm"
-#include "../../assets/buttons/hit.xpm"
-#include "../../assets/buttons/double.xpm"
-#include "../../assets/buttons/stand.xpm"
-#include "../../assets/buttons/surrender.xpm"
-#include "../../assets/buttons/bet.xpm"
-
 app_t *app_init()
 {
 	app_t *app = (app_t *) malloc(sizeof(app_t));

@@ -1,21 +1,5 @@
 #include "drawer.h"
 #include "../model/app/app.h"
-#include "../assets/charxpms/0.xpm"
-#include "../assets/charxpms/1.xpm"
-#include "../assets/charxpms/2.xpm"
-#include "../assets/charxpms/3.xpm"
-#include "../assets/charxpms/5.xpm"
-#include "../assets/charxpms/6.xpm"
-#include "../assets/charxpms/7.xpm"
-#include "../assets/charxpms/8.xpm"
-#include "../assets/charxpms/9.xpm"
-
-
-#include "../assets/charxpms/s.xpm"
-#include "../assets/charxpms/a.xpm"
-#include "../assets/charxpms/d.xpm"
-#include "../assets/charxpms/l.xpm"
-#include "../assets/charxpms/o.xpm"
 
 void draw_state(app_t *app)
 {

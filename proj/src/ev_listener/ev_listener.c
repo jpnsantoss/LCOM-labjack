@@ -213,7 +213,7 @@ void handle_game_over(app_t *app, interrupt_type_t interrupt)
   }
 }
 
-#include "../assets/charxpms/chars.h"
+#include "../assets/font/font.h"
 void handle_bet_value(app_t *app, interrupt_type_t interrupt)
 {
 	const xpm_map_t number_xpm[10] = {
