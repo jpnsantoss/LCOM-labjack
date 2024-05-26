@@ -3,6 +3,8 @@
 
 void draw_state(app_t *app)
 {
+	uint32_t dealer_value;
+
 	if (app == NULL) return;
 
 	if (app->state != MAIN_MENU && app->state != GAME_OVER)
@@ -22,17 +24,24 @@ void draw_state(app_t *app)
 			break;
 		case GAME_BET:
 			sprite_draw(app->button_bet);
-			vg_draw_border(460, 785, 140, 55,
-				app->game.input_select ? 0xe69f58 : 0xffffff, 4);
-			if (app->game.input_select) font_print_number(&app->font, (uint16_t) app->game.main_player.bet, (
-				vg_get_width() / 2) - 100, 795);
+			vg_draw_border(460, 785, 140, 55, app->game.input_select ? 0xe69f58 : 0xffffff, 4);
+			if (app->game.main_player.bet != 0)
+			{
+				font_print_number(&app->font, app->game.main_player.bet, (vg_get_width() / 2) - 100, 795);
+			}
 			break;
 		case GAME_PLAY:
 			font_print_number(&app->font, app->game.main_player.bet, 10, 760);
-			font_print_number(&app->font, (uint16_t) &app->game.main_player.cards_value, 10, 725);
+			font_print_number(&app->font, app->game.main_player.cards_value, 10, 725);
 			draw_button_set(app->buttons_game_playing);
 			break;
 		case GAME_OVER:
+			dealer_value = game_get_cards_value(app->game.dealer);
+			font_print_str(&app->font, 
+				app->game.main_player.cards_value > dealer_value 
+					&& app->game.main_player.cards_value <= 21 ? "Win" : "Lose",
+				vg_get_width() / 2 - 10, vg_get_height() / 2);
+			
 			draw_button_set(app->buttons_game_over);
 			break;
 		default:

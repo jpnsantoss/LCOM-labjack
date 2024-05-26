@@ -19,7 +19,8 @@ void handle_interrupt(app_t *app, interrupt_type_t interrupt)
   handler hd = listeners[app->state];
   if (hd == NULL)
     return;
-  if (state_changed) {
+  if (state_changed)
+	{
     state_changed = 0;
     return;
   }
@@ -29,14 +30,16 @@ void handle_interrupt(app_t *app, interrupt_type_t interrupt)
 
 void handle_general(app_t *app, interrupt_type_t interrupt)
 {
-  switch (interrupt) {
+  switch (interrupt)
+	{
     case KEYBOARD:
       kbc_ih();
       break;
     case MOUSE:
       mouse_ih();
 
-      if (mouse_read_packet()) {
+      if (mouse_read_packet())
+			{
         mouse_info_t *info = mouse_get_info();
         if (info == NULL)
           return;
@@ -51,9 +54,9 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
       }
       break;
     case UART:
-      if (uart_ih()) {
-        if (uart_get_byte(&uart_response))
-          uart_response = 0xff;
+      if (uart_ih())
+			{
+        if (uart_get_byte(&uart_response)) uart_response = 0xff;
       }
       break;
     case TIMER:
@@ -67,13 +70,14 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
 
 void handle_main_menu(app_t *app, interrupt_type_t interrupt)
 {
-  switch (interrupt) {
+  switch (interrupt)
+	{
     case KEYBOARD:
-      if (scancode == KB_0) {
+      if (scancode == KB_0)
+			{
         uart_send_byte(1);
       }
-      if (scancode == KB_ESC)
-        app->state = EXIT;
+      if (scancode == KB_ESC) app->state = EXIT;
       return;
 
     case MOUSE:
@@ -81,7 +85,8 @@ void handle_main_menu(app_t *app, interrupt_type_t interrupt)
       {
         app->state = GAME_BET;
 
-        if (game_init(&app->game)) {
+        if (game_init(&app->game))
+				{
           app->state = EXIT;
           game_destroy(&app->game);
           return;
@@ -128,14 +133,17 @@ void handle_game_playing(app_t *app, interrupt_type_t interrupt)
     {
       game_give_card(app->game.cards, app->game.main_player.cards);
       app->game.main_player.cards_value = game_get_cards_value(app->game.main_player.cards);
-      if (app->game.main_player.cards_value > 21)
+      
+			if (app->game.main_player.cards_value > 21)
       {
         app->state = GAME_OVER;
-      } else if (app->game.main_player.cards_value == 21)
+      }
+			else if (app->game.main_player.cards_value == 21)
       {
 				app->game.main_player.coins += app->game.main_player.bet * 2;
 				app->state = GAME_OVER;
 			}
+
       vg_set_redraw();
     }
 
@@ -156,27 +164,30 @@ void handle_game_playing(app_t *app, interrupt_type_t interrupt)
   }
 }
 
-// Function to handle the interrupts in the game start
+// Function to handle the interrupts in the game betting
 void handle_game_betting(app_t *app, interrupt_type_t interrupt)
 {
   mouse_info_t *info = mouse_get_info();
-  if (interrupt == KEYBOARD) {
+  if (interrupt == KEYBOARD)
+	{
     vg_set_redraw();
 
     if (app->game.input_select)
       handle_bet_value(app, interrupt);
 
-    if (scancode == KB_ESC) {
-      if (!app->game.input_select) {
+    if (scancode == KB_ESC)
+		{
+      if (!app->game.input_select)
+			{
         app->state = MAIN_MENU;
         game_destroy(&app->game);
         return;
       }
+
       app->game.input_select = false;
     }
 
-    if (scancode == KB_ENTER)
-      app->game.input_select = true;
+    if (scancode == KB_ENTER) app->game.input_select = true;
   }
 
   if (interrupt == MOUSE)
@@ -196,12 +207,24 @@ void handle_game_betting(app_t *app, interrupt_type_t interrupt)
   }
 }
 
-// Function to handle the interrupts in the game start
+// Function to handle the interrupts in the game over
+void handle_game_over_rebet(app_t *app, interrupt_type_t interrupt)
+{
+	app->game.main_player.bet = 0;
+	app->game.main_player.cards_value = 0;
+  queue_destroy(&app->game.main_player.cards, queue_destroy_nothing);
+  app->game.main_player.cards = queue_create(PLAYER_MAX_DECK_SIZE);
+	app->state = GAME_BET;
+	vg_set_redraw();
+}
+
 void handle_game_over(app_t *app, interrupt_type_t interrupt)
 {
   if (interrupt == KEYBOARD)
   {
-    if (scancode == KB_ESC)
+		if (scancode == KB_1) handle_game_over_rebet(app, interrupt);
+		
+    if (scancode == KB_ESC || scancode == KB_2)
     {
       app->state = MAIN_MENU;
       game_destroy(&app->game);
@@ -211,15 +234,9 @@ void handle_game_over(app_t *app, interrupt_type_t interrupt)
 
   if (interrupt == MOUSE)
   {
-    // Handle the interrupt here
 		if (cursor_sprite_colides(&app->cursor, queue_at(app->buttons_game_over, 0)))
     {
-			app->game.main_player.bet = 0;
-			app->game.main_player.cards_value = 0;
-      queue_destroy(&app->game.main_player.cards, queue_destroy_nothing);
-      app->game.main_player.cards = queue_create(PLAYER_MAX_DECK_SIZE);
-			app->state = GAME_BET;
-			vg_set_redraw();
+			handle_game_over_rebet(app, interrupt);
     }
 
     if (cursor_sprite_colides(&app->cursor, queue_at(app->buttons_game_over, 1)))
@@ -239,15 +256,28 @@ void handle_bet_value(app_t *app, interrupt_type_t interrupt)
       if (scancode >= KB_1 && scancode <= KB_0)
       {
         last = scancode == KB_0 ? 0 : scancode - KB_1 + 1;
-        app->game.main_player.bet = app->game.main_player.bet * 10 + last;
+
+				uint32_t new_bet = app->game.main_player.bet * 10 + last;
+				if (new_bet > 1000)
+				{
+					last = 0;
+					return;
+				}
+
+        app->game.main_player.bet = new_bet;
         return;
       }
 
       if (scancode == KB_BACKSPC)
       {
-        if (app->game.main_player.bet <= 0) return;
+        if (app->game.main_player.bet == 0)
+				{
+					last = 0;
+					return;
+				}
 
         app->game.main_player.bet = (app->game.main_player.bet - last) / 10;
+				last = app->game.main_player.bet % 10;
         return;
       }
 
@@ -277,6 +307,7 @@ void handle_bet_value_check(app_t *app)
   if (app->game.main_player.bet > app->game.main_player.coins)
   {
     app->game.main_player.bet = 0;
+		last = 0;
     return;
   }
 

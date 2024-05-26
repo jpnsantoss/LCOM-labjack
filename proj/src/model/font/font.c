@@ -59,7 +59,7 @@ int font_init(font_t *font)
   return 0;
 }
 
-int font_print_char(font_t *font, char c, uint32_t x, uint32_t y)
+void font_print_char(font_t *font, char c, uint32_t x, uint32_t y)
 {
   sprite_t *sprite = NULL;
 
@@ -74,33 +74,30 @@ int font_print_char(font_t *font, char c, uint32_t x, uint32_t y)
   else if (c >= '0' && c <= '9')
 	{
     sprite = queue_at(font->xpms_numbers, c - '0');
-  } 
-	else return 0;
+  }
 
-  if (sprite == NULL) return 1;
+  if (sprite == NULL) return;
 
   sprite_move(sprite, x, y);
-  return sprite_draw(sprite);
+	sprite_draw(sprite);
 }
 
-int font_print_str(font_t *font, char *str, uint32_t x, uint32_t y)
+void font_print_str(font_t *font, char *str, uint32_t x, uint32_t y)
 {
 	for (size_t i = 0; i < strlen(str); i++)
 	{
-		if (font_print_char(font, str[i], x, y)) return 1;
+		font_print_char(font, str[i], x, y);
 
 		x += 24;
 	}
-
-	return 0;
 }
 
-int font_print_number(font_t *font, uint16_t num, uint32_t x, uint32_t y)
+void font_print_number(font_t *font, uint32_t num, uint32_t x, uint32_t y)
 {
   char str[16];
   sprintf(str, "%u", num);
 
-  return font_print_str(font, str, x, y);
+  font_print_str(font, str, x, y);
 }
 
 void font_destroy(font_t *font)
