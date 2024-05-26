@@ -4,7 +4,7 @@
 #include <lcom/lcf.h>
 #include "../sprite/sprite.h"
 #include "../../assets/cards/cards.h"
-#include "../../data_structures/queue.h"
+#include "../../data_structures/queue/queue.h"
 
 #define CARD_TYPE_NUM 4
 #define CARD_VALUE_NUM 13

@@ -3,12 +3,6 @@
 
 #include <lcom/lcf.h>
 
-/** @defgroup i8042 i8042
- * @{
- *
- * Constants for programming the i8042 Keyboard
- */
-
 #define IRQ_KEYBOARD 1
 #define IRQ_MOUSE 12
 

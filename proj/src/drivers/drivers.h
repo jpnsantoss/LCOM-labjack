@@ -7,6 +7,6 @@
 #include "serial_port/serial_port.h"
 #include "timer/timer.h"
 
-#include "../data_structures/stack.h"
+#include "../data_structures/stack/stack.h"
 
 #endif

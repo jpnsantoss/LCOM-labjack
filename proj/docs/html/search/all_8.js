@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['i8042_2eh_0',['i8042.h',['../i8042_8h.html',1,'']]],
+  ['i8254_2eh_1',['i8254.h',['../i8254_8h.html',1,'']]],
+  ['idx_2',['idx',['../dvr__mouse_8c.html#a266732d9c228f9bac150e7554734d112',1,'dvr_mouse.c']]],
+  ['img_3',['img',['../structsprite__t.html#abcbff3455b8c51e01df47939f880e457',1,'sprite_t']]],
+  ['indexed_4',['indexed',['../graphics_8h.html#a7af9350c793aac04ad725e8cd93868cca8cba2f43c858a8207c4a588348d1d8e7',1,'graphics.h']]],
+  ['indexed_5fcolor_5',['INDEXED_COLOR',['../i_v_b_e_8h.html#a8cc35ceb6edb14480e5afceb3ce2ee8b',1,'iVBE.h']]],
+  ['input_2eh_6',['input.h',['../input_8h.html',1,'']]],
+  ['input_5fselect_7',['input_select',['../structgame__t.html#adf816c3344418f7b10618f9901859ec7',1,'game_t']]],
+  ['interrupt_5ftype_5ft_8',['interrupt_type_t',['../app_8h.html#a406b2633f06098c7126e1959b197dc2a',1,'app.h']]],
+  ['irq_5fcom1_9',['IRQ_COM1',['../i_u_a_r_t_8h.html#a603b478f70a928f442e33fefba73494a',1,'iUART.h']]],
+  ['irq_5fcom2_10',['IRQ_COM2',['../i_u_a_r_t_8h.html#afe9f19b981c093830239430dd2e42ba5',1,'iUART.h']]],
+  ['irq_5fkeyboard_11',['IRQ_KEYBOARD',['../i8042_8h.html#a8092843c014fad609c1b01a4604a44a3',1,'i8042.h']]],
+  ['irq_5fmouse_12',['IRQ_MOUSE',['../i8042_8h.html#a32ffe73ffc337fbec467ea02948591af',1,'i8042.h']]],
+  ['irq_5frtc_13',['IRQ_RTC',['../rtc_8h.html#a910ac5f2c1b4016e433f9832358a1816',1,'rtc.h']]],
+  ['is_5fdouble_14',['is_double',['../structcard__t.html#a55ff66419409a25046e8c427a6821daf',1,'card_t']]],
+  ['ispacketfull_15',['isPacketFull',['../dvr__mouse_8c.html#a19e4c9d7823623e21ed0f0815ad3c06e',1,'dvr_mouse.c']]],
+  ['iuart_2eh_16',['iUART.h',['../i_u_a_r_t_8h.html',1,'']]],
+  ['ivbe_2eh_17',['iVBE.h',['../i_v_b_e_8h.html',1,'']]]
+];

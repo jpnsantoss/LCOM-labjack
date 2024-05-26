@@ -5,7 +5,8 @@
 .PATH: ${.CURDIR}/drivers/serial_port
 .PATH: ${.CURDIR}/drivers/timer
 .PATH: ${.CURDIR}/drivers/utils
-.PATH: ${.CURDIR}/data_structures
+.PATH: ${.CURDIR}/data_structures/stack
+.PATH: ${.CURDIR}/data_structures/queue
 .PATH: ${.CURDIR}/ev_listener
 .PATH: ${.CURDIR}/model/card
 .PATH: ${.CURDIR}/model/game

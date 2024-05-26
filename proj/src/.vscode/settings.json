@@ -37,6 +37,7 @@
 		"chars.h": "c",
 		"cards.h": "c",
 		"graphics.h": "c",
-		"serial_port.h": "c"
+		"serial_port.h": "c",
+		"animation.h": "c"
 	},
 }

@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['game_0',['game',['../structapp__t.html#a5884264d3d127e0ad677ef8dfe3f6692',1,'app_t']]],
+  ['game_2ec_1',['game.c',['../game_8c.html',1,'']]],
+  ['game_2eh_2',['game.h',['../game_8h.html',1,'']]],
+  ['game_5fadd_5fdeck_3',['game_add_deck',['../game_8c.html#a0d56ac73692d6b836f9890cd66ea3bce',1,'game.c']]],
+  ['game_5fbet_4',['GAME_BET',['../app_8h.html#a5bb27460721cc90620d197fabf50d4bba348ebcd82d47620e8f943c243eccca6b',1,'app.h']]],
+  ['game_5fdeck_5famount_5',['GAME_DECK_AMOUNT',['../game_8h.html#a5187dfc4a5a85bc113d0be0c1b6361f9',1,'game.h']]],
+  ['game_5fdeck_5fdraw_5famount_6',['GAME_DECK_DRAW_AMOUNT',['../game_8h.html#a4c338a45441c92b511ed789d70f76e82',1,'game.h']]],
+  ['game_5fdeck_5fdraw_5fx_7',['GAME_DECK_DRAW_X',['../game_8h.html#ae3c820e021c2276eff209599c77e671f',1,'game.h']]],
+  ['game_5fdeck_5fdraw_5fy_8',['GAME_DECK_DRAW_Y',['../game_8h.html#a3131570d5b2033d4b07a931aef791c27',1,'game.h']]],
+  ['game_5fdeck_5fsize_9',['GAME_DECK_SIZE',['../game_8h.html#a5cf24499bef3f062f18d3004da269778',1,'game.h']]],
+  ['game_5fdestroy_10',['game_destroy',['../game_8c.html#a803c43aec649e1f97a9f1e7999ac0b0a',1,'game_destroy(game_t *game):&#160;game.c'],['../game_8h.html#a803c43aec649e1f97a9f1e7999ac0b0a',1,'game_destroy(game_t *game):&#160;game.c']]],
+  ['game_5fdraw_5fdealer_11',['game_draw_dealer',['../game_8c.html#afb2a22b782cd7b5f7b5106a4b73c769c',1,'game_draw_dealer(game_t *game):&#160;game.c'],['../game_8h.html#afb2a22b782cd7b5f7b5106a4b73c769c',1,'game_draw_dealer(game_t *game):&#160;game.c']]],
+  ['game_5fdraw_5fdeck_12',['game_draw_deck',['../game_8c.html#ad3e8cb324ace24ca7267af566dd3317e',1,'game_draw_deck(game_t *game):&#160;game.c'],['../game_8h.html#ad3e8cb324ace24ca7267af566dd3317e',1,'game_draw_deck(game_t *game):&#160;game.c']]],
+  ['game_5fgive_5fcard_13',['game_give_card',['../game_8c.html#affaedf6d9dba0337a5224b02c84f6108',1,'game_give_card(queue_t *deck, queue_t *receiver):&#160;game.c'],['../game_8h.html#affaedf6d9dba0337a5224b02c84f6108',1,'game_give_card(queue_t *deck, queue_t *receiver):&#160;game.c']]],
+  ['game_5finit_14',['game_init',['../game_8c.html#a38ace932203d6d4ffab3ae71486a930b',1,'game_init(game_t *game):&#160;game.c'],['../game_8h.html#a38ace932203d6d4ffab3ae71486a930b',1,'game_init(game_t *game):&#160;game.c']]],
+  ['game_5fover_15',['GAME_OVER',['../app_8h.html#a5bb27460721cc90620d197fabf50d4bba871723195985a4ae22d7e10d99bf8a00',1,'app.h']]],
+  ['game_5fplay_16',['GAME_PLAY',['../app_8h.html#a5bb27460721cc90620d197fabf50d4bba447b09fe0b554bd0a94116f85a2b91ab',1,'app.h']]],
+  ['game_5ft_17',['game_t',['../structgame__t.html',1,'']]],
+  ['gph_18',['gph',['../dvr__graphics_8c.html#a25028bea5407640412be3f0a33aa0e60',1,'dvr_graphics.c']]],
+  ['graphics_2eh_19',['graphics.h',['../graphics_8h.html',1,'']]],
+  ['green_5ffield_5fpos_20',['green_field_pos',['../structs__gph.html#a7a91e6d23b5d5a0e72290f51b79f3ddf',1,'s_gph']]],
+  ['green_5fmask_5fsize_21',['green_mask_size',['../structs__gph.html#acacbcbb34ffe72a6d37b911e039c256a',1,'s_gph']]]
+];
