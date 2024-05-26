@@ -44,6 +44,4 @@ void player_draw(font_t *font, player_t *player)
 		}		
 	}
 	font_print_number(font, player->coins, 10, 795);
-	font_print_number(font, player->bet, 10, 760);
-	font_print_number(font, player->cards_value, 10, 725);
 }

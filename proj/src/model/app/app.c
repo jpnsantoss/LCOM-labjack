@@ -23,8 +23,7 @@ app_t *app_init()
 
 	if (app_buttons_game_playing_init(&app->buttons_game_playing)) return NULL; 
 
-	app->xpms_numbers = stack_create(4);
-	if (app->xpms_numbers == NULL) return NULL;
+	if (app_buttons_game_over_init(&app->buttons_game_over)) return NULL;
 
 	font_init(&app->font);
 	
@@ -77,13 +76,32 @@ int	app_buttons_main_menu_init(queue_t** queue)
 	return 0;
 }
 
+int	app_buttons_game_over_init(queue_t** queue)
+{
+	sprite_t *sprite = NULL;
+
+	if (queue == NULL) return 1;
+	*queue = queue_create(2);
+	if (*queue == NULL) return 1;
+
+  sprite = sprite_create((xpm_map_t) rebet_xpm);
+	if (sprite == NULL) return 1;
+	queue_push(*queue, sprite);
+
+  sprite = sprite_create((xpm_map_t) exit_xpm);
+	if (sprite == NULL) return 1;
+	queue_push(*queue, sprite);
+
+	return 0;
+}
+
 void app_destroy(app_t *app)
 {
 	if (app == NULL) return;
 
 	queue_destroy(&app->buttons_main_menu, sprite_queue_destroy);
 	queue_destroy(&app->buttons_game_playing, sprite_queue_destroy);
-	stack_destroy(&app->xpms_numbers, sprite_queue_destroy);
+	queue_destroy(&app->buttons_game_over, sprite_queue_destroy);
 	sprite_destroy(app->background);
 	sprite_destroy(app->button_bet);
 	game_destroy(&app->game);

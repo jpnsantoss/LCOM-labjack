@@ -14,4 +14,7 @@
 // In-game / Betting phase
 #include "bet.xpm"
 
+// In-game / Game over
+#include "rebet.xpm"
+
 #endif
