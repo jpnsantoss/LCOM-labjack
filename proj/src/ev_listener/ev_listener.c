@@ -181,7 +181,7 @@ void handle_game_betting(app_t *app, interrupt_type_t interrupt)
 		if (info == NULL) return;
     
 		if (!app->game.input_select && 
-			cursor_box_colides(&app->cursor, 420, 785, 600, 840))
+			cursor_box_colides(&app->cursor, 460, 785, 600, 840))
 		{
     	app->game.input_select = true;
       
@@ -227,6 +227,8 @@ void handle_bet_value(app_t *app, interrupt_type_t interrupt)
     case KEYBOARD:
 			if (scancode >= KB_1 && scancode <= KB_0)
 			{
+				if (stack_full(app->xpms_numbers)) return;
+
 				sprite_t *sprite = sprite_create(number_xpm[scancode - KB_1]);
         if (sprite == NULL) return;
 
@@ -235,6 +237,7 @@ void handle_bet_value(app_t *app, interrupt_type_t interrupt)
 
 				app->game.main_player.bet = app->game.main_player.bet * 10 + last;
 				vg_set_redraw();
+				return;
 			}
 
 			if (scancode == KB_BACKSPC)
@@ -248,6 +251,7 @@ void handle_bet_value(app_t *app, interrupt_type_t interrupt)
 				}
 
 				vg_set_redraw();
+				return;
 			}
 
 	  	if (scancode == KB_ENTER)
@@ -270,7 +274,7 @@ void handle_bet_value(app_t *app, interrupt_type_t interrupt)
 void handle_bet_value_check(app_t *app)
 {
 	stack_destroy(&app->xpms_numbers, sprite_queue_destroy);
-	app->xpms_numbers = stack_create(6);
+	app->xpms_numbers = stack_create(4);
 	vg_set_redraw();
 
 	if (app->game.main_player.bet == 0) return;

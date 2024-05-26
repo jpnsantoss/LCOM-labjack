@@ -23,7 +23,7 @@ void draw_state(app_t *app)
 			break;
 		case GAME_BET:
 			sprite_draw(app->button_bet);
-			vg_draw_border(420, 785, 180, 55,
+			vg_draw_border(460, 785, 140, 55,
 				app->game.input_select ? 0xe69f58 : 0xffffff, 4);
 			draw_number(app->xpms_numbers);
 			break;
@@ -69,7 +69,7 @@ void draw_number(my_stack_t *xpms_numbers)
 {
 	if (xpms_numbers == NULL) return;
 	
-	uint32_t pos = (vg_get_width() / 2) - 150;
+	uint32_t pos = (vg_get_width() / 2) - 100;
 	for (size_t i = xpms_numbers->curr_size; i > 0; i--)
 	{
 		size_t index = i - 1;
@@ -79,6 +79,6 @@ void draw_number(my_stack_t *xpms_numbers)
 		sprite_move(sprite, pos, 795);
 		if (sprite_draw(sprite)) return;
 
-		pos += 20;
+		pos += 22;
 	}
 }

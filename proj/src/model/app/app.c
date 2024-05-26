@@ -23,7 +23,7 @@ app_t *app_init()
 
 	if (app_buttons_game_playing_init(&app->buttons_game_playing)) return NULL; 
 
-	app->xpms_numbers = stack_create(6);
+	app->xpms_numbers = stack_create(4);
 	if (app->xpms_numbers == NULL) return NULL;
 
 	sprite_t *sprite = sprite_create(hand_xpm);
