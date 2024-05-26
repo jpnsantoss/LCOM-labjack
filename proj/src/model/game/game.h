@@ -39,6 +39,6 @@ void	game_destroy(game_t *game);
 int 	game_draw_deck(game_t *game);
 int		game_draw_dealer(game_t *game);
 int		game_give_card(queue_t *deck, queue_t *receiver);
-
+uint32_t game_get_cards_value(queue_t *cards);
 
 #endif

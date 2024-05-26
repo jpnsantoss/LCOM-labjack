@@ -6,6 +6,7 @@ int player_init(player_t *player)
 
 	player->coins = PLAYER_STARTING_COINS;
 	player->bet = 0;
+	player->cards_value = 0;
 	player->cards = queue_create(PLAYER_MAX_DECK_SIZE);
 
 	return player->cards == NULL;
@@ -19,7 +20,7 @@ void player_destroy(player_t *player)
 	queue_destroy(&player->cards, card_queue_destroy);
 }
 
-void player_draw(player_t *player)
+void player_draw(font_t *font, player_t *player)
 {
 	if (player == NULL) return;
 
@@ -42,5 +43,7 @@ void player_draw(player_t *player)
 			sprite_draw(card->sprite_base);
 		}		
 	}
+	font_print_number(font, player->coins, 10, 795);
+	font_print_number(font, player->bet, 10, 760);
+	font_print_number(font, player->cards_value, 10, 725);
 }
-

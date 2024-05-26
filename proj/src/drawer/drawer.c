@@ -7,14 +7,12 @@ void draw_state(app_t *app)
 
 	if (app->state != MAIN_MENU && app->state != GAME_OVER)
 	{
-		player_draw(&app->game.main_player);
+		player_draw(&app->font, &app->game.main_player);
 
 		// TODO: Draw player info if multiplayer.
 		
 		game_draw_deck(&app->game);
 		game_draw_dealer(&app->game);
-
-		font_print_number(&app->font, app->game.main_player.coins, 10, 795);
 	}
 
 	switch(app->state)

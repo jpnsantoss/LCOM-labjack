@@ -124,3 +124,27 @@ int game_draw_dealer(game_t *game)
 	return 0;
 }
 
+uint32_t game_get_cards_value(queue_t *cards)
+{
+	if (cards == NULL) return 0;
+
+	uint32_t cards_value = 0;
+	uint32_t aces = 0;
+
+	for (size_t i = 0; i < cards->curr_size; i++)
+	{
+		card_t *card = queue_at(cards, i);
+		if (card == NULL) continue;
+
+		cards_value += card->value;
+		if (card->value == 11) aces++;
+	}
+
+	while (cards_value > 21 && aces > 0)
+	{
+		cards_value -= 10;
+		aces--;
+	}
+
+	return cards_value;
+}
