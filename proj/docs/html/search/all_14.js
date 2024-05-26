@@ -9,11 +9,11 @@ var searchData=
   ['vg_5fenter_5fgraphic_5fmode_6',['vg_enter_graphic_mode',['../dvr__graphics_8c.html#a034d06f984cff1406df71cc9a0897589',1,'vg_enter_graphic_mode(uint16_t mode):&#160;dvr_graphics.c'],['../graphics_8h.html#a034d06f984cff1406df71cc9a0897589',1,'vg_enter_graphic_mode(uint16_t mode):&#160;dvr_graphics.c']]],
   ['vg_5fflip_7',['vg_flip',['../dvr__graphics_8c.html#a4b1b70f79ae36948f9e296bd6ff6dc1e',1,'vg_flip():&#160;dvr_graphics.c'],['../graphics_8h.html#a4b1b70f79ae36948f9e296bd6ff6dc1e',1,'vg_flip():&#160;dvr_graphics.c']]],
   ['vg_5fget_5fheight_8',['vg_get_height',['../dvr__graphics_8c.html#a27bae7bb2746ac15b7cf450ef081350f',1,'vg_get_height():&#160;dvr_graphics.c'],['../graphics_8h.html#a27bae7bb2746ac15b7cf450ef081350f',1,'vg_get_height():&#160;dvr_graphics.c']]],
-  ['vg_5fget_5finfo_9',['vg_get_info',['../dvr__graphics_8c.html#a409edff9f44dbd49bb1258bb213f673a',1,'vg_get_info():&#160;dvr_graphics.c'],['../graphics_8h.html#a409edff9f44dbd49bb1258bb213f673a',1,'vg_get_info():&#160;dvr_graphics.c']]],
+  ['vg_5fget_5finfo_9',['vg_get_info',['../dvr__graphics_8c.html#ab52043147d41e2f66a892043455a8515',1,'vg_get_info():&#160;dvr_graphics.c'],['../graphics_8h.html#ab52043147d41e2f66a892043455a8515',1,'vg_get_info():&#160;dvr_graphics.c']]],
   ['vg_5fget_5fwidth_10',['vg_get_width',['../dvr__graphics_8c.html#a0053bc870d8f61c8ff96cb89e9c7d02d',1,'vg_get_width():&#160;dvr_graphics.c'],['../graphics_8h.html#a0053bc870d8f61c8ff96cb89e9c7d02d',1,'vg_get_width():&#160;dvr_graphics.c']]],
   ['vg_5fhas_5fredraw_11',['vg_has_redraw',['../dvr__graphics_8c.html#a22134793947945272b62261dcbb803f3',1,'vg_has_redraw():&#160;dvr_graphics.c'],['../graphics_8h.html#a22134793947945272b62261dcbb803f3',1,'vg_has_redraw():&#160;dvr_graphics.c']]],
   ['vg_5finit_5fmode_12',['vg_init_mode',['../dvr__graphics_8c.html#a6664487029a8e9a963af275d0d7490b1',1,'vg_init_mode():&#160;dvr_graphics.c'],['../graphics_8h.html#a6664487029a8e9a963af275d0d7490b1',1,'vg_init_mode():&#160;dvr_graphics.c']]],
   ['vg_5fmap_5fmemory_13',['vg_map_memory',['../dvr__graphics_8c.html#a11c89396cac53667e8cdcfe09307cc18',1,'vg_map_memory(uint16_t mode):&#160;dvr_graphics.c'],['../graphics_8h.html#a11c89396cac53667e8cdcfe09307cc18',1,'vg_map_memory(uint16_t mode):&#160;dvr_graphics.c']]],
-  ['vg_5fmode_14',['VG_MODE',['../i_v_b_e_8h.html#abda7d7db4e0e969314d48874c71ec3e3',1,'iVBE.h']]],
+  ['vg_5fmode_14',['VG_MODE',['../iVBE_8h.html#abda7d7db4e0e969314d48874c71ec3e3',1,'iVBE.h']]],
   ['vg_5fset_5fredraw_15',['vg_set_redraw',['../dvr__graphics_8c.html#a3a0d84e943447c67a7a9932cf0fd20ea',1,'vg_set_redraw():&#160;dvr_graphics.c'],['../graphics_8h.html#a3a0d84e943447c67a7a9932cf0fd20ea',1,'vg_set_redraw():&#160;dvr_graphics.c']]]
 ];

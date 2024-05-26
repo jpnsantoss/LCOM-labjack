@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['uart_5fdisable_0',['uart_disable',['../dvr__uart_8c.html#a7c1f3854849c410f9b1d94eb1f049faa',1,'uart_disable():&#160;dvr_uart.c'],['../serial__port_8h.html#a7c1f3854849c410f9b1d94eb1f049faa',1,'uart_disable():&#160;dvr_uart.c']]],
+  ['uart_5fdisable_0',['uart_disable',['../serial__port_8h.html#a7c1f3854849c410f9b1d94eb1f049faa',1,'uart_disable():&#160;dvr_uart.c'],['../dvr__uart_8c.html#a7c1f3854849c410f9b1d94eb1f049faa',1,'uart_disable():&#160;dvr_uart.c']]],
   ['uart_5fdl_5faccess_1',['uart_DL_access',['../dvr__uart_8c.html#a9ad737778f20b7f247dae23b966e8b4f',1,'uart_DL_access(int base_addr, int enable):&#160;dvr_uart.c'],['../serial__port_8h.html#a9ad737778f20b7f247dae23b966e8b4f',1,'uart_DL_access(int base_addr, int enable):&#160;dvr_uart.c']]],
   ['uart_5ffifo_5fread_2',['uart_fifo_read',['../dvr__uart_8c.html#ae0041956c2af5d797bfa49cef0ca2d94',1,'uart_fifo_read(int base_addr):&#160;dvr_uart.c'],['../serial__port_8h.html#ae0041956c2af5d797bfa49cef0ca2d94',1,'uart_fifo_read(int base_addr):&#160;dvr_uart.c']]],
   ['uart_5ffifo_5fwrite_3',['uart_fifo_write',['../dvr__uart_8c.html#a4711d21be10140f9786a03ee25fbec19',1,'uart_fifo_write(int base_addr):&#160;dvr_uart.c'],['../serial__port_8h.html#a4711d21be10140f9786a03ee25fbec19',1,'uart_fifo_write(int base_addr):&#160;dvr_uart.c']]],

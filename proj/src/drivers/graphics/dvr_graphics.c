@@ -1,8 +1,8 @@
 #include "graphics.h"
 
-static t_gph gph;
+static gph_t gph;
 
-t_gph vg_get_info()
+gph_t vg_get_info()
 {
 	return gph;
 }
@@ -22,7 +22,7 @@ int	vg_map_memory(uint16_t mode)
 	vbe_mode_info_t mode_info;
 
 	memset(&mode_info, 0, sizeof(vbe_mode_info_t));
-	memset(&gph, 0, sizeof(t_gph));
+	memset(&gph, 0, sizeof(gph_t));
 
 	if (vbe_get_mode_info(mode, &mode_info)) return 1;
 	

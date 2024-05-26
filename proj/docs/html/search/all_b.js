@@ -26,8 +26,8 @@ var searchData=
   ['mouse_5finfo_5ft_23',['mouse_info_t',['../input_8h.html#a9397b8ca631db5c065d029dad66da3e4',1,'input.h']]],
   ['mouse_5finit_24',['mouse_init',['../dvr__mouse_8c.html#a94fafb2ceb49ddd6a2ecc54920db9693',1,'mouse_init(uint8_t *bit_no):&#160;dvr_mouse.c'],['../input_8h.html#a94fafb2ceb49ddd6a2ecc54920db9693',1,'mouse_init(uint8_t *bit_no):&#160;dvr_mouse.c']]],
   ['mouse_5fread_5fpacket_25',['mouse_read_packet',['../dvr__mouse_8c.html#a182a99324a2f0f348d32603b05528735',1,'mouse_read_packet():&#160;dvr_mouse.c'],['../input_8h.html#a182a99324a2f0f348d32603b05528735',1,'mouse_read_packet():&#160;dvr_mouse.c']]],
-  ['mouse_5fsubscribe_5fint_26',['mouse_subscribe_int',['../dvr__mouse_8c.html#a9da18257ff113b686bb826d154bfaa87',1,'mouse_subscribe_int(uint8_t *bit_no):&#160;dvr_mouse.c'],['../input_8h.html#a9da18257ff113b686bb826d154bfaa87',1,'mouse_subscribe_int(uint8_t *bit_no):&#160;dvr_mouse.c']]],
-  ['mouse_5funsubscribe_5fint_27',['mouse_unsubscribe_int',['../input_8h.html#a685ad2706aca36d9869a30a19b9f446a',1,'mouse_unsubscribe_int():&#160;dvr_mouse.c'],['../dvr__mouse_8c.html#a685ad2706aca36d9869a30a19b9f446a',1,'mouse_unsubscribe_int():&#160;dvr_mouse.c']]],
+  ['mouse_5fsubscribe_5fint_26',['mouse_subscribe_int',['../input_8h.html#a9da18257ff113b686bb826d154bfaa87',1,'mouse_subscribe_int(uint8_t *bit_no):&#160;dvr_mouse.c'],['../dvr__mouse_8c.html#a9da18257ff113b686bb826d154bfaa87',1,'mouse_subscribe_int(uint8_t *bit_no):&#160;dvr_mouse.c']]],
+  ['mouse_5funsubscribe_5fint_27',['mouse_unsubscribe_int',['../dvr__mouse_8c.html#a685ad2706aca36d9869a30a19b9f446a',1,'mouse_unsubscribe_int():&#160;dvr_mouse.c'],['../input_8h.html#a685ad2706aca36d9869a30a19b9f446a',1,'mouse_unsubscribe_int():&#160;dvr_mouse.c']]],
   ['multiplayer_28',['multiplayer',['../structgame__t.html#ae256c73f590a813abe9eaf18454d5d79',1,'game_t']]],
   ['my_5fstack_5ft_29',['my_stack_t',['../structmy__stack__t.html',1,'']]]
 ];

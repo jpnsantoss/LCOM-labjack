@@ -3,7 +3,7 @@ var searchData=
   ['parity_5fbit_0',['PARITY_BIT',['../i8042_8h.html#a3fe0dea7b30a55d84f5763338956eb44',1,'i8042.h']]],
   ['player_2ec_1',['player.c',['../player_8c.html',1,'']]],
   ['player_2eh_2',['player.h',['../player_8h.html',1,'']]],
-  ['player_5fdestroy_3',['player_destroy',['../player_8c.html#a3e022dfe5f6c73df82be5acf948387f4',1,'player_destroy(player_t *player):&#160;player.c'],['../player_8h.html#a3e022dfe5f6c73df82be5acf948387f4',1,'player_destroy(player_t *player):&#160;player.c']]],
+  ['player_5fdestroy_3',['player_destroy',['../player_8h.html#a3e022dfe5f6c73df82be5acf948387f4',1,'player_destroy(player_t *player):&#160;player.c'],['../player_8c.html#a3e022dfe5f6c73df82be5acf948387f4',1,'player_destroy(player_t *player):&#160;player.c']]],
   ['player_5fdraw_4',['player_draw',['../player_8c.html#a5af00e8a8b2fc96d6e24db15e46efa8f',1,'player_draw(player_t *player):&#160;player.c'],['../player_8h.html#a5af00e8a8b2fc96d6e24db15e46efa8f',1,'player_draw(player_t *player):&#160;player.c']]],
   ['player_5finit_5',['player_init',['../player_8c.html#ae9fa81a12efad3cbbaadacf5e80bbf67',1,'player_init(player_t *player):&#160;player.c'],['../player_8h.html#ae9fa81a12efad3cbbaadacf5e80bbf67',1,'player_init(player_t *player):&#160;player.c']]],
   ['player_5fmax_5fdeck_5fsize_6',['PLAYER_MAX_DECK_SIZE',['../player_8h.html#a10c6020cf634635794d9b39e13f3e36c',1,'player.h']]],

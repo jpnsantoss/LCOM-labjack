@@ -32,7 +32,7 @@ int	sprite_draw(sprite_t *sprite)
 {
 	if (sprite == NULL) return 1;
 	
-	t_gph gph = vg_get_info();
+	gph_t gph = vg_get_info();
 	uint8_t *map = sprite->img.bytes;
 
 	for (int j = 0; j < sprite->img.height; j++)
@@ -57,7 +57,7 @@ int	sprite_draw(sprite_t *sprite)
 
 int	sprite_draw_rotate(sprite_t *sprite)
 {
-	t_gph gph = vg_get_info();
+	gph_t gph = vg_get_info();
 	uint8_t *map = sprite->img.bytes;
 
 	for (int j = 0; j < sprite->img.height; j++)
@@ -82,7 +82,7 @@ int	sprite_draw_rotate(sprite_t *sprite)
 
 int sprite_move(sprite_t *sprite, uint32_t x, uint32_t y)
 {
-	t_gph gph = vg_get_info();
+	gph_t gph = vg_get_info();
 
 	if (x >= gph.x_res || y >= gph.y_res) return 1;
 	if (sprite == NULL) return 1;
