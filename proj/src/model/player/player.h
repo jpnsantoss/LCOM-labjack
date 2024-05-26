@@ -19,6 +19,5 @@ typedef struct {
 int		player_init(player_t *player);
 void 	player_destroy(player_t *player);
 void	player_draw(player_t *player);
-int		player_give_card(queue_t *deck, player_t *player, int is_double);
 
 #endif

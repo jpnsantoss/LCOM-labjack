@@ -1,4 +1,4 @@
-#include "../drivers.h"
+#include "timer.h"
 
 int hook_id_timer = 0;
 int timer_counter = 0;
@@ -115,5 +115,5 @@ int (timer_set_frequency)(uint8_t timer, uint32_t freq)
 	}
 
 	return sys_outb(TIMER_CTRL, st) || sys_outb(TIMER_0 + timer, lsb)
-								|| sys_outb(TIMER_0 + timer, msb);
+		|| sys_outb(TIMER_0 + timer, msb);
 }

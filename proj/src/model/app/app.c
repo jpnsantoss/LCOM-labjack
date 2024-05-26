@@ -1,13 +1,5 @@
 #include "app.h"
 
-#include "../../assets/background.xpm"
-#include "../../assets/buttons/start.xpm"
-#include "../../assets/buttons/exit.xpm"
-#include "../../assets/buttons/hit.xpm"
-#include "../../assets/buttons/double.xpm"
-#include "../../assets/buttons/stand.xpm"
-#include "../../assets/buttons/surrender.xpm"
-
 app_t *app_init()
 {
 	app_t *app = (app_t *) malloc(sizeof(app_t));
@@ -21,14 +13,28 @@ app_t *app_init()
 	if (cursor_init(&app->cursor)) return NULL;
 
 	app->background = sprite_create((xpm_map_t) background_xpm);
+	if (app->background == NULL) return NULL;
+
+	app->button_bet = sprite_create((xpm_map_t) bet_xpm);
+	if (app->button_bet == NULL) return NULL;
+	sprite_move(app->button_bet, 620, vg_get_height() - 93);
 
 	if (app_buttons_main_menu_init(&app->buttons_main_menu)) return NULL;
 
 	if (app_buttons_game_playing_init(&app->buttons_game_playing)) return NULL; 
 
-	app->xpms_numbers = queue_create(6);
+	app->xpms_numbers = stack_create(4);
 	if (app->xpms_numbers == NULL) return NULL;
 
+	sprite_t *sprite = sprite_create(hand_xpm);
+	app->card_loop = animation_create(true, 30, 30);
+	if (app->card_loop == NULL) return NULL;
+
+	for (int i = 0; i < 30; i++)
+	{
+		if (animation_add_frame(app->card_loop, sprite, 200 + i * 5, 200)) exit(0);
+	}
+	
   return app;
 }
 
@@ -84,7 +90,9 @@ void app_destroy(app_t *app)
 
 	queue_destroy(&app->buttons_main_menu, sprite_queue_destroy);
 	queue_destroy(&app->buttons_game_playing, sprite_queue_destroy);
-	queue_destroy(&app->xpms_numbers, sprite_queue_destroy);
+	stack_destroy(&app->xpms_numbers, sprite_queue_destroy);
+	sprite_destroy(app->background);
+	sprite_destroy(app->button_bet);
 	game_destroy(&app->game);
 	cursor_destroy(&app->cursor);
 	free(app);

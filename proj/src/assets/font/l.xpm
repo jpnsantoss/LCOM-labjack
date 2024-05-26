@@ -1,5 +1,5 @@
 /* XPM */
-static const char* 1553047_l_letter_red_alphabet_letters_icon_xpm[] = {
+static const char* letter_l_xpm[] = {
 "64 64 71 1",
 " 	c None",
 ".	c #330910",

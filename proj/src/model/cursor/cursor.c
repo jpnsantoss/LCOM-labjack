@@ -25,6 +25,8 @@ int cursor_move(cursor_t *cursor, uint32_t x, uint32_t y)
 {
 	if (cursor == NULL) return 1;
 
+	if (x >= vg_get_width() || y >= vg_get_height()) return 1;
+
 	cursor->x = x;
 	cursor->y = y;
 
@@ -56,7 +58,7 @@ void cursor_destroy(cursor_t *cursor)
 	sprite_destroy(cursor->hand);
 }
 
-int cursor_collision(cursor_t *cursor, sprite_t *sprite)
+int cursor_sprite_colides(cursor_t *cursor, sprite_t *sprite)
 {
 	mouse_info_t *info = mouse_get_info();
 
@@ -69,6 +71,25 @@ int cursor_collision(cursor_t *cursor, sprite_t *sprite)
 	if (cursor->state == HAND) return 0;
 	
 	cursor->state = sprite_colides(sel_sprite, sprite) ? HAND : POINTER;
+
+	return cursor->state == HAND && info != NULL && info->lb;
+}
+
+int cursor_box_colides(cursor_t *cursor, uint32_t x, uint32_t y, uint32_t x2, uint32_t y2)
+{
+	mouse_info_t *info = mouse_get_info();
+
+	if (cursor == NULL) return 0;
+
+	sprite_t *sel_sprite = cursor->state == HAND ? cursor->hand : cursor->pointer;
+
+	sprite_move(sel_sprite, cursor->x, cursor->y);
+
+	if (cursor->state == HAND) return 0;
+	
+	uint8_t x_colides = cursor->x >= x && cursor->x <= x2;
+	uint8_t y_colides = cursor->y >= y && cursor->y <= y2;
+	cursor->state = x_colides && y_colides ? HAND : POINTER;
 
 	return cursor->state == HAND && info != NULL && info->lb;
 }

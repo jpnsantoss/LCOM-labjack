@@ -3,12 +3,17 @@
 
 #include <lcom/lcf.h>
 #include "../sprite/sprite.h"
+#include "../animation/animation.h"
 #include "../cursor/cursor.h"
 #include "../../drivers/drivers.h"
 #include "../game/game.h"
 
+#include "../../assets/background.xpm"
+#include "../../assets/buttons/buttons.h"
+
 #define KB_ESC 0x81
 #define KB_ENTER 0x9c
+#define KB_BACKSPC 0x0e
 #define KB_X 0xad
 #define KB_Y 0x95
 #define KB_C 0xae
@@ -26,24 +31,27 @@
 
 typedef enum {
 	MAIN_MENU,
-	GAME_BETTING,
-	GAME_PLAYING,
+	GAME_BET,
+	GAME_PLAY,
 	GAME_OVER,
-	BET_VALUE,
-	EXIT
+	EXIT,
+	EXIT_CONFIRMATION
 } app_state_t;
 
 typedef struct {
-	cursor_t	cursor;
+	cursor_t		cursor;
 
-	sprite_t	*background;
-	queue_t 	*buttons_main_menu;
-	queue_t		*buttons_game_playing;
-	queue_t		*buttons_game_over;
-	queue_t		*xpms_numbers;
+	sprite_t		*background;
+	queue_t 		*buttons_main_menu;
+	queue_t			*buttons_game_playing;
+	queue_t			*buttons_game_over;
+	sprite_t		*button_bet;
+	my_stack_t	*xpms_numbers;
+
+	animation_t *card_loop;
 	
-	game_t		game;
-	app_state_t state;
+	game_t			game;
+	app_state_t	state;
 } app_t;
 
 typedef struct {
@@ -64,7 +72,6 @@ typedef enum {
 
 app_t *app_init();
 void 	app_destroy(app_t *app);
-void 	app_update_cursor_pos(app_t *app, mouse_info_t *mouse_info);
 int		app_buttons_main_menu_init(queue_t **queue);
 int		app_buttons_game_playing_init(queue_t **queue);
 

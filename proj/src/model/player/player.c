@@ -29,7 +29,7 @@ void player_draw(player_t *player)
 		if (card == NULL) continue;
 
 		uint32_t x = 500 + i * card->sprite_base->img.width * 0.5;
-		uint32_t y = 600 - card->sprite_base->img.height * 0.09;
+		uint32_t y = 500 - card->sprite_base->img.height * 0.09;
 
 		if (card->is_double)
 		{
@@ -44,14 +44,3 @@ void player_draw(player_t *player)
 	}
 }
 
-int	player_give_card(queue_t *deck, player_t *player, int is_double)
-{
-	if (deck == NULL || deck->curr_size == 0) return 1;
-	if (player == NULL || player->cards == NULL) return 1;
-
-	card_t *card = queue_pop(deck);
-	if (card == NULL) return 1;
-	card->is_double = is_double;
-
-	return queue_push(player->cards, card);
-}

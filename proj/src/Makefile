@@ -1,10 +1,10 @@
 
-.PATH: ${.CURDIR}/drivers
 .PATH: ${.CURDIR}/drivers/graphics
 .PATH: ${.CURDIR}/drivers/input
 .PATH: ${.CURDIR}/drivers/rtc
 .PATH: ${.CURDIR}/drivers/serial_port
 .PATH: ${.CURDIR}/drivers/timer
+.PATH: ${.CURDIR}/drivers/utils
 .PATH: ${.CURDIR}/data_structures
 .PATH: ${.CURDIR}/ev_listener
 .PATH: ${.CURDIR}/model/card
@@ -12,6 +12,7 @@
 .PATH: ${.CURDIR}/model/app
 .PATH: ${.CURDIR}/model/player
 .PATH: ${.CURDIR}/model/sprite
+.PATH: ${.CURDIR}/model/animation
 .PATH: ${.CURDIR}/model/cursor
 .PATH: ${.CURDIR}/drawer
 
@@ -20,9 +21,12 @@ PROG=proj
 
 # source code files to be compiled
 SRCS = proj.c
-SRCS += dvr_graphics.c dvr_kbc.c dvr_keyboard.c dvr_mouse.c dvr_timer.c dvr_uart.c dvr_rtc.c utils.c
-SRCS += queue.c stack.c ev_listener.c drawer.c sprite.c cursor.c
-SRCS += app.c player.c card.c game.c
+# drivers
+SRCS += dvr_graphics.c dvr_kbc.c dvr_keyboard.c dvr_mouse.c dvr_timer.c dvr_rtc.c dvr_uart.c utils.c
+# data_structs
+SRCS += queue.c stack.c ev_listener.c
+# models
+SRCS += sprite.c app.c drawer.c player.c card.c game.c cursor.c animation.c
 
 # additional compilation flags
 # "-Wall -Wextra -Werror -I . -std=c11 -Wno-unused-parameter" are already set

@@ -7,11 +7,11 @@
   "editor.wordWrap": "bounded",
   "editor.wordWrapColumn": 100,
   "files.associations": {
+		"*.embeddedhtml": "html",
 		"*.js": "javascript",
 		"*.tpl": "php",
 		"*.pcss": "css",
 		".env*": "dotenv",
-		"*.embeddedhtml": "html",
 		"drivers.h": "c",
 		"string.h": "c",
 		"lcf.h": "c",
@@ -30,6 +30,13 @@
 		"app.h": "c",
 		"player.h": "c",
 		"card.h": "c",
-		"math.h": "c"
+		"math.h": "c",
+		"stack.h": "c",
+		"letters.h": "c",
+		"font.h": "c",
+		"chars.h": "c",
+		"cards.h": "c",
+		"graphics.h": "c",
+		"serial_port.h": "c"
 	},
 }

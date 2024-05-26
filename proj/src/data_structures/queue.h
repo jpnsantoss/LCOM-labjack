@@ -22,4 +22,6 @@ int			queue_empty(queue_t *queue);
 void		queue_destroy(queue_t **queue, void (*f)(void *));
 void		queue_shuffle(queue_t *queue);
 
+void		queue_destroy_nothing(void *ptr);
+
 #endif

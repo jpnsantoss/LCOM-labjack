@@ -1,25 +1,16 @@
 #include "ev_listener.h"
-#include "../assets/charxpms/0.xpm"
-#include "../assets/charxpms/1.xpm"
-#include "../assets/charxpms/2.xpm"
-#include "../assets/charxpms/3.xpm"
-#include "../assets/charxpms/5.xpm"
-#include "../assets/charxpms/6.xpm"
-#include "../assets/charxpms/7.xpm"
-#include "../assets/charxpms/8.xpm"
-#include "../assets/charxpms/9.xpm"
-
 
 extern uint8_t scancode;
 extern int timer_counter;
 int state_changed = 0;
+uint32_t last = 0;
+uint8_t uart_response = 0xff;
 
 handler listeners[] = {
   handle_main_menu,
   handle_game_betting,
 	handle_game_playing,
 	handle_game_over,
-	handle_bet_value,
 	NULL
 };
 
@@ -43,25 +34,6 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
 	{
 		case KEYBOARD:
 			kbc_ih();
-			if (scancode == KB_ESC && app->state != MAIN_MENU)
-			{
-				app->state = MAIN_MENU;
-				state_changed = 1;
-				vg_set_redraw();
-			}
-
-			if (scancode == KB_X || scancode == KB_C)
-			{
-				player_give_card(app->game.cards, &app->game.main_player,
-					scancode == KB_C);
-				vg_set_redraw();
-			}
-
-			if (scancode == KB_Y)
-			{
-				uart_write_msg(1, 1);
-			}
-
 			break;
 		case MOUSE:
 			mouse_ih();
@@ -81,10 +53,14 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
 			}
 			break;
 		case UART:
-			uart_ih();
+			if (uart_ih())
+			{
+				if (uart_get_byte(&uart_response)) uart_response = 0xff;
+			}
 			break;
 		case TIMER:
 			draw_screen(app);
+			animation_run(app->card_loop);
 			break;
 		case RTC:
 			rtc_ih();
@@ -97,13 +73,17 @@ void handle_main_menu(app_t *app, interrupt_type_t interrupt)
 	switch (interrupt)
 	{
 		case KEYBOARD:
+			if (scancode == KB_0)
+			{
+				uart_send_byte(1);
+			}
 			if (scancode == KB_ESC) app->state = EXIT;
 			return;
 
 		case MOUSE:
-			if (cursor_collision(&app->cursor, queue_at(app->buttons_main_menu, 0)))
+			if (cursor_sprite_colides(&app->cursor, queue_at(app->buttons_main_menu, 0)))
 			{
-				app->state = GAME_BETTING;
+				app->state = GAME_BET;
 			
 				if (game_init(&app->game))
 				{
@@ -116,10 +96,19 @@ void handle_main_menu(app_t *app, interrupt_type_t interrupt)
 				return;
 			}
 
-			if (cursor_collision(&app->cursor, queue_at(app->buttons_main_menu, 1)))
+			if (cursor_sprite_colides(&app->cursor, queue_at(app->buttons_main_menu, 1)))
 			{
 				app->state = EXIT;
+				game_destroy(&app->game);
 				return;
+			}
+			break;
+		case UART:
+			if (uart_response == 1)
+			{
+				uart_response = 0xff;
+				cursor_move(&app->cursor, app->cursor.x + 10, app->cursor.y);
+				vg_set_redraw();
 			}
 			break;
 		default:
@@ -129,24 +118,33 @@ void handle_main_menu(app_t *app, interrupt_type_t interrupt)
 
 void handle_game_playing(app_t *app, interrupt_type_t interrupt)
 {
+	if (interrupt == KEYBOARD)
+	{
+		if (scancode == KB_ESC)
+		{
+			app->state = MAIN_MENU;
+			vg_set_redraw();
+		}
+	}
+
 	if (interrupt == MOUSE)
 	{
-		if (cursor_collision(&app->cursor, queue_at(app->buttons_game_playing, 0)))
-		{
-
-		}
-
-		if (cursor_collision(&app->cursor, queue_at(app->buttons_game_playing, 1)))
+		if (cursor_sprite_colides(&app->cursor, queue_at(app->buttons_game_playing, 0)))
 		{
 			
 		}
 
-		if (cursor_collision(&app->cursor, queue_at(app->buttons_game_playing, 2)))
+		if (cursor_sprite_colides(&app->cursor, queue_at(app->buttons_game_playing, 1)))
 		{
 			
 		}
 
-		if (cursor_collision(&app->cursor, queue_at(app->buttons_game_playing, 3)))
+		if (cursor_sprite_colides(&app->cursor, queue_at(app->buttons_game_playing, 2)))
+		{
+			
+		}
+
+		if (cursor_sprite_colides(&app->cursor, queue_at(app->buttons_game_playing, 3)))
 		{
 			
 		}
@@ -160,77 +158,140 @@ void handle_game_betting(app_t *app, interrupt_type_t interrupt)
 	mouse_info_t *info = mouse_get_info();
 	if (interrupt == KEYBOARD)
 	{
-		if (scancode == KB_ENTER)
+		vg_set_redraw();
+		
+		if (app->game.input_select) handle_bet_value(app, interrupt);
+		
+		if (scancode == KB_ESC)
 		{
-			if (app->game.main_player.bet > app->game.main_player.coins) return;
-
-			app->game.main_player.coins -= app->game.main_player.bet;
-			app->state = GAME_PLAYING;
-			vg_set_redraw();
+			if (!app->game.input_select)
+			{
+				app->state = MAIN_MENU;
+				game_destroy(&app->game);
+				return;
+			}
+			app->game.input_select = false;
 		}
+
+		if (scancode == KB_ENTER) app->game.input_select = true;
   }
 
-	if(interrupt == MOUSE)
+	if (interrupt == MOUSE)
 	{
 		if (info == NULL) return;
-
-		if (app->cursor.state == HAND)
-			{
-				app->cursor.state = POINTER;
-				vg_set_redraw();
-			}
     
-    if (app->cursor.x >= 470 && app->cursor.x <= 690 
-			&& app->cursor.y >= 785 && app->cursor.y <= 840 
-			&& info->lb)
+		if (!app->game.input_select && 
+			cursor_box_colides(&app->cursor, 460, 785, 600, 840))
 		{
-    	app->state = BET_VALUE;
+    	app->game.input_select = true;
       
 			vg_set_redraw();
-    }
+		}
+		else 
+		{
+			handle_bet_value(app, interrupt);
+		}
 	}
 }
 
 // Function to handle the interrupts in the game start
 void handle_game_over(app_t *app, interrupt_type_t interrupt)
 {
+	if (interrupt == KEYBOARD)
+	{
+		if (scancode == KB_ESC)
+		{
+			app->state = MAIN_MENU;
+			game_destroy(&app->game);
+			vg_set_redraw();
+		}
+	}
+
 	if (interrupt == MOUSE)
 	{
 		// Handle the interrupt here
   }
 }
 
+#include "../assets/font/font.h"
 void handle_bet_value(app_t *app, interrupt_type_t interrupt)
 {
 	const xpm_map_t number_xpm[10] = {
 		number_1_xpm, number_2_xpm, number_3_xpm,
-		number_5_xpm, number_5_xpm, number_6_xpm, number_7_xpm,
+		number_4_xpm, number_5_xpm, number_6_xpm, number_7_xpm,
 		number_8_xpm, number_9_xpm, number_0_xpm
 	};
 
   switch (interrupt)
 	{
     case KEYBOARD:
-			if (scancode >= 0x82 && scancode <= 0x8b)
+			if (scancode >= KB_1 && scancode <= KB_0)
 			{
-				sprite_t *sprite = sprite_create(number_xpm[scancode - 0x82]);
+				if (stack_full(app->xpms_numbers)) return;
+
+				sprite_t *sprite = sprite_create(number_xpm[scancode - KB_1]);
         if (sprite == NULL) return;
-        queue_push(app->xpms_numbers, sprite);
-        vg_set_redraw();
+
+        stack_push(app->xpms_numbers, sprite);
+				last = scancode == KB_0 ? 0 : scancode - KB_1 + 1;
+
+				app->game.main_player.bet = app->game.main_player.bet * 10 + last;
+				vg_set_redraw();
+				return;
 			}
 
-	  	if (scancode == 0x9c) // enter
-			{ 
-        while (!queue_empty(app->xpms_numbers)) queue_pop(app->xpms_numbers);
-        app->state = GAME_PLAYING;
+			if (scancode == KB_BACKSPC)
+			{
+				sprite_t *sprite = stack_pop(app->xpms_numbers);
+				if (sprite != NULL) sprite_destroy(sprite);
 
-        vg_set_redraw();
+				if(app->game.main_player.bet > 0)
+				{
+					app->game.main_player.bet = (app->game.main_player.bet - last) / 10;
+				}
+
+				vg_set_redraw();
+				return;
+			}
+
+	  	if (scancode == KB_ENTER)
+			{
+				handle_bet_value_check(app);
       }
 
 			return;
     case MOUSE:
-
+			if (cursor_sprite_colides(&app->cursor, app->button_bet))
+			{
+				handle_bet_value_check(app);
+			}
+			return;
     default:
       return;
   }
+}
+
+void handle_bet_value_check(app_t *app)
+{
+	stack_destroy(&app->xpms_numbers, sprite_queue_destroy);
+	app->xpms_numbers = stack_create(4);
+	vg_set_redraw();
+
+	if (app->game.main_player.bet == 0) return;
+	
+	if (app->game.main_player.bet > app->game.main_player.coins)
+	{
+		app->game.main_player.bet = 0;
+		return;
+	}
+				
+	app->game.main_player.coins -= app->game.main_player.bet;
+	app->state = GAME_PLAY;
+	app->game.input_select = false;
+
+	game_give_card(app->game.cards, app->game.dealer);
+	game_give_card(app->game.cards, app->game.dealer);
+
+	game_give_card(app->game.cards, app->game.main_player.cards);
+	game_give_card(app->game.cards, app->game.main_player.cards);
 }

@@ -1,4 +1,4 @@
-#include "../drivers.h"
+#include "graphics.h"
 
 static t_gph gph;
 
@@ -43,11 +43,11 @@ int	vg_map_memory(uint16_t mode)
 	unsigned int screen_size = gph.x_res * gph.y_res * gph.bytes_per_pixel;
 	
 	mr.mr_base = (phys_bytes) mode_info.PhysBasePtr;
-	mr.mr_limit = mr.mr_base + 2 * screen_size;
+	mr.mr_limit = mr.mr_base + 3 * screen_size;
 
 	if(sys_privctl(SELF, SYS_PRIV_ADD_MEM, &mr))return 1;
 	
-	for (uint32_t i = 0; i < 2; i++)
+	for (uint32_t i = 0; i < 3; i++)
 	{
 		gph.frame_buffer[i] = vm_map_phys(SELF, (void *) (mr.mr_base + i * screen_size), screen_size);
 		if (gph.frame_buffer[i] == NULL) return 1;
@@ -56,7 +56,7 @@ int	vg_map_memory(uint16_t mode)
 	}
 
 	gph.selectedNum = 1;
-	gph.needs_redraw[0] = true;
+	gph.needs_redraw = true;
 
   return 0;
 }
@@ -73,8 +73,8 @@ int (vg_flip)()
 	r.cx = 0;
 	r.dx = gph.selectedNum * gph.y_res;
 
-	gph.needs_redraw[gph.selectedNum] = false;
-	gph.selectedNum = !gph.selectedNum;
+	gph.needs_redraw = false;
+	gph.selectedNum = gph.selectedNum == 2 ? 0 : gph.selectedNum + 1;
 
 	return sys_int86(&r);
 }
@@ -129,27 +129,17 @@ int (vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width,
 	return 0;
 }
 
-int(vg_draw_border)(uint16_t x, uint16_t y, uint16_t width,
-                    uint16_t height, uint32_t color)
+int vg_draw_border(uint16_t x, uint16_t y, uint16_t width, uint16_t height, 		uint32_t color, uint8_t thickness)
 {
-  for (int i = 0; i < 4; i++)
+  for (int i = 0; i < thickness; i++)
 	{
     if (vg_draw_hline(x, y + i, width, color)) return 1;
-  }
 
-  for (int i = 0; i < 4; i++)
-	{
-    if (vg_draw_hline(x, y + height - 1 + i, width, color)) return 1;
-  }
+    if (vg_draw_hline(x, y + height - 1 - i, width, color)) return 1;
 
-  for (int i = 0; i < 4; i++)
-	{
     if (vg_draw_vline(x + i, y, height, color)) return 1;
-  }
 
-  for (int i = 0; i < 4; i++)
-	{
-    if (vg_draw_vline(x + width - 1 + i, y, height, color)) return 1;
+    if (vg_draw_vline(x + width - 1 - i, y, height, color)) return 1;
   }
 
   return 0;
@@ -167,17 +157,10 @@ unsigned vg_get_height()
 
 void vg_set_redraw()
 {
-	for (uint32_t i = 0; i < 2; i++)
-	{
-		gph.needs_redraw[i] = 1;
-	}
+	gph.needs_redraw = true;
 }
 
 int vg_has_redraw()
 {
-	for (uint32_t i = 0; i < 2; i++)
-	{
-		if (gph.needs_redraw[i]) return 1;
-	}
-	return 0;
+	return gph.needs_redraw;
 }
