@@ -3,7 +3,10 @@
 
 #include <lcom/lcf.h>
 
-/** @defgroup queue_t Queue
+/** @defgroup data_structures Data Structures */
+
+/** @defgroup queue_t Queue 
+ * 	@ingroup data_structures
  * @{
  *
  * @brief Container which follows the FIFO (First in, First out) principle.

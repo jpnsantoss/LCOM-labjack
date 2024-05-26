@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['card_5fbase_5fdestroy_0',['card_base_destroy',['../card_8h.html#a03f71f970e17949d6382639bf049e710',1,'card_base_destroy():&#160;card.c'],['../card_8c.html#a03f71f970e17949d6382639bf049e710',1,'card_base_destroy():&#160;card.c']]],
+  ['card_5fbase_5fdestroy_0',['card_base_destroy',['../card_8c.html#a03f71f970e17949d6382639bf049e710',1,'card_base_destroy():&#160;card.c'],['../card_8h.html#a03f71f970e17949d6382639bf049e710',1,'card_base_destroy():&#160;card.c']]],
   ['card_5fbase_5finit_1',['card_base_init',['../card_8c.html#abb3f40a32df4102ffe6f359c2cab0a92',1,'card_base_init():&#160;card.c'],['../card_8h.html#abb3f40a32df4102ffe6f359c2cab0a92',1,'card_base_init():&#160;card.c']]],
   ['card_5fcreate_2',['card_create',['../card_8c.html#a81ea1a299f20c143fee5a3c67d4951d7',1,'card_create(int value, card_type_t type):&#160;card.c'],['../card_8h.html#a81ea1a299f20c143fee5a3c67d4951d7',1,'card_create(int value, card_type_t type):&#160;card.c']]],
   ['card_5fdestroy_3',['card_destroy',['../card_8c.html#a199fa1253b6d8e693f43c4c9e98746e6',1,'card_destroy(card_t *card):&#160;card.c'],['../card_8h.html#a199fa1253b6d8e693f43c4c9e98746e6',1,'card_destroy(card_t *card):&#160;card.c']]],

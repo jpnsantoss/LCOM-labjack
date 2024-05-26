@@ -3,6 +3,15 @@
 
 #include <lcom/lcf.h>
 
+/** @defgroup data_structures Data Structures */
+
+/** @defgroup stack_t Stack 
+ * 	@ingroup data_structures
+ * @{
+ *
+ * @brief Container which follows the LIFO (Last in, First out) principle.
+*/
+
 typedef struct {
 	void 	**content;
 	size_t	base_size;
@@ -18,5 +27,7 @@ int			stack_full(my_stack_t *stack);
 int			stack_empty(my_stack_t *stack);
 void		stack_destroy(my_stack_t **stack, void (*f)(void *));
 void 		*stack_at(my_stack_t *stack, size_t pos);
+
+/** @} */
 
 #endif
