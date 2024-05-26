@@ -3,9 +3,6 @@
 #include "model/game/game.h"
 #include "model/app/app.h"
 #include "ev_listener/ev_listener.h"
-#include "data_structures/stack.h"
-
-int counter = 0;
 
 // Any header files included below this line should have been created by you
 
@@ -70,8 +67,6 @@ int (proj_main_loop)(int argc, char **argv)
 
 	app_t *app = app_init();
 	if (app == NULL) close_app();
-	
-	counter = 0;
 
 	while (app->state != EXIT)
 	{

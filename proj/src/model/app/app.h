@@ -7,6 +7,7 @@
 #include "../cursor/cursor.h"
 #include "../../drivers/drivers.h"
 #include "../game/game.h"
+#include "../font/font.h"
 
 #include "../../assets/background.xpm"
 #include "../../assets/buttons/buttons.h"
@@ -48,7 +49,7 @@ typedef struct {
 	sprite_t		*button_bet;
 	my_stack_t	*xpms_numbers;
 
-	animation_t *card_loop;
+	font_t 			font;
 	
 	game_t			game;
 	app_state_t	state;

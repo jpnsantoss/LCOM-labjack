@@ -3,7 +3,7 @@
 
 #include <lcom/lcf.h>
 
-#include "../../data_structures/queue.h"
+#include "../../data_structures/queue/queue.h"
 #include "../player/player.h"
 #include "../card/card.h"
 #include "../../assets/cards/back_red_1.xpm"

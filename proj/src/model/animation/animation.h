@@ -2,7 +2,7 @@
 #define _LCOM_ANIMATION_H_
 
 #include <lcom/lcf.h>
-#include "../../data_structures/queue.h"
+#include "../../data_structures/queue/queue.h"
 #include "../sprite/sprite.h"
 
 typedef struct {

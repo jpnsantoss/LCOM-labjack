@@ -13,13 +13,14 @@ void draw_state(app_t *app)
 		
 		game_draw_deck(&app->game);
 		game_draw_dealer(&app->game);
+
+		font_print_number(&app->font, app->game.main_player.coins, 10, 795);
 	}
 
 	switch(app->state)
 	{
 		case MAIN_MENU:
 			draw_button_set(app->buttons_main_menu);
-			animation_draw(app->card_loop);
 			break;
 		case GAME_BET:
 			sprite_draw(app->button_bet);

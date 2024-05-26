@@ -3,12 +3,6 @@
 
 #include <lcom/lcf.h>
 
-/** @defgroup i8254 i8254
- * @{
- *
- * Constants for programming the i8254 Timer. Needs to be completed.
- */
-
 #define TIMER_FREQ 1193182 /**< @brief clock frequency for timer in PC and AT */
 #define TIMER0_IRQ 0 /**< @brief Timer 0 IRQ line */
 
@@ -53,7 +47,5 @@
 #define TIMER_RB_COUNT_  BIT(5)
 #define TIMER_RB_STATUS_ BIT(4)
 #define TIMER_RB_SEL(n)  BIT((n) + 1)
-
-/**@}*/
 
 #endif /* _LCOM_I8254_H */
