@@ -60,7 +60,6 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
 			break;
 		case TIMER:
 			draw_screen(app);
-			animation_run(app->card_loop);
 			break;
 		case RTC:
 			rtc_ih();

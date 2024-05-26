@@ -26,14 +26,7 @@ app_t *app_init()
 	app->xpms_numbers = stack_create(4);
 	if (app->xpms_numbers == NULL) return NULL;
 
-	sprite_t *sprite = sprite_create(hand_xpm);
-	app->card_loop = animation_create(true, 30, 30);
-	if (app->card_loop == NULL) return NULL;
-
-	for (int i = 0; i < 30; i++)
-	{
-		if (animation_add_frame(app->card_loop, sprite, 200 + i * 5, 200)) exit(0);
-	}
+	font_init(&app->font);
 	
   return app;
 }
@@ -95,5 +88,7 @@ void app_destroy(app_t *app)
 	sprite_destroy(app->button_bet);
 	game_destroy(&app->game);
 	cursor_destroy(&app->cursor);
+	font_destroy(&app->font);
+	
 	free(app);
 }
