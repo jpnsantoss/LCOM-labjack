@@ -4,6 +4,7 @@ int hook_id_uart = 4;
 
 queue_t *transmitter = NULL;
 queue_t *receiver = NULL;
+int uart_disabled = 0;
 
 int (uart_subscribe_int)(uint8_t *bit_no)
 {
@@ -188,7 +189,11 @@ int (uart_init)(uint8_t *bit_no, int bit_rate)
 	cmd = UART_IER_ENABLE_INT_DATA | UART_IER_ENABLE_INT_LSR | UART_IER_ENABLE_INT_THR;
 	if (uart_write(UART_COM1, UART_IER, cmd)) return 1;
 
-	if (uart_fifo_read(UART_COM1)) return 1;
+	if (uart_fifo_read(UART_COM1))
+	{
+		uart_disabled = 1;
+		return 0;
+	}
 
 	return uart_subscribe_int(bit_no);
 }
@@ -198,6 +203,8 @@ int (uart_disable)()
 	if (transmitter != NULL) queue_destroy(&transmitter, free);
 
 	if (receiver != NULL) queue_destroy(&receiver, free);
+
+	if (uart_disabled) return 0;
 
 	return uart_unsubscribe_int();
 }
