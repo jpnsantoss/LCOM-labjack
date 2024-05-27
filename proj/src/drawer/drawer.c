@@ -31,7 +31,11 @@ void draw_state(app_t *app)
 			}
 			break;
 		case GAME_PLAY:
-			font_print_number(&app->font, app->game.main_player.bet, 10, 760);
+			font_print_char(&app->font, 'B', 10, 760);
+			font_print_char(&app->font, 'e', 34, 765);
+			font_print_char(&app->font, 't', 53, 765);
+			font_print_char(&app->font, ':', 68, 765);
+			font_print_number(&app->font, app->game.main_player.bet, 92, 760);
 			font_print_number(&app->font, app->game.main_player.cards_value, 10, 725);
 			draw_button_set(app->buttons_game_playing);
 			break;

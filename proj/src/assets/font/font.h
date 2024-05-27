@@ -2,10 +2,11 @@
 #define _LCOM_ASSETS_FONT_H_
 
 #include "a.xpm"
+#include "B.xpm"
 // #include "b.xpm"
 // #include "c.xpm"
 #include "d.xpm"
-// #include "e.xpm"
+#include "e.xpm"
 // #include "f.xpm"
 // #include "g.xpm"
 // #include "h.xpm"
@@ -20,7 +21,7 @@
 // #include "q.xpm"
 // #include "r.xpm"
 #include "s.xpm"
-// #include "t.xpm"
+#include "t.xpm"
 // #include "u.xpm"
 // #include "v.xpm"
 // #include "w.xpm"
@@ -38,5 +39,7 @@
 #include "7.xpm"
 #include "8.xpm"
 #include "9.xpm"
+
+#include "twodots.xpm"
 
 #endif

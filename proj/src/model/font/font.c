@@ -5,15 +5,15 @@ int font_init(font_t *font)
 	if (font == NULL) return 1;
 
   const xpm_map_t letters_xpm[26] = {
-    letter_a_xpm , /*letter_b_xpm, letter_c_xpm,
-     letter_d_xpm, letter_e_xpm, letter_f_xpm,
-     letter_g_xpm, letter_h_xpm, letter_i_xpm,
-     letter_j_xpm, letter_k_xpm, letter_l_xpm,
-     letter_m_xpm, letter_n_xpm, letter_o_xpm,
-     letter_p_xpm, letter_q_xpm, letter_r_xpm,
-     letter_s_xpm, letter_t_xpm, letter_u_xpm,
-     letter_v_xpm, letter_w_xpm, letter_x_xpm,
-     letter_y_xpm, letter_z_xpm*/
+    letter_a_xpm , letter_B_xpm,  letter_t_xpm,
+     letter_t_xpm, letter_e_xpm, letter_e_xpm,
+     letter_e_xpm, letter_e_xpm, letter_e_xpm,
+     letter_e_xpm, letter_e_xpm, letter_e_xpm,
+     letter_e_xpm, letter_e_xpm, letter_e_xpm,
+     letter_e_xpm, letter_e_xpm, letter_e_xpm,
+     letter_e_xpm, letter_t_xpm, letter_e_xpm,
+     letter_e_xpm, letter_e_xpm, letter_e_xpm,
+     letter_e_xpm, letter_e_xpm, 
   };
 
   const xpm_map_t numbers_xpm[10] = {
@@ -25,7 +25,7 @@ int font_init(font_t *font)
   font->xpms_letters = queue_create(26);
   if (font->xpms_letters == NULL) return 1;
 
-  for (int letter = 0; letter < 1; letter++)
+  for (int letter = 0; letter < 26; letter++)
 	{
     sprite_t *sprite = sprite_create(letters_xpm[letter]);
     if (sprite == NULL)
@@ -62,6 +62,10 @@ int font_init(font_t *font)
 void font_print_char(font_t *font, char c, uint32_t x, uint32_t y)
 {
   sprite_t *sprite = NULL;
+
+  if(c == ':'){
+    sprite = sprite_create(twodots_xpm);
+  }
 
   if (c >= 'a' && c <= 'z')
 	{
