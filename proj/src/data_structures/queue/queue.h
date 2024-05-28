@@ -1,12 +1,13 @@
-#ifndef _LCOM_LIST_H_
-#define _LCOM_LIST_H_
+#ifndef _LCOM_QUEUE_H_
+#define _LCOM_QUEUE_H_
 
 #include <lcom/lcf.h>
 
 /** @defgroup data_structures Data Structures */
 
-/** @defgroup queue_t Queue 
- * 	@ingroup data_structures
+/**
+ * @defgroup queue_t Queue 
+ * @ingroup data_structures
  * @{
  *
  * @brief Container which follows the FIFO (First in, First out) principle.
@@ -111,4 +112,4 @@ void		queue_shuffle(queue_t *queue);
 
 /** @} */
 
-#endif
+#endif /* _LCOM_QUEUE_H_ */

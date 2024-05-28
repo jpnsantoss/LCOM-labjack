@@ -9,4 +9,6 @@
 
 #include "../data_structures/stack/stack.h"
 
+/** @defgroup drivers Drivers */
+
 #endif

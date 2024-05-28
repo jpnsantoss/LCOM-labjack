@@ -5,8 +5,9 @@
 
 /** @defgroup data_structures Data Structures */
 
-/** @defgroup stack_t Stack 
- * 	@ingroup data_structures
+/** 
+ * @defgroup stack_t Stack 
+ * @ingroup data_structures
  * @{
  *
  * @brief Container which follows the LIFO (Last in, First out) principle.
@@ -30,4 +31,4 @@ void 		*stack_at(my_stack_t *stack, size_t pos);
 
 /** @} */
 
-#endif
+#endif /* _LCOM_STACK_H_ */
