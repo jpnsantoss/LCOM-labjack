@@ -108,8 +108,10 @@ int game_draw_deck(game_t *game)
 	return 0;
 }
 
-int game_draw_dealer(game_t *game)
+int game_draw_dealer(game_t *game, font_t *font)
 {
+	uint32_t card_value = 0;
+
 	for(size_t i = 0; i < queue_size(game->dealer); i++)
 	{	
 		card_t *card = queue_at(game->dealer, i);
@@ -117,17 +119,18 @@ int game_draw_dealer(game_t *game)
 		if (card == NULL) return 1;
 
 		sprite_t *sprite;
-		if(game->dealer_turn){
-			sprite = card->sprite_base;
-		}
-		else{
-			sprite = (i == 0 || game->round_count > 1) ?
-			card->sprite_base : game->card_back;
-		}
-		
-		sprite_move(sprite, 500 + i * card->sprite_base->img.width * 0.5, 240);
+
+		if (i == 0) card_value = card->value;
+
+		sprite = (i == 0 || game->dealer_turn) ? card->sprite_base : game->card_back;
+
+		sprite_move(sprite, 500 + i * sprite->img.width * 0.5, 240);
 		sprite_draw(sprite);
 	}
+
+	font_print_number(font, game->dealer_turn ? 
+		game_get_cards_value(game->dealer) : card_value, 505, 315);
+
 	return 0;
 }
 

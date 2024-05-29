@@ -43,5 +43,7 @@ void player_draw(font_t *font, player_t *player)
 			sprite_draw(card->sprite_base);
 		}		
 	}
-	font_print_number(font, player->coins, 10, 795);
+
+	//font_print_str(font, "Bal:", 10, 805);
+	font_print_number(font, player->coins, 92, 805);
 }

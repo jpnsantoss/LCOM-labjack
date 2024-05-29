@@ -38,7 +38,7 @@ typedef struct {
 int		game_init(game_t *game);
 void	game_destroy(game_t *game);
 int 	game_draw_deck(game_t *game);
-int		game_draw_dealer(game_t *game);
+int		game_draw_dealer(game_t *game, font_t *font);
 int		game_give_card(queue_t *deck, queue_t *receiver);
 uint32_t game_get_cards_value(queue_t *cards);
 int game_dealer_cards(game_t *game);

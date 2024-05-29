@@ -11,7 +11,9 @@ handler listeners[] = {
   handle_game_betting,
   handle_game_playing,
   handle_game_over,
-  NULL};
+  NULL,
+	handle_dealer_turn
+};
 
 void handle_interrupt(app_t *app, interrupt_type_t interrupt)
 {
@@ -73,10 +75,6 @@ void handle_main_menu(app_t *app, interrupt_type_t interrupt)
   switch (interrupt)
 	{
     case KEYBOARD:
-      if (scancode == KB_0)
-			{
-        uart_send_byte(1);
-      }
       if (scancode == KB_ESC) app->state = EXIT;
       return;
 
@@ -104,12 +102,35 @@ void handle_main_menu(app_t *app, interrupt_type_t interrupt)
       }
       break;
     case UART:
-      if (uart_response == 1)
+      if (uart_response == PROTO_QUERY_GAME)
       {
-        uart_response = 0xff;
-        cursor_move(&app->cursor, app->cursor.x + 10, app->cursor.y);
+        uart_response = PROTO_NONE;
+        uart_send_byte(PROTO_YES);
+
+				app->state = GAME_BET;
+
+        if (game_init(&app->game))
+				{
+          app->state = EXIT;
+          game_destroy(&app->game);
+          return;
+        }
+
         vg_set_redraw();
       }
+			if (uart_response == PROTO_YES)
+			{
+				app->state = GAME_BET;
+
+        if (game_init(&app->game))
+				{
+          app->state = EXIT;
+          game_destroy(&app->game);
+          return;
+        }
+
+        vg_set_redraw();
+			}
       break;
     default:
       return;
@@ -149,14 +170,15 @@ void handle_game_playing(app_t *app, interrupt_type_t interrupt)
 
     if (cursor_sprite_colides(&app->cursor, queue_at(app->buttons_game_playing, 1)))
     {
-        app->game.dealer_turn = true;
+        app->state = GAME_DEALER_TURN;
         vg_set_redraw();
-        
     }
 
     if (cursor_sprite_colides(&app->cursor, queue_at(app->buttons_game_playing, 2)))
     {
-
+			app->state = GAME_DEALER_TURN;
+			game_give_card(app->game.dealer, app->game.main_player.cards);
+			vg_set_redraw();
     }
 
     if (cursor_sprite_colides(&app->cursor, queue_at(app->buttons_game_playing, 3)))
@@ -326,4 +348,9 @@ void handle_bet_value_check(app_t *app)
   game_give_card(app->game.cards, app->game.main_player.cards);
 
 	app->game.main_player.cards_value = game_get_cards_value(app->game.main_player.cards);
+}
+
+void handle_dealer_turn(app_t *app, interrupt_type_t interrupt)
+{
+	
 }

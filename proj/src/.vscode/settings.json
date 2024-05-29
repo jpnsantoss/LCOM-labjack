@@ -38,6 +38,7 @@
 		"cards.h": "c",
 		"graphics.h": "c",
 		"serial_port.h": "c",
-		"animation.h": "c"
+		"animation.h": "c",
+		"com_manager.h": "c"
 	},
 }
