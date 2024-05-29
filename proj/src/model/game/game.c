@@ -130,8 +130,8 @@ int game_draw_dealer(game_t *game, font_t *font)
 		sprite_draw(sprite);
 	}
 
-	font_print_number(font, game->dealer_turn ? 
-		game_get_cards_value(game->dealer) : card_value, 505, 315);
+	font_print_number(font, game->dealer_turn? game_get_cards_value(game->dealer)
+		: card_value, 505, 315, 0xffffff);
 
 	return 0;
 }

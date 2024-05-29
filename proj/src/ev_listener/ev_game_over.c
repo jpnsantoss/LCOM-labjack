@@ -33,7 +33,7 @@ void handle_game_over(app_t *app, interrupt_type_t interrupt)
 		
     if (scancode == KB_ESC || scancode == KB_2)
     {
-      app->state = MAIN_MENU;
+      app->state = EXIT;
       game_destroy(&app->game);
       vg_set_redraw();
     }

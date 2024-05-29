@@ -16,6 +16,7 @@ void			sprite_destroy(sprite_t *sprite);
 void			sprite_queue_destroy(void *sprite);
 int				sprite_draw(sprite_t *sprite);
 int				sprite_draw_rotate(sprite_t *sprite);
+int				sprite_draw_force_color(sprite_t *sprite, uint32_t color);
 int				sprite_move(sprite_t *sprite, uint32_t x, uint32_t y);
 int				sprite_colides(sprite_t *sprite1, sprite_t *sprite2);
 

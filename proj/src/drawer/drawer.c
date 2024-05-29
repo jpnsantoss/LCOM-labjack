@@ -8,23 +8,25 @@ void draw_state(app_t *app)
   if (app == NULL)
     return;
 
+	if (app->state != MAIN_MENU)
+	{
+		font_print_str(&app->font, "Bal:~", 10, 805, 0xffff00);
+		font_print_number(&app->font, app->game.main_player.coins, 146, 805, 0xffff00);
+	}
+
   if (app->state != MAIN_MENU && app->state != GAME_BET)
 	{
     player_draw(&app->game.main_player);
-		font_print_number(&app->font, app->game.main_player.coins, 92, 805);
 
     // TODO: Draw player info if multiplayer.
 
     game_draw_dealer(&app->game, &app->font);
     game_draw_deck(&app->game);
 
-		font_print_char(&app->font, 'B', 10, 760);
-    font_print_char(&app->font, 'e', 34, 765);
-    font_print_char(&app->font, 't', 53, 765);
-    font_print_char(&app->font, ':', 68, 765);
+		font_print_str(&app->font, "Bet:~", 10, 762, 0xffffff);
 
-    font_print_number(&app->font, app->game.main_player.bet, 92, 760);
-    font_print_number(&app->font, app->game.main_player.cards_value, 505, 575);
+    font_print_number(&app->font, app->game.main_player.bet, 146, 760, 0xffffff);
+    font_print_number(&app->font, app->game.main_player.cards_value, 505, 575, 0xffffff);
   }
 
   switch (app->state) {
@@ -36,34 +38,35 @@ void draw_state(app_t *app)
       vg_draw_border(460, 785, 140, 55, app->game.input_select ? 0xe69f58 : 0xffffff, 4);
       if (app->game.main_player.bet != 0)
 			{
-        font_print_number(&app->font, app->game.main_player.bet, (vg_get_width() / 2) - 100, 795);
+        font_print_number(&app->font, app->game.main_player.bet, 
+					(vg_get_width() / 2) - 100, 795, 0xffffff);
       }
-			font_print_number(&app->font, app->game.main_player.coins, 92, 805);
       break;
     case GAME_PLAY:
       draw_button_set(app->buttons_game_playing);
       break;
     case GAME_OVER:
-			x = vg_get_width() / 2 - 66;
+			x = vg_get_width() / 2;
 			y = vg_get_height() / 2 - 42;
 			switch (app->game.main_player.game_over_state)
 			{
 				case PLAYER_WIN:
-					font_print_str(&app->font, "YOU WIN", x, y);
+					font_print_str(&app->font, "YOU WIN", x - 26 * 3, y, 0x00ff00);
 					break;
 				case PLAYER_LOSS:
-					font_print_str(&app->font, "YOU LOSE", x, y);
+					font_print_str(&app->font, "YOU LOSE", x - 26 * 3.5, y, 0xff0000);
 					break;
 				case PLAYER_DRAW:
-					font_print_str(&app->font, "DRAW", x, y);
+					font_print_str(&app->font, "DRAW", x - 26 * 2, y, 0xffa500);
 					break;
 				default:
-					font_print_str(&app->font, "GAME ENDED?", x, y);
+					font_print_str(&app->font, "GAME ENDED?", x - 26 * 5.5, y, 0x808080);
 					break;
 			}
 
+			font_print_str(&app->font, "~", vg_get_width() / 2 - 40, vg_get_height() / 2, 0xffff00);
 			font_print_number(&app->font, app->game.main_player.won_coins, 
-				vg_get_width() / 2 - 10, vg_get_height() / 2);
+				vg_get_width() / 2 - 10, vg_get_height() / 2, 0xffff00);
 
       draw_button_set(app->buttons_game_over);
       break;
