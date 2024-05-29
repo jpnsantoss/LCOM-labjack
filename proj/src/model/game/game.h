@@ -19,6 +19,8 @@ typedef struct {
 
 	queue_t 	*cards;
 	queue_t		*dealer;
+
+	uint32_t	dealer_value;
 	
 	uint32_t	round_count;
 	uint32_t	card_played_count;
@@ -35,12 +37,13 @@ typedef struct {
 	player_t 	other_player;
 } game_t;
 
-int		game_init(game_t *game);
-void	game_destroy(game_t *game);
-int 	game_draw_deck(game_t *game);
-int		game_draw_dealer(game_t *game, font_t *font);
-int		game_give_card(queue_t *deck, queue_t *receiver);
-uint32_t game_get_cards_value(queue_t *cards);
-int game_dealer_cards(game_t *game);
+int				game_init(game_t *game);
+void			game_destroy(game_t *game);
+int 			game_add_deck(queue_t *cards, bool shuffle);
+
+int 			game_draw_deck(game_t *game);
+int				game_draw_dealer(game_t *game, font_t *font);
+int				game_give_card(queue_t *deck, queue_t *receiver);
+uint32_t	game_get_cards_value(queue_t *cards);
 
 #endif

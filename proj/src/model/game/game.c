@@ -80,6 +80,8 @@ void game_destroy(game_t *game)
 
 	if (game->cards != NULL) queue_destroy(&game->cards, card_queue_destroy);
 	if (game->dealer != NULL) queue_destroy(&game->dealer, card_queue_destroy);
+
+	card_base_destroy();
 }
 
 int	game_give_card(queue_t *deck, queue_t *receiver)

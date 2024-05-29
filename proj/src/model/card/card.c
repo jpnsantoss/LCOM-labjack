@@ -49,7 +49,7 @@ void card_destroy(card_t *card)
 {
 	if (card == NULL) return;
 
-	sprite_destroy(card->sprite_base);
+	free(card);
 }
 
 card_t *card_create(int value, card_type_t type)

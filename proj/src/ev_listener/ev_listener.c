@@ -18,8 +18,7 @@ void handle_interrupt(app_t *app, interrupt_type_t interrupt)
 {
   handle_general(app, interrupt);
   handler hd = listeners[app->state];
-  if (hd == NULL)
-    return;
+  if (hd == NULL) return;
   if (state_changed)
 	{
     state_changed = 0;
@@ -42,8 +41,7 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
       if (mouse_read_packet())
 			{
         mouse_info_t *info = mouse_get_info();
-        if (info == NULL)
-          return;
+        if (info == NULL) return;
 
         uint32_t new_x = app->cursor.x + info->delta_x;
         uint32_t new_y = app->cursor.y - info->delta_y;
@@ -61,6 +59,7 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
       }
       break;
     case TIMER:
+      timer_int_handler();
       draw_screen(app);
       break;
     case RTC:
@@ -68,4 +67,3 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
       break;
   }
 }
-

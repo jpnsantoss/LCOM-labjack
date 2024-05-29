@@ -120,4 +120,10 @@ void handle_bet_value_check(app_t *app)
   game_give_card(app->game.cards, app->game.main_player.cards);
 
 	app->game.main_player.cards_value = game_get_cards_value(app->game.main_player.cards);
+
+  if (app->game.main_player.cards_value == 21)
+  {
+    app->game.dealer_turn = 1;
+    app->state = GAME_DEALER_TURN;
+  }
 }
