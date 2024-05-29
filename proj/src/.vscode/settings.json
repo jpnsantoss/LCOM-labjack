@@ -7,11 +7,11 @@
   "editor.wordWrap": "bounded",
   "editor.wordWrapColumn": 100,
   "files.associations": {
-		"*.embeddedhtml": "html",
 		"*.js": "javascript",
 		"*.tpl": "php",
 		"*.pcss": "css",
 		".env*": "dotenv",
+		"*.embeddedhtml": "html",
 		"drivers.h": "c",
 		"string.h": "c",
 		"lcf.h": "c",
@@ -39,6 +39,7 @@
 		"graphics.h": "c",
 		"serial_port.h": "c",
 		"animation.h": "c",
-		"com_manager.h": "c"
+		"com_manager.h": "c",
+		"protocol.h": "c"
 	},
 }

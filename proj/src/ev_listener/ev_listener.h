@@ -10,8 +10,6 @@
 
 typedef void(*handler)(app_t *, interrupt_type_t);
 
-extern handler listeners[];
-
 void	handle_interrupt(app_t *app, interrupt_type_t interrupt);
 
 void	handle_general(app_t *app, interrupt_type_t interrupt);

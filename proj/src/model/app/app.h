@@ -35,9 +35,8 @@ typedef enum {
 	GAME_BET,
 	GAME_PLAY,
 	GAME_OVER,
-	EXIT,
-	EXIT_CONFIRMATION,
-	GAME_DEALER_TURN
+	GAME_DEALER_TURN,
+	EXIT
 } app_state_t;
 
 typedef struct {
