@@ -35,6 +35,7 @@ int game_init(game_t *game)
 	game->extra_deck_count = 0;
 	game->multiplayer = 0;
 	game->input_select = 0;
+	game->dealer_turn = 0;
 	game->playing_id = 0;
 	game->card_theme = 0;
 	game->round_count = 0;
@@ -115,8 +116,14 @@ int game_draw_dealer(game_t *game)
 
 		if (card == NULL) return 1;
 
-		sprite_t *sprite = (i == 0 || game->round_count > 1) ?
-		 card->sprite_base : game->card_back;
+		sprite_t *sprite;
+		if(game->dealer_turn){
+			sprite = card->sprite_base;
+		}
+		else{
+			sprite = (i == 0 || game->round_count > 1) ?
+			card->sprite_base : game->card_back;
+		}
 		
 		sprite_move(sprite, 500 + i * card->sprite_base->img.width * 0.5, 240);
 		sprite_draw(sprite);

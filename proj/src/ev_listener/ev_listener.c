@@ -149,7 +149,9 @@ void handle_game_playing(app_t *app, interrupt_type_t interrupt)
 
     if (cursor_sprite_colides(&app->cursor, queue_at(app->buttons_game_playing, 1)))
     {
-
+        app->game.dealer_turn = true;
+        vg_set_redraw();
+        
     }
 
     if (cursor_sprite_colides(&app->cursor, queue_at(app->buttons_game_playing, 2)))
@@ -236,6 +238,7 @@ void handle_game_over(app_t *app, interrupt_type_t interrupt)
   {
 		if (cursor_sprite_colides(&app->cursor, queue_at(app->buttons_game_over, 0)))
     {
+      app->game.dealer_turn = false;
 			handle_game_over_rebet(app, interrupt);
     }
 

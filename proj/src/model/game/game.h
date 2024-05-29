@@ -29,6 +29,7 @@ typedef struct {
 	uint8_t		card_theme;
 
 	uint8_t		input_select;
+	uint8_t		dealer_turn;
 
 	player_t 	main_player;
 	player_t 	other_player;
@@ -40,5 +41,6 @@ int 	game_draw_deck(game_t *game);
 int		game_draw_dealer(game_t *game);
 int		game_give_card(queue_t *deck, queue_t *receiver);
 uint32_t game_get_cards_value(queue_t *cards);
+int game_dealer_cards(game_t *game);
 
 #endif

@@ -12,9 +12,10 @@ void draw_state(app_t *app)
 		player_draw(&app->font, &app->game.main_player);
 
 		// TODO: Draw player info if multiplayer.
-		
-		game_draw_deck(&app->game);
+	
 		game_draw_dealer(&app->game);
+		game_draw_deck(&app->game);
+		
 	}
 
 	switch(app->state)
@@ -38,9 +39,12 @@ void draw_state(app_t *app)
 			font_print_number(&app->font, app->game.main_player.bet, 92, 760);
 			font_print_number(&app->font, app->game.main_player.cards_value, 10, 725);
 			draw_button_set(app->buttons_game_playing);
+			/*if(app->game.dealer_turn){
+				game_draw_dealer(&app->game);
+			}*/
 			break;
 		case GAME_OVER:
-			dealer_value = game_get_cards_value(app->game.dealer);
+					dealer_value = game_get_cards_value(app->game.dealer);
 			font_print_str(&app->font, 
 				app->game.main_player.cards_value > dealer_value 
 					&& app->game.main_player.cards_value <= 21 ? "Win" : "Lose",
