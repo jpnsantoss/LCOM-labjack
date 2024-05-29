@@ -3,10 +3,21 @@
 
 #include <lcom/lcf.h>
 
+/** @defgroup timer Timer */
+
+/** 
+ * @defgroup timer_i8254 i8254 
+ * @ingroup timer
+ * @{
+ * 
+ * @brief Constants for the i8254 timer device.
+ */
+
 #define TIMER_FREQ 1193182 /**< @brief clock frequency for timer in PC and AT */
 #define TIMER0_IRQ 0 /**< @brief Timer 0 IRQ line */
 
-#define TIMER_ACTUAL_FREQ 30
+#define TIMER_ACTUAL_FREQ 30 /**< @brief Frequency used in the project (AKA frame rate)*/
+#define TIMER_DEFAULT_FREQ 60 /**< @brief Default frequency for MINIX */
 
 /* I/O port addresses */
 
@@ -15,7 +26,7 @@
 #define TIMER_2    0x42 /**< @brief Timer 2 count register */
 #define TIMER_CTRL 0x43 /**< @brief Control register */
 
-#define SPEAKER_CTRL 0x61 /**< @brief Register for speaker control  */
+#define SPEAKER_CTRL 0x61 /**< @brief Register for speaker control */
 
 /* Timer control */
 
@@ -44,8 +55,10 @@
 
 /* READ-BACK COMMAND FORMAT */
 
-#define TIMER_RB_COUNT_  BIT(5)
-#define TIMER_RB_STATUS_ BIT(4)
-#define TIMER_RB_SEL(n)  BIT((n) + 1)
+#define TIMER_RB_COUNT  BIT(5) /**< @brief Timer Read-Back Counter */
+#define TIMER_RB_STATUS BIT(4) /**< @brief Timer Read-Back Status */
+#define TIMER_RB_SEL(n)  BIT((n) + 1) /**< @brief Timer Read-Back Selector */
 
-#endif /* _LCOM_I8254_H */
+/** @} */
+
+#endif /* _LCOM_I8254_H_ */

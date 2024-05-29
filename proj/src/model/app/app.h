@@ -35,8 +35,8 @@ typedef enum {
 	GAME_BET,
 	GAME_PLAY,
 	GAME_OVER,
-	EXIT,
-	EXIT_CONFIRMATION
+	GAME_DEALER_TURN,
+	EXIT
 } app_state_t;
 
 typedef struct {
@@ -47,7 +47,6 @@ typedef struct {
 	queue_t			*buttons_game_playing;
 	queue_t			*buttons_game_over;
 	sprite_t		*button_bet;
-	my_stack_t	*xpms_numbers;
 
 	font_t 			font;
 	
@@ -75,5 +74,6 @@ app_t *app_init();
 void 	app_destroy(app_t *app);
 int		app_buttons_main_menu_init(queue_t **queue);
 int		app_buttons_game_playing_init(queue_t **queue);
+int		app_buttons_game_over_init(queue_t **queue);
 
 #endif

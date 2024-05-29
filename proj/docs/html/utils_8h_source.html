@@ -82,14 +82,16 @@ $(function() {
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;lcom/lcf.h&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>int (<a class="code hl_function" href="utils_8h.html#a81621440b3d65680979425e39aa8c789">util_get_LSB</a>)(uint16_t val, uint8_t *lsb);</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>int (<a class="code hl_function" href="utils_8h.html#a6a880076cd2ec468834438b6e0c58836">util_get_MSB</a>)(uint16_t val, uint8_t *msb);</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>int (<a class="code hl_function" href="utils_8h.html#a79a031a8611f5b2d6afa4158e92b0fb4">util_sys_inb</a>)(<span class="keywordtype">int</span> port, uint8_t *value);</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="autils_8h_html_a6a880076cd2ec468834438b6e0c58836"><div class="ttname"><a href="utils_8h.html#a6a880076cd2ec468834438b6e0c58836">util_get_MSB</a></div><div class="ttdeci">int() util_get_MSB(uint16_t val, uint8_t *msb)</div><div class="ttdef"><b>Definition</b> utils.c:11</div></div>
-<div class="ttc" id="autils_8h_html_a79a031a8611f5b2d6afa4158e92b0fb4"><div class="ttname"><a href="utils_8h.html#a79a031a8611f5b2d6afa4158e92b0fb4">util_sys_inb</a></div><div class="ttdeci">int() util_sys_inb(int port, uint8_t *value)</div><div class="ttdef"><b>Definition</b> utils.c:19</div></div>
-<div class="ttc" id="autils_8h_html_a81621440b3d65680979425e39aa8c789"><div class="ttname"><a href="utils_8h.html#a81621440b3d65680979425e39aa8c789">util_get_LSB</a></div><div class="ttdeci">int() util_get_LSB(uint16_t val, uint8_t *lsb)</div><div class="ttdef"><b>Definition</b> utils.c:3</div></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>int (<a class="code hl_function" href="group__driver__utils.html#ga81621440b3d65680979425e39aa8c789">util_get_LSB</a>)(uint16_t val, uint8_t *lsb);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>int (<a class="code hl_function" href="group__driver__utils.html#ga6a880076cd2ec468834438b6e0c58836">util_get_MSB</a>)(uint16_t val, uint8_t *msb);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>int (<a class="code hl_function" href="group__driver__utils.html#ga79a031a8611f5b2d6afa4158e92b0fb4">util_sys_inb</a>)(<span class="keywordtype">int</span> port, uint8_t *value);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#endif </span><span class="comment">/* _LCOM_DRIVER_UTILS_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="agroup__driver__utils_html_ga6a880076cd2ec468834438b6e0c58836"><div class="ttname"><a href="group__driver__utils.html#ga6a880076cd2ec468834438b6e0c58836">util_get_MSB</a></div><div class="ttdeci">int() util_get_MSB(uint16_t val, uint8_t *msb)</div><div class="ttdoc">Get the most significant bit of a value.</div><div class="ttdef"><b>Definition</b> utils.c:11</div></div>
+<div class="ttc" id="agroup__driver__utils_html_ga79a031a8611f5b2d6afa4158e92b0fb4"><div class="ttname"><a href="group__driver__utils.html#ga79a031a8611f5b2d6afa4158e92b0fb4">util_sys_inb</a></div><div class="ttdeci">int() util_sys_inb(int port, uint8_t *value)</div><div class="ttdoc">Reads the information in a register and converts it to a 8-bit unsigned integer.</div><div class="ttdef"><b>Definition</b> utils.c:19</div></div>
+<div class="ttc" id="agroup__driver__utils_html_ga81621440b3d65680979425e39aa8c789"><div class="ttname"><a href="group__driver__utils.html#ga81621440b3d65680979425e39aa8c789">util_get_LSB</a></div><div class="ttdeci">int() util_get_LSB(uint16_t val, uint8_t *lsb)</div><div class="ttdoc">Get the most least bit of a value.</div><div class="ttdef"><b>Definition</b> utils.c:3</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

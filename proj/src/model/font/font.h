@@ -10,10 +10,10 @@ typedef struct {
   queue_t     *xpms_letters;
 } font_t;
 
-int font_init(font_t *font);
-int font_print_char(font_t *font, char c, uint32_t x, uint32_t y);
-int font_print_str(font_t *font, char *str, uint32_t x, uint32_t y);
-int font_print_number(font_t *font, uint16_t num, uint32_t x, uint32_t y);
-void font_destroy(font_t *font);
+int		font_init(font_t *font);
+void	font_print_char(font_t *font, char c, uint32_t x, uint32_t y);
+void	font_print_str(font_t *font, char *str, uint32_t x, uint32_t y);
+void	font_print_number(font_t *font, uint32_t num, uint32_t x, uint32_t y);
+void	font_destroy(font_t *font);
 
 #endif

@@ -6,6 +6,9 @@ int player_init(player_t *player)
 
 	player->coins = PLAYER_STARTING_COINS;
 	player->bet = 0;
+	player->cards_value = 0;
+	player->game_over_state = NOT_ENDED;
+	player->won_coins = 0;
 	player->cards = queue_create(PLAYER_MAX_DECK_SIZE);
 
 	return player->cards == NULL;
@@ -33,7 +36,7 @@ void player_draw(player_t *player)
 
 		if (card->is_double)
 		{
-			sprite_move(card->sprite_base, 750, 600);
+			sprite_move(card->sprite_base, 505, y + 30);
 			sprite_draw_rotate(card->sprite_base);
 		}
 		else
@@ -43,4 +46,3 @@ void player_draw(player_t *player)
 		}		
 	}
 }
-

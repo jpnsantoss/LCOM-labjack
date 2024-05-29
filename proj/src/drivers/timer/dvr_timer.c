@@ -29,7 +29,7 @@ int (timer_get_conf)(uint8_t timer, uint8_t *st)
 	if (!st || timer < 0 || timer > 2)
 		return 1;
 
-	uint8_t cmd = TIMER_RB_CMD | TIMER_RB_SEL(timer) | TIMER_RB_COUNT_;
+	uint8_t cmd = TIMER_RB_CMD | TIMER_RB_SEL(timer) | TIMER_RB_COUNT;
 	int retv = sys_outb(TIMER_CTRL, cmd);
 	if (retv)
 		return 1;

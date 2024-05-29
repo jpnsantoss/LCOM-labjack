@@ -112,7 +112,7 @@ int queue_push(queue_t *queue, void *content)
 
 	if (queue_empty(queue))
 	{
-		queue->curr_size += 1;
+		queue->curr_size = 1;
 		queue->content[0] = content;
 		return 0;
 	}

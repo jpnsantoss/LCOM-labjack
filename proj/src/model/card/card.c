@@ -49,16 +49,19 @@ void card_destroy(card_t *card)
 {
 	if (card == NULL) return;
 
-	sprite_destroy(card->sprite_base);
+	free(card);
 }
 
 card_t *card_create(int value, card_type_t type)
 {
-  card_t *card = (card_t *) malloc(sizeof(card_t));
+	card_t *card = (card_t *) malloc(sizeof(card_t));
 
-	if (value < 0 || value > 13) return NULL;
+	if (value < 0 || value >= 13) return NULL;
 
-  card->value = value;
+	if(value == 0) card->value = 11;
+	else if(value >= 10) card->value = 10;
+	else card->value = value + 1;
+
   card->type = type;
 	card->is_double = 0;
 	card->sprite_base = card_sprites[type][value];

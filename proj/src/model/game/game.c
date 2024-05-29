@@ -35,6 +35,7 @@ int game_init(game_t *game)
 	game->extra_deck_count = 0;
 	game->multiplayer = 0;
 	game->input_select = 0;
+	game->dealer_turn = 0;
 	game->playing_id = 0;
 	game->card_theme = 0;
 	game->round_count = 0;
@@ -79,6 +80,8 @@ void game_destroy(game_t *game)
 
 	if (game->cards != NULL) queue_destroy(&game->cards, card_queue_destroy);
 	if (game->dealer != NULL) queue_destroy(&game->dealer, card_queue_destroy);
+
+	card_base_destroy();
 }
 
 int	game_give_card(queue_t *deck, queue_t *receiver)
@@ -107,20 +110,53 @@ int game_draw_deck(game_t *game)
 	return 0;
 }
 
-int game_draw_dealer(game_t *game)
+int game_draw_dealer(game_t *game, font_t *font)
 {
+	uint32_t card_value = 0;
+
 	for(size_t i = 0; i < queue_size(game->dealer); i++)
 	{	
 		card_t *card = queue_at(game->dealer, i);
 
 		if (card == NULL) return 1;
 
-		sprite_t *sprite = (i == 0 || game->round_count > 1) ?
-		 card->sprite_base : game->card_back;
-		
-		sprite_move(sprite, 500 + i * card->sprite_base->img.width * 0.5, 240);
+		sprite_t *sprite;
+
+		if (i == 0) card_value = card->value;
+
+		sprite = (i == 0 || game->dealer_turn) ? card->sprite_base : game->card_back;
+
+		sprite_move(sprite, 500 + i * sprite->img.width * 0.5, 240);
 		sprite_draw(sprite);
 	}
+
+	font_print_number(font, game->dealer_turn ? 
+		game_get_cards_value(game->dealer) : card_value, 505, 315);
+
 	return 0;
 }
 
+uint32_t game_get_cards_value(queue_t *cards)
+{
+	if (cards == NULL) return 0;
+
+	uint32_t cards_value = 0;
+	uint32_t aces = 0;
+
+	for (size_t i = 0; i < cards->curr_size; i++)
+	{
+		card_t *card = queue_at(cards, i);
+		if (card == NULL) continue;
+
+		cards_value += card->value;
+		if (card->value == 11) aces++;
+	}
+
+	while (cards_value > 21 && aces > 0)
+	{
+		cards_value -= 10;
+		aces--;
+	}
+
+	return cards_value;
+}
