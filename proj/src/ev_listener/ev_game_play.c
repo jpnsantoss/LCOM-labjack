@@ -15,6 +15,7 @@ void handle_hit(app_t *app)
     player->won_coins = 0;
     player->game_over_state = PLAYER_LOSS;
     app->state = GAME_OVER;
+		uart_send_byte(app->game.main_player.game_over_state);
   }
 
   if (player->cards_value == 21)
@@ -46,7 +47,9 @@ void handle_double(app_t *app)
     player->won_coins = 0;
     player->game_over_state = PLAYER_LOSS;
     app->state = GAME_OVER;
-  } else
+		uart_send_byte(app->game.main_player.game_over_state);
+  }
+	else
   {
     app->game.dealer_turn = 1;
     app->state = GAME_DEALER_TURN;
@@ -88,6 +91,7 @@ void handle_game_playing(app_t *app, interrupt_type_t interrupt)
         app->game.main_player.coins += app->game.main_player.won_coins;
         app->game.main_player.game_over_state = PLAYER_WIN;
         app->state = GAME_OVER;
+				uart_send_byte(app->game.main_player.game_over_state);
         break;
       default:
         break;
@@ -127,6 +131,7 @@ void handle_game_playing(app_t *app, interrupt_type_t interrupt)
       app->game.main_player.coins += app->game.main_player.won_coins;
       app->game.main_player.game_over_state = PLAYER_WIN;
       app->state = GAME_OVER;
+			uart_send_byte(app->game.main_player.game_over_state);
     }
   }
 }

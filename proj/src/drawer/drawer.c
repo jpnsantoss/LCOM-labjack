@@ -5,8 +5,9 @@ void draw_state(app_t *app)
 {
 	uint32_t x, y;
 
-  if (app == NULL)
-    return;
+  if (app == NULL) return;
+
+	banner_draw(&app->banner, &app->font);
 
 	if (app->state != MAIN_MENU)
 	{

@@ -8,6 +8,7 @@
 #include "../../drivers/drivers.h"
 #include "../game/game.h"
 #include "../font/font.h"
+#include "../banner/banner.h"
 
 #include "../../assets/background.xpm"
 #include "../../assets/buttons/buttons.h"
@@ -49,6 +50,7 @@ typedef struct {
 	sprite_t		*button_bet;
 
 	font_t 			font;
+	banner_t		banner;
 	
 	game_t			game;
 	app_state_t	state;

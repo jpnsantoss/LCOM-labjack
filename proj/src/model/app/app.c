@@ -26,6 +26,7 @@ app_t *app_init()
 	if (app_buttons_game_over_init(&app->buttons_game_over)) return NULL;
 
 	font_init(&app->font);
+	banner_init(&app->banner);
 	
   return app;
 }

@@ -16,6 +16,7 @@
 .PATH: ${.CURDIR}/model/animation
 .PATH: ${.CURDIR}/model/cursor
 .PATH: ${.CURDIR}/model/font
+.PATH: ${.CURDIR}/model/banner
 .PATH: ${.CURDIR}/drawer
 
 # name of the program (Minix service)
@@ -28,7 +29,7 @@ SRCS += dvr_graphics.c dvr_kbc.c dvr_keyboard.c dvr_mouse.c dvr_timer.c dvr_rtc.
 # data_structs
 SRCS += queue.c stack.c
 # models
-SRCS += sprite.c app.c player.c card.c game.c cursor.c animation.c font.c
+SRCS += sprite.c app.c player.c card.c game.c cursor.c animation.c font.c banner.c
 #listeners
 SRCS += ev_listener.c ev_game_bet.c ev_game_dealer_turn.c ev_game_over.c ev_game_play.c ev_main_menu.c
 #others
