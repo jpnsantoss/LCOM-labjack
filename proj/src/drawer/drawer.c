@@ -64,10 +64,13 @@ void draw_state(app_t *app)
 					break;
 			}
 
-			font_print_str(&app->font, "~", vg_get_width() / 2 - 40, vg_get_height() / 2, 0xffff00);
-			font_print_number(&app->font, app->game.main_player.won_coins, 
+			if (app->game.main_player.game_over_state != PLAYER_LOSS)
+			{
+				font_print_str(&app->font, "~", vg_get_width() / 2 - 40, vg_get_height() / 2, 0xffff00);
+				font_print_number(&app->font, app->game.main_player.won_coins, 
 				vg_get_width() / 2 - 10, vg_get_height() / 2, 0xffff00);
-
+			}
+			
       draw_button_set(app->buttons_game_over);
       break;
     case GAME_DEALER_TURN:

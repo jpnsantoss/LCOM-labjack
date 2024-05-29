@@ -41,7 +41,8 @@ void handle_game_over(app_t *app, interrupt_type_t interrupt)
 
   if (interrupt == MOUSE)
   {
-		if (cursor_sprite_colides(&app->cursor, queue_at(app->buttons_game_over, 0)))
+		if (app->game.main_player.coins > 0 
+			&& cursor_sprite_colides(&app->cursor, queue_at(app->buttons_game_over, 0)))
     {
       app->game.dealer_turn = false;
 			handle_game_over_rebet(app, interrupt);
