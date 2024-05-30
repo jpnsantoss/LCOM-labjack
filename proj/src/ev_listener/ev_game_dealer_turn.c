@@ -2,8 +2,79 @@
 extern uint8_t scancode;
 extern int timer_counter;
 
+void handle_dealer_card(void *ptr)
+{
+  if (ptr == NULL) return;
+
+  app_t *app = (app_t *)ptr;
+
+  game_give_card(app->game.cards, app->game.dealer);
+
+  timer_counter = 0;
+}
+
+void add_dealer_animation(app_t *app)
+{
+  sprite_t *rotate_1 = sprite_create((xpm_map_t) rotate1_xpm);
+  sprite_t *rotate_2 = sprite_create((xpm_map_t) rotate2_xpm);
+  sprite_t *card_back = app->game.card_back;
+
+  size_t card_pos = app->game.dealer->curr_size;
+  uint32_t x = 500 + card_pos * card_back->img.width * 0.5;
+	uint32_t y = 240;
+  size_t animation_size = abs(GAME_DECK_DRAW_X - x) + 2;
+
+  animation_t *move_card = animation_create(animation_size,
+   handle_dealer_card);
+
+  for(size_t i = 0; i < animation_size - 2; i += 5)
+  {
+    animation_add_frame(move_card, card_back, 
+      GAME_DECK_DRAW_X + app->game.card_back->img.width * 0.02 - i/3,
+      GAME_DECK_DRAW_Y - app->game.card_back->img.height * 0.1, 0
+    );
+  }
+
+  animation_add_frame(move_card, rotate_1, x, y, 0);
+  animation_add_frame(move_card, rotate_2, x, y, 0);
+  
+  app->game.curr_anim = move_card;
+}
+
+void activate_dealer_turn(void *ptr)
+{
+  if (ptr == NULL) return;
+
+  app_t *app = (app_t *)ptr;
+
+  app->game.dealer_turn = 1;
+  app->state = GAME_DEALER_TURN;
+
+  timer_counter = 0;
+}
+
+void add_dealer_single_animation(app_t *app)
+{
+  sprite_t *rotate_1 = sprite_create((xpm_map_t) rotate1_xpm);
+  sprite_t *rotate_2 = sprite_create((xpm_map_t) rotate2_xpm);
+  sprite_t *card_back = app->game.card_back;
+
+  size_t card_pos = app->game.dealer->curr_size - 1;
+  uint32_t x = 500 + card_pos * card_back->img.width * 0.5;
+	uint32_t y = 240;
+
+  animation_t *move_card = animation_create(2, activate_dealer_turn);
+
+  animation_add_frame(move_card, rotate_1, x, y, 0);
+  animation_add_frame(move_card, rotate_2, x, y, 0);
+  
+  app->game.curr_anim = move_card;
+}
+
 void handle_dealer_turn(app_t *app, interrupt_type_t interrupt)
 {
+  if (animation_running(app->game.curr_anim)) return;
+
   if (interrupt == KEYBOARD)
   {
     if (scancode == KB_ESC)
@@ -44,8 +115,11 @@ void handle_dealer_turn(app_t *app, interrupt_type_t interrupt)
         app->state = GAME_OVER;
 				uart_send_byte(app->game.main_player.game_over_state);
       } 
-      else game_give_card(app->game.cards, app->game.dealer);
-      
+      else 
+      {
+        add_dealer_animation(app);
+      }
+
       timer_counter = 0;
     }
   }

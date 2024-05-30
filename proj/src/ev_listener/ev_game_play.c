@@ -23,8 +23,7 @@ void handle_hit(void *ptr)
 
   if (player->cards_value == 21)
   {
-    app->game.dealer_turn = 1;
-    app->state = GAME_DEALER_TURN;
+    add_dealer_single_animation(app);
   }
 
   vg_set_redraw();
@@ -41,7 +40,7 @@ void add_hit_animation(app_t *app)
   {
     animation_add_frame(move_card, card_back, 
       GAME_DECK_DRAW_X + app->game.card_back->img.width * 0.02 - i/3,
-      GAME_DECK_DRAW_Y - (app->game.card_back->img.height * 0.1 - i)
+      GAME_DECK_DRAW_Y - (app->game.card_back->img.height * 0.1 - i), 0
     );
   }
 
@@ -50,8 +49,8 @@ void add_hit_animation(app_t *app)
   uint32_t x = 500 + card_pos * card_back->img.width * 0.5;
 	uint32_t y = 500 - card_back->img.height * 0.09;
 
-  animation_add_frame(move_card, rotate_1, x, y);
-  animation_add_frame(move_card, rotate_2, x, y);
+  animation_add_frame(move_card, rotate_1, x, y, 0);
+  animation_add_frame(move_card, rotate_2, x, y, 0);
 
   app->game.curr_anim = move_card;
 }
@@ -66,9 +65,7 @@ void handle_double(void *ptr)
 
   player->bet *= 2;
   
-  app->state = GAME_DEALER_TURN;
-  app->game.dealer_turn = 1;
-	game_give_card(app->game.dealer, player->cards);
+	game_give_card(app->game.cards, player->cards);
 
   card_t *card = queue_at(player->cards, player->cards->curr_size - 1);
   if (card != NULL) card->is_double = true;
@@ -84,8 +81,7 @@ void handle_double(void *ptr)
   }
 	else
   {
-    app->game.dealer_turn = 1;
-    app->state = GAME_DEALER_TURN;
+    add_dealer_single_animation(app);
   }
 
 	vg_set_redraw();
@@ -96,11 +92,14 @@ void add_double_animation(app_t *app)
   sprite_t *rotate_1 = sprite_create((xpm_map_t) rotate1_xpm);
   sprite_t *rotate_2 = sprite_create((xpm_map_t) rotate2_xpm);
   sprite_t *card_back = app->game.card_back;
-  animation_t *move_card = animation_create(27, handle_hit);
+  animation_t *move_card = animation_create(27, handle_double);
   
   for(size_t i = 0; i < 250; i += 10)
   {
-    
+    animation_add_frame(move_card, card_back, 
+      GAME_DECK_DRAW_X + app->game.card_back->img.width * 0.02 - i/3,
+      GAME_DECK_DRAW_Y - (app->game.card_back->img.height * 0.1 - i), 0
+    );
   }
 
   size_t card_pos = app->game.main_player.cards->curr_size;
@@ -108,8 +107,8 @@ void add_double_animation(app_t *app)
   uint32_t x = 500 + card_pos * card_back->img.width * 0.5;
 	uint32_t y = 500 - card_back->img.height * 0.09;
 
-  animation_add_frame(move_card, rotate_1, x, y);
-  animation_add_frame(move_card, rotate_2, x, y);
+  animation_add_frame(move_card, rotate_1, x, y, 1);
+  animation_add_frame(move_card, rotate_2, x, y, 1);
 
   app->game.curr_anim = move_card;
 }
@@ -133,8 +132,7 @@ void handle_game_playing(app_t *app, interrupt_type_t interrupt)
       // Stand
       case KB_2:
         timer_counter = 0;
-        app->state = GAME_DEALER_TURN;
-        app->game.dealer_turn = 1;
+        add_dealer_single_animation(app);
         vg_set_redraw();
         break;
       // Double
@@ -168,8 +166,7 @@ void handle_game_playing(app_t *app, interrupt_type_t interrupt)
     if (cursor_sprite_colides(&app->cursor, queue_at(app->buttons_game_playing, 1)))
     {
       timer_counter = 0;
-      app->game.dealer_turn = 1;
-      app->state = GAME_DEALER_TURN;
+      add_dealer_single_animation(app);
       vg_set_redraw();
       return;
     }

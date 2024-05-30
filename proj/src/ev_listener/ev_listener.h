@@ -27,5 +27,6 @@ void	handle_bet_value(app_t *app, interrupt_type_t interrupt);
 void	handle_bet_value_check(app_t *app);
 
 void	handle_dealer_turn(app_t *app, interrupt_type_t interrupt);
+void	add_dealer_single_animation(app_t *app);
 
 #endif
