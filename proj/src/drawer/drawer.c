@@ -11,8 +11,10 @@ void draw_state(app_t *app)
 
 	if (app->state != MAIN_MENU)
 	{
-		font_print_str(&app->font, "Bal:~", 10, 805, 0xffff00);
-		font_print_number(&app->font, app->game.main_player.coins, 146, 805, 0xffff00);
+		font_print_str(&app->font, "Bal", 10, 770, 0xffff00);
+		font_print_char(&app->font, '~', 10, 815, 0xffff00);
+
+		font_print_number(&app->font, app->game.main_player.coins, 35, 815, 0xffff00);
 
     animation_draw(app->game.curr_anim);
 	}
@@ -26,9 +28,11 @@ void draw_state(app_t *app)
     game_draw_dealer(&app->game, &app->font);
     game_draw_deck(&app->game);
 
-	  font_print_str(&app->font, "Bet:~", 10, 762, 0xffffff);
+		// 45
+	  font_print_str(&app->font, "Bet", 10, 665, 0xffffff);
+		font_print_char(&app->font, '~', 10, 710, 0xffffff);
+    font_print_number(&app->font, app->game.main_player.bet, 35, 710, 0xffffff);
 
-    font_print_number(&app->font, app->game.main_player.bet, 146, 760, 0xffffff);
     font_print_number(&app->font, app->game.main_player.cards_value, 505, 575, 0xffffff);
   }
 
@@ -41,7 +45,7 @@ void draw_state(app_t *app)
       draw_button_set(app->buttons_main_menu);
       break;
     case GAME_BET:
-	font_print_str(&app->font, "Please place your bet:", (vg_get_width() / 2) - 290, vg_get_height() / 2 - 92, 0xffffff);
+	font_print_str(&app->font, "Please place your bet", (vg_get_width() / 2) - 290, vg_get_height() / 2 - 92, 0xffffff);
       sprite_draw(app->button_bet);
       vg_draw_border(460, 785, 140, 55, app->game.input_select ? 0xe69f58 : 0xffffff, 4);
       if (app->game.main_player.bet != 0)
