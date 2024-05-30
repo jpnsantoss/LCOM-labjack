@@ -32,9 +32,10 @@ void draw_state(app_t *app)
 
   switch (app->state) {
     case MAIN_MENU:
-	font_print_str(&app->font, "Welcome to", (vg_get_width() / 2) - 49 * 3 + 6, vg_get_height() / 2 - 192, 0xffffff);
-		font_print_str(&app->font, "LabJack", (vg_get_width() / 2) - 30 * 3 - 5, vg_get_height() / 2 - 92, 0x8b0000);
-		vg_draw_border((vg_get_width() / 2) - 26 * 3 - 50, vg_get_height() / 2 - 104, 250, 55, 0x8b0000, 4);
+	  font_print_str(&app->font, "Welcome to", (vg_get_width() / 2) - 49 * 3 + 6, vg_get_height() / 2 - 192, 0xffffff);
+	  vg_draw_rectangle((vg_get_width() / 2) - 26 * 3 - 50, vg_get_height() / 2 - 104, 250, 55, 0xffffff);
+	  vg_draw_border((vg_get_width() / 2) - 26 * 3 - 50, vg_get_height() / 2 - 104, 250, 55, 0x8b0000, 4);
+	  font_print_str(&app->font, "LabJack", (vg_get_width() / 2) - 30 * 3 - 5, vg_get_height() / 2 - 92, 0x8b0000);
       draw_button_set(app->buttons_main_menu);
       break;
     case GAME_BET:
