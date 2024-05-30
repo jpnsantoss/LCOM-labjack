@@ -67,9 +67,9 @@ int (vg_flip)()
 	memset(&r, 0, sizeof(reg86_t));
 
 	r.intno = 0x10;
-	r.ah = 0x4F;
-	r.al = 0x07;
-	r.bl = 0x00;
+	r.ah = AH_PORT;
+	r.al = AL_DISPLAY_START_CONTROL;
+	r.bl = BL_SET_DISPLAY_START;
 	r.cx = 0;
 	r.dx = gph.selectedNum * gph.y_res;
 
@@ -84,9 +84,9 @@ int	vg_enter_graphic_mode(uint16_t mode)
 	reg86_t r;
 	memset(&r, 0, sizeof(reg86_t));
 	r.intno = 0x10;
-	r.ah = 0x4F;
-	r.al = 0x02;
-	r.bx = BIT(14) | mode;
+	r.ah = AH_PORT;
+	r.al = AL_VBEMODE_SET;
+	r.bx = BX_LINEAR_FRAME_BUFF | mode;
 
 	return sys_int86(&r);
 }
