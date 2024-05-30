@@ -34,39 +34,23 @@ void add_hit_animation(app_t *app)
   sprite_t *rotate_1 = sprite_create((xpm_map_t) rotate1_xpm);
   sprite_t *rotate_2 = sprite_create((xpm_map_t) rotate2_xpm);
   sprite_t *card_back = app->game.card_back;
-  animation_t *move_card = animation_create(50, handle_hit);
+  animation_t *move_card = animation_create(8, handle_hit);
 
   size_t card_pos = app->game.main_player.cards->curr_size;
 
-  uint32_t x_i = GAME_DECK_DRAW_X + app->game.card_back->img.width * 0.02;
-  uint32_t y_i = GAME_DECK_DRAW_Y - (app->game.card_back->img.height * 0.1);
-  
-  uint32_t x_f = 500 + card_pos * card_back->img.width * 0.5;
-	uint32_t y_f = 500 - card_back->img.height * 0.09;
-  
-  double m = abs(y_i - y_f) / abs(x_i - x_f);
-
-  double b = y_i - m * x_i;
-  
-  printf("%d, %d --> %d, %d | m %d | b %d\n", x_i, y_i, x_f, y_f, m, b);
-
-  for (uint32_t i = x_i; i > x_f; i -= 10)
-  {
-    animation_add_frame(move_card, card_back, i, m * i + b, 0);
-    printf("%d, %d\n", i, m * i + b);
-  }
-
-  animation_add_frame(move_card, card_back, x_f, y_f, 0);
+  uint32_t x = 500 + card_pos * card_back->img.width * 0.5;
+	uint32_t y = 500 - card_back->img.height * 0.09;
 
   for(int i = 0; i < 4; i++)
   {
-    animation_add_frame(move_card, rotate_1, x_f, y_f, 0);
+    animation_add_frame(move_card, rotate_1, x, y, 0);
   }
 
   for(int i = 0; i < 4; i++)
   {
-   animation_add_frame(move_card, rotate_2, x_f, y_f, 0);
+		animation_add_frame(move_card, rotate_2, x, y, 0);
   }
+
 
   app->game.curr_anim = move_card;
 }
@@ -108,20 +92,10 @@ void add_double_animation(app_t *app)
   sprite_t *rotate_1 = sprite_create((xpm_map_t) rotate1_xpm);
   sprite_t *rotate_2 = sprite_create((xpm_map_t) rotate2_xpm);
   sprite_t *card_back = app->game.card_back;
-  animation_t *move_card = animation_create(27, handle_double);
-  
-  for(size_t i = 0; i < 250; i += 10)
-  {
-    animation_add_frame(move_card, card_back, 
-      GAME_DECK_DRAW_X + app->game.card_back->img.width * 0.02 - i/3,
-      GAME_DECK_DRAW_Y - (app->game.card_back->img.height * 0.1 - i), 0
-    );
-  }
+  animation_t *move_card = animation_create(8, handle_double);
 
-  size_t card_pos = app->game.main_player.cards->curr_size;
-
-  uint32_t x = 500 + card_pos * card_back->img.width * 0.5;
-	uint32_t y = 500 - card_back->img.height * 0.09;
+  uint32_t x = 505;
+	uint32_t y = 500 - card_back->img.height * 0.09 + 30;
 
   for(int i = 0; i < 4; i++)
   {

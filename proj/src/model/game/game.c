@@ -4,8 +4,7 @@ int game_add_deck(queue_t *cards, bool shuffle) {
   for (int type = 0; type < CARD_TYPE_NUM; type++) {
     for (int value = 0; value < CARD_VALUE_NUM; value++) {
       card_t *card = card_create(value, type);
-      if (card == NULL)
-        return 1;
+      if (card == NULL) return 1;
 
       if (queue_push(cards, card)) {
         free(card);
@@ -89,8 +88,7 @@ int game_give_card(queue_t *deck, queue_t *receiver) {
     return 1;
 
   card_t *card = queue_pop(deck);
-  if (card == NULL)
-    return 1;
+  if (card == NULL) return 1;
 
   return queue_push(receiver, card);
 }

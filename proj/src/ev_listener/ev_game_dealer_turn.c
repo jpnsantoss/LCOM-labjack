@@ -1,4 +1,5 @@
 #include "ev_listener.h"
+
 extern uint8_t scancode;
 extern int timer_counter;
 
@@ -22,25 +23,25 @@ void add_dealer_animation(app_t *app)
   size_t card_pos = app->game.dealer->curr_size;
   uint32_t x = 500 + card_pos * card_back->img.width * 0.5;
 	uint32_t y = 240;
-  size_t animation_size = abs(GAME_DECK_DRAW_X - x) + 2;
+  size_t animation_size = abs(GAME_DECK_DRAW_X - x) + 6;
 
   animation_t *move_card = animation_create(animation_size,
    handle_dealer_card);
 
-  for(size_t i = 0; i < animation_size - 2; i += 5)
+  for(size_t i = 0; i < animation_size - 8; i += 15)
   {
-    animation_add_frame(move_card, card_back, 
-      GAME_DECK_DRAW_X + app->game.card_back->img.width * 0.02 - i/3,
+    animation_add_frame(move_card, card_back,
+      GAME_DECK_DRAW_X + app->game.card_back->img.width * 0.02 - i,
       GAME_DECK_DRAW_Y - app->game.card_back->img.height * 0.1, 0
     );
   }
 
-  for(int i = 0; i < 4; i++)
+  for(int i = 0; i < 3; i++)
   {
     animation_add_frame(move_card, rotate_1, x, y, 0);
   }
 
-  for(int i = 0; i < 4; i++)
+  for(int i = 0; i < 3; i++)
   {
    animation_add_frame(move_card, rotate_2, x, y, 0);
   }
@@ -71,14 +72,14 @@ void add_dealer_single_animation(app_t *app)
   uint32_t x = 500 + card_pos * card_back->img.width * 0.5;
 	uint32_t y = 240;
 
-  animation_t *move_card = animation_create(4, activate_dealer_turn);
+  animation_t *move_card = animation_create(6, activate_dealer_turn);
 
-  for(int i = 0; i < 4; i++)
+  for(int i = 0; i < 3; i++)
   {
     animation_add_frame(move_card, rotate_1, x, y, 0);
   }
 
-  for(int i = 0; i < 4; i++)
+  for(int i = 0; i < 3; i++)
   {
    animation_add_frame(move_card, rotate_2, x, y, 0);
   }

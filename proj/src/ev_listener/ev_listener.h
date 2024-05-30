@@ -9,6 +9,7 @@
 #include "../model/animation/animation.h"
 #include "../assets/cards/rotate1.xpm"
 #include "../assets/cards/rotate2.xpm"
+#include <math.h>
 
 typedef void(*handler)(app_t *, interrupt_type_t);
 

@@ -127,7 +127,7 @@ void queue_shuffle(queue_t *queue)
 {
 	if (queue == NULL) return;
 
-  for (size_t i = queue->curr_size; i > 1; i--) 
+  for (size_t i = queue->curr_size - 1; i > 0; i--) 
   {
     int k = rand() % (i + 1);
 
