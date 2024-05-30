@@ -1,7 +1,7 @@
 #include "animation.h"
 
 animation_t *animation_create(uint32_t frame_amount, void (*on_end)(void *)) {
-  animation_t *anim = (animation_t *) malloc(sizeof(animation_t *));
+  animation_t *anim = (animation_t *) malloc(sizeof(animation_t));
   if (anim == NULL)
     return NULL;
 
