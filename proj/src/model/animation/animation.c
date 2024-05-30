@@ -62,6 +62,13 @@ void animation_run(animation_t *animation)
 	vg_set_redraw();
 }
 
+/*int move_card(game_t *game, uint32_t pos){
+	uint32_t x = 500 + game->card_back->img.width * 0.02;
+	uint32_t y = 500 + (pos + 1) * game->card_back->img.height * 0.1;
+	sprite_move(game->card_back, x, y);
+	return sprite_draw(game->card_back);
+}*/
+
 int animation_draw(animation_t *animation)
 {
 	if (animation == NULL) return 1;

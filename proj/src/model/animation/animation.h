@@ -21,5 +21,6 @@ int					animation_add_frame(animation_t *animation, sprite_t *sprite, uint32_t x
 int					animation_draw(animation_t *animation);
 void				animation_run(animation_t *animation);
 void				animation_destroy(animation_t *animation);
+//int move_card(game_t *game, uint32_t pos);
 
 #endif

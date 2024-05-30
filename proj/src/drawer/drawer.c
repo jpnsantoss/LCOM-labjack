@@ -1,6 +1,8 @@
 #include "drawer.h"
 #include "../model/app/app.h"
 
+
+
 void draw_state(app_t *app)
 {
 	uint32_t x, y;
@@ -45,6 +47,9 @@ void draw_state(app_t *app)
       break;
     case GAME_PLAY:
       draw_button_set(app->buttons_game_playing);
+	  if(app->game.curr_anim != NULL){
+	  		animation_draw(app->game.curr_anim);
+	  }
       break;
     case GAME_OVER:
 			x = vg_get_width() / 2;

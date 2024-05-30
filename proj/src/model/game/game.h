@@ -7,6 +7,7 @@
 #include "../player/player.h"
 #include "../card/card.h"
 #include "../../assets/cards/back_red_1.xpm"
+#include "../animation/animation.h"
 
 #define GAME_DECK_SIZE 52
 #define GAME_DECK_AMOUNT 2
@@ -19,6 +20,8 @@ typedef struct {
 
 	queue_t 	*cards;
 	queue_t		*dealer;
+
+	animation_t *curr_anim;
 
 	uint32_t	dealer_value;
 	

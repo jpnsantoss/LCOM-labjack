@@ -3,9 +3,26 @@
 extern uint8_t scancode;
 extern int timer_counter;
 
-void handle_hit(app_t *app)
+void handle_hit(app_t *app, interrupt_type_t interrupt)
 {
   player_t *player = &app->game.main_player;
+
+  /*while(timer_counter/20 != 3){
+    if(interrupt == TIMER){
+      timer_int_handler();
+      if(timer_counter % 20 == 0){
+        app->game.dealer_value = timer_counter/20;
+        vg_set_redraw();
+      } 
+    }
+  }*/
+
+  animation_t *move_card = animation_create(0, 20, 10);
+  for(size_t i = 0; i<=100; i+=10){
+    if (animation_add_frame(move_card, app->game.card_back, GAME_DECK_DRAW_X + game->card_back->img.width * 0.02, GAME_DECK_DRAW_Y - (game->card_back->img.height * 0.1 + i))) printf("ERROR");
+  }
+  app->game.curr_anim = move_card;
+  animation_run(move_card);
 
   game_give_card(app->game.cards, player->cards);
   player->cards_value = game_get_cards_value(player->cards);
@@ -70,7 +87,7 @@ void handle_game_playing(app_t *app, interrupt_type_t interrupt)
         break;
       // Hit
       case KB_1:
-        handle_hit(app);
+        handle_hit(app, interrupt);
         break;
       // Stand
       case KB_2:
@@ -103,7 +120,7 @@ void handle_game_playing(app_t *app, interrupt_type_t interrupt)
     // Hit
     if (cursor_sprite_colides(&app->cursor, queue_at(app->buttons_game_playing, 0)))
     {
-      handle_hit(app);
+      handle_hit(app, interrupt);
     }
 
     // Stand
