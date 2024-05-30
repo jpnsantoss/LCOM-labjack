@@ -36,6 +36,7 @@ int game_init(game_t *game) {
   game->playing_id = 0;
   game->card_theme = 0;
   game->round_count = 0;
+  game->dealer_ignore_last = 0;
   game->curr_anim = NULL;
 
   game->card_back = sprite_create((xpm_map_t) back_red_1_xpm);
@@ -122,7 +123,9 @@ int game_draw_dealer(game_t *game, font_t *font) {
 
     if (i == 0)
       card_value = card->value;
-
+    
+    if (i > 0 && game->dealer_ignore_last) break;
+    
     sprite = (i == 0 || game->dealer_turn) ? card->sprite_base : game->card_back;
 
     sprite_move(sprite, 500 + i * sprite->img.width * 0.5, 240);

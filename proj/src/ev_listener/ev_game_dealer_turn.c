@@ -35,8 +35,15 @@ void add_dealer_animation(app_t *app)
     );
   }
 
-  animation_add_frame(move_card, rotate_1, x, y, 0);
-  animation_add_frame(move_card, rotate_2, x, y, 0);
+  for(int i = 0; i < 4; i++)
+  {
+    animation_add_frame(move_card, rotate_1, x, y, 0);
+  }
+
+  for(int i = 0; i < 4; i++)
+  {
+   animation_add_frame(move_card, rotate_2, x, y, 0);
+  }
   
   app->game.curr_anim = move_card;
 }
@@ -48,6 +55,7 @@ void activate_dealer_turn(void *ptr)
   app_t *app = (app_t *)ptr;
 
   app->game.dealer_turn = 1;
+  app->game.dealer_ignore_last = 0;
   app->state = GAME_DEALER_TURN;
 
   timer_counter = 0;
@@ -63,12 +71,20 @@ void add_dealer_single_animation(app_t *app)
   uint32_t x = 500 + card_pos * card_back->img.width * 0.5;
 	uint32_t y = 240;
 
-  animation_t *move_card = animation_create(2, activate_dealer_turn);
+  animation_t *move_card = animation_create(4, activate_dealer_turn);
 
-  animation_add_frame(move_card, rotate_1, x, y, 0);
-  animation_add_frame(move_card, rotate_2, x, y, 0);
+  for(int i = 0; i < 4; i++)
+  {
+    animation_add_frame(move_card, rotate_1, x, y, 0);
+  }
+
+  for(int i = 0; i < 4; i++)
+  {
+   animation_add_frame(move_card, rotate_2, x, y, 0);
+  }
   
   app->game.curr_anim = move_card;
+  app->game.dealer_ignore_last = 1;
 }
 
 void handle_dealer_turn(app_t *app, interrupt_type_t interrupt)
