@@ -40,8 +40,8 @@ int mouse_subscribe_int(uint8_t *bit_no)
 
 int mouse_unsubscribe_int()
 {
-	if (hook_id_mouse < 0)
-		return 1;
+	if (hook_id_mouse < 0) return 1;
+	
 	return sys_irqrmpolicy(&hook_id_mouse);
 }
 

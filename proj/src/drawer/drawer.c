@@ -34,9 +34,14 @@ void draw_state(app_t *app)
 
   switch (app->state) {
     case MAIN_MENU:
+	  font_print_str(&app->font, "Welcome to", (vg_get_width() / 2) - 49 * 3 + 6, vg_get_height() / 2 - 192, 0xffffff);
+	  vg_draw_rectangle((vg_get_width() / 2) - 26 * 3 - 50, vg_get_height() / 2 - 104, 250, 55, 0xffffff);
+	  vg_draw_border((vg_get_width() / 2) - 26 * 3 - 50, vg_get_height() / 2 - 104, 250, 55, 0x8b0000, 4);
+	  font_print_str(&app->font, "LabJack", (vg_get_width() / 2) - 30 * 3 - 5, vg_get_height() / 2 - 92, 0x8b0000);
       draw_button_set(app->buttons_main_menu);
       break;
     case GAME_BET:
+	font_print_str(&app->font, "Please place your bet:", (vg_get_width() / 2) - 290, vg_get_height() / 2 - 92, 0xffffff);
       sprite_draw(app->button_bet);
       vg_draw_border(460, 785, 140, 55, app->game.input_select ? 0xe69f58 : 0xffffff, 4);
       if (app->game.main_player.bet != 0)

@@ -67,9 +67,9 @@ int (vg_flip)()
 	memset(&r, 0, sizeof(reg86_t));
 
 	r.intno = 0x10;
-	r.ah = 0x4F;
-	r.al = 0x07;
-	r.bl = 0x00;
+	r.ah = AH_PORT;
+	r.al = AL_DISPLAY_START_CONTROL;
+	r.bl = BL_SET_DISPLAY_START;
 	r.cx = 0;
 	r.dx = gph.selectedNum * gph.y_res;
 
@@ -84,9 +84,9 @@ int	vg_enter_graphic_mode(uint16_t mode)
 	reg86_t r;
 	memset(&r, 0, sizeof(reg86_t));
 	r.intno = 0x10;
-	r.ah = 0x4F;
-	r.al = 0x02;
-	r.bx = BIT(14) | mode;
+	r.ah = AH_PORT;
+	r.al = AL_VBEMODE_SET;
+	r.bx = BX_LINEAR_FRAME_BUFF | mode;
 
 	return sys_int86(&r);
 }
@@ -121,7 +121,7 @@ int(vg_draw_vline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color)
 int (vg_draw_rectangle)(uint16_t x, uint16_t y, uint16_t width, 
 					uint16_t height, uint32_t color)
 {
-	for (uint16_t i = 0; i < height; i++)
+	for (int i = 0; i < height; i++)
 	{
 		if (vg_draw_hline(x, y + i, width, color)) return 1;
 	}
