@@ -83,6 +83,8 @@ void draw_state(app_t *app)
       draw_button_set(app->buttons_game_over);
       break;
     case GAME_DEALER_TURN:
+			font_print_str(&app->font, "DEALER TURN", 
+				vg_get_width() / 2 - 26 * 5.5, vg_get_height() - 68, 0xffffff);
       break;
     default:
       break;
