@@ -3,26 +3,15 @@
 extern uint8_t scancode;
 extern int timer_counter;
 
-void handle_hit(app_t *app, interrupt_type_t interrupt)
+void handle_hit(void *ptr)
 {
+  printf("b1\n");
+  if (ptr == NULL) return;
+  printf("b2\n");
+  app_t *app = (app_t *)ptr;
+  printf("c\n");
   player_t *player = &app->game.main_player;
-
-  /*while(timer_counter/20 != 3){
-    if(interrupt == TIMER){
-      timer_int_handler();
-      if(timer_counter % 20 == 0){
-        app->game.dealer_value = timer_counter/20;
-        vg_set_redraw();
-      } 
-    }
-  }*/
-
-  animation_t *move_card = animation_create(0, 20, 10);
-  for(size_t i = 0; i<=100; i+=10){
-    if (animation_add_frame(move_card, app->game.card_back, GAME_DECK_DRAW_X + game->card_back->img.width * 0.02, GAME_DECK_DRAW_Y - (game->card_back->img.height * 0.1 + i))) printf("ERROR");
-  }
-  app->game.curr_anim = move_card;
-  animation_run(move_card);
+  printf("app %p, player %p\n", app, player);
 
   game_give_card(app->game.cards, player->cards);
   player->cards_value = game_get_cards_value(player->cards);
@@ -43,6 +32,23 @@ void handle_hit(app_t *app, interrupt_type_t interrupt)
 
   vg_set_redraw();
 }
+
+void add_animation(app_t *app)
+{
+  sprite_t *rotate_1 = sprite_create((xpm_map_t) rotate1_xpm);
+  sprite_t *rotate_2 = sprite_create((xpm_map_t) rotate2_xpm);
+  animation_t *move_card = animation_create(12, handle_hit);
+  
+  for(size_t i = 0; i < 100; i += 10)
+  {
+    if (animation_add_frame(move_card, app->game.card_back, GAME_DECK_DRAW_X + app->game.card_back->img.width * 0.02 - i, GAME_DECK_DRAW_Y - (app->game.card_back->img.height * 0.1 + i))) printf("ERROR1");
+  }
+  if (animation_add_frame(move_card, rotate_1, GAME_DECK_DRAW_X + app->game.card_back->img.width * 0.02 - 100, GAME_DECK_DRAW_Y - (app->game.card_back->img.height * 0.1 + 100))) printf("ERROR2");
+  if (animation_add_frame(move_card, rotate_2, GAME_DECK_DRAW_X + app->game.card_back->img.width * 0.02 - 100, GAME_DECK_DRAW_Y - (app->game.card_back->img.height * 0.1 + 100))) printf("ERROR3");
+
+  app->game.curr_anim = move_card;
+}
+
 
 void handle_double(app_t *app)
 {
@@ -77,6 +83,8 @@ void handle_double(app_t *app)
 
 void handle_game_playing(app_t *app, interrupt_type_t interrupt)
 {
+  if (animation_running(app->game.curr_anim)) return;
+
   if (interrupt == KEYBOARD)
   {
     switch (scancode)
@@ -87,7 +95,8 @@ void handle_game_playing(app_t *app, interrupt_type_t interrupt)
         break;
       // Hit
       case KB_1:
-        handle_hit(app, interrupt);
+        add_animation(app);
+        //handle_hit(app, interrupt);
         break;
       // Stand
       case KB_2:
@@ -120,7 +129,8 @@ void handle_game_playing(app_t *app, interrupt_type_t interrupt)
     // Hit
     if (cursor_sprite_colides(&app->cursor, queue_at(app->buttons_game_playing, 0)))
     {
-      handle_hit(app, interrupt);
+      add_animation(app);
+      //handle_hit(app, interrupt);
     }
 
     // Stand

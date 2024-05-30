@@ -1,8 +1,6 @@
 #include "drawer.h"
 #include "../model/app/app.h"
 
-
-
 void draw_state(app_t *app)
 {
 	uint32_t x, y;
@@ -15,6 +13,8 @@ void draw_state(app_t *app)
 	{
 		font_print_str(&app->font, "Bal:~", 10, 805, 0xffff00);
 		font_print_number(&app->font, app->game.main_player.coins, 146, 805, 0xffff00);
+
+    animation_draw(app->game.curr_anim);
 	}
 
   if (app->state != MAIN_MENU && app->state != GAME_BET)
@@ -26,7 +26,7 @@ void draw_state(app_t *app)
     game_draw_dealer(&app->game, &app->font);
     game_draw_deck(&app->game);
 
-		font_print_str(&app->font, "Bet:~", 10, 762, 0xffffff);
+	  font_print_str(&app->font, "Bet:~", 10, 762, 0xffffff);
 
     font_print_number(&app->font, app->game.main_player.bet, 146, 760, 0xffffff);
     font_print_number(&app->font, app->game.main_player.cards_value, 505, 575, 0xffffff);
@@ -46,10 +46,8 @@ void draw_state(app_t *app)
       }
       break;
     case GAME_PLAY:
+      if (animation_running(app->game.curr_anim)) return;
       draw_button_set(app->buttons_game_playing);
-	  if(app->game.curr_anim != NULL){
-	  		animation_draw(app->game.curr_anim);
-	  }
       break;
     case GAME_OVER:
 			x = vg_get_width() / 2;

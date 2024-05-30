@@ -9,6 +9,8 @@ app_t *app_init()
 	app->game.cards = NULL;
 	app->game.main_player.cards = NULL;
 	app->game.other_player.cards = NULL;
+	app->game.dealer = NULL;
+	app->game.curr_anim = NULL;
 
 	if (cursor_init(&app->cursor)) return NULL;
 

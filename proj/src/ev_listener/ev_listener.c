@@ -79,6 +79,8 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
     case TIMER:
       timer_int_handler();
 			banner_update_timeout(&app->banner);
+      if (app->state != MAIN_MENU) 
+        animation_run(&app->game.curr_anim, app);
       draw_screen(app);
       break;
     case RTC:

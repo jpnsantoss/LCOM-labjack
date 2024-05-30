@@ -8,6 +8,8 @@
 #include "../model/app/app.h"
 #include "../model/com_manager/protocol.h"
 #include "../model/animation/animation.h"
+#include "../assets/cards/rotate1.xpm"
+#include "../assets/cards/rotate2.xpm"
 
 typedef void(*handler)(app_t *, interrupt_type_t);
 
@@ -17,7 +19,7 @@ void	handle_general(app_t *app, interrupt_type_t interrupt);
 void	handle_main_menu(app_t *app, interrupt_type_t interrupt);
 
 void	handle_game_playing(app_t *app, interrupt_type_t interrupt);
-void	handle_hit(app_t *app, interrupt_type_t interrupt);
+void	handle_hit(void *ptr);
 
 void	handle_game_betting(app_t *app, interrupt_type_t interrupt);
 void	handle_game_over(app_t *app, interrupt_type_t interrupt);
