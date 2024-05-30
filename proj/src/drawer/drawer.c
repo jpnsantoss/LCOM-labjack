@@ -39,6 +39,7 @@ void draw_state(app_t *app)
       draw_button_set(app->buttons_main_menu);
       break;
     case GAME_BET:
+	font_print_str(&app->font, "Please place your bet:", (vg_get_width() / 2) - 290, vg_get_height() / 2 - 92, 0xffffff);
       sprite_draw(app->button_bet);
       vg_draw_border(460, 785, 140, 55, app->game.input_select ? 0xe69f58 : 0xffffff, 4);
       if (app->game.main_player.bet != 0)
