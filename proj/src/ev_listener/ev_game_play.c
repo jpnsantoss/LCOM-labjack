@@ -5,13 +5,10 @@ extern int timer_counter;
 
 void handle_hit(void *ptr)
 {
-  printf("b1\n");
   if (ptr == NULL) return;
-  printf("b2\n");
+
   app_t *app = (app_t *)ptr;
-  printf("c\n");
   player_t *player = &app->game.main_player;
-  printf("app %p, player %p\n", app, player);
 
   game_give_card(app->game.cards, player->cards);
   player->cards_value = game_get_cards_value(player->cards);
@@ -33,25 +30,38 @@ void handle_hit(void *ptr)
   vg_set_redraw();
 }
 
-void add_animation(app_t *app)
+void add_hit_animation(app_t *app)
 {
   sprite_t *rotate_1 = sprite_create((xpm_map_t) rotate1_xpm);
   sprite_t *rotate_2 = sprite_create((xpm_map_t) rotate2_xpm);
+  sprite_t *card_back = app->game.card_back;
   animation_t *move_card = animation_create(27, handle_hit);
   
   for(size_t i = 0; i < 250; i += 10)
   {
-    if (animation_add_frame(move_card, app->game.card_back, GAME_DECK_DRAW_X + app->game.card_back->img.width * 0.02 - i/2, GAME_DECK_DRAW_Y - (app->game.card_back->img.height * 0.1 - i))) printf("ERROR1");
+    animation_add_frame(move_card, card_back, 
+      GAME_DECK_DRAW_X + app->game.card_back->img.width * 0.02 - i/3,
+      GAME_DECK_DRAW_Y - (app->game.card_back->img.height * 0.1 - i)
+    );
   }
-  if (animation_add_frame(move_card, rotate_1, GAME_DECK_DRAW_X + app->game.card_back->img.width * 0.02 - 125, GAME_DECK_DRAW_Y - (app->game.card_back->img.height * 0.1 - 250))) printf("ERROR2");
-  if (animation_add_frame(move_card, rotate_2, GAME_DECK_DRAW_X + app->game.card_back->img.width * 0.02 - 125, GAME_DECK_DRAW_Y - (app->game.card_back->img.height * 0.1 - 250))) printf("ERROR3");
+
+  size_t card_pos = app->game.main_player.cards->curr_size;
+
+  uint32_t x = 500 + card_pos * card_back->img.width * 0.5;
+	uint32_t y = 500 - card_back->img.height * 0.09;
+
+  animation_add_frame(move_card, rotate_1, x, y);
+  animation_add_frame(move_card, rotate_2, x, y);
 
   app->game.curr_anim = move_card;
 }
 
-
-void handle_double(app_t *app)
+void handle_double(void *ptr)
 {
+  if (ptr == NULL) return;
+  
+  app_t *app = (app_t *)ptr;
+
   player_t *player = &app->game.main_player;
 
   player->bet *= 2;
@@ -81,6 +91,29 @@ void handle_double(app_t *app)
 	vg_set_redraw();
 }
 
+void add_double_animation(app_t *app)
+{
+  sprite_t *rotate_1 = sprite_create((xpm_map_t) rotate1_xpm);
+  sprite_t *rotate_2 = sprite_create((xpm_map_t) rotate2_xpm);
+  sprite_t *card_back = app->game.card_back;
+  animation_t *move_card = animation_create(27, handle_hit);
+  
+  for(size_t i = 0; i < 250; i += 10)
+  {
+    
+  }
+
+  size_t card_pos = app->game.main_player.cards->curr_size;
+
+  uint32_t x = 500 + card_pos * card_back->img.width * 0.5;
+	uint32_t y = 500 - card_back->img.height * 0.09;
+
+  animation_add_frame(move_card, rotate_1, x, y);
+  animation_add_frame(move_card, rotate_2, x, y);
+
+  app->game.curr_anim = move_card;
+}
+
 void handle_game_playing(app_t *app, interrupt_type_t interrupt)
 {
   if (animation_running(app->game.curr_anim)) return;
@@ -95,8 +128,7 @@ void handle_game_playing(app_t *app, interrupt_type_t interrupt)
         break;
       // Hit
       case KB_1:
-        add_animation(app);
-        //handle_hit(app, interrupt);
+        add_hit_animation(app);
         break;
       // Stand
       case KB_2:
@@ -108,7 +140,7 @@ void handle_game_playing(app_t *app, interrupt_type_t interrupt)
       // Double
       case KB_3:
         if (app->game.main_player.cards->curr_size != 2) break;
-        handle_double(app);
+        add_double_animation(app);
         break;
       // Surrender
       case KB_4:
@@ -129,8 +161,7 @@ void handle_game_playing(app_t *app, interrupt_type_t interrupt)
     // Hit
     if (cursor_sprite_colides(&app->cursor, queue_at(app->buttons_game_playing, 0)))
     {
-      add_animation(app);
-      //handle_hit(app, interrupt);
+      add_hit_animation(app);
     }
 
     // Stand
@@ -147,7 +178,7 @@ void handle_game_playing(app_t *app, interrupt_type_t interrupt)
     if (app->game.main_player.cards->curr_size == 2 &&
       cursor_sprite_colides(&app->cursor, queue_at(app->buttons_game_playing, 2)))
     {
-			handle_double(app);
+			add_double_animation(app);
       return;
     }
     

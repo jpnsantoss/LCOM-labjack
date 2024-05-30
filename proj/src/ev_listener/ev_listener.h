@@ -6,7 +6,6 @@
 #include "../model/sprite/sprite.h"
 #include "../model/game/game.h"
 #include "../model/app/app.h"
-#include "../model/com_manager/protocol.h"
 #include "../model/animation/animation.h"
 #include "../assets/cards/rotate1.xpm"
 #include "../assets/cards/rotate2.xpm"

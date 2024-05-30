@@ -47,7 +47,6 @@ void animation_run(animation_t **animation, void *ptr) {
   animation_t *anim = *animation;
   if (anim == NULL || anim->frames == NULL) return;
   anim->frame_index += 1;
-  printf("frame\n");
 
 	if (anim->frame_index == anim->frames->curr_size - 1)
   {
