@@ -37,14 +37,14 @@ void add_animation(app_t *app)
 {
   sprite_t *rotate_1 = sprite_create((xpm_map_t) rotate1_xpm);
   sprite_t *rotate_2 = sprite_create((xpm_map_t) rotate2_xpm);
-  animation_t *move_card = animation_create(12, handle_hit);
+  animation_t *move_card = animation_create(27, handle_hit);
   
-  for(size_t i = 0; i < 100; i += 10)
+  for(size_t i = 0; i < 250; i += 10)
   {
-    if (animation_add_frame(move_card, app->game.card_back, GAME_DECK_DRAW_X + app->game.card_back->img.width * 0.02 - i, GAME_DECK_DRAW_Y - (app->game.card_back->img.height * 0.1 + i))) printf("ERROR1");
+    if (animation_add_frame(move_card, app->game.card_back, GAME_DECK_DRAW_X + app->game.card_back->img.width * 0.02 - i/2, GAME_DECK_DRAW_Y - (app->game.card_back->img.height * 0.1 - i))) printf("ERROR1");
   }
-  if (animation_add_frame(move_card, rotate_1, GAME_DECK_DRAW_X + app->game.card_back->img.width * 0.02 - 100, GAME_DECK_DRAW_Y - (app->game.card_back->img.height * 0.1 + 100))) printf("ERROR2");
-  if (animation_add_frame(move_card, rotate_2, GAME_DECK_DRAW_X + app->game.card_back->img.width * 0.02 - 100, GAME_DECK_DRAW_Y - (app->game.card_back->img.height * 0.1 + 100))) printf("ERROR3");
+  if (animation_add_frame(move_card, rotate_1, GAME_DECK_DRAW_X + app->game.card_back->img.width * 0.02 - 125, GAME_DECK_DRAW_Y - (app->game.card_back->img.height * 0.1 - 250))) printf("ERROR2");
+  if (animation_add_frame(move_card, rotate_2, GAME_DECK_DRAW_X + app->game.card_back->img.width * 0.02 - 125, GAME_DECK_DRAW_Y - (app->game.card_back->img.height * 0.1 - 250))) printf("ERROR3");
 
   app->game.curr_anim = move_card;
 }
