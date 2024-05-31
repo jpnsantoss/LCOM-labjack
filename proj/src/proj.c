@@ -72,6 +72,8 @@ int (proj_main_loop)(int argc, char **argv)
   bit_no_t bit_no;
 	int ipc_status;
 	message msg;
+	
+	rtc_setup();
 
   vg_init_mode();
 
