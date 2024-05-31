@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['delay_5fus_0',['DELAY_US',['../i8042_8h.html#a1a522aa19bcb695a9df30032a893bee3',1,'i8042.h']]],
-  ['direct_5fcolor_1',['DIRECT_COLOR',['../i_v_b_e_8h.html#aa1736cd349cf2b4f9dbe368c2a13e5be',1,'iVBE.h']]]
+  ['irq_5frtc_0',['IRQ_RTC',['../rtc_8h.html#a910ac5f2c1b4016e433f9832358a1816',1,'rtc.h']]]
 ];

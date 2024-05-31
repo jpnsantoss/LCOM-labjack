@@ -1,7 +1,12 @@
 var searchData=
 [
-  ['player_5fdestroy_0',['player_destroy',['../player_8c.html#a3e022dfe5f6c73df82be5acf948387f4',1,'player_destroy(player_t *player):&#160;player.c'],['../player_8h.html#a3e022dfe5f6c73df82be5acf948387f4',1,'player_destroy(player_t *player):&#160;player.c']]],
-  ['player_5fdraw_1',['player_draw',['../player_8c.html#a5c00590deb96c74bad199e4100eb8ee6',1,'player_draw(font_t *font, player_t *player):&#160;player.c'],['../player_8h.html#a5c00590deb96c74bad199e4100eb8ee6',1,'player_draw(font_t *font, player_t *player):&#160;player.c']]],
-  ['player_5finit_2',['player_init',['../player_8c.html#ae9fa81a12efad3cbbaadacf5e80bbf67',1,'player_init(player_t *player):&#160;player.c'],['../player_8h.html#ae9fa81a12efad3cbbaadacf5e80bbf67',1,'player_init(player_t *player):&#160;player.c']]],
-  ['proj_5fmain_5floop_3',['proj_main_loop',['../proj_8c.html#ad290208c74ef25eb347d1d96a390cd66',1,'proj.c']]]
+  ['main_0',['main',['../proj_8c.html#a0ddf1224851353fc92bfbff6f499fa97',1,'proj.c']]],
+  ['mouse_5fdisable_1',['mouse_disable',['../group__input.html#ga4b21609cf20aa6689e73976702f26bce',1,'mouse_disable():&#160;dvr_mouse.c'],['../group__input.html#ga4b21609cf20aa6689e73976702f26bce',1,'mouse_disable():&#160;dvr_mouse.c']]],
+  ['mouse_5ffill_5fpacket_2',['mouse_fill_packet',['../group__input.html#ga14886abfecbdb576b89c3d78d7d5e6a4',1,'mouse_fill_packet(uint8_t *bytes, struct packet *pp):&#160;dvr_mouse.c'],['../group__input.html#ga14886abfecbdb576b89c3d78d7d5e6a4',1,'mouse_fill_packet(uint8_t *bytes, struct packet *pp):&#160;dvr_mouse.c']]],
+  ['mouse_5fget_5finfo_3',['mouse_get_info',['../group__input.html#ga951843dd85f1419664c540d5ff0819d3',1,'mouse_get_info():&#160;dvr_mouse.c'],['../group__input.html#ga951843dd85f1419664c540d5ff0819d3',1,'mouse_get_info():&#160;dvr_mouse.c']]],
+  ['mouse_5fih_4',['mouse_ih',['../group__input.html#ga210374b50462acdedab00df64d5cea3c',1,'mouse_ih():&#160;dvr_mouse.c'],['../group__input.html#ga210374b50462acdedab00df64d5cea3c',1,'mouse_ih():&#160;dvr_mouse.c']]],
+  ['mouse_5finit_5',['mouse_init',['../group__input.html#ga94fafb2ceb49ddd6a2ecc54920db9693',1,'mouse_init(uint8_t *bit_no):&#160;dvr_mouse.c'],['../group__input.html#ga94fafb2ceb49ddd6a2ecc54920db9693',1,'mouse_init(uint8_t *bit_no):&#160;dvr_mouse.c']]],
+  ['mouse_5fread_5fpacket_6',['mouse_read_packet',['../group__input.html#ga182a99324a2f0f348d32603b05528735',1,'mouse_read_packet():&#160;dvr_mouse.c'],['../group__input.html#ga182a99324a2f0f348d32603b05528735',1,'mouse_read_packet():&#160;dvr_mouse.c']]],
+  ['mouse_5fsubscribe_5fint_7',['mouse_subscribe_int',['../group__input.html#ga9da18257ff113b686bb826d154bfaa87',1,'mouse_subscribe_int(uint8_t *bit_no):&#160;dvr_mouse.c'],['../group__input.html#ga9da18257ff113b686bb826d154bfaa87',1,'mouse_subscribe_int(uint8_t *bit_no):&#160;dvr_mouse.c']]],
+  ['mouse_5funsubscribe_5fint_8',['mouse_unsubscribe_int',['../group__input.html#ga685ad2706aca36d9869a30a19b9f446a',1,'mouse_unsubscribe_int():&#160;dvr_mouse.c'],['../group__input.html#ga685ad2706aca36d9869a30a19b9f446a',1,'mouse_unsubscribe_int():&#160;dvr_mouse.c']]]
 ];

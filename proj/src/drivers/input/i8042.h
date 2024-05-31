@@ -4,6 +4,7 @@
 #include <lcom/lcf.h>
 
 /** @defgroup i8042 i8042
+ * @ingroup input
  * @{
  *
  * @brief Constants for the i8042 keyboard and mouse controller.
