@@ -15,7 +15,7 @@ int (rtc_get_time)() {
     uint8_t out;
 
     printf("Checking if RTC is updating...\n");
-    if (rtc_updating() != 0) return 1;
+    rtc_wait();
 
     printf("Reading year...\n");
     if (rtc_read_output(Y, &out) != 0) return 1;
@@ -79,55 +79,39 @@ int (rtc_get_time)() {
 
     return 0;
 }
-
-int(rtc_set_alarm)() {
+int rtc_set_alarm() {
+    //fires at 18 o'clock
+    rtc_wait();
+    if(rtc_disable_update_int()!= 0) return 1;
     printf("Setting alarm...\n");
-    
+    uint8_t current_minutes;
+    if (rtc_read_output(M, &current_minutes) != 0) return 1;
+    unsigned long alarm_minutes = (current_minutes + 5) % 60;
     rtc_wait();
     if(rtc_disable_update_int()!= 0) return 1;
     if(rtc_input(RTC_H_ALARM, RTC_DONT_CARE) != 0) return 1;
-    if(rtc_input(RTC_MIN_ALARM, RTC_DONT_CARE) != 0) return 1;
+    if(rtc_input(RTC_MIN_ALARM, alarm_minutes) != 0) return 1;
     if(rtc_input(RTC_S_ALARM, RTC_DONT_CARE) != 0) return 1;
     if(rtc_update_int() != 0) return 1;
     return 0;
 }
-
-/*
-int (rtc_set_alarm)() {
-    printf("Setting alarm...\n");
-    rtc_wait();
-    if(rtc_disable_update_int()!= 0) return 1;
-
-    printf("Setting hours for alarm...\n");
-    if (rtc_input(RTC_H_ALARM, mytime.hours) != 0) {
-        return 1;
-    }
-
-    printf("Setting minutes for alarm...\n");
-    if (rtc_input(RTC_MIN_ALARM, mytime.minutes) != 0) {
-        return 1;
-    }
-
-    printf("Setting seconds for alarm to 'don't care'...\n");
-    if (rtc_input(RTC_S_ALARM, RTC_DONT_CARE) != 0) {
-        return 1;
-    }
-
-    rtc_update_int();
-    return 0;
-}*/
-
 int (rtc_setup)() {
     uint8_t status;
     printf("Setting up RTC...\n");
     if (rtc_read_output(REGB, &status)) return 1;
     if (ISBIN & status) bin_mode = 1;
     if (rtc_get_time() != 0) return 0;
+    if (rtc_disable_alarm_int() != 0) return 1;
+    if (rtc_disable_update_int() != 0) return 1;
+    if (rtc_alarm_int() != 0) return 1;
     printf("rtc setup");
     return 0;
 }
 
 int (rtc_subscribe_int)(uint8_t* bit_no) {
+    uint8_t val = 0;
+    if(rtc_read_output(REGC, &val) != 0) return 1;
+    
     if (!bit_no) return 1;
     *bit_no = BIT(rtc_hook_id);
 
@@ -137,31 +121,29 @@ int (rtc_subscribe_int)(uint8_t* bit_no) {
 
     if (rtc_update_int() != 0) return 1;
     printf("Update interrupts subscribed\n");
-
-    return rtc_alarm_int();
+    return 0;
 }
+
 
 int (rtc_unsubscribe_int)() {
     printf("Unsubscribing from RTC interrupts...\n");
-    if (rtc_disable_alarm_int() != 0) return 1;
-    if (rtc_disable_update_int() != 0) return 1;
+   if (rtc_disable_alarm_int() != 0) return 1;
+   if (rtc_disable_update_int() != 0) return 1;
     return sys_irqrmpolicy(&rtc_hook_id);
 }
 
 void (rtc_wait)() {
-    uint8_t val;
     while (true) {
-        val = 0;
-        rtc_read_output(REGA, &val);
-        if (!(val & REGA_UPDATE)) break;
+        if (!(rtc_updating())) break;
         tickdelay(micros_to_ticks(20000));
     }
 }
 
+
 int (rtc_read_output)(uint8_t cmd, uint8_t *output) {
     if (output == NULL) return 1;   
     if (sys_outb(INPUT_REG, cmd) != 0) return 1;
-    printf("Asked for output\n");
+    
     return util_sys_inb(OUTPUT_REG, output);
 }
 
@@ -246,6 +228,7 @@ int (rtc_alarm_int)() {
     val |= REGB_ALARM;
     printf("Necessary bits enabled!\n");
     if (rtc_input(REGB, val) != 0) return 1;
+    printf("inputted\n");
     return 0;
 }
 
