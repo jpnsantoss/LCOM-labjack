@@ -7,18 +7,17 @@
 #define KBC_MAX_TRIES 10
 
 /**
- * @brief Structure for mouse information.
- */
-
-typedef struct packet mouse_info_t;
-
-/**
- * @defgroup input Input Driver
+ * @defgroup input Input
  * @ingroup drivers
  * @{
  * 
  * @brief Driver for input devices: keyboard and mouse.
  */
+
+/**
+ * @brief Structure for mouse information.
+ */
+typedef struct packet mouse_info_t;
 
 /**
  * @brief Writes a value to the keyboard controller (KBC).

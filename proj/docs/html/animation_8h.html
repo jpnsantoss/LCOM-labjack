@@ -80,9 +80,9 @@ $(function() {
   <div class="headertitle"><div class="title">animation.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;lcom/lcf.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="queue_8h_source.html">../../data_structures/queue/queue.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="queue_8h_source.html">../../data_structures/queue/queue.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="sprite_8h_source.html">../sprite/sprite.h</a>&quot;</code><br />
+<code>#include &lt;lcom/lcf.h&gt;</code><br />
 </div>
 <p><a href="animation_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -93,20 +93,22 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a0b0db5e2841c87a01ef6052ff34c4f19"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structanimation__t.html">animation_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="animation_8h.html#a0b0db5e2841c87a01ef6052ff34c4f19">animation_create</a> (uint8_t loop, uint32_t frame_rate, uint32_t frame_amount)</td></tr>
-<tr class="separator:a0b0db5e2841c87a01ef6052ff34c4f19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff085b5759c8a71d319cf3fdd28dc603"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="animation_8h.html#aff085b5759c8a71d319cf3fdd28dc603">animation_add_frame</a> (<a class="el" href="structanimation__t.html">animation_t</a> *animation, <a class="el" href="structsprite__t.html">sprite_t</a> *sprite, uint32_t x, uint32_t y)</td></tr>
-<tr class="separator:aff085b5759c8a71d319cf3fdd28dc603"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08d98778bffe43b6cb8b1e9f1546db2a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structanimation__t.html">animation_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="animation_8h.html#a08d98778bffe43b6cb8b1e9f1546db2a">animation_create</a> (uint32_t frame_amount, void(*on_end)(void *))</td></tr>
+<tr class="separator:a08d98778bffe43b6cb8b1e9f1546db2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a079d535391b5fbff3ecd4fae614e18f1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="animation_8h.html#a079d535391b5fbff3ecd4fae614e18f1">animation_add_frame</a> (<a class="el" href="structanimation__t.html">animation_t</a> *animation, <a class="el" href="structsprite__t.html">sprite_t</a> *sprite, uint32_t x, uint32_t y, bool rotate)</td></tr>
+<tr class="separator:a079d535391b5fbff3ecd4fae614e18f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab21a107c5ce3e38887940bdf400f721f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="animation_8h.html#ab21a107c5ce3e38887940bdf400f721f">animation_draw</a> (<a class="el" href="structanimation__t.html">animation_t</a> *animation)</td></tr>
 <tr class="separator:ab21a107c5ce3e38887940bdf400f721f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8249fbb3a96829f4a13a2a9a0177669a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="animation_8h.html#a8249fbb3a96829f4a13a2a9a0177669a">animation_run</a> (<a class="el" href="structanimation__t.html">animation_t</a> *animation)</td></tr>
-<tr class="separator:a8249fbb3a96829f4a13a2a9a0177669a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa555c1bf59971c71e605cc44d9ca147f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="animation_8h.html#aa555c1bf59971c71e605cc44d9ca147f">animation_run</a> (<a class="el" href="structanimation__t.html">animation_t</a> **animation, void *ptr)</td></tr>
+<tr class="separator:aa555c1bf59971c71e605cc44d9ca147f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0abab1d77047f6f710e2f6dba14381a3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="animation_8h.html#a0abab1d77047f6f710e2f6dba14381a3">animation_running</a> (<a class="el" href="structanimation__t.html">animation_t</a> *animation)</td></tr>
+<tr class="separator:a0abab1d77047f6f710e2f6dba14381a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20212c585ef755ed071f904caf6e2997"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="animation_8h.html#a20212c585ef755ed071f904caf6e2997">animation_destroy</a> (<a class="el" href="structanimation__t.html">animation_t</a> *animation)</td></tr>
 <tr class="separator:a20212c585ef755ed071f904caf6e2997"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="aff085b5759c8a71d319cf3fdd28dc603" name="aff085b5759c8a71d319cf3fdd28dc603"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff085b5759c8a71d319cf3fdd28dc603">&#9670;&#160;</a></span>animation_add_frame()</h2>
+<a id="a079d535391b5fbff3ecd4fae614e18f1" name="a079d535391b5fbff3ecd4fae614e18f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a079d535391b5fbff3ecd4fae614e18f1">&#9670;&#160;</a></span>animation_add_frame()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -133,7 +135,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>y</em>&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>rotate</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -145,8 +153,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a0b0db5e2841c87a01ef6052ff34c4f19" name="a0b0db5e2841c87a01ef6052ff34c4f19"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b0db5e2841c87a01ef6052ff34c4f19">&#9670;&#160;</a></span>animation_create()</h2>
+<a id="a08d98778bffe43b6cb8b1e9f1546db2a" name="a08d98778bffe43b6cb8b1e9f1546db2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08d98778bffe43b6cb8b1e9f1546db2a">&#9670;&#160;</a></span>animation_create()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -154,20 +162,14 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="structanimation__t.html">animation_t</a> * animation_create </td>
           <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>loop</em>, </td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>frame_amount</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>frame_rate</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>frame_amount</em>&#160;</td>
+          <td class="paramtype">void(*)(void *)&#160;</td>
+          <td class="paramname"><em>on_end</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -215,14 +217,42 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a8249fbb3a96829f4a13a2a9a0177669a" name="a8249fbb3a96829f4a13a2a9a0177669a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8249fbb3a96829f4a13a2a9a0177669a">&#9670;&#160;</a></span>animation_run()</h2>
+<a id="aa555c1bf59971c71e605cc44d9ca147f" name="aa555c1bf59971c71e605cc44d9ca147f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa555c1bf59971c71e605cc44d9ca147f">&#9670;&#160;</a></span>animation_run()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void animation_run </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structanimation__t.html">animation_t</a> **&#160;</td>
+          <td class="paramname"><em>animation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0abab1d77047f6f710e2f6dba14381a3" name="a0abab1d77047f6f710e2f6dba14381a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0abab1d77047f6f710e2f6dba14381a3">&#9670;&#160;</a></span>animation_running()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int animation_running </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structanimation__t.html">animation_t</a> *&#160;</td>
           <td class="paramname"><em>animation</em></td><td>)</td>

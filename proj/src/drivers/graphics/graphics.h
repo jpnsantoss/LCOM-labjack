@@ -5,7 +5,8 @@
 #include "iVBE.h"
 
 /**
- * @defgroup graphics Graphics Driver
+ * @defgroup graphics Graphics
+ * @ingroup drivers
  * @{
  *
  * @brief Functions and data structures related to graphics handling.
@@ -116,7 +117,6 @@ int(vg_draw_vline)(uint16_t x, uint16_t y, uint16_t len, uint32_t color);
  * @return 0 if successful, non-zero otherwise
  */
 int vg_draw_border(uint16_t x, uint16_t y, uint16_t width, uint16_t height, uint32_t color, uint8_t thickness);
-
 
 /**
  * @brief Gets the graphics information.

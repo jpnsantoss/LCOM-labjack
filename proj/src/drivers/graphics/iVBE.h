@@ -3,9 +3,9 @@
 
 #include <lcom/lcf.h>
 
-
 /**
- * @defgroup ivbe VBE
+ * @defgroup ivbe iVBE
+ * @ingroup graphics
  * @{
  *
  * @brief Constants for the VESA BIOS Extensions (VBE).
@@ -13,7 +13,6 @@
 
 /** @brief VBE video mode identifier for the graphics mode used in the project. */
 #define VG_MODE 0x14c
-
 
 /** @brief VBE function call failure status code. */
 #define AH_FAIL 0x01

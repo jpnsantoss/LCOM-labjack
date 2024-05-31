@@ -85,12 +85,12 @@ $(function() {
 Functions</h2></td></tr>
 <tr class="memitem:a368309c58e051e585f1f8e65d92a46d0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="font_8c.html#a368309c58e051e585f1f8e65d92a46d0">font_init</a> (<a class="el" href="structfont__t.html">font_t</a> *font)</td></tr>
 <tr class="separator:a368309c58e051e585f1f8e65d92a46d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a727bcdb52c89c62d9559e97f57684aac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="font_8c.html#a727bcdb52c89c62d9559e97f57684aac">font_print_char</a> (<a class="el" href="structfont__t.html">font_t</a> *font, char c, uint32_t x, uint32_t y)</td></tr>
-<tr class="separator:a727bcdb52c89c62d9559e97f57684aac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6d81715911acd0dcce44640699e4e94"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="font_8c.html#ae6d81715911acd0dcce44640699e4e94">font_print_str</a> (<a class="el" href="structfont__t.html">font_t</a> *font, char *str, uint32_t x, uint32_t y)</td></tr>
-<tr class="separator:ae6d81715911acd0dcce44640699e4e94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a287256ad6b492f46ed269f98001d31ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="font_8c.html#a287256ad6b492f46ed269f98001d31ef">font_print_number</a> (<a class="el" href="structfont__t.html">font_t</a> *font, uint32_t num, uint32_t x, uint32_t y)</td></tr>
-<tr class="separator:a287256ad6b492f46ed269f98001d31ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49d2405ed21c9f3e00b309135982a447"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="font_8c.html#a49d2405ed21c9f3e00b309135982a447">font_print_char</a> (<a class="el" href="structfont__t.html">font_t</a> *font, char c, uint32_t x, uint32_t y, uint32_t color)</td></tr>
+<tr class="separator:a49d2405ed21c9f3e00b309135982a447"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2abd04209b05b96660ad789fb6916bde"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="font_8c.html#a2abd04209b05b96660ad789fb6916bde">font_print_str</a> (<a class="el" href="structfont__t.html">font_t</a> *font, char *str, uint32_t x, uint32_t y, uint32_t color)</td></tr>
+<tr class="separator:a2abd04209b05b96660ad789fb6916bde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add66dc588194c7a3c4f9f3d013073e4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="font_8c.html#add66dc588194c7a3c4f9f3d013073e4a">font_print_number</a> (<a class="el" href="structfont__t.html">font_t</a> *font, uint32_t num, uint32_t x, uint32_t y, uint32_t color)</td></tr>
+<tr class="separator:add66dc588194c7a3c4f9f3d013073e4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace7b106acf084f479f5dcd2c7d2c9a06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="font_8c.html#ace7b106acf084f479f5dcd2c7d2c9a06">font_destroy</a> (<a class="el" href="structfont__t.html">font_t</a> *font)</td></tr>
 <tr class="separator:ace7b106acf084f479f5dcd2c7d2c9a06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -131,8 +131,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a727bcdb52c89c62d9559e97f57684aac" name="a727bcdb52c89c62d9559e97f57684aac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a727bcdb52c89c62d9559e97f57684aac">&#9670;&#160;</a></span>font_print_char()</h2>
+<a id="a49d2405ed21c9f3e00b309135982a447" name="a49d2405ed21c9f3e00b309135982a447"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49d2405ed21c9f3e00b309135982a447">&#9670;&#160;</a></span>font_print_char()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -159,7 +159,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>y</em>&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -171,8 +177,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a287256ad6b492f46ed269f98001d31ef" name="a287256ad6b492f46ed269f98001d31ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a287256ad6b492f46ed269f98001d31ef">&#9670;&#160;</a></span>font_print_number()</h2>
+<a id="add66dc588194c7a3c4f9f3d013073e4a" name="add66dc588194c7a3c4f9f3d013073e4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add66dc588194c7a3c4f9f3d013073e4a">&#9670;&#160;</a></span>font_print_number()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -199,7 +205,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>y</em>&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -211,8 +223,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ae6d81715911acd0dcce44640699e4e94" name="ae6d81715911acd0dcce44640699e4e94"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6d81715911acd0dcce44640699e4e94">&#9670;&#160;</a></span>font_print_str()</h2>
+<a id="a2abd04209b05b96660ad789fb6916bde" name="a2abd04209b05b96660ad789fb6916bde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2abd04209b05b96660ad789fb6916bde">&#9670;&#160;</a></span>font_print_str()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -239,7 +251,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>y</em>&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>color</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

@@ -12,15 +12,15 @@
 #include <math.h>
 
 /**
- * @file ev_listener.h
+ * @defgroup ev_listener Event Listener
+ * @{
+ * 
  * @brief Event listeners and handlers for the application.
  */
 
 /**
  * @brief Type definition for a handler function.
- *
- * A handler function processes an event interrupt for the application.
- * 
+ * @details A handler function processes an event interrupt for the application.
  * @param app Pointer to the application structure.
  * @param interrupt The type of interrupt that occurred.
  */
@@ -99,5 +99,7 @@ void handle_dealer_turn(app_t *app, interrupt_type_t interrupt);
  * @param app Pointer to the application structure.
  */
 void add_dealer_single_animation(app_t *app);
+
+/** @} */
 
 #endif /* _LCOM_EV_LISTENER_H_ */
