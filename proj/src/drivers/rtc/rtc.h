@@ -1,5 +1,5 @@
-#ifndef _LCOM_H_
-#define _LCOM_H_
+#ifndef _LCOM_DRIVERS_RTC_H_
+#define _LCOM_DRIVERS_RTC_H_
 
 #include <minix/sysutil.h>
 #include <lcom/lcf.h>
