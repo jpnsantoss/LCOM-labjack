@@ -103,362 +103,93 @@ $(function(){ initResizable(false); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdatetime.html">datetime</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdatetime__t.html">datetime_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a8dbd8f6812bf2fd6b71034876f308a35" id="r_a8dbd8f6812bf2fd6b71034876f308a35"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8dbd8f6812bf2fd6b71034876f308a35">RTC_IS_UPDATING</a>&#160;&#160;&#160;BIT(7)</td></tr>
-<tr class="separator:a8dbd8f6812bf2fd6b71034876f308a35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb4c3bae5369ec12933b0dfd1afc4a80" id="r_abb4c3bae5369ec12933b0dfd1afc4a80"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abb4c3bae5369ec12933b0dfd1afc4a80">RTC_IS_BIN</a>&#160;&#160;&#160;BIT(2)</td></tr>
-<tr class="separator:abb4c3bae5369ec12933b0dfd1afc4a80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b1373d131ebfcf39dc2659a34af4ab9" id="r_a2b1373d131ebfcf39dc2659a34af4ab9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b1373d131ebfcf39dc2659a34af4ab9">RTC_UPDATE_REG</a>&#160;&#160;&#160;0x10</td></tr>
-<tr class="separator:a2b1373d131ebfcf39dc2659a34af4ab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fb6a2883d38dca59ebc66e0f14c7a08" id="r_a9fb6a2883d38dca59ebc66e0f14c7a08"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9fb6a2883d38dca59ebc66e0f14c7a08">RTC_COUNT_REG</a>&#160;&#160;&#160;0x11</td></tr>
-<tr class="separator:a9fb6a2883d38dca59ebc66e0f14c7a08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a436321b18e28627e298594d1576fc59f" id="r_a436321b18e28627e298594d1576fc59f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a436321b18e28627e298594d1576fc59f">RTC_INPUT_REG</a>&#160;&#160;&#160;0x70</td></tr>
-<tr class="separator:a436321b18e28627e298594d1576fc59f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34cd3e37486350d2d14630e3689a44d3" id="r_a34cd3e37486350d2d14630e3689a44d3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34cd3e37486350d2d14630e3689a44d3">RTC_OUTPUT_REG</a>&#160;&#160;&#160;0x71</td></tr>
-<tr class="separator:a34cd3e37486350d2d14630e3689a44d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a910ac5f2c1b4016e433f9832358a1816" id="r_a910ac5f2c1b4016e433f9832358a1816"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a910ac5f2c1b4016e433f9832358a1816">IRQ_RTC</a>&#160;&#160;&#160;8</td></tr>
-<tr class="separator:a910ac5f2c1b4016e433f9832358a1816"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e241e682f861155860680a8aa19effe" id="r_a4e241e682f861155860680a8aa19effe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e241e682f861155860680a8aa19effe">RTC_H</a>&#160;&#160;&#160;4</td></tr>
-<tr class="separator:a4e241e682f861155860680a8aa19effe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed8df8dfbbc8986c323408eed0643b0a" id="r_aed8df8dfbbc8986c323408eed0643b0a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed8df8dfbbc8986c323408eed0643b0a">RTC_M</a>&#160;&#160;&#160;2</td></tr>
-<tr class="separator:aed8df8dfbbc8986c323408eed0643b0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c777ccd8dfc8187e130ddd211bc8da0" id="r_a4c777ccd8dfc8187e130ddd211bc8da0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c777ccd8dfc8187e130ddd211bc8da0">RTC_S</a>&#160;&#160;&#160;0</td></tr>
-<tr class="separator:a4c777ccd8dfc8187e130ddd211bc8da0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26e353d01a6f6cb64c5ee78954b4c332" id="r_a26e353d01a6f6cb64c5ee78954b4c332"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26e353d01a6f6cb64c5ee78954b4c332">RTC_Y</a>&#160;&#160;&#160;9</td></tr>
-<tr class="separator:a26e353d01a6f6cb64c5ee78954b4c332"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34fc4e7c0e5db231217aa3174e394c72" id="r_a34fc4e7c0e5db231217aa3174e394c72"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34fc4e7c0e5db231217aa3174e394c72">RTC_MIN</a>&#160;&#160;&#160;8</td></tr>
-<tr class="separator:a34fc4e7c0e5db231217aa3174e394c72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9daeab3b1a62b3c1ffca1faf5d00e42" id="r_ad9daeab3b1a62b3c1ffca1faf5d00e42"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9daeab3b1a62b3c1ffca1faf5d00e42">RTC_D</a>&#160;&#160;&#160;7</td></tr>
-<tr class="separator:ad9daeab3b1a62b3c1ffca1faf5d00e42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad2728aebfeb39eb582820479cfad75c2" id="r_gad2728aebfeb39eb582820479cfad75c2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#gad2728aebfeb39eb582820479cfad75c2">ISUPDATING</a>&#160;&#160;&#160;BIT(7)</td></tr>
+<tr class="separator:gad2728aebfeb39eb582820479cfad75c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacfdfe82ac33489b104988ff58ca9eefc" id="r_gacfdfe82ac33489b104988ff58ca9eefc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#gacfdfe82ac33489b104988ff58ca9eefc">ISBIN</a>&#160;&#160;&#160;BIT(2)</td></tr>
+<tr class="separator:gacfdfe82ac33489b104988ff58ca9eefc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8ca4547b66ba6771ca72fa132bb4cec0" id="r_ga8ca4547b66ba6771ca72fa132bb4cec0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga8ca4547b66ba6771ca72fa132bb4cec0">RTC_DONT_CARE</a>&#160;&#160;&#160;BIT(7) | BIT(6)</td></tr>
+<tr class="separator:ga8ca4547b66ba6771ca72fa132bb4cec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga871557447a6fe92581aa4905362f3526" id="r_ga871557447a6fe92581aa4905362f3526"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga871557447a6fe92581aa4905362f3526">REGA</a>&#160;&#160;&#160;10</td></tr>
+<tr class="separator:ga871557447a6fe92581aa4905362f3526"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae8dbe49e05512c45b2d41fb44ad80e3f" id="r_gae8dbe49e05512c45b2d41fb44ad80e3f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#gae8dbe49e05512c45b2d41fb44ad80e3f">REGA_UPDATE</a>&#160;&#160;&#160;BIT(7)</td></tr>
+<tr class="separator:gae8dbe49e05512c45b2d41fb44ad80e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac7a5df986ee5b01c21774a26460625b3" id="r_gac7a5df986ee5b01c21774a26460625b3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#gac7a5df986ee5b01c21774a26460625b3">REGB</a>&#160;&#160;&#160;11</td></tr>
+<tr class="separator:gac7a5df986ee5b01c21774a26460625b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3706e3b472bda5f66ae0419d84c7f8e8" id="r_ga3706e3b472bda5f66ae0419d84c7f8e8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga3706e3b472bda5f66ae0419d84c7f8e8">REGB_ALARM</a>&#160;&#160;&#160;BIT(5)</td></tr>
+<tr class="separator:ga3706e3b472bda5f66ae0419d84c7f8e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0ed257f2e8910fd617fe92b89dd11d3c" id="r_ga0ed257f2e8910fd617fe92b89dd11d3c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga0ed257f2e8910fd617fe92b89dd11d3c">REGB_DONT_UPDATE</a>&#160;&#160;&#160;BIT(7)</td></tr>
+<tr class="separator:ga0ed257f2e8910fd617fe92b89dd11d3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa14fed75241f317200591276a0040c1f" id="r_gaa14fed75241f317200591276a0040c1f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#gaa14fed75241f317200591276a0040c1f">REGC</a>&#160;&#160;&#160;12</td></tr>
+<tr class="separator:gaa14fed75241f317200591276a0040c1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4f2761b945258feaf94155f566a2f0d0" id="r_ga4f2761b945258feaf94155f566a2f0d0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga4f2761b945258feaf94155f566a2f0d0">REGC_ALARMFLAG</a>&#160;&#160;&#160;BIT(5)</td></tr>
+<tr class="separator:ga4f2761b945258feaf94155f566a2f0d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa10e640c92b02c0807a2dcc884d49138" id="r_gaa10e640c92b02c0807a2dcc884d49138"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#gaa10e640c92b02c0807a2dcc884d49138">REGC_UPDATEFLAG</a>&#160;&#160;&#160;BIT(4)</td></tr>
+<tr class="separator:gaa10e640c92b02c0807a2dcc884d49138"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6e00880e0840721709ef45207ec0864b" id="r_ga6e00880e0840721709ef45207ec0864b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga6e00880e0840721709ef45207ec0864b">INPUT_REG</a>&#160;&#160;&#160;0x70</td></tr>
+<tr class="separator:ga6e00880e0840721709ef45207ec0864b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga090b0a3ad176077fc01276c224b5fe02" id="r_ga090b0a3ad176077fc01276c224b5fe02"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga090b0a3ad176077fc01276c224b5fe02">OUTPUT_REG</a>&#160;&#160;&#160;0x71</td></tr>
+<tr class="separator:ga090b0a3ad176077fc01276c224b5fe02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7f6b0bbf4271dd31625f92ec8314808c" id="r_ga7f6b0bbf4271dd31625f92ec8314808c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga7f6b0bbf4271dd31625f92ec8314808c">RTC_IRQ_LINE</a>&#160;&#160;&#160;8</td></tr>
+<tr class="separator:ga7f6b0bbf4271dd31625f92ec8314808c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabec92cc72a096640b821b8cd56a02495" id="r_gabec92cc72a096640b821b8cd56a02495"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#gabec92cc72a096640b821b8cd56a02495">H</a>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:gabec92cc72a096640b821b8cd56a02495"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac4557ee2431dcda570cf96118bfbb2f9" id="r_gac4557ee2431dcda570cf96118bfbb2f9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#gac4557ee2431dcda570cf96118bfbb2f9">RTC_H_ALARM</a>&#160;&#160;&#160;5</td></tr>
+<tr class="separator:gac4557ee2431dcda570cf96118bfbb2f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa8281933977e38870b77221eec3b3c84" id="r_gaa8281933977e38870b77221eec3b3c84"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#gaa8281933977e38870b77221eec3b3c84">MNT</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:gaa8281933977e38870b77221eec3b3c84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9eeae383df10aa2c8bf7f1d3273517f6" id="r_ga9eeae383df10aa2c8bf7f1d3273517f6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga9eeae383df10aa2c8bf7f1d3273517f6">RTC_MIN_ALARM</a>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:ga9eeae383df10aa2c8bf7f1d3273517f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf933676109efed7ab34cea71d748a517" id="r_gaf933676109efed7ab34cea71d748a517"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#gaf933676109efed7ab34cea71d748a517">S</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:gaf933676109efed7ab34cea71d748a517"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga830508f03b24a4a5b4c1f960ad9e4ff6" id="r_ga830508f03b24a4a5b4c1f960ad9e4ff6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga830508f03b24a4a5b4c1f960ad9e4ff6">RTC_S_ALARM</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:ga830508f03b24a4a5b4c1f960ad9e4ff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga798e4073d613ca5ba9618e1b3253df14" id="r_ga798e4073d613ca5ba9618e1b3253df14"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga798e4073d613ca5ba9618e1b3253df14">Y</a>&#160;&#160;&#160;9</td></tr>
+<tr class="separator:ga798e4073d613ca5ba9618e1b3253df14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga52037c938e3c1b126c6277da5ca689d0" id="r_ga52037c938e3c1b126c6277da5ca689d0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga52037c938e3c1b126c6277da5ca689d0">M</a>&#160;&#160;&#160;8</td></tr>
+<tr class="separator:ga52037c938e3c1b126c6277da5ca689d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf316c33cc298530f245e8b55330e86b5" id="r_gaf316c33cc298530f245e8b55330e86b5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#gaf316c33cc298530f245e8b55330e86b5">D</a>&#160;&#160;&#160;7</td></tr>
+<tr class="separator:gaf316c33cc298530f245e8b55330e86b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a99c770b400026bc59e3c80a22615ad50" id="r_a99c770b400026bc59e3c80a22615ad50"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99c770b400026bc59e3c80a22615ad50">rtc_setup</a> ()</td></tr>
-<tr class="separator:a99c770b400026bc59e3c80a22615ad50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5171a9c0f54940fe60f7500896afcc86" id="r_a5171a9c0f54940fe60f7500896afcc86"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5171a9c0f54940fe60f7500896afcc86">rtc_subscribe_int</a> (uint8_t *bit_no)</td></tr>
-<tr class="separator:a5171a9c0f54940fe60f7500896afcc86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab8f17bf5280c908c8b199a90fefcc758" id="r_ab8f17bf5280c908c8b199a90fefcc758"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8f17bf5280c908c8b199a90fefcc758">rtc_unsubscribe_int</a> ()</td></tr>
-<tr class="separator:ab8f17bf5280c908c8b199a90fefcc758"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4dcde1fe70316dc6f8cd48cb0a24e630" id="r_a4dcde1fe70316dc6f8cd48cb0a24e630"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4dcde1fe70316dc6f8cd48cb0a24e630">rtc_to_bin</a> (uint8_t bcd_number)</td></tr>
-<tr class="separator:a4dcde1fe70316dc6f8cd48cb0a24e630"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e4030507a3afad53e5b80851f90d193" id="r_a8e4030507a3afad53e5b80851f90d193"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e4030507a3afad53e5b80851f90d193">rtc_output</a> (uint8_t command, uint8_t *<a class="el" href="dvr__mouse_8c.html#ae9690d841a9bc6e3df9b44ac00ee070e">output</a>)</td></tr>
-<tr class="separator:a8e4030507a3afad53e5b80851f90d193"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57f7116af216e3779ad9d6e98351d329" id="r_a57f7116af216e3779ad9d6e98351d329"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57f7116af216e3779ad9d6e98351d329">rtc_ih</a> ()</td></tr>
-<tr class="separator:a57f7116af216e3779ad9d6e98351d329"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6b0da68455d95423b5c3a4168536135" id="r_ae6b0da68455d95423b5c3a4168536135"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae6b0da68455d95423b5c3a4168536135">rtc_updating</a> ()</td></tr>
-<tr class="separator:ae6b0da68455d95423b5c3a4168536135"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad5efc0412ba4199ff6b5ecb663d6a7e5" id="r_gad5efc0412ba4199ff6b5ecb663d6a7e5"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#gad5efc0412ba4199ff6b5ecb663d6a7e5">rtc_to_bin</a> (uint8_t inbcd)</td></tr>
+<tr class="separator:gad5efc0412ba4199ff6b5ecb663d6a7e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6028be0c2f6834191783cd629f324a2b" id="r_ga6028be0c2f6834191783cd629f324a2b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga6028be0c2f6834191783cd629f324a2b">rtc_get_time</a> ()</td></tr>
+<tr class="separator:ga6028be0c2f6834191783cd629f324a2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0a6fd09353e9e32173333e7a32997c88" id="r_ga0a6fd09353e9e32173333e7a32997c88"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga0a6fd09353e9e32173333e7a32997c88">rtc_set_alarm</a> ()</td></tr>
+<tr class="separator:ga0a6fd09353e9e32173333e7a32997c88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga99c770b400026bc59e3c80a22615ad50" id="r_ga99c770b400026bc59e3c80a22615ad50"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga99c770b400026bc59e3c80a22615ad50">rtc_setup</a> ()</td></tr>
+<tr class="separator:ga99c770b400026bc59e3c80a22615ad50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5171a9c0f54940fe60f7500896afcc86" id="r_ga5171a9c0f54940fe60f7500896afcc86"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga5171a9c0f54940fe60f7500896afcc86">rtc_subscribe_int</a> (uint8_t *bit_no)</td></tr>
+<tr class="separator:ga5171a9c0f54940fe60f7500896afcc86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab8f17bf5280c908c8b199a90fefcc758" id="r_gab8f17bf5280c908c8b199a90fefcc758"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#gab8f17bf5280c908c8b199a90fefcc758">rtc_unsubscribe_int</a> ()</td></tr>
+<tr class="separator:gab8f17bf5280c908c8b199a90fefcc758"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab712a57821fb75c8bb120e70fd77532f" id="r_gab712a57821fb75c8bb120e70fd77532f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#gab712a57821fb75c8bb120e70fd77532f">rtc_read_output</a> (uint8_t cmd, uint8_t *<a class="el" href="dvr__mouse_8c.html#ae9690d841a9bc6e3df9b44ac00ee070e">output</a>)</td></tr>
+<tr class="separator:gab712a57821fb75c8bb120e70fd77532f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae6b0da68455d95423b5c3a4168536135" id="r_gae6b0da68455d95423b5c3a4168536135"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#gae6b0da68455d95423b5c3a4168536135">rtc_updating</a> ()</td></tr>
+<tr class="separator:gae6b0da68455d95423b5c3a4168536135"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4d0941fd90ed29c8043b7fb5b119b49d" id="r_ga4d0941fd90ed29c8043b7fb5b119b49d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga4d0941fd90ed29c8043b7fb5b119b49d">rtc_input</a> (uint8_t cmd, uint8_t content)</td></tr>
+<tr class="separator:ga4d0941fd90ed29c8043b7fb5b119b49d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1616eba91a73b03ecba145c8a91ebc11" id="r_ga1616eba91a73b03ecba145c8a91ebc11"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga1616eba91a73b03ecba145c8a91ebc11">rtc_wait</a> ()</td></tr>
+<tr class="separator:ga1616eba91a73b03ecba145c8a91ebc11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga57f7116af216e3779ad9d6e98351d329" id="r_ga57f7116af216e3779ad9d6e98351d329"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga57f7116af216e3779ad9d6e98351d329">rtc_ih</a> ()</td></tr>
+<tr class="separator:ga57f7116af216e3779ad9d6e98351d329"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga78f654bf11a863bb3cef2dc7e4b18090" id="r_ga78f654bf11a863bb3cef2dc7e4b18090"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga78f654bf11a863bb3cef2dc7e4b18090">rtc_alarm_handler</a> ()</td></tr>
+<tr class="separator:ga78f654bf11a863bb3cef2dc7e4b18090"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1531c6ecabb4c45a8724b6bb4ae387b5" id="r_ga1531c6ecabb4c45a8724b6bb4ae387b5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga1531c6ecabb4c45a8724b6bb4ae387b5">rtc_update_int</a> ()</td></tr>
+<tr class="separator:ga1531c6ecabb4c45a8724b6bb4ae387b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1afd50fcaa06d278c0e08a0bdc2812dc" id="r_ga1afd50fcaa06d278c0e08a0bdc2812dc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga1afd50fcaa06d278c0e08a0bdc2812dc">rtc_disable_update_int</a> ()</td></tr>
+<tr class="separator:ga1afd50fcaa06d278c0e08a0bdc2812dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga85a630f46eb3bf67b59b02f0cb315356" id="r_ga85a630f46eb3bf67b59b02f0cb315356"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga85a630f46eb3bf67b59b02f0cb315356">rtc_alarm_int</a> ()</td></tr>
+<tr class="separator:ga85a630f46eb3bf67b59b02f0cb315356"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga66c9b2d2f35336cdc0a15a9bbea82d33" id="r_ga66c9b2d2f35336cdc0a15a9bbea82d33"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga66c9b2d2f35336cdc0a15a9bbea82d33">rtc_disable_alarm_int</a> ()</td></tr>
+<tr class="separator:ga66c9b2d2f35336cdc0a15a9bbea82d33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a910ac5f2c1b4016e433f9832358a1816" name="a910ac5f2c1b4016e433f9832358a1816"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a910ac5f2c1b4016e433f9832358a1816">&#9670;&#160;</a></span>IRQ_RTC</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define IRQ_RTC&#160;&#160;&#160;8</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a9fb6a2883d38dca59ebc66e0f14c7a08" name="a9fb6a2883d38dca59ebc66e0f14c7a08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9fb6a2883d38dca59ebc66e0f14c7a08">&#9670;&#160;</a></span>RTC_COUNT_REG</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define RTC_COUNT_REG&#160;&#160;&#160;0x11</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad9daeab3b1a62b3c1ffca1faf5d00e42" name="ad9daeab3b1a62b3c1ffca1faf5d00e42"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad9daeab3b1a62b3c1ffca1faf5d00e42">&#9670;&#160;</a></span>RTC_D</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define RTC_D&#160;&#160;&#160;7</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4e241e682f861155860680a8aa19effe" name="a4e241e682f861155860680a8aa19effe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4e241e682f861155860680a8aa19effe">&#9670;&#160;</a></span>RTC_H</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define RTC_H&#160;&#160;&#160;4</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a436321b18e28627e298594d1576fc59f" name="a436321b18e28627e298594d1576fc59f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a436321b18e28627e298594d1576fc59f">&#9670;&#160;</a></span>RTC_INPUT_REG</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define RTC_INPUT_REG&#160;&#160;&#160;0x70</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="abb4c3bae5369ec12933b0dfd1afc4a80" name="abb4c3bae5369ec12933b0dfd1afc4a80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abb4c3bae5369ec12933b0dfd1afc4a80">&#9670;&#160;</a></span>RTC_IS_BIN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define RTC_IS_BIN&#160;&#160;&#160;BIT(2)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a8dbd8f6812bf2fd6b71034876f308a35" name="a8dbd8f6812bf2fd6b71034876f308a35"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8dbd8f6812bf2fd6b71034876f308a35">&#9670;&#160;</a></span>RTC_IS_UPDATING</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define RTC_IS_UPDATING&#160;&#160;&#160;BIT(7)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aed8df8dfbbc8986c323408eed0643b0a" name="aed8df8dfbbc8986c323408eed0643b0a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed8df8dfbbc8986c323408eed0643b0a">&#9670;&#160;</a></span>RTC_M</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define RTC_M&#160;&#160;&#160;2</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a34fc4e7c0e5db231217aa3174e394c72" name="a34fc4e7c0e5db231217aa3174e394c72"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34fc4e7c0e5db231217aa3174e394c72">&#9670;&#160;</a></span>RTC_MIN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define RTC_MIN&#160;&#160;&#160;8</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a34cd3e37486350d2d14630e3689a44d3" name="a34cd3e37486350d2d14630e3689a44d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34cd3e37486350d2d14630e3689a44d3">&#9670;&#160;</a></span>RTC_OUTPUT_REG</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define RTC_OUTPUT_REG&#160;&#160;&#160;0x71</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4c777ccd8dfc8187e130ddd211bc8da0" name="a4c777ccd8dfc8187e130ddd211bc8da0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c777ccd8dfc8187e130ddd211bc8da0">&#9670;&#160;</a></span>RTC_S</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define RTC_S&#160;&#160;&#160;0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2b1373d131ebfcf39dc2659a34af4ab9" name="a2b1373d131ebfcf39dc2659a34af4ab9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b1373d131ebfcf39dc2659a34af4ab9">&#9670;&#160;</a></span>RTC_UPDATE_REG</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define RTC_UPDATE_REG&#160;&#160;&#160;0x10</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a26e353d01a6f6cb64c5ee78954b4c332" name="a26e353d01a6f6cb64c5ee78954b4c332"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a26e353d01a6f6cb64c5ee78954b4c332">&#9670;&#160;</a></span>RTC_Y</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define RTC_Y&#160;&#160;&#160;9</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a57f7116af216e3779ad9d6e98351d329" name="a57f7116af216e3779ad9d6e98351d329"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57f7116af216e3779ad9d6e98351d329">&#9670;&#160;</a></span>rtc_ih()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int rtc_ih </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a8e4030507a3afad53e5b80851f90d193" name="a8e4030507a3afad53e5b80851f90d193"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e4030507a3afad53e5b80851f90d193">&#9670;&#160;</a></span>rtc_output()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int rtc_output </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>command</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>output</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a99c770b400026bc59e3c80a22615ad50" name="a99c770b400026bc59e3c80a22615ad50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99c770b400026bc59e3c80a22615ad50">&#9670;&#160;</a></span>rtc_setup()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int rtc_setup </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5171a9c0f54940fe60f7500896afcc86" name="a5171a9c0f54940fe60f7500896afcc86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5171a9c0f54940fe60f7500896afcc86">&#9670;&#160;</a></span>rtc_subscribe_int()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int rtc_subscribe_int </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>bit_no</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4dcde1fe70316dc6f8cd48cb0a24e630" name="a4dcde1fe70316dc6f8cd48cb0a24e630"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4dcde1fe70316dc6f8cd48cb0a24e630">&#9670;&#160;</a></span>rtc_to_bin()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t rtc_to_bin </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>bcd_number</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab8f17bf5280c908c8b199a90fefcc758" name="ab8f17bf5280c908c8b199a90fefcc758"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab8f17bf5280c908c8b199a90fefcc758">&#9670;&#160;</a></span>rtc_unsubscribe_int()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int rtc_unsubscribe_int </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae6b0da68455d95423b5c3a4168536135" name="ae6b0da68455d95423b5c3a4168536135"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6b0da68455d95423b5c3a4168536135">&#9670;&#160;</a></span>rtc_updating()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int rtc_updating </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

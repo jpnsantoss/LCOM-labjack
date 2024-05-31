@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['irq_5frtc_0',['IRQ_RTC',['../rtc_8h.html#a910ac5f2c1b4016e433f9832358a1816',1,'rtc.h']]]
+  ['kbc_5fmax_5ftries_0',['KBC_MAX_TRIES',['../input_8h.html#a7b4d484a883aa41467988410308317d9',1,'input.h']]]
 ];

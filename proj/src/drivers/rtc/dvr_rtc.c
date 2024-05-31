@@ -56,6 +56,7 @@ int (rtc_get_time)()
 
     return 0;
 }
+
 int rtc_set_alarm()
 {
     //fires at 18 o'clock
@@ -76,6 +77,7 @@ int rtc_set_alarm()
 
     return rtc_update_int();
 }
+
 int (rtc_setup)()
 {
     uint8_t status;
