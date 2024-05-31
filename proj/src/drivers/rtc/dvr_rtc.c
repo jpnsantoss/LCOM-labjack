@@ -76,8 +76,30 @@ int rtc_set_alarm()
 
     return rtc_update_int();
 }
-int (rtc_setup)()
-{
+
+int(rtc_set_alarm)() {
+    printf("Setting alarm...\n");
+    
+    rtc_wait();
+    if(rtc_disable_update_int()!= 0) return 1;
+    if(rtc_input(RTC_H_ALARM, RTC_DONT_CARE) != 0) return 1;
+    if(rtc_input(RTC_MIN_ALARM, RTC_DONT_CARE) != 0) return 1;
+    if(rtc_input(RTC_S_ALARM, RTC_DONT_CARE) != 0) return 1;
+    if(rtc_update_int() != 0) return 1;
+    return 0;
+}
+/*int(rtc_set_alarm)() {
+    printf("Setting alarm...\n");
+    
+    rtc_wait();
+    if(rtc_disable_update_int()!= 0) return 1;
+    if(rtc_input(RTC_H_ALARM, RTC_DONT_CARE) != 0) return 1;
+    if(rtc_input(RTC_MIN_ALARM, RTC_DONT_CARE) != 0) return 1;
+    if(rtc_input(RTC_S_ALARM, RTC_DONT_CARE) != 0) return 1;
+    if(rtc_update_int() != 0) return 1;
+    return 0;
+}*/
+int (rtc_setup)() {
     uint8_t status;
 
     printf("Setting up RTC...\n");
