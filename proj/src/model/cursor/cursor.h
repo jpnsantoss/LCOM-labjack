@@ -9,7 +9,12 @@
 #include "../../assets/hand.xpm"
 
 /**
- * @file cursor.h
+ * @defgroup cursor Cursor
+ * @ingroup models
+ * @{
+ */
+
+/**
  * @brief Enum for the different cursor states.
  */
 typedef enum {
@@ -81,5 +86,7 @@ int		cursor_box_colides(cursor_t *cursor, uint32_t x, uint32_t y, uint32_t x2, u
  * @param cursor Pointer to the cursor to be destroyed.
  */
 void	cursor_destroy(cursor_t *cursor);
+
+/** @} */
 
 #endif

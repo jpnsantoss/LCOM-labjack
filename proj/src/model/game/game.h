@@ -16,7 +16,10 @@
 #define GAME_DECK_DRAW_Y 250
 
 /**
- * @file game.h
+ * @defgroup game Game
+ * @ingroup models
+ * @{
+ * 
  * @brief Game module for handling the main game logic and state.
  */
 
@@ -100,5 +103,7 @@ int game_give_card(queue_t *deck, queue_t *receiver);
  * @return The total value of the cards.
  */
 uint32_t game_get_cards_value(queue_t *cards);
+
+/** @} */
 
 #endif

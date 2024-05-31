@@ -11,7 +11,10 @@
 #define PLAYER_MAX_DECK_SIZE 15
 
 /**
- * @file player.h
+ * @defgroup player Player
+ * @ingroup models
+ * @{
+ * 
  * @brief Player module for handling player-related operations and state.
  */
 
@@ -60,5 +63,7 @@ void player_destroy(player_t *player);
  * @param player Pointer to the player structure.
  */
 void player_draw(player_t *player);
+
+/** @} */
 
 #endif /* _LCOM_PLAYER_H_ */

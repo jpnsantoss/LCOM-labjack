@@ -6,7 +6,10 @@
 #include <lcom/lcf.h>
 
 /**
- * @file animation.h
+ * @defgroup animation Animation
+ * @ingroup models
+ * @{
+ * 
  * @brief Animation module for handling sprite animations.
  */
 
@@ -15,19 +18,19 @@
  * @brief Structure to represent an animation.
  */
 typedef struct {
-  queue_t *frames;     /**< Queue of sprite frames. */
-  queue_t *rotate;     /**< Queue of rotation flags for each frame. */
-  queue_t *x;          /**< Queue of x coordinates for each frame. */
-  queue_t *y;          /**< Queue of y coordinates for each frame. */
-  uint32_t frame_index; /**< Current frame index. */
-  void (*on_end)(void *); /**< Callback function to be called when the animation ends. */
+  queue_t *frames;     /**< @brief Queue of sprite frames. */
+  queue_t *rotate;     /**< @brief Queue of rotation flags for each frame. */
+  queue_t *x;          /**< @brief Queue of x coordinates for each frame. */
+  queue_t *y;          /**< @brief Queue of y coordinates for each frame. */
+  uint32_t frame_index; /**< @brief Current frame index. */
+  void (*on_end)(void *); /**< @brief Callback function to be called when the animation ends. */
 } animation_t;
 
 /**
  * @brief Creates an animation.
- *
- * Allocates memory for a new animation and initializes its frame queues.
- *
+ * 
+ * @details Allocates memory for a new animation and initializes its frame queues.
+ * 
  * @param frame_amount The number of frames in the animation.
  * @param on_end The callback function to be called when the animation ends.
  * @return Pointer to the created animation, or NULL if allocation fails.
@@ -36,9 +39,9 @@ animation_t *animation_create(uint32_t frame_amount, void (*on_end)(void *));
 
 /**
  * @brief Adds a frame to the animation.
- *
- * Adds a new frame with the specified sprite, coordinates, and rotation flag to the animation.
- *
+ * 
+ * @details Adds a new frame with the specified sprite, coordinates, and rotation flag to the animation.
+ * 
  * @param animation Pointer to the animation.
  * @param sprite Pointer to the sprite to be added.
  * @param x The x coordinate of the frame.
@@ -51,9 +54,9 @@ int animation_add_frame(animation_t *animation, sprite_t *sprite, uint32_t x, ui
 
 /**
  * @brief Draws the current frame of the animation.
- *
- * Draws the current frame of the animation at its specified coordinates.
- *
+ * 
+ * @details Draws the current frame of the animation at its specified coordinates.
+ * 
  * @param animation Pointer to the animation.
  * @return 0 on success, 1 on failure.
  */
@@ -61,9 +64,9 @@ int animation_draw(animation_t *animation);
 
 /**
  * @brief Runs the animation.
- *
- * Advances the animation by one frame. If the animation reaches its end, the on_end callback is called.
- *
+ * 
+ * @details Advances the animation by one frame. If the animation reaches its end, the on_end callback is called.
+ * 
  * @param animation Double pointer to the animation.
  * @param ptr Pointer to be passed to the on_end callback function.
  */
@@ -71,6 +74,7 @@ void animation_run(animation_t **animation, void *ptr);
 
 /**
  * @brief Checks if the animation is running.
+ * 
  * @param animation Pointer to the animation.
  * @return 1 if the animation is running, 0 otherwise.
  */
@@ -78,11 +82,12 @@ int  animation_running(animation_t *animation);
 
 /**
  * @brief Destroys the animation.
- *
- * Frees the memory allocated for the animation and its frame queues.
- *
+ * 
+ * @details Frees the memory allocated for the animation and its frame queues.
  * @param animation Pointer to the animation to be destroyed.
  */
 void animation_destroy(animation_t *animation);
+
+/** @} */
 
 #endif

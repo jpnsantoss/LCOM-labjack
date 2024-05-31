@@ -18,12 +18,17 @@
  * removing elements, this implementation uses two variables (front_pos and end_pos) to determine
  * what section of the vector is valid. 
 */
+
+/**
+ * @struct queue_t
+ * @brief Structure to represent a FIFO fixed-size container.
+*/
 typedef struct {
-	void 	**content;
-	size_t	base_size;
-	size_t	curr_size;
-	size_t	front_pos;
-	size_t	end_pos;
+	void 	**content; /**< @brief Queue content. */
+	size_t	base_size; /**< @brief Max queue size. */
+	size_t	curr_size; /**< @brief Current queue size. */
+	size_t	front_pos; /**< @brief Position of the first valid element inside the queue. */
+	size_t	end_pos; /**< @brief Position of the last valid element inside the queue. */
 } queue_t;
 
 /**

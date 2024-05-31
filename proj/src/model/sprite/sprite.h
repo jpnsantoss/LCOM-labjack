@@ -5,7 +5,10 @@
 #include "../../drivers/drivers.h"
 
 /**
- * @file sprite.h
+ * @defgroup sprite Sprite
+ * @ingroup models
+ * @{
+ * 
  * @brief Sprite module for handling sprite-related operations.
  */
 
@@ -85,5 +88,7 @@ int sprite_move(sprite_t *sprite, uint32_t x, uint32_t y);
  * @return 1 if the sprites collide, 0 otherwise.
  */
 int sprite_colides(sprite_t *sprite1, sprite_t *sprite2);
+
+/** @} */
 
 #endif /* _LCOM_SPRITE_H_ */

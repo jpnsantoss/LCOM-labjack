@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vbe_0',['VBE',['../group__ivbe.html',1,'']]]
+  ['keyboard_20scancodes_0',['Keyboard Scancodes',['../group__kb__scancodes.html',1,'']]]
 ];

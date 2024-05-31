@@ -6,7 +6,13 @@
 #include "../sprite/sprite.h"
 
 /**
- * @file font.h
+ * @defgroup font Font
+ * @ingroup models
+ * @{
+ * 
+ */
+
+/**
  * @brief Structure representing a font with sprites for letters, numbers, and special characters.
  */
 typedef struct {
@@ -63,5 +69,7 @@ void font_print_number(font_t *font, uint32_t num, uint32_t x, uint32_t y, uint3
  * @param font Pointer to the font to be destroyed.
  */
 void font_destroy(font_t *font);
+
+/** @} */
 
 #endif /* _LCOM_FONT_H_ */

@@ -153,4 +153,6 @@ void vg_set_redraw();
  */
 int vg_has_redraw();
 
+/** @} */
+
 #endif

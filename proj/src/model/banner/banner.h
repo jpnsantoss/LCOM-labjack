@@ -5,6 +5,12 @@
 #include "../../drivers/drivers.h"
 #include "../font/font.h"
 
+/** 
+ * @defgroup banner Banner 
+ * @ingroup models
+ * @{
+*/
+
 /**
  * @brief Structure representing a banner that displays a message for a specified timeout period.
  */
@@ -13,7 +19,6 @@ typedef struct {
     uint32_t    timeout;           /**< The duration for which the message should be displayed. */
     uint32_t    current_timeout;   /**< The current elapsed time since the message started displaying. */
 } banner_t;
-
 
 /**
  * @brief Initializes a banner.
@@ -49,5 +54,7 @@ int	banner_update_timeout(banner_t *banner);
  * @return 0 on success, 1 on failure (if the banner, message, or font pointer is NULL).
  */
 int	banner_draw(banner_t *banner, font_t *font);
+
+/** @} */
 
 #endif

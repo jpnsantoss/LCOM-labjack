@@ -45,4 +45,6 @@
 #define MOUSE_DATA_REPORT_ENABLE 0xF4  /**< @brief Command to enable mouse data reporting */
 #define MOUSE_DATA_REPORT_DISABLE 0xF5 /**< @brief Command to disable mouse data reporting */
 
+/** @} */
+
 #endif /* _LCOM_I8042_H */

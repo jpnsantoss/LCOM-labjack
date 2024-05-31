@@ -11,7 +11,7 @@ var searchData=
   ['input_8',['Input',['../group__input.html',1,'']]],
   ['input_2eh_9',['input.h',['../input_8h.html',1,'']]],
   ['input_5fselect_10',['input_select',['../structgame__t.html#adf816c3344418f7b10618f9901859ec7',1,'game_t']]],
-  ['interrupt_5ftype_5ft_11',['interrupt_type_t',['../app_8h.html#a406b2633f06098c7126e1959b197dc2a',1,'app.h']]],
+  ['interrupt_5ftype_5ft_11',['interrupt_type_t',['../group__app.html#ga406b2633f06098c7126e1959b197dc2a',1,'app.h']]],
   ['irq_5fcom1_12',['IRQ_COM1',['../group__serial__port__i_u_a_r_t.html#ga603b478f70a928f442e33fefba73494a',1,'iUART.h']]],
   ['irq_5fcom2_13',['IRQ_COM2',['../group__serial__port__i_u_a_r_t.html#gafe9f19b981c093830239430dd2e42ba5',1,'iUART.h']]],
   ['irq_5fkeyboard_14',['IRQ_KEYBOARD',['../group__i8042.html#ga8092843c014fad609c1b01a4604a44a3',1,'i8042.h']]],

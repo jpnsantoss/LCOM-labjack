@@ -24,7 +24,7 @@
  * @param app Pointer to the application structure.
  * @param interrupt The type of interrupt that occurred.
  */
-typedef void(*handler)(app_t *, interrupt_type_t);
+typedef void(*handler)(app_t *app, interrupt_type_t interrupt);
 
 /**
  * @brief Handles general interrupts for the application. 
@@ -95,7 +95,7 @@ void handle_bet_value_check(app_t *app);
 void handle_dealer_turn(app_t *app, interrupt_type_t interrupt);
 
 /**
- * @brief Adds a single animation for the dealer´s turning up first card.
+ * @brief Adds a single animation for the dealer's turning up first card.
  * @param app Pointer to the application structure.
  */
 void add_dealer_single_animation(app_t *app);

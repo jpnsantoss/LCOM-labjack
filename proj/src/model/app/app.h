@@ -13,12 +13,20 @@
 #include "../../assets/background.xpm"
 #include "../../assets/buttons/buttons.h"
 
+/** @defgroup models Models */
+
 /**
- * @file app.h
+ * @defgroup app App
+ * @ingroup models
+ * @{
+ * 
  * @brief Application module for initializing and managing the application state.
  */
 
-/** @defgroup Keyboard Scancodes */
+/** 
+ * @defgroup kb_scancodes Keyboard Scancodes
+ * @{
+ */
 #define KB_ESC 0x81
 #define KB_ENTER 0x9c
 #define KB_BACKSPC 0x0e
@@ -37,23 +45,24 @@
 #define KB_8 0x89
 #define KB_9 0x8a
 
+/** @} */
+
 /**
  * @brief Enum representing the application states.
  */
 typedef enum {
-	MAIN_MENU,         /**< Main menu state. */
-	GAME_BET,          /**< Game betting state. */
-	GAME_PLAY,         /**< Game playing state. */
-	GAME_OVER,         /**< Game over state. */
-	GAME_DEALER_TURN,  /**< Game dealer turn state. */
-	EXIT               /**< Exit state. */
+	MAIN_MENU,         /**< @brief Main menu state. */
+	GAME_BET,          /**< @brief Game betting state. */
+	GAME_PLAY,         /**< @brief Game playing state. */
+	GAME_OVER,         /**< @brief Game over state. */
+	GAME_DEALER_TURN,  /**< @brief Game dealer turn state. */
+	EXIT               /**< @brief Exit state. */
 } app_state_t;
 
 /**
  * @struct app_t
  * @brief Structure to represent the application.
- *
- * This structure contains all the elements required to manage the application state:
+ * @details This structure contains all the elements required to manage the application state:
  * sprites, buttons, game state, cursor, and other UI components.
  */
 typedef struct {
@@ -94,21 +103,22 @@ typedef enum {
 
 /**
  * @brief Initializes the application.
- *
- * Allocates memory for the application, initializes its state and various components.
- *
+ * 
+ * @details Allocates memory for the application, initializes its state and various components.
  * @return Pointer to the initialized application, or NULL if initialization fails.
  */
 app_t *app_init();
 
 /**
  * @brief Frees the memory allocated for the application and its components.
+ * 
  * @param app Pointer to the application to be destroyed.
  */
 void 	app_destroy(app_t *app);
 
 /**
  * @brief Initializes the main menu buttons.
+ * 
  * @param queue Pointer to the queue of main menu buttons.
  * @return 0 on success, 1 on failure.
  */
@@ -116,6 +126,7 @@ int		app_buttons_main_menu_init(queue_t **queue);
 
 /**
  * @brief Initializes the game playing buttons.
+ * 
  * @param queue Pointer to the queue of game playing buttons.
  * @return 0 on success, 1 on failure.
  */
@@ -123,9 +134,12 @@ int		app_buttons_game_playing_init(queue_t **queue);
 
 /**
  * @brief Initializes the game over buttons.
+ * 
  * @param queue Pointer to the queue of game over buttons.
  * @return 0 on success, 1 on failure.
  */
 int		app_buttons_game_over_init(queue_t **queue);
+
+/** @} */
 
 #endif

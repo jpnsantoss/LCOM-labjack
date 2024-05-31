@@ -30,6 +30,17 @@ int main(int argc, char *argv[])
   return 0;
 }
 
+/**
+ * @defgroup main Main
+ * @{
+ */
+
+/**
+ * @brief Unsubscribes the interrupts from all devices
+ * and returns the screen to text mode.
+ * 
+ * @return 0 if successful, non-zero otherwise.
+*/
 int close_app()
 {
 	if (uart_disable()) return 1;
@@ -45,6 +56,17 @@ int close_app()
 	return vg_exit();
 }
 
+/**
+ * @brief The main loop for the project.
+ * 
+ * @details Subscribes the program to interrupts from the necessary devices, 
+ * initializes the structures necessary for the app and waits for interrupts
+ * till the program goes to the EXIT state.
+ * 
+ * @param argc Argument count
+ * @param argv Argument vector
+ * @return 0 if successful, non-zero otherwise.
+*/
 int (proj_main_loop)(int argc, char **argv)
 {
   bit_no_t bit_no;
@@ -105,3 +127,5 @@ int (proj_main_loop)(int argc, char **argv)
 	app_destroy(app);
   return close_app();
 }
+
+/** @} */

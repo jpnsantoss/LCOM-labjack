@@ -124,4 +124,6 @@ int mouse_read_packet();
  */
 mouse_info_t *mouse_get_info();
 
+/** @} */
+
 #endif
