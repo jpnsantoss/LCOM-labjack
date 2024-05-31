@@ -4,31 +4,31 @@
 #include <minix/sysutil.h>
 #include <lcom/lcf.h>
 
-#define ISUPDATING 0x10000000
-#define ISBIN           0x100
+#define ISUPDATING 				BIT(7)
+#define ISBIN           	BIT(2)
 
-#define RTC_DONT_CARE   BIT(7)|BIT(6) 
-#define REGA                       10
-#define REGA_UPDATE            BIT(7)
-#define REGB                       11
-#define REGB_ALARM             BIT(5)
-#define REGB_DONT_UPDATE       BIT(7)
-#define REGC                       12
-#define REGC_ALARMFLAG         BIT(5)
-#define REGC_UPDATEFLAG        BIT(4)
-#define INPUT_REG               0x70
-#define OUTPUT_REG              0x71
-#define RTC_IRQ_LINE               8
+#define RTC_DONT_CARE   	BIT(7) | BIT(6) 
+#define REGA              10
+#define REGA_UPDATE       BIT(7)
+#define REGB              11
+#define REGB_ALARM        BIT(5)
+#define REGB_DONT_UPDATE  BIT(7)
+#define REGC              12
+#define REGC_ALARMFLAG    BIT(5)
+#define REGC_UPDATEFLAG   BIT(4)
+#define INPUT_REG         0x70
+#define OUTPUT_REG        0x71
+#define RTC_IRQ_LINE      8
 
-#define H                          4
-#define RTC_H_ALARM                5
-#define MNT                        2
-#define RTC_MIN_ALARM              3
-#define S                          0
-#define RTC_S_ALARM                1
-#define Y                          9
-#define M                          8
-#define D                          7
+#define H                 4
+#define RTC_H_ALARM       5
+#define MNT               2
+#define RTC_MIN_ALARM     3
+#define S                 0
+#define RTC_S_ALARM       1
+#define Y                 9
+#define M                 8
+#define D                 7
 
 uint8_t (rtc_to_bin)(uint8_t inbcd);
 int (rtc_get_time)();
@@ -54,6 +54,6 @@ typedef struct {
     uint8_t year;
     uint8_t month;
     uint8_t day;
-} datetime;
+} datetime_t;
 
 #endif
