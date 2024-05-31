@@ -85,6 +85,7 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
       break;
     case RTC:
       rtc_ih();
+      /*LÓGICA PARA ADICIONAR AS FICHAS QUE FALTAM, TAMBÉM PODE ESTAR NO ALARM HANDLER*/
       break;
   }
 }
