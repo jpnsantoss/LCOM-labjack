@@ -15,7 +15,10 @@ int banner_set_message(banner_t *banner, char *msg, uint32_t timeout) {
   if (banner == NULL || msg == NULL)
     return 1;
 
-  banner->msg = msg;
+  char *message = malloc(sizeof(char) * strlen(msg));
+  strcpy(message, msg);
+	
+  banner->msg = message;
   banner->timeout = timeout;
   banner->current_timeout = 0;
 
@@ -32,6 +35,7 @@ int banner_update_timeout(banner_t *banner) {
 
   if (banner->current_timeout == banner->timeout) {
     vg_set_redraw();
+    free(banner->msg);
     banner->msg = NULL;
   }
 
@@ -44,7 +48,6 @@ int banner_draw(banner_t *banner, font_t *font) {
 
   uint32_t msg_size = 26 * strlen(banner->msg);
 
-	//printf("msg: %s\n", banner->msg);
   vg_draw_rectangle(vg_get_width() / 2 - 26 - (msg_size / 2), 0,
                     52 + msg_size, 40, 0x9d6025);
   font_print_str(font, banner->msg, vg_get_width() / 2 - (msg_size / 2), 4, 0xffffff);

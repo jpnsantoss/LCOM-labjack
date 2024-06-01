@@ -72,6 +72,9 @@ void draw_state(app_t *app) {
         case PLAYER_DRAW:
           font_print_str(&app->font, "DRAW", x - 26 * 2, y, 0xffa500);
           break;
+				case PLAYER_SURRENDER:
+					font_print_str(&app->font, "SURRENDER", x - 26 * 5, y, 0xffa500);
+					break;
         default:
           font_print_str(&app->font, "GAME ENDED?", x - 26 * 5.5, y, 0x808080);
           break;
