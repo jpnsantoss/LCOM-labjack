@@ -4,6 +4,12 @@
 #include <minix/sysutil.h>
 #include <lcom/lcf.h>
 
+/**
+ * @defgroup rtc RTC
+ * @ingroup drivers
+ * @{
+*/
+
 #define ISUPDATING 				BIT(7)
 #define ISBIN           	BIT(2)
 
@@ -33,6 +39,7 @@
 uint8_t (rtc_to_bin)(uint8_t inbcd);
 int (rtc_get_time)();
 int (rtc_set_alarm)();
+int (rtc_unset_alarm)();
 int (rtc_setup)();
 int (rtc_subscribe_int)(uint8_t* bit_no);
 int (rtc_unsubscribe_int)();
@@ -55,5 +62,7 @@ typedef struct {
     uint8_t month;
     uint8_t day;
 } datetime_t;
+
+/** @} */
 
 #endif

@@ -25,8 +25,14 @@ void handle_game_over(app_t *app, interrupt_type_t interrupt)
 {
   if (interrupt == KEYBOARD)
   {
-		if (scancode == KB_1)
+		if (scancode == KB_1 || scancode == KB_ENTER)
     {
+			if (app->game.main_player.coins <= 0)
+			{
+				banner_set_message(&app->banner, "Insufficient balance to rebet", 60);
+				return;
+			}
+
       app->game.dealer_turn = false;
       handle_game_over_rebet(app, interrupt);
     }
@@ -41,9 +47,14 @@ void handle_game_over(app_t *app, interrupt_type_t interrupt)
 
   if (interrupt == MOUSE)
   {
-		if (app->game.main_player.coins > 0 
-			&& cursor_sprite_colides(&app->cursor, queue_at(app->buttons_game_over, 0)))
+		if (cursor_sprite_colides(&app->cursor, queue_at(app->buttons_game_over, 0)))
     {
+			if (app->game.main_player.coins <= 0)
+			{
+				banner_set_message(&app->banner, "Insufficient balance to rebet", 60);
+				return;
+			}
+
       app->game.dealer_turn = false;
 			handle_game_over_rebet(app, interrupt);
     }

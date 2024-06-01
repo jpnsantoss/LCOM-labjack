@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['game_2ec_0',['game.c',['../game_8c.html',1,'']]],
-  ['game_2eh_1',['game.h',['../game_8h.html',1,'']]],
-  ['graphics_2eh_2',['graphics.h',['../graphics_8h.html',1,'']]]
+  ['font_2ec_0',['font.c',['../font_8c.html',1,'']]],
+  ['font_2eh_1',['font.h',['../font_8h.html',1,'']]]
 ];

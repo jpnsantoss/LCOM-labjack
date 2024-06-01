@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['full_5finput_0',['FULL_INPUT',['../i8042_8h.html#ae24591507a0a92e9079db930309e5e60',1,'i8042.h']]],
-  ['full_5foutput_1',['FULL_OUTPUT',['../i8042_8h.html#aa20da1e96f8d5b5dc1c5bb11b1807a5e',1,'i8042.h']]]
+  ['player_5fmax_5fdeck_5fsize_0',['PLAYER_MAX_DECK_SIZE',['../player_8h.html#a10c6020cf634635794d9b39e13f3e36c',1,'player.h']]],
+  ['player_5fstarting_5fcoins_1',['PLAYER_STARTING_COINS',['../player_8h.html#adb5ec6894532127bf9ea559cad73a9dc',1,'player.h']]]
 ];

@@ -99,10 +99,15 @@ void handle_bet_value_check(app_t *app)
 {
   vg_set_redraw();
 
-  if (app->game.main_player.bet == 0) return;
+  if (app->game.main_player.bet == 0)
+	{
+		banner_set_message(&app->banner, "Bet must be greater than ~0", 120);
+		return;
+	}
 
   if (app->game.main_player.bet > app->game.main_player.coins)
   {
+		banner_set_message(&app->banner, "Your balance is insufficient", 120);
     app->game.main_player.bet = 0;
 		last = 0;
     return;

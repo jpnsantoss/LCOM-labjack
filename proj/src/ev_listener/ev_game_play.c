@@ -124,6 +124,7 @@ void handle_game_playing(app_t *app, interrupt_type_t interrupt)
         break;
       // Hit
       case KB_1:
+			case KB_ENTER:
         add_hit_animation(app);
         break;
       // Stand
@@ -134,12 +135,27 @@ void handle_game_playing(app_t *app, interrupt_type_t interrupt)
         break;
       // Double
       case KB_3:
-        if (app->game.main_player.cards->curr_size != 2) break;
+        if (app->game.main_player.cards->curr_size != 2)
+				{
+					banner_set_message(&app->banner, "You can only do this in the 1st round", 60);
+					break;
+				}
+
+				if (app->game.main_player.coins < app->game.main_player.bet)
+				{
+					banner_set_message(&app->banner, "Insufficient balance to double", 60);
+					break;
+				}
+
         add_double_animation(app);
         break;
       // Surrender
       case KB_4:
-        if (app->game.main_player.cards->curr_size != 2) break;
+        if (app->game.main_player.cards->curr_size != 2)
+				{
+					banner_set_message(&app->banner, "You can only do this in the 1st round", 60);
+					break;
+				}
         app->game.main_player.won_coins = app->game.main_player.bet / 2;
         app->game.main_player.coins += app->game.main_player.won_coins;
         app->game.main_player.game_over_state = PLAYER_WIN;
@@ -169,16 +185,33 @@ void handle_game_playing(app_t *app, interrupt_type_t interrupt)
     }
 
     // Double
-    if (app->game.main_player.cards->curr_size == 2 &&
-      cursor_sprite_colides(&app->cursor, queue_at(app->buttons_game_playing, 2)))
+    if (cursor_sprite_colides(&app->cursor, queue_at(app->buttons_game_playing, 2)))
     {
+			if (app->game.main_player.cards->curr_size != 2)
+			{
+				banner_set_message(&app->banner, "You can only do this in the 1st round", 60);
+				return;
+			}
+
+			if (app->game.main_player.coins < app->game.main_player.bet)
+			{
+				banner_set_message(&app->banner, "Insufficient balance to double", 60);
+				return;
+			}
+
 			add_double_animation(app);
       return;
     }
     
     // Surrender
-    if (app->game.main_player.cards->curr_size == 2 &&  cursor_sprite_colides(&app->cursor, queue_at(app->buttons_game_playing, 3)))
+    if (cursor_sprite_colides(&app->cursor, queue_at(app->buttons_game_playing, 3)))
     {
+			if (app->game.main_player.cards->curr_size != 2)
+			{
+				banner_set_message(&app->banner, "You can only do this in the 1st round", 60);
+				return;
+			}
+
       app->game.main_player.won_coins = app->game.main_player.bet / 2;
       app->game.main_player.coins += app->game.main_player.won_coins;
       app->game.main_player.game_over_state = PLAYER_WIN;

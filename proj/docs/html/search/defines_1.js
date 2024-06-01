@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['card_5ftype_5fnum_0',['CARD_TYPE_NUM',['../card_8h.html#acc7a918a02555a818abe0776999a531e',1,'card.h']]],
-  ['card_5fvalue_5fnum_1',['CARD_VALUE_NUM',['../card_8h.html#ac42f0f7cba9d913ba3d969023f36db18',1,'card.h']]]
+  ['game_5fdeck_5famount_0',['GAME_DECK_AMOUNT',['../game_8h.html#a5187dfc4a5a85bc113d0be0c1b6361f9',1,'game.h']]],
+  ['game_5fdeck_5fdraw_5famount_1',['GAME_DECK_DRAW_AMOUNT',['../game_8h.html#a4c338a45441c92b511ed789d70f76e82',1,'game.h']]],
+  ['game_5fdeck_5fdraw_5fx_2',['GAME_DECK_DRAW_X',['../game_8h.html#ae3c820e021c2276eff209599c77e671f',1,'game.h']]],
+  ['game_5fdeck_5fdraw_5fy_3',['GAME_DECK_DRAW_Y',['../game_8h.html#a3131570d5b2033d4b07a931aef791c27',1,'game.h']]],
+  ['game_5fdeck_5fsize_4',['GAME_DECK_SIZE',['../game_8h.html#a5cf24499bef3f062f18d3004da269778',1,'game.h']]]
 ];
