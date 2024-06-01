@@ -44,6 +44,7 @@ int banner_draw(banner_t *banner, font_t *font) {
 
   uint32_t msg_size = 26 * strlen(banner->msg);
 
+	//printf("msg: %s\n", banner->msg);
   vg_draw_rectangle(vg_get_width() / 2 - 26 - (msg_size / 2), 0,
                     52 + msg_size, 40, 0x9d6025);
   font_print_str(font, banner->msg, vg_get_width() / 2 - (msg_size / 2), 4, 0xffffff);

@@ -113,7 +113,7 @@ void handle_dealer_turn(app_t *app, interrupt_type_t interrupt) {
 
         app->game.main_player.coins += app->game.main_player.won_coins;
         app->state = GAME_OVER;
-        uart_send_byte(app->game.main_player.game_over_state);
+        com_send_msg((com_msg_t) app->game.main_player.game_over_state, app->game.main_player.won_coins);
       }
       else {
         add_dealer_animation(app);

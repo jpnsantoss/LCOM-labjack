@@ -1,6 +1,5 @@
 #include "ev_listener.h"
 
-uint8_t uart_response = 0xff;
 extern uint8_t scancode;
 extern int timer_counter;
 extern datetime_t curr_time;
@@ -29,6 +28,8 @@ void handle_interrupt(app_t *app, interrupt_type_t interrupt) {
 }
 
 void handle_general(app_t *app, interrupt_type_t interrupt) {
+	uint8_t byte;
+
   switch (interrupt) {
     case KEYBOARD:
       kbc_ih();
@@ -52,22 +53,10 @@ void handle_general(app_t *app, interrupt_type_t interrupt) {
       break;
     case UART:
       if (uart_ih()) {
-        if (uart_get_byte(&uart_response))
-          uart_response = 0xff;
-
-        switch (uart_response) {
-          case PLAYER_WIN:
-            banner_set_message(&app->banner, "A player has won.", 120);
-            break;
-          case PLAYER_LOSS:
-            banner_set_message(&app->banner, "A player has lost.", 120);
-            break;
-          case PLAYER_DRAW:
-            banner_set_message(&app->banner, "A player has draw.", 120);
-            break;
-          default:
-            break;
-        }
+        while (!uart_get_byte(&byte)) {
+					com_add_byte(byte);
+					com_handle_packet(app);
+				}
       }
       break;
     case TIMER:
