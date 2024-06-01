@@ -34,6 +34,9 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
 	{
     case KEYBOARD:
       kbc_ih();
+
+			if (scancode == KB_9) banner_set_message(&app->banner, "aaa", 600);
+			
       break;
     case MOUSE:
       mouse_ih();
@@ -56,14 +59,33 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
       if (uart_ih())
 			{
         if (uart_get_byte(&uart_response)) uart_response = 0xff;
+
+				switch (uart_response)
+				{
+					case PLAYER_WIN:
+						banner_set_message(&app->banner, "A player has won.", 120);
+						break;
+					case PLAYER_LOSS:
+						banner_set_message(&app->banner, "A player has lost.", 120);
+						break;
+					case PLAYER_DRAW:
+						banner_set_message(&app->banner, "A player has draw.", 120);
+						break;
+					default:
+						break;
+				}
       }
       break;
     case TIMER:
       timer_int_handler();
+			banner_update_timeout(&app->banner);
+      if (app->state != MAIN_MENU) 
+        animation_run(&app->game.curr_anim, app);
       draw_screen(app);
       break;
     case RTC:
       rtc_ih();
+      /*LÓGICA PARA ADICIONAR AS FICHAS QUE FALTAM, TAMBÉM PODE ESTAR NO ALARM HANDLER*/
       break;
   }
 }

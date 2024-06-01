@@ -31,7 +31,7 @@ int mouse_disable()
 
 int mouse_subscribe_int(uint8_t *bit_no)
 {
-	if (!bit_no)
+	if (bit_no == NULL)
 		return 1;
   	*bit_no = BIT(hook_id_mouse);
 
@@ -40,8 +40,8 @@ int mouse_subscribe_int(uint8_t *bit_no)
 
 int mouse_unsubscribe_int()
 {
-	if (hook_id_mouse < 0)
-		return 1;
+	if (hook_id_mouse < 0) return 1;
+	
 	return sys_irqrmpolicy(&hook_id_mouse);
 }
 

@@ -123,7 +123,6 @@ void handle_bet_value_check(app_t *app)
 
   if (app->game.main_player.cards_value == 21)
   {
-    app->game.dealer_turn = 1;
-    app->state = GAME_DEALER_TURN;
+    add_dealer_single_animation(app);
   }
 }

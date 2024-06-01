@@ -50,15 +50,15 @@ void queue_destroy(queue_t **queue, void (*f)(void *))
 	if ((*queue)->front_pos < (*queue)->end_pos)
 	{
 		for (size_t i = (*queue)->front_pos; i <= (*queue)->end_pos; i++)
-			free((*queue)->content[i]);
+			f((*queue)->content[i]);
 	}
 	else if ((*queue)->curr_size != 0)
 	{
 		for (size_t i = 0; i <= (*queue)->end_pos; i++)
-			free((*queue)->content[i]);
+			f((*queue)->content[i]);
 		
 		for (size_t i = (*queue)->front_pos; i < (*queue)->base_size; i++)
-			free((*queue)->content[i]);
+			f((*queue)->content[i]);
 	}
 	free(*queue);
 	*queue = NULL;
@@ -127,7 +127,7 @@ void queue_shuffle(queue_t *queue)
 {
 	if (queue == NULL) return;
 
-  for (size_t i = queue->curr_size; i > 1; i--) 
+  for (size_t i = queue->curr_size - 1; i > 0; i--) 
   {
     int k = rand() % (i + 1);
 

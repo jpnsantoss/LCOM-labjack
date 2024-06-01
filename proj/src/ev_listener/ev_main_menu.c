@@ -29,7 +29,7 @@ void handle_main_menu(app_t *app, interrupt_type_t interrupt)
         default:
           break;
       }
-      if (scancode == KB_ESC) app->state = EXIT;
+			
       return;
 
     case MOUSE:
@@ -53,35 +53,6 @@ void handle_main_menu(app_t *app, interrupt_type_t interrupt)
       }
       break;
     case UART:
-      if (uart_response == PROTO_QUERY_GAME)
-      {
-        uart_response = PROTO_NONE;
-        uart_send_byte(PROTO_YES);
-
-				app->state = GAME_BET;
-
-        if (game_init(&app->game))
-				{
-          app->state = EXIT;
-          game_destroy(&app->game);
-          return;
-        }
-
-        vg_set_redraw();
-      }
-			if (uart_response == PROTO_YES)
-			{
-				app->state = GAME_BET;
-
-        if (game_init(&app->game))
-				{
-          app->state = EXIT;
-          game_destroy(&app->game);
-          return;
-        }
-
-        vg_set_redraw();
-			}
       break;
     default:
       return;
