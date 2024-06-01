@@ -37,14 +37,14 @@ int (rtc_get_time)()
 
     curr_time.minutes = bin_mode ? out : rtc_to_bin(out);
 
-    if (rtc_read_output(S, &out) != 0) return 1;
+    if (rtc_read_output(S, &out)) return 1;
 
     curr_time.seconds = bin_mode ? out : rtc_to_bin(out);
 
     return 0;
 }
 
-int rtc_set_alarm()
+/*int rtc_set_alarm()
 {
     rtc_wait();
 
@@ -62,50 +62,45 @@ int rtc_set_alarm()
     if (rtc_input(RTC_S_ALARM, RTC_DONT_CARE)) return 1;
 
     return rtc_update_int();
-}
+}*/
 
-int(rtc_unset_alarm)()
+int (rtc_set_alarm)()
 {
-    rtc_wait();
+  rtc_wait();
 
-    if(rtc_disable_update_int()) return 1;
+  if (rtc_disable_update_int()) return 1;
 
-    if(rtc_input(RTC_H_ALARM, RTC_DONT_CARE)) return 1;
-    if(rtc_input(RTC_MIN_ALARM, RTC_DONT_CARE)) return 1;
-    if(rtc_input(RTC_S_ALARM, RTC_DONT_CARE)) return 1;
+  if (rtc_input(RTC_H_ALARM, RTC_DONT_CARE)) return 1;
+  if (rtc_input(RTC_MIN_ALARM, RTC_DONT_CARE)) return 1;
+  if (rtc_input(RTC_S_ALARM, RTC_DONT_CARE)) return 1;
 
-    return (rtc_update_int());
+  return rtc_update_int();
 }
 
 int (rtc_setup)()
 {
-    uint8_t status;
+  if (rtc_set_alarm()) return 1;
 
-    if (rtc_read_output(REGB, &status)) return 1;
+  if (rtc_disable_periodic_int()) return 1;
+  if (rtc_disable_alarm_int()) return 1;
+  //if (rtc_disable_update_int()) return 1;
 
-    if (ISBIN & status) bin_mode = 1;
-
-    if (rtc_get_time()) return 0;
-
-    if (rtc_disable_alarm_int()) return 1;
-    if (rtc_disable_update_int()) return 1;
-
-    return rtc_alarm_int();
+	return rtc_alarm_int();
 }
 
 int (rtc_subscribe_int)(uint8_t* bit_no)
 {
-    uint8_t val = 0;
+  uint8_t val = 0;
 
-    if (rtc_read_output(REGC, &val)) return 1;
+  if (rtc_read_output(REGC, &val)) return 1;
     
-    if (bit_no == NULL) return 1;
+  if (bit_no == NULL) return 1;
 		
-    *bit_no = BIT(rtc_hook_id);
+  *bit_no = BIT(rtc_hook_id);
 
-    if (sys_irqsetpolicy(RTC_IRQ_LINE, IRQ_REENABLE, &rtc_hook_id)) return 1;
+  if (sys_irqsetpolicy(RTC_IRQ_LINE, IRQ_REENABLE, &rtc_hook_id)) return 1;
 
-    return rtc_update_int();
+  return 0;
 }
 
 int (rtc_unsubscribe_int)()
@@ -123,7 +118,6 @@ void (rtc_wait)()
     tickdelay(micros_to_ticks(20000));
   }
 }
-
 
 int (rtc_read_output)(uint8_t cmd, uint8_t *output)
 {
@@ -157,12 +151,14 @@ int (rtc_ih)()
 
   if (value & REGC_ALARMFLAG)
 	{
-    if (rtc_alarm_handler()) return 1;
+    if (rtc_get_time()) return 1;
+		vg_set_redraw();
   }
-
+  
   if (value & REGC_UPDATEFLAG)
 	{
     if (rtc_get_time()) return 1;
+    vg_set_redraw();
   }
 
   return 0;
@@ -170,16 +166,27 @@ int (rtc_ih)()
 
 int (rtc_alarm_handler)()
 {
-    if (rtc_get_time()) return 1;
+  if (rtc_get_time()) return 1;
 
-    curr_time.minutes++;
-    if (curr_time.minutes >= 60)
-		{
-        curr_time.minutes -= 60;
-        curr_time.hours++;
-    }
+  curr_time.minutes++;
+  if (curr_time.minutes >= 60)
+	{
+   	curr_time.minutes -= 60;
+  	curr_time.hours++;
+  }
 
-    return rtc_set_alarm();
+  return rtc_set_alarm();
+}
+
+int rtc_disable_periodic_int()
+{
+  uint8_t val;
+
+  if (rtc_read_output(REGB, &val)) return 1;
+
+  val &= ~REGB_PERIODIC;
+
+  return rtc_input(REGB, val);
 }
 
 int (rtc_update_int)()

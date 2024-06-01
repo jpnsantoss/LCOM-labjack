@@ -11,6 +11,10 @@ void draw_state(app_t *app)
 
 	banner_draw(&app->banner, &app->font);
 
+  char time[10];
+  sprintf(time, "%02d:%02d:%02d", curr_time.hours, curr_time.minutes, curr_time.seconds);
+  font_print_str(&app->font, time, vg_get_width() - 220, 10, 0xffffff);
+
 	if (app->state != MAIN_MENU)
 	{
 		font_print_str(&app->font, "Bal", 10, 770, 0xffff00);
@@ -35,11 +39,8 @@ void draw_state(app_t *app)
     font_print_number(&app->font, app->game.main_player.cards_value, 505, 575, 0xffffff);
   }
 
-  char time[10];
   switch (app->state) {
     case MAIN_MENU:
-    sprintf(time, "%02d:%02d:%02d", curr_time.hours, curr_time.minutes, curr_time.seconds);
-    font_print_str(&app->font, time, vg_get_width() - 230, 10, 0xffffff);
 	  font_print_str(&app->font, "Welcome to", (vg_get_width() / 2) - 49 * 3 + 6, vg_get_height() / 2 - 192, 0xffffff);
 	  vg_draw_rectangle((vg_get_width() / 2) - 26 * 3 - 50, vg_get_height() / 2 - 104, 250, 55, 0xffffff);
 	  vg_draw_border((vg_get_width() / 2) - 26 * 3 - 50, vg_get_height() / 2 - 104, 250, 55, 0x8b0000, 4);

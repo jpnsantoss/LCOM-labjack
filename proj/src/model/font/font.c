@@ -103,9 +103,8 @@ void font_print_str(font_t *font, char *str, uint32_t x, uint32_t y, uint32_t co
 	for (size_t i = 0; i < strlen(str); i++)
 	{
 		font_print_char(font, str[i], x, y, color);
-
-		if (str[i + 1] == ':') x += 20;
-		else if (str[i + 1] == '~') x+= 35;
+    
+		if (str[i + 1] == '~') x += 35;
  		else x += 26;
 	}
 }

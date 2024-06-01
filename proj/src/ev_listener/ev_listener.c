@@ -3,6 +3,7 @@
 uint8_t uart_response = 0xff;
 extern uint8_t scancode;
 extern int timer_counter;
+extern datetime_t curr_time;
 int state_changed = 0;
 
 handler listeners[] = {
@@ -85,6 +86,11 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
       break;
     case RTC:
       rtc_ih();
+      if (curr_time.seconds == 0 && curr_time.minutes % 5 == 0 && app->game.dealer != NULL)
+      {
+         banner_set_message(&app->banner, "You received a bonus ~50", 120);
+         app->game.main_player.coins += 50;
+      }
       break;
   }
 }

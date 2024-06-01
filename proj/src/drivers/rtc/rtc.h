@@ -25,6 +25,7 @@
 #define INPUT_REG         0x70
 #define OUTPUT_REG        0x71
 #define RTC_IRQ_LINE      8
+#define REGB_PERIODIC     BIT(6) 
 
 #define H                 4
 #define RTC_H_ALARM       5
@@ -53,6 +54,7 @@ int (rtc_update_int)();
 int (rtc_disable_update_int)();
 int (rtc_alarm_int)();
 int (rtc_disable_alarm_int)();
+int (rtc_disable_periodic_int)();
 
 typedef struct {
     uint8_t hours;
