@@ -13,7 +13,7 @@ void draw_state(app_t *app)
 
   char time[10];
   sprintf(time, "%02d:%02d:%02d", curr_time.hours, curr_time.minutes, curr_time.seconds);
-  font_print_str(&app->font, time, vg_get_width() - 220, 10, 0xffffff);
+  font_print_str(&app->font, time, vg_get_width() - 220, 815, 0xffffff);
 
 	if (app->state != MAIN_MENU)
 	{
