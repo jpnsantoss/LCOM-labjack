@@ -33,12 +33,6 @@ typedef struct {
   queue_t *dealer;                   /**< Queue of cards for the dealer. */
   animation_t *curr_anim;            /**< Pointer to the current animation. */
   uint32_t dealer_value;             /**< Value of the dealer's cards. */
-  uint32_t round_count;              /**< Number of rounds played. */
-  uint32_t card_played_count;        /**< Count of cards played. */
-  uint32_t extra_deck_count;         /**< Count of extra decks. */
-  uint8_t playing_id;                /**< ID of the playing player. */
-  uint8_t multiplayer;               /**< Flag for multiplayer mode. */
-  uint8_t card_theme;                /**< Theme of the cards. */
   uint8_t input_select;              /**< Input select flag. */
   uint8_t dealer_turn;               /**< Flag indicating if it's the dealer's turn. */
   uint8_t dealer_ignore_last;        /**< Flag to ignore the dealer's last card. */

@@ -1,13 +1,12 @@
-#include <lcom/lcf.h>
 #include "drivers/drivers.h"
-#include "model/game/game.h"
-#include "model/app/app.h"
 #include "ev_listener/ev_listener.h"
+#include "model/app/app.h"
+#include "model/game/game.h"
+#include <lcom/lcf.h>
 
 // Any header files included below this line should have been created by you
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
   lcf_set_language("EN-US");
 
@@ -21,7 +20,8 @@ int main(int argc, char *argv[])
 
   // handles control over to LCF
   // [LCF handles command line arguments and invokes the right function]
-  if (lcf_start(argc, argv)) return 1;
+  if (lcf_start(argc, argv))
+    return 1;
 
   // LCF clean up tasks
   // [must be the last statement before return]
@@ -38,95 +38,103 @@ int main(int argc, char *argv[])
 /**
  * @brief Unsubscribes the interrupts from all devices
  * and returns the screen to text mode.
- * 
+ *
  * @return 0 if successful, non-zero otherwise.
-*/
-int close_app()
-{
-	if (uart_disable()) return 1;
+ */
+int close_app() {
+  if (uart_disable())
+    return 1;
 
-	if (mouse_disable()) return 1;
+  if (mouse_disable())
+    return 1;
 
-	if (kbd_unsubscribe_int()) return 1;
+  if (kbd_unsubscribe_int())
+    return 1;
 
-	if (timer_unsubscribe_int()) return 1;
+  if (timer_unsubscribe_int())
+    return 1;
 
-	if (rtc_unsubscribe_int()) return 1;
+  if (rtc_unsubscribe_int())
+    return 1;
 
-	return vg_exit();
+  return vg_exit();
 }
 
 /**
  * @brief The main loop for the project.
- * 
- * @details Subscribes the program to interrupts from the necessary devices, 
+ *
+ * @details Subscribes the program to interrupts from the necessary devices,
  * initializes the structures necessary for the app and waits for interrupts
  * till the program goes to the EXIT state.
- * 
+ *
  * @param argc Argument count
  * @param argv Argument vector
  * @return 0 if successful, non-zero otherwise.
-*/
-int (proj_main_loop)(int argc, char **argv)
-{
+ */
+int(proj_main_loop)(int argc, char **argv) {
   bit_no_t bit_no;
-	int ipc_status;
-	message msg;
-	
-	rtc_setup();
+  int ipc_status;
+  message msg;
 
   vg_init_mode();
 
-  if (timer_subscribe_int(&bit_no.timer)) return 1;
+	if (rtc_setup())
+		return 1;
 
-	if (timer_set_frequency(0, 30)) return 1;
+  if (timer_subscribe_int(&bit_no.timer))
+    return 1;
 
-	if (uart_init(&bit_no.uart, UART_MAX_BIT_RATE)) return 1;
-	
- 	if (mouse_init(&bit_no.mouse)) return 1;
+  if (timer_set_frequency(0, 30))
+    return 1;
 
-  if (kbd_subscribe_int(&bit_no.kb)) return 1;
+  if (uart_init(&bit_no.uart, UART_MAX_BIT_RATE))
+    return 1;
 
-	if (rtc_subscribe_int(&bit_no.rtc)) return 1;
+  if (mouse_init(&bit_no.mouse))
+    return 1;
 
-	app_t *app = app_init();
-	if (app == NULL) close_app();
+  if (kbd_subscribe_int(&bit_no.kb))
+    return 1;
 
-	while (app->state != EXIT)
-	{
-    if (driver_receive(ANY, &msg, &ipc_status)) continue;
+  if (rtc_subscribe_int(&bit_no.rtc))
+    return 1;
 
-    if (!is_ipc_notify(ipc_status)) continue;
+  app_t *app = app_init();
+  if (app == NULL)
+    close_app();
 
-		if (_ENDPOINT_P(msg.m_source) != HARDWARE) continue;
+  while (app->state != EXIT) {
+    if (driver_receive(ANY, &msg, &ipc_status))
+      continue;
 
-		if (msg.m_notify.interrupts & bit_no.mouse)
-		{
-			handle_interrupt(app, MOUSE);
-		}
+    if (!is_ipc_notify(ipc_status))
+      continue;
 
-		if (msg.m_notify.interrupts & bit_no.uart)
-		{
-			handle_interrupt(app, UART);
-		}
+    if (_ENDPOINT_P(msg.m_source) != HARDWARE)
+      continue;
 
-		if (msg.m_notify.interrupts & bit_no.rtc)
-		{
-			handle_interrupt(app, RTC);
-		}
+    if (msg.m_notify.interrupts & bit_no.mouse) {
+      handle_interrupt(app, MOUSE);
+    }
 
-		if (msg.m_notify.interrupts & bit_no.kb)
-		{
-			handle_interrupt(app, KEYBOARD);
-		}
+    if (msg.m_notify.interrupts & bit_no.uart) {
+      handle_interrupt(app, UART);
+    }
 
-		if (msg.m_notify.interrupts & bit_no.timer)
-		{
-			handle_interrupt(app, TIMER);
-		}
-	}
+    if (msg.m_notify.interrupts & bit_no.rtc) {
+      handle_interrupt(app, RTC);
+    }
 
-	app_destroy(app);
+    if (msg.m_notify.interrupts & bit_no.kb) {
+      handle_interrupt(app, KEYBOARD);
+    }
+
+    if (msg.m_notify.interrupts & bit_no.timer) {
+      handle_interrupt(app, TIMER);
+    }
+  }
+
+  app_destroy(app);
   return close_app();
 }
 
