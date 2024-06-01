@@ -100,4 +100,4 @@ uint32_t game_get_cards_value(queue_t *cards);
 
 /** @} */
 
-#endif
+#endif /* _LCOM_EV_GAME_H_ */

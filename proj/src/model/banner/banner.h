@@ -57,4 +57,4 @@ int	banner_draw(banner_t *banner, font_t *font);
 
 /** @} */
 
-#endif
+#endif /* _LCOM_EV_BANNER_H_ */

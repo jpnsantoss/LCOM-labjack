@@ -108,18 +108,40 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ac3cd66284acb7afe5ed7d7da9e7b3845" id="r_ac3cd66284acb7afe5ed7d7da9e7b3845"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3cd66284acb7afe5ed7d7da9e7b3845">uart_response</a> = 0xff</td></tr>
-<tr class="separator:ac3cd66284acb7afe5ed7d7da9e7b3845"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1de7a5557e9d96b83cf03f73c92163f" id="r_aa1de7a5557e9d96b83cf03f73c92163f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa1de7a5557e9d96b83cf03f73c92163f">scancode</a></td></tr>
 <tr class="separator:aa1de7a5557e9d96b83cf03f73c92163f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f08eb193e0aedb134a1481913b6a823" id="r_a0f08eb193e0aedb134a1481913b6a823"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f08eb193e0aedb134a1481913b6a823">timer_counter</a></td></tr>
 <tr class="separator:a0f08eb193e0aedb134a1481913b6a823"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b4d3d90bad99bbf2e2cee75d29d85ab" id="r_a9b4d3d90bad99bbf2e2cee75d29d85ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdatetime__t.html">datetime_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b4d3d90bad99bbf2e2cee75d29d85ab">curr_time</a></td></tr>
+<tr class="separator:a9b4d3d90bad99bbf2e2cee75d29d85ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac044c169143351a88b368ab710a4aabd" id="r_ac044c169143351a88b368ab710a4aabd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac044c169143351a88b368ab710a4aabd">state_changed</a> = 0</td></tr>
 <tr class="separator:ac044c169143351a88b368ab710a4aabd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56b6ee4f345ff19ecef5c88cea1a2b8c" id="r_a56b6ee4f345ff19ecef5c88cea1a2b8c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__ev__listener.html#ga4e73e48e952830ba82788c8e5c2f1a0a">handler</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56b6ee4f345ff19ecef5c88cea1a2b8c">listeners</a> []</td></tr>
 <tr class="separator:a56b6ee4f345ff19ecef5c88cea1a2b8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="a9b4d3d90bad99bbf2e2cee75d29d85ab" name="a9b4d3d90bad99bbf2e2cee75d29d85ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b4d3d90bad99bbf2e2cee75d29d85ab">&#9670;&#160;</a></span>curr_time</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structdatetime__t.html">datetime_t</a> curr_time</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a56b6ee4f345ff19ecef5c88cea1a2b8c" name="a56b6ee4f345ff19ecef5c88cea1a2b8c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a56b6ee4f345ff19ecef5c88cea1a2b8c">&#9670;&#160;</a></span>listeners</h2>
 
@@ -140,9 +162,9 @@ Variables</h2></td></tr>
 <div class="line">  NULL</div>
 <div class="line">}</div>
 <div class="ttc" id="agroup__ev__listener_html_ga440c6c7cbaa7a4aca8e09d35eaa71e61"><div class="ttname"><a href="group__ev__listener.html#ga440c6c7cbaa7a4aca8e09d35eaa71e61">handle_game_betting</a></div><div class="ttdeci">void handle_game_betting(app_t *app, interrupt_type_t interrupt)</div><div class="ttdoc">Handles interrupts in the game betting state.</div><div class="ttdef"><b>Definition</b> ev_game_bet.c:6</div></div>
-<div class="ttc" id="agroup__ev__listener_html_gaac3b528525094a9c64495cc99154b2c2"><div class="ttname"><a href="group__ev__listener.html#gaac3b528525094a9c64495cc99154b2c2">handle_game_playing</a></div><div class="ttdeci">void handle_game_playing(app_t *app, interrupt_type_t interrupt)</div><div class="ttdoc">Handles interrupts in the game playing state.</div><div class="ttdef"><b>Definition</b> ev_game_play.c:113</div></div>
-<div class="ttc" id="agroup__ev__listener_html_gabeab42a878a73b55decd954a69ec1be7"><div class="ttname"><a href="group__ev__listener.html#gabeab42a878a73b55decd954a69ec1be7">handle_game_over</a></div><div class="ttdeci">void handle_game_over(app_t *app, interrupt_type_t interrupt)</div><div class="ttdoc">Handles interrupts in the game over state.</div><div class="ttdef"><b>Definition</b> ev_game_over.c:24</div></div>
-<div class="ttc" id="agroup__ev__listener_html_gad15caf2d5bda57970cde01330a905649"><div class="ttname"><a href="group__ev__listener.html#gad15caf2d5bda57970cde01330a905649">handle_dealer_turn</a></div><div class="ttdeci">void handle_dealer_turn(app_t *app, interrupt_type_t interrupt)</div><div class="ttdoc">Handles interrupts during the dealer's turn.</div><div class="ttdef"><b>Definition</b> ev_game_dealer_turn.c:91</div></div>
+<div class="ttc" id="agroup__ev__listener_html_gaac3b528525094a9c64495cc99154b2c2"><div class="ttname"><a href="group__ev__listener.html#gaac3b528525094a9c64495cc99154b2c2">handle_game_playing</a></div><div class="ttdeci">void handle_game_playing(app_t *app, interrupt_type_t interrupt)</div><div class="ttdoc">Handles interrupts in the game playing state.</div><div class="ttdef"><b>Definition</b> ev_game_play.c:103</div></div>
+<div class="ttc" id="agroup__ev__listener_html_gabeab42a878a73b55decd954a69ec1be7"><div class="ttname"><a href="group__ev__listener.html#gabeab42a878a73b55decd954a69ec1be7">handle_game_over</a></div><div class="ttdeci">void handle_game_over(app_t *app, interrupt_type_t interrupt)</div><div class="ttdoc">Handles interrupts in the game over state.</div><div class="ttdef"><b>Definition</b> ev_game_over.c:23</div></div>
+<div class="ttc" id="agroup__ev__listener_html_gad15caf2d5bda57970cde01330a905649"><div class="ttname"><a href="group__ev__listener.html#gad15caf2d5bda57970cde01330a905649">handle_dealer_turn</a></div><div class="ttdeci">void handle_dealer_turn(app_t *app, interrupt_type_t interrupt)</div><div class="ttdoc">Handles interrupts during the dealer's turn.</div><div class="ttdef"><b>Definition</b> ev_game_dealer_turn.c:83</div></div>
 <div class="ttc" id="agroup__ev__listener_html_gaf39362208e047dd8c2fdac3802d35a25"><div class="ttname"><a href="group__ev__listener.html#gaf39362208e047dd8c2fdac3802d35a25">handle_main_menu</a></div><div class="ttdeci">void handle_main_menu(app_t *app, interrupt_type_t interrupt)</div><div class="ttdoc">Handles interrupts in the main menu state.</div><div class="ttdef"><b>Definition</b> ev_main_menu.c:6</div></div>
 </div><!-- fragment -->
 </div>
@@ -201,20 +223,6 @@ Variables</h2></td></tr>
 <span class="mlabels"><span class="mlabel">extern</span></span>  </td>
   </tr>
 </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac3cd66284acb7afe5ed7d7da9e7b3845" name="ac3cd66284acb7afe5ed7d7da9e7b3845"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac3cd66284acb7afe5ed7d7da9e7b3845">&#9670;&#160;</a></span>uart_response</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t uart_response = 0xff</td>
-        </tr>
-      </table>
 </div><div class="memdoc">
 
 </div>

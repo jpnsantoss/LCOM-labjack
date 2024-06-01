@@ -101,17 +101,17 @@ void handle_dealer_turn(app_t *app, interrupt_type_t interrupt) {
         if (app->game.dealer_value > 21 || app->game.dealer_value < app->game.main_player.cards_value) {
           app->game.main_player.won_coins = app->game.main_player.bet * 2;
           app->game.main_player.game_over_state = PLAYER_WIN;
-					com_send_msg((com_msg_t) app->game.main_player.game_over_state, app->game.main_player.won_coins);
+					com_send_msg((proto_msg_type_t) app->game.main_player.game_over_state, app->game.main_player.won_coins);
         }
         else if (app->game.dealer_value > app->game.main_player.cards_value) {
           app->game.main_player.won_coins = 0;
           app->game.main_player.game_over_state = PLAYER_LOSS;
-					com_send_msg((com_msg_t) app->game.main_player.game_over_state, app->game.main_player.bet);
+					com_send_msg((proto_msg_type_t) app->game.main_player.game_over_state, app->game.main_player.bet);
         }
         else {
           app->game.main_player.won_coins = app->game.main_player.bet;
           app->game.main_player.game_over_state = PLAYER_DRAW;
-					com_send_msg((com_msg_t) app->game.main_player.game_over_state, app->game.main_player.won_coins);
+					com_send_msg((proto_msg_type_t) app->game.main_player.game_over_state, app->game.main_player.won_coins);
         }
 
         app->game.main_player.coins += app->game.main_player.won_coins;

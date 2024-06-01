@@ -33,7 +33,7 @@ int com_add_byte(uint8_t byte) {
   return 0;
 }
 
-int com_send_msg(com_msg_t type, uint32_t content) {
+int com_send_msg(proto_msg_type_t type, uint32_t content) {
   if (uart_send_byte(PROTO_START))
     return 1;
   if (uart_send_byte(type))

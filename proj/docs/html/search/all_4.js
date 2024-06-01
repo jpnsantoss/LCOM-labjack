@@ -11,6 +11,5 @@ var searchData=
   ['ev_5flistener_2eh_8',['ev_listener.h',['../ev__listener_8h.html',1,'']]],
   ['ev_5fmain_5fmenu_2ec_9',['ev_main_menu.c',['../ev__main__menu_8c.html',1,'']]],
   ['event_20listener_10',['Event Listener',['../group__ev__listener.html',1,'']]],
-  ['exit_11',['EXIT',['../group__app.html#gga5bb27460721cc90620d197fabf50d4bba7a10b5d68d31711288e1fe0fa17dbf4f',1,'app.h']]],
-  ['extra_5fdeck_5fcount_12',['extra_deck_count',['../structgame__t.html#a06c3a4bbe8b18b37076ebb3c865c947f',1,'game_t']]]
+  ['exit_11',['EXIT',['../group__app.html#gga5bb27460721cc90620d197fabf50d4bba7a10b5d68d31711288e1fe0fa17dbf4f',1,'app.h']]]
 ];

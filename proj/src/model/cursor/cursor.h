@@ -89,4 +89,4 @@ void	cursor_destroy(cursor_t *cursor);
 
 /** @} */
 
-#endif
+#endif /* _LCOM_EV_CURSOR_H_ */

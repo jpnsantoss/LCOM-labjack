@@ -17,7 +17,7 @@ void handle_hit(void *ptr) {
     player->won_coins = 0;
     player->game_over_state = PLAYER_LOSS;
     app->state = GAME_OVER;
-    com_send_msg((com_msg_t) app->game.main_player.game_over_state, app->game.main_player.bet);
+    com_send_msg((proto_msg_type_t) app->game.main_player.game_over_state, app->game.main_player.bet);
   }
 
   if (player->cards_value == 21) {
@@ -71,7 +71,7 @@ void handle_double(void *ptr) {
     player->won_coins = 0;
     player->game_over_state = PLAYER_LOSS;
     app->state = GAME_OVER;
-    com_send_msg((com_msg_t) app->game.main_player.game_over_state, app->game.main_player.bet);
+    com_send_msg((proto_msg_type_t) app->game.main_player.game_over_state, app->game.main_player.bet);
   }
   else {
     add_dealer_single_animation(app);
@@ -145,7 +145,7 @@ void handle_game_playing(app_t *app, interrupt_type_t interrupt) {
         app->game.main_player.coins += app->game.main_player.won_coins;
         app->game.main_player.game_over_state = PLAYER_SURRENDER;
         app->state = GAME_OVER;
-        com_send_msg((com_msg_t) app->game.main_player.game_over_state, app->game.main_player.won_coins);
+        com_send_msg((proto_msg_type_t) app->game.main_player.game_over_state, app->game.main_player.won_coins);
         break;
       default:
         break;
@@ -193,7 +193,7 @@ void handle_game_playing(app_t *app, interrupt_type_t interrupt) {
       app->game.main_player.coins += app->game.main_player.won_coins;
       app->game.main_player.game_over_state = PLAYER_WIN;
       app->state = GAME_OVER;
-      com_send_msg((com_msg_t) app->game.main_player.game_over_state, app->game.main_player.won_coins);
+      com_send_msg((proto_msg_type_t) app->game.main_player.game_over_state, app->game.main_player.won_coins);
     }
   }
 }

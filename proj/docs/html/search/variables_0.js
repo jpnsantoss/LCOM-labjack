@@ -12,6 +12,6 @@ var searchData=
   ['buttons_5fgame_5fover_9',['buttons_game_over',['../structapp__t.html#ab5d44eca782a86f2df68a849b2ccc2ed',1,'app_t']]],
   ['buttons_5fgame_5fplaying_10',['buttons_game_playing',['../structapp__t.html#aef07bb78f484b7e198e6142a8616c127',1,'app_t']]],
   ['buttons_5fmain_5fmenu_11',['buttons_main_menu',['../structapp__t.html#a37db580d82d70b333b71b3c4fcdda06f',1,'app_t']]],
-  ['bytes_12',['bytes',['../dvr__mouse_8c.html#a89fe01e2d4cf73b27993d65029aff235',1,'dvr_mouse.c']]],
+  ['bytes_12',['bytes',['../dvr__mouse_8c.html#a89fe01e2d4cf73b27993d65029aff235',1,'bytes:&#160;dvr_mouse.c'],['../com__manager_8c.html#a6c9e9164574665638784cac5cbfb74e4',1,'bytes:&#160;com_manager.c']]],
   ['bytes_5fper_5fpixel_13',['bytes_per_pixel',['../structgph__t.html#a4993060ce954603e9394fe6d9f71f015',1,'gph_t']]]
 ];

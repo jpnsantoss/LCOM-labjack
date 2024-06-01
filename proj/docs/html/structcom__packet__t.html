@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>LabJack: src/model/com_manager Directory Reference</title>
+<title>LabJack: com_packet_t Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -82,24 +82,67 @@ $(function(){ initResizable(false); });
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_5dd65160827af56e6353642206b80129.html">model</a></li><li class="navelem"><a class="el" href="dir_db7f0942c3a3848fe98dae5d9c346a8e.html">com_manager</a></li>  </ul>
-</div>
 </div><!-- top -->
 <div id="doc-content">
 <div class="header">
-  <div class="headertitle"><div class="title">com_manager Directory Reference</div></div>
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle"><div class="title">com_packet_t Struct Reference<div class="ingroups"><a class="el" href="group__models.html">Models</a> &raquo; <a class="el" href="group__com__manager.html">COM Manager</a></div></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Structure representing a message received via serial port.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="com__manager_8h_source.html">com_manager.h</a>&gt;</code></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><span class="icondoc"></span>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="com__manager_8c.html">com_manager.c</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="com__manager_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="com__manager_8h.html">com_manager.h</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:aa133388cd70d8aa057d89260fb9b285f" id="r_aa133388cd70d8aa057d89260fb9b285f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__proto.html#ga19a4061dc29287dfc682075be5655364">proto_msg_type_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa133388cd70d8aa057d89260fb9b285f">type</a></td></tr>
+<tr class="memdesc:aa133388cd70d8aa057d89260fb9b285f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message type.  <br /></td></tr>
+<tr class="separator:aa133388cd70d8aa057d89260fb9b285f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa09d40c0bc64fd76bccfc29cbc7eeaf9" id="r_aa09d40c0bc64fd76bccfc29cbc7eeaf9"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa09d40c0bc64fd76bccfc29cbc7eeaf9">data</a></td></tr>
+<tr class="memdesc:aa09d40c0bc64fd76bccfc29cbc7eeaf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message content.  <br /></td></tr>
+<tr class="separator:aa09d40c0bc64fd76bccfc29cbc7eeaf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Structure representing a message received via serial port. </p>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a id="aa09d40c0bc64fd76bccfc29cbc7eeaf9" name="aa09d40c0bc64fd76bccfc29cbc7eeaf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa09d40c0bc64fd76bccfc29cbc7eeaf9">&#9670;&#160;</a></span>data</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t com_packet_t::data</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Message content. </p>
+
+</div>
+</div>
+<a id="aa133388cd70d8aa057d89260fb9b285f" name="aa133388cd70d8aa057d89260fb9b285f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa133388cd70d8aa057d89260fb9b285f">&#9670;&#160;</a></span>type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__proto.html#ga19a4061dc29287dfc682075be5655364">proto_msg_type_t</a> com_packet_t::type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Message type. </p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>src/model/com_manager/<a class="el" href="com__manager_8h_source.html">com_manager.h</a></li>
+</ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

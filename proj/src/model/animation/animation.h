@@ -90,4 +90,4 @@ void animation_destroy(animation_t *animation);
 
 /** @} */
 
-#endif
+#endif /* _LCOM_EV_ANIMATION_H_ */
