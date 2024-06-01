@@ -1,6 +1,8 @@
 #include "drawer.h"
 #include "../model/app/app.h"
 
+extern datetime_t curr_time;
+
 void draw_state(app_t *app)
 {
 	uint32_t x, y;
@@ -23,12 +25,9 @@ void draw_state(app_t *app)
 	{
     player_draw(&app->game.main_player);
 
-    // TODO: Draw player info if multiplayer.
-
     game_draw_dealer(&app->game, &app->font);
     game_draw_deck(&app->game);
 
-		// 45
 	  font_print_str(&app->font, "Bet", 10, 665, 0xffffff);
 		font_print_char(&app->font, '~', 10, 710, 0xffffff);
     font_print_number(&app->font, app->game.main_player.bet, 35, 710, 0xffffff);
@@ -36,8 +35,11 @@ void draw_state(app_t *app)
     font_print_number(&app->font, app->game.main_player.cards_value, 505, 575, 0xffffff);
   }
 
+  char time[10];
   switch (app->state) {
     case MAIN_MENU:
+    sprintf(time, "%02d:%02d:%02d", curr_time.hours, curr_time.minutes, curr_time.seconds);
+    font_print_str(&app->font, time, vg_get_width() - 230, 10, 0xffffff);
 	  font_print_str(&app->font, "Welcome to", (vg_get_width() / 2) - 49 * 3 + 6, vg_get_height() / 2 - 192, 0xffffff);
 	  vg_draw_rectangle((vg_get_width() / 2) - 26 * 3 - 50, vg_get_height() / 2 - 104, 250, 55, 0xffffff);
 	  vg_draw_border((vg_get_width() / 2) - 26 * 3 - 50, vg_get_height() / 2 - 104, 250, 55, 0x8b0000, 4);
