@@ -15,6 +15,7 @@ void handle_main_menu(app_t *app, interrupt_type_t interrupt)
           app->state = EXIT;
           break;
         case KB_1:
+				case KB_ENTER:
           app->state = GAME_BET;
 
           if (game_init(&app->game))

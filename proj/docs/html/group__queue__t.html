@@ -128,10 +128,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga2a0ac508b8a3e94d7d50de284cc9b898"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a queue is empty.  <br /></td></tr>
 <tr class="separator:ga2a0ac508b8a3e94d7d50de284cc9b898"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0488f00c2aa08e55eab9286564c6e676" id="r_ga0488f00c2aa08e55eab9286564c6e676"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0488f00c2aa08e55eab9286564c6e676">queue_destroy</a> (<a class="el" href="structqueue__t.html">queue_t</a> **queue, void(*f)(void *))</td></tr>
-<tr class="memdesc:ga0488f00c2aa08e55eab9286564c6e676"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queue destroyed. Frees all allocated memory inside the queue, including the content still stored inside it using the function passed by f.  <br /></td></tr>
+<tr class="memdesc:ga0488f00c2aa08e55eab9286564c6e676"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queue destroyer. Frees all allocated memory inside the queue, including the content still stored inside it using the function passed by f.  <br /></td></tr>
 <tr class="separator:ga0488f00c2aa08e55eab9286564c6e676"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf924b822f95bb5b6c5bbe2988d17be91" id="r_gaf924b822f95bb5b6c5bbe2988d17be91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf924b822f95bb5b6c5bbe2988d17be91">queue_destroy_nothing</a> (void *ptr)</td></tr>
-<tr class="memdesc:gaf924b822f95bb5b6c5bbe2988d17be91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Can be used in the <a class="el" href="#ga0488f00c2aa08e55eab9286564c6e676" title="Queue destroyed. Frees all allocated memory inside the queue, including the content still stored insi...">queue_destroy()</a> function to prevent it from deleting the content still inside the queue.  <br /></td></tr>
+<tr class="memdesc:gaf924b822f95bb5b6c5bbe2988d17be91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Can be used in the <a class="el" href="#ga0488f00c2aa08e55eab9286564c6e676" title="Queue destroyer. Frees all allocated memory inside the queue, including the content still stored insi...">queue_destroy()</a> function to prevent it from deleting the content still inside the queue.  <br /></td></tr>
 <tr class="separator:gaf924b822f95bb5b6c5bbe2988d17be91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadb51dd354cbb706eb420cb0a29b70626" id="r_gadb51dd354cbb706eb420cb0a29b70626"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gadb51dd354cbb706eb420cb0a29b70626">queue_shuffle</a> (<a class="el" href="structqueue__t.html">queue_t</a> *queue)</td></tr>
 <tr class="memdesc:gadb51dd354cbb706eb420cb0a29b70626"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shuffles the content inside a queue.  <br /></td></tr>
@@ -248,11 +248,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Queue destroyed. Frees all allocated memory inside the queue, including the content still stored inside it using the function passed by f. </p>
-<dl class="section note"><dt>Note</dt><dd><a class="el" href="#gaf924b822f95bb5b6c5bbe2988d17be91" title="Can be used in the queue_destroy() function to prevent it from deleting the content still inside the ...">queue_destroy_nothing()</a> can be passed in the f paramenter and elements inside the queue won't be destroyed. </dd></dl>
+<p>Queue destroyer. Frees all allocated memory inside the queue, including the content still stored inside it using the function passed by f. </p>
+<dl class="section note"><dt>Note</dt><dd><a class="el" href="#gaf924b822f95bb5b6c5bbe2988d17be91" title="Can be used in the queue_destroy() function to prevent it from deleting the content still inside the ...">queue_destroy_nothing()</a> can be passed in the f paramenter and elements inside the queue won't be destroyed.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">queue</td><td>Pointer to queue pointer </td></tr>
+    <tr><td class="paramname">queue</td><td>Pointer to queue struct pointer </td></tr>
     <tr><td class="paramname">f</td><td>Function to free content memory </td></tr>
   </table>
   </dd>
@@ -275,7 +275,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Can be used in the <a class="el" href="#ga0488f00c2aa08e55eab9286564c6e676" title="Queue destroyed. Frees all allocated memory inside the queue, including the content still stored insi...">queue_destroy()</a> function to prevent it from deleting the content still inside the queue. </p>
+<p>Can be used in the <a class="el" href="#ga0488f00c2aa08e55eab9286564c6e676" title="Queue destroyer. Frees all allocated memory inside the queue, including the content still stored insi...">queue_destroy()</a> function to prevent it from deleting the content still inside the queue. </p>
 
 </div>
 </div>
@@ -347,7 +347,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Removes an element from the queue and returns it. </p>
-<dl class="section note"><dt>Note</dt><dd>If the queue if empty, NULL is returned. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the queue if empty, NULL is returned.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">queue</td><td>Queue </td></tr>
@@ -378,7 +378,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Pushes an element to the end of a queue. </p>
-<dl class="section note"><dt>Note</dt><dd>If the queue is full (at max capacity), nothing will be added. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the queue is full (at max capacity), nothing will be added.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">queue</td><td>Queue </td></tr>

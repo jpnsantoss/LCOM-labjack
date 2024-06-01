@@ -39,6 +39,7 @@
 uint8_t (rtc_to_bin)(uint8_t inbcd);
 int (rtc_get_time)();
 int (rtc_set_alarm)();
+int (rtc_unset_alarm)();
 int (rtc_setup)();
 int (rtc_subscribe_int)(uint8_t* bit_no);
 int (rtc_unsubscribe_int)();

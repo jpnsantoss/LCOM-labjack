@@ -23,29 +23,31 @@ my_stack_t *stack_create(size_t size)
 
 size_t stack_size(my_stack_t *stack)
 {
-	if (!stack) return 0;
+	if (stack == NULL) return 0;
 
 	return stack->base_size;
 }
 
 int stack_full(my_stack_t *stack)
 {
-	if (!stack) return 0;
+	if (stack == NULL) return 0;
 
 	return stack->base_size == stack->curr_size;
 }
 
 int stack_empty(my_stack_t *stack)
 {
-	if (!stack) return 0;
+	if (stack == NULL) return 0;
 
 	return stack->curr_size == 0;
 }
 
 void stack_destroy(my_stack_t **stack, void (*f)(void *))
 {
+	if (stack == NULL || *stack == NULL || f == NULL) return;
+
 	for (size_t i = 0; i <= (*stack)->curr_size; i++)
-		free((*stack)->content[i]);
+		f((*stack)->content[i]);
 	
 	free(*stack);
 	*stack = NULL;
@@ -81,3 +83,7 @@ void *stack_at(my_stack_t *stack, size_t pos)
     return stack->content[f_pos];
 }
 
+void		stack_destroy_nothing(void *ptr)
+{
+	(void)ptr;
+}
