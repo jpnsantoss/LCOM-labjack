@@ -119,7 +119,7 @@ int (uart_ih)();
  * @details Default configuration is the following:
  * - 8 bit character, 1 stop without parity messages.
  * - FIFO enabled, with receiver and transmitter clear on init, 
- * and a FIFO receiver trigger level of 4
+ * and a FIFO receiver trigger level of 1
  * - Transmitter holding, line status and data available interruptions are turned on.
  * 
  * @warning If the system does not have an active serial port, this function will still return 0.
