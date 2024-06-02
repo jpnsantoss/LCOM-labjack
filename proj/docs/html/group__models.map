@@ -1,0 +1,13 @@
+<map id="Models" name="Models">
+<area shape="rect" id="Node000002" href="$group__animation.html" title="Animation module for handling sprite animations." alt="" coords="130,5,209,32"/>
+<area shape="rect" id="Node000003" href="$group__app.html" title="Application module for initializing and managing the application state." alt="" coords="147,56,192,83"/>
+<area shape="rect" id="Node000004" href="$group__banner.html" title=" " alt="" coords="138,107,201,133"/>
+<area shape="rect" id="Node000005" href="$group__card.html" title=" " alt="" coords="145,157,194,184"/>
+<area shape="rect" id="Node000006" href="$group__com__manager.html" title="Manages data received from the serial port / UART device." alt="" coords="117,208,222,235"/>
+<area shape="rect" id="Node000007" href="$group__cursor.html" title=" " alt="" coords="140,259,199,285"/>
+<area shape="rect" id="Node000008" href="$group__font.html" title=" " alt="" coords="146,309,193,336"/>
+<area shape="rect" id="Node000009" href="$group__game.html" title="Game module for handling the main game logic and state." alt="" coords="141,360,198,387"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,233,69,260"/>
+<area shape="rect" id="Node000010" href="$group__player.html" title="Player module for handling player&#45;related operations and state." alt="" coords="140,411,199,437"/>
+<area shape="rect" id="Node000011" href="$group__sprite.html" title="Sprite module for handling sprite&#45;related operations." alt="" coords="142,461,197,488"/>
+</map>

@@ -1,0 +1,43 @@
+<map id="close_app" name="close_app">
+<area shape="rect" id="Node000001" title="Unsubscribes the interrupts from all devices and returns the screen to text mode." alt="" coords="5,125,86,152"/>
+<area shape="rect" id="Node000002" href="$group__input.html#ga5bdf6cfb570c375192b0d87913b65c57" title="Unsubscribes interruptions from keyboard." alt="" coords="138,24,278,51"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="57,123,89,92,132,60,143,55,145,59,135,65,93,96,61,127"/>
+<area shape="rect" id="Node000003" href="$group__input.html#ga4b21609cf20aa6689e73976702f26bce" title="Disables the mouse." alt="" coords="154,75,262,101"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="85,123,147,104,149,109,87,129"/>
+<area shape="rect" id="Node000010" href="$group__rtc.html#gab8f17bf5280c908c8b199a90fefcc758" title=" " alt="" coords="141,125,275,152"/>
+<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="86,136,125,136,125,141,86,141"/>
+<area shape="rect" id="Node000015" href="$group__timer.html#gab9eea51549744bca5c5c923b388bb4ee" title="Unsubscribes interruptions from Timer 0." alt="" coords="134,176,282,203"/>
+<area shape="poly" id="edge20_Node000001_Node000015" title=" " alt="" coords="87,148,149,168,147,173,85,154"/>
+<area shape="rect" id="Node000016" href="$group__serial__port.html#ga954b450471faa8a148790f27f75edbca" title="Deletes allocated memory by the UART device driver and unsubscribes interrupts." alt="" coords="162,227,254,253"/>
+<area shape="poly" id="edge21_Node000001_Node000016" title=" " alt="" coords="61,150,93,181,135,212,149,219,147,224,132,217,89,185,57,154"/>
+<area shape="rect" id="Node000004" href="$group__input.html#gac081a634a260ce39d0e06a8ab595df8a" title="Writes a command to the keyboard controller (KBC)." alt="" coords="371,24,447,51"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="262,72,355,48,357,53,263,77"/>
+<area shape="rect" id="Node000009" href="$group__input.html#ga685ad2706aca36d9869a30a19b9f446a" title="Unsubscribes mouse interruptions." alt="" coords="330,75,488,101"/>
+<area shape="poly" id="edge11_Node000003_Node000009" title=" " alt="" coords="262,85,315,85,315,91,262,91"/>
+<area shape="rect" id="Node000005" href="$group__input.html#gab90a9774eaabd0949d73b61e9f3fba88" title="Reads value from the keyboard controller (KBC)." alt="" coords="536,24,654,51"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="448,35,520,35,520,40,448,40"/>
+<area shape="rect" id="Node000007" href="$group__driver__utils.html#ga2b56f50ba159e9d5115ed1a75eff15d9" title="Reads the information in a register and converts it to a 8&#45;bit unsigned integer." alt="" coords="867,49,957,76"/>
+<area shape="poly" id="edge10_Node000004_Node000007" title=" " alt="" coords="447,25,536,9,616,3,679,5,741,14,820,31,859,41,857,46,818,36,740,19,678,10,616,9,537,14,448,30"/>
+<area shape="rect" id="Node000008" href="$group__input.html#ga2823114f828bc7248a230685772dafbb" title="Writes a value to the keyboard controller (KBC)." alt="" coords="539,75,651,101"/>
+<area shape="poly" id="edge8_Node000004_Node000008" title=" " alt="" coords="448,45,529,67,528,72,447,50"/>
+<area shape="rect" id="Node000006" href="$dvr__kbc_8c.html#a9546f355fcf070b152b392ef21543bd8" title=" " alt="" coords="702,75,819,101"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="642,49,701,67,699,72,640,54"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="654,39,852,55,851,60,654,44"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="819,75,852,70,852,75,820,81"/>
+<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="651,85,686,85,686,91,651,91"/>
+<area shape="rect" id="Node000011" href="$group__rtc.html#ga4bd7edbf0206bbf43f7c9cc88fe71532" title=" " alt="" coords="349,125,470,152"/>
+<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="275,136,333,136,333,141,275,141"/>
+<area shape="rect" id="Node000014" href="$group__rtc.html#ga0ac2f7b9a8194d3811fb3ef622024773" title=" " alt="" coords="345,176,473,203"/>
+<area shape="poly" id="edge17_Node000010_Node000014" title=" " alt="" coords="265,150,339,169,338,174,263,155"/>
+<area shape="rect" id="Node000012" href="$group__rtc.html#gaa09d96578f0f0aad40b6beea97e1605a" title=" " alt="" coords="561,176,629,203"/>
+<area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="462,150,547,173,545,179,460,155"/>
+<area shape="rect" id="Node000013" href="$group__rtc.html#ga87e4ef947b464068568304d39b119fa5" title=" " alt="" coords="560,125,630,152"/>
+<area shape="poly" id="edge16_Node000011_Node000013" title=" " alt="" coords="470,136,544,136,544,141,470,141"/>
+<area shape="poly" id="edge15_Node000012_Node000007" title=" " alt="" coords="629,177,715,150,818,111,874,82,877,86,820,116,717,155,630,182"/>
+<area shape="poly" id="edge18_Node000014_Node000012" title=" " alt="" coords="474,187,545,187,545,192,474,192"/>
+<area shape="poly" id="edge19_Node000014_Node000013" title=" " alt="" coords="460,173,544,149,546,155,462,178"/>
+<area shape="rect" id="Node000017" href="$group__queue__t.html#ga0488f00c2aa08e55eab9286564c6e676" title="Queue destroyer. Frees all allocated memory inside the queue, including the content still stored insi..." alt="" coords="356,227,462,253"/>
+<area shape="poly" id="edge22_Node000016_Node000017" title=" " alt="" coords="254,237,341,237,341,243,254,243"/>
+<area shape="rect" id="Node000018" href="$group__serial__port.html#gaf1ff3ad84fc50b3da2bf271b569af0da" title="Unsubscribes interruptions from COM1." alt="" coords="339,277,480,304"/>
+<area shape="poly" id="edge23_Node000016_Node000018" title=" " alt="" coords="254,249,339,270,338,275,253,254"/>
+</map>

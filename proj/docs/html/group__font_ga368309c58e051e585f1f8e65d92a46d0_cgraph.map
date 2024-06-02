@@ -1,0 +1,19 @@
+<map id="font_init" name="font_init">
+<area shape="rect" id="Node000001" title="Initializes the font by loading sprites for letters, numbers, and special characters." alt="" coords="5,107,72,133"/>
+<area shape="rect" id="Node000002" href="$group__queue__t.html#ga496024ec829b39d9a93d6f37391d5a18" title="Creates an empty queue." alt="" coords="143,5,242,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="49,105,78,73,118,42,128,36,130,41,121,46,82,77,53,108"/>
+<area shape="rect" id="Node000003" href="$group__queue__t.html#ga0488f00c2aa08e55eab9286564c6e676" title="Queue destroyer. Frees all allocated memory inside the queue, including the content still stored insi..." alt="" coords="139,56,246,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="71,107,134,86,136,91,73,112"/>
+<area shape="rect" id="Node000004" href="$group__queue__t.html#ga89bb8cf14f8a833ded72fca1fb6d8636" title="Pushes an element to the end of a queue." alt="" coords="147,107,238,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="72,117,131,117,131,123,72,123"/>
+<area shape="rect" id="Node000007" href="$group__sprite.html#ga647e1492c9ac657b437388cde60c8fbe" title="Creates a sprite from an XPM map." alt="" coords="144,157,241,184"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="73,128,136,149,134,154,71,133"/>
+<area shape="rect" id="Node000008" href="$group__sprite.html#ga42f02929141674478580e63678b9771f" title="Destroys a sprite from a queue." alt="" coords="120,208,265,235"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="53,132,82,163,121,194,130,199,128,204,118,198,78,167,49,135"/>
+<area shape="rect" id="Node000005" href="$group__queue__t.html#ga2a0ac508b8a3e94d7d50de284cc9b898" title="Checks if a queue is empty." alt="" coords="315,81,414,108"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="238,111,300,101,301,107,239,116"/>
+<area shape="rect" id="Node000006" href="$group__queue__t.html#ga48ca9da7d179448a59262595a0dfcdce" title="Checks if the queue is full." alt="" coords="325,132,404,159"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="239,124,311,135,310,140,238,129"/>
+<area shape="rect" id="Node000009" href="$group__sprite.html#ga1f0f379ec6f2b2cd0985ec0770cb1a2c" title="Destroys a sprite, freeing all allocated resources." alt="" coords="313,208,416,235"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="266,219,297,219,297,224,266,224"/>
+</map>

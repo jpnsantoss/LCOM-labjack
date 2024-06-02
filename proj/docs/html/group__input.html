@@ -95,6 +95,16 @@ $(function(){ initResizable(false); });
 
 <p>Driver for input devices: keyboard and mouse.  
 <a href="#details">More...</a></p>
+<div class="dynheader">
+Collaboration diagram for Input:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__input.png" border="0" usemap="#agroup____input" alt=""/></div>
+<map name="agroup____input" id="agroup____input">
+<area shape="rect" href="group__drivers.html" title=" " alt="" coords="5,5,66,32"/>
+<area shape="rect" title="Driver for input devices: keyboard and mouse." alt="" coords="114,5,163,32"/>
+<area shape="rect" href="group__i8042.html" title="Constants for the i8042 keyboard and mouse controller." alt="" coords="211,5,263,32"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Topics</h2></td></tr>
@@ -189,6 +199,35 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Handles keyboard interruptions. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__input_gab9e6ed7960d60aa4834f2038247d4536_cgraph.png" border="0" usemap="#agroup__input_gab9e6ed7960d60aa4834f2038247d4536_cgraph" alt=""/></div>
+<map name="agroup__input_gab9e6ed7960d60aa4834f2038247d4536_cgraph" id="agroup__input_gab9e6ed7960d60aa4834f2038247d4536_cgraph">
+<area shape="rect" title="Handles keyboard interruptions." alt="" coords="5,31,65,57"/>
+<area shape="rect" href="group__input.html#gab90a9774eaabd0949d73b61e9f3fba88" title="Reads value from the keyboard controller (KBC)." alt="" coords="113,31,230,57"/>
+<area shape="poly" title=" " alt="" coords="65,41,97,41,97,47,65,47"/>
+<area shape="rect" href="dvr__kbc_8c.html#a9546f355fcf070b152b392ef21543bd8" title=" " alt="" coords="278,5,395,32"/>
+<area shape="poly" title=" " alt="" coords="230,32,262,27,263,33,231,38"/>
+<area shape="rect" href="group__driver__utils.html#ga2b56f50ba159e9d5115ed1a75eff15d9" title="Reads the information in a register and converts it to a 8&#45;bit unsigned integer." alt="" coords="443,31,534,57"/>
+<area shape="poly" title=" " alt="" coords="230,41,428,41,428,47,230,47"/>
+<area shape="poly" title=" " alt="" coords="396,26,429,31,428,37,395,31"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__input_gab9e6ed7960d60aa4834f2038247d4536_icgraph.png" border="0" usemap="#agroup__input_gab9e6ed7960d60aa4834f2038247d4536_icgraph" alt=""/></div>
+<map name="agroup__input_gab9e6ed7960d60aa4834f2038247d4536_icgraph" id="agroup__input_gab9e6ed7960d60aa4834f2038247d4536_icgraph">
+<area shape="rect" title="Handles keyboard interruptions." alt="" coords="479,5,539,32"/>
+<area shape="rect" href="group__ev__listener.html#ga2fd2cc82c3f815282a1b041ba2cab26b" title="General interrupt handler." alt="" coords="323,5,431,32"/>
+<area shape="poly" title=" " alt="" coords="464,21,432,21,432,16,464,16"/>
+<area shape="rect" href="group__ev__listener.html#ga955b5bc9310ba1d1d83fea434ad6da45" title="Handles general interrupts for the application." alt="" coords="162,5,275,32"/>
+<area shape="poly" title=" " alt="" coords="307,21,275,21,275,16,307,16"/>
+<area shape="rect" href="group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="5,5,114,32"/>
+<area shape="poly" title=" " alt="" coords="146,21,114,21,114,16,146,16"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -226,6 +265,48 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 if successful, 1 otherwise. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__input_gab90a9774eaabd0949d73b61e9f3fba88_cgraph.png" border="0" usemap="#agroup__input_gab90a9774eaabd0949d73b61e9f3fba88_cgraph" alt=""/></div>
+<map name="agroup__input_gab90a9774eaabd0949d73b61e9f3fba88_cgraph" id="agroup__input_gab90a9774eaabd0949d73b61e9f3fba88_cgraph">
+<area shape="rect" title="Reads value from the keyboard controller (KBC)." alt="" coords="5,31,123,57"/>
+<area shape="rect" href="dvr__kbc_8c.html#a9546f355fcf070b152b392ef21543bd8" title=" " alt="" coords="171,5,288,32"/>
+<area shape="poly" title=" " alt="" coords="123,32,155,27,156,33,124,38"/>
+<area shape="rect" href="group__driver__utils.html#ga2b56f50ba159e9d5115ed1a75eff15d9" title="Reads the information in a register and converts it to a 8&#45;bit unsigned integer." alt="" coords="336,31,426,57"/>
+<area shape="poly" title=" " alt="" coords="123,41,321,41,321,47,123,47"/>
+<area shape="poly" title=" " alt="" coords="289,26,321,31,321,37,288,31"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__input_gab90a9774eaabd0949d73b61e9f3fba88_icgraph.png" border="0" usemap="#agroup__input_gab90a9774eaabd0949d73b61e9f3fba88_icgraph" alt=""/></div>
+<map name="agroup__input_gab90a9774eaabd0949d73b61e9f3fba88_icgraph" id="agroup__input_gab90a9774eaabd0949d73b61e9f3fba88_icgraph">
+<area shape="rect" title="Reads value from the keyboard controller (KBC)." alt="" coords="605,56,722,83"/>
+<area shape="rect" href="group__input.html#gab9e6ed7960d60aa4834f2038247d4536" title="Handles keyboard interruptions." alt="" coords="488,5,548,32"/>
+<area shape="poly" title=" " alt="" coords="607,53,547,31,549,26,609,48"/>
+<area shape="rect" href="group__input.html#gac081a634a260ce39d0e06a8ab595df8a" title="Writes a command to the keyboard controller (KBC)." alt="" coords="480,107,556,133"/>
+<area shape="poly" title=" " alt="" coords="609,91,557,109,556,104,608,86"/>
+<area shape="rect" href="group__input.html#ga834b6d7efe311484d6da234db333cb97" title="Handles interruprions from mouse." alt="" coords="479,56,557,83"/>
+<area shape="poly" title=" " alt="" coords="589,72,557,72,557,67,589,67"/>
+<area shape="rect" href="group__ev__listener.html#ga2fd2cc82c3f815282a1b041ba2cab26b" title="General interrupt handler." alt="" coords="323,31,431,57"/>
+<area shape="poly" title=" " alt="" coords="473,29,432,37,432,32,472,24"/>
+<area shape="rect" href="group__ev__listener.html#ga955b5bc9310ba1d1d83fea434ad6da45" title="Handles general interrupts for the application." alt="" coords="162,31,275,57"/>
+<area shape="poly" title=" " alt="" coords="307,47,275,47,275,41,307,41"/>
+<area shape="rect" href="group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="5,81,114,108"/>
+<area shape="poly" title=" " alt="" coords="160,65,105,83,103,78,159,60"/>
+<area shape="rect" href="group__input.html#ga4b21609cf20aa6689e73976702f26bce" title="Disables the mouse." alt="" coords="323,81,431,108"/>
+<area shape="poly" title=" " alt="" coords="464,113,431,107,432,102,465,108"/>
+<area shape="rect" href="group__input.html#ga94fafb2ceb49ddd6a2ecc54920db9693" title="Initializes mouse." alt="" coords="176,132,261,159"/>
+<area shape="poly" title=" " alt="" coords="465,127,261,144,261,139,464,122"/>
+<area shape="rect" href="group__main.html#ga3260b4ca4b069d575595f76a611c21e8" title="Unsubscribes the interrupts from all devices and returns the screen to text mode." alt="" coords="178,81,259,108"/>
+<area shape="poly" title=" " alt="" coords="308,97,259,97,259,92,308,92"/>
+<area shape="poly" title=" " alt="" coords="162,97,114,97,114,92,162,92"/>
+<area shape="poly" title=" " alt="" coords="161,130,103,111,104,106,162,125"/>
+<area shape="poly" title=" " alt="" coords="463,62,431,56,432,51,464,57"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -257,6 +338,42 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 if successful, 1 otherwise. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__input_gac081a634a260ce39d0e06a8ab595df8a_cgraph.png" border="0" usemap="#agroup__input_gac081a634a260ce39d0e06a8ab595df8a_cgraph" alt=""/></div>
+<map name="agroup__input_gac081a634a260ce39d0e06a8ab595df8a_cgraph" id="agroup__input_gac081a634a260ce39d0e06a8ab595df8a_cgraph">
+<area shape="rect" title="Writes a command to the keyboard controller (KBC)." alt="" coords="5,56,82,83"/>
+<area shape="rect" href="group__input.html#gab90a9774eaabd0949d73b61e9f3fba88" title="Reads value from the keyboard controller (KBC)." alt="" coords="130,56,247,83"/>
+<area shape="poly" title=" " alt="" coords="82,67,114,67,114,72,82,72"/>
+<area shape="rect" href="group__driver__utils.html#ga2b56f50ba159e9d5115ed1a75eff15d9" title="Reads the information in a register and converts it to a 8&#45;bit unsigned integer." alt="" coords="460,56,551,83"/>
+<area shape="poly" title=" " alt="" coords="83,80,130,92,215,99,301,96,380,88,445,78,446,84,381,94,301,101,215,104,129,97,82,86"/>
+<area shape="rect" href="group__input.html#ga2823114f828bc7248a230685772dafbb" title="Writes a value to the keyboard controller (KBC)." alt="" coords="133,5,244,32"/>
+<area shape="poly" title=" " alt="" coords="81,54,133,35,135,40,83,59"/>
+<area shape="rect" href="dvr__kbc_8c.html#a9546f355fcf070b152b392ef21543bd8" title=" " alt="" coords="295,5,412,32"/>
+<area shape="poly" title=" " alt="" coords="234,53,292,35,294,40,235,58"/>
+<area shape="poly" title=" " alt="" coords="247,67,445,67,445,72,247,72"/>
+<area shape="poly" title=" " alt="" coords="397,30,450,48,448,53,395,35"/>
+<area shape="poly" title=" " alt="" coords="244,16,279,16,279,21,244,21"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__input_gac081a634a260ce39d0e06a8ab595df8a_icgraph.png" border="0" usemap="#agroup__input_gac081a634a260ce39d0e06a8ab595df8a_icgraph" alt=""/></div>
+<map name="agroup__input_gac081a634a260ce39d0e06a8ab595df8a_icgraph" id="agroup__input_gac081a634a260ce39d0e06a8ab595df8a_icgraph">
+<area shape="rect" title="Writes a command to the keyboard controller (KBC)." alt="" coords="450,31,527,57"/>
+<area shape="rect" href="group__input.html#ga4b21609cf20aa6689e73976702f26bce" title="Disables the mouse." alt="" coords="294,5,402,32"/>
+<area shape="poly" title=" " alt="" coords="435,37,402,31,403,26,435,32"/>
+<area shape="rect" href="group__input.html#ga94fafb2ceb49ddd6a2ecc54920db9693" title="Initializes mouse." alt="" coords="162,56,246,83"/>
+<area shape="poly" title=" " alt="" coords="435,51,247,68,246,63,434,46"/>
+<area shape="rect" href="group__main.html#ga3260b4ca4b069d575595f76a611c21e8" title="Unsubscribes the interrupts from all devices and returns the screen to text mode." alt="" coords="164,5,244,32"/>
+<area shape="poly" title=" " alt="" coords="278,21,244,21,244,16,278,16"/>
+<area shape="rect" href="group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="5,31,114,57"/>
+<area shape="poly" title=" " alt="" coords="149,31,114,37,113,32,148,26"/>
+<area shape="poly" title=" " alt="" coords="146,62,114,56,115,51,147,57"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -288,6 +405,37 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 if successful, 1 otherwise. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__input_ga2823114f828bc7248a230685772dafbb_cgraph.png" border="0" usemap="#agroup__input_ga2823114f828bc7248a230685772dafbb_cgraph" alt=""/></div>
+<map name="agroup__input_ga2823114f828bc7248a230685772dafbb_cgraph" id="agroup__input_ga2823114f828bc7248a230685772dafbb_cgraph">
+<area shape="rect" title="Writes a value to the keyboard controller (KBC)." alt="" coords="5,5,117,32"/>
+<area shape="rect" href="dvr__kbc_8c.html#a9546f355fcf070b152b392ef21543bd8" title=" " alt="" coords="165,5,282,32"/>
+<area shape="poly" title=" " alt="" coords="117,16,149,16,149,21,117,21"/>
+<area shape="rect" href="group__driver__utils.html#ga2b56f50ba159e9d5115ed1a75eff15d9" title="Reads the information in a register and converts it to a 8&#45;bit unsigned integer." alt="" coords="330,5,420,32"/>
+<area shape="poly" title=" " alt="" coords="282,16,315,16,315,21,282,21"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__input_ga2823114f828bc7248a230685772dafbb_icgraph.png" border="0" usemap="#agroup__input_ga2823114f828bc7248a230685772dafbb_icgraph" alt=""/></div>
+<map name="agroup__input_ga2823114f828bc7248a230685772dafbb_icgraph" id="agroup__input_ga2823114f828bc7248a230685772dafbb_icgraph">
+<area shape="rect" title="Writes a value to the keyboard controller (KBC)." alt="" coords="575,31,686,57"/>
+<area shape="rect" href="group__input.html#gac081a634a260ce39d0e06a8ab595df8a" title="Writes a command to the keyboard controller (KBC)." alt="" coords="450,31,527,57"/>
+<area shape="poly" title=" " alt="" coords="559,47,527,47,527,41,559,41"/>
+<area shape="rect" href="group__input.html#ga4b21609cf20aa6689e73976702f26bce" title="Disables the mouse." alt="" coords="294,5,402,32"/>
+<area shape="poly" title=" " alt="" coords="435,37,402,31,403,26,435,32"/>
+<area shape="rect" href="group__input.html#ga94fafb2ceb49ddd6a2ecc54920db9693" title="Initializes mouse." alt="" coords="162,56,246,83"/>
+<area shape="poly" title=" " alt="" coords="435,51,247,68,246,63,434,46"/>
+<area shape="rect" href="group__main.html#ga3260b4ca4b069d575595f76a611c21e8" title="Unsubscribes the interrupts from all devices and returns the screen to text mode." alt="" coords="164,5,244,32"/>
+<area shape="poly" title=" " alt="" coords="278,21,244,21,244,16,278,16"/>
+<area shape="rect" href="group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="5,31,114,57"/>
+<area shape="poly" title=" " alt="" coords="149,31,114,37,113,32,148,26"/>
+<area shape="poly" title=" " alt="" coords="146,62,114,56,115,51,147,57"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -314,6 +462,16 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 if successful, 1 otherwise. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__input_gaa7a491d4d95eab5ca5326c4000ad67f8_icgraph.png" border="0" usemap="#agroup__input_gaa7a491d4d95eab5ca5326c4000ad67f8_icgraph" alt=""/></div>
+<map name="agroup__input_gaa7a491d4d95eab5ca5326c4000ad67f8_icgraph" id="agroup__input_gaa7a491d4d95eab5ca5326c4000ad67f8_icgraph">
+<area shape="rect" title="Subscribes to keyboard interrupts." alt="" coords="162,5,288,32"/>
+<area shape="rect" href="group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="5,5,114,32"/>
+<area shape="poly" title=" " alt="" coords="146,21,114,21,114,16,146,16"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -334,6 +492,18 @@ Functions</h2></td></tr>
 
 <p>Unsubscribes interruptions from keyboard. </p>
 <dl class="section return"><dt>Returns</dt><dd>0 if sucessful, 1 otherwise </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__input_ga5bdf6cfb570c375192b0d87913b65c57_icgraph.png" border="0" usemap="#agroup__input_ga5bdf6cfb570c375192b0d87913b65c57_icgraph" alt=""/></div>
+<map name="agroup__input_ga5bdf6cfb570c375192b0d87913b65c57_icgraph" id="agroup__input_ga5bdf6cfb570c375192b0d87913b65c57_icgraph">
+<area shape="rect" title="Unsubscribes interruptions from keyboard." alt="" coords="290,5,430,32"/>
+<area shape="rect" href="group__main.html#ga3260b4ca4b069d575595f76a611c21e8" title="Unsubscribes the interrupts from all devices and returns the screen to text mode." alt="" coords="162,5,242,32"/>
+<area shape="poly" title=" " alt="" coords="274,21,242,21,242,16,274,16"/>
+<area shape="rect" href="group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="5,5,114,32"/>
+<area shape="poly" title=" " alt="" coords="146,21,114,21,114,16,146,16"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -354,6 +524,41 @@ Functions</h2></td></tr>
 
 <p>Disables the mouse. </p>
 <dl class="section return"><dt>Returns</dt><dd>0 if successful, 1 otherwise. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__input_ga4b21609cf20aa6689e73976702f26bce_cgraph.png" border="0" usemap="#agroup__input_ga4b21609cf20aa6689e73976702f26bce_cgraph" alt=""/></div>
+<map name="agroup__input_ga4b21609cf20aa6689e73976702f26bce_cgraph" id="agroup__input_ga4b21609cf20aa6689e73976702f26bce_cgraph">
+<area shape="rect" title="Disables the mouse." alt="" coords="5,81,114,108"/>
+<area shape="rect" href="group__input.html#gac081a634a260ce39d0e06a8ab595df8a" title="Writes a command to the keyboard controller (KBC)." alt="" coords="203,56,279,83"/>
+<area shape="poly" title=" " alt="" coords="114,84,187,74,187,79,114,90"/>
+<area shape="rect" href="group__input.html#ga685ad2706aca36d9869a30a19b9f446a" title="Unsubscribes mouse interruptions." alt="" coords="162,107,320,133"/>
+<area shape="poly" title=" " alt="" coords="114,100,146,104,146,109,114,105"/>
+<area shape="rect" href="group__input.html#gab90a9774eaabd0949d73b61e9f3fba88" title="Reads value from the keyboard controller (KBC)." alt="" coords="368,56,485,83"/>
+<area shape="poly" title=" " alt="" coords="279,67,352,67,352,72,279,72"/>
+<area shape="rect" href="group__driver__utils.html#ga2b56f50ba159e9d5115ed1a75eff15d9" title="Reads the information in a register and converts it to a 8&#45;bit unsigned integer." alt="" coords="699,56,789,83"/>
+<area shape="poly" title=" " alt="" coords="280,76,368,92,454,96,539,93,683,77,683,82,540,98,454,101,368,97,279,81"/>
+<area shape="rect" href="group__input.html#ga2823114f828bc7248a230685772dafbb" title="Writes a value to the keyboard controller (KBC)." alt="" coords="371,5,482,32"/>
+<area shape="poly" title=" " alt="" coords="279,57,359,34,361,39,280,62"/>
+<area shape="rect" href="dvr__kbc_8c.html#a9546f355fcf070b152b392ef21543bd8" title=" " alt="" coords="533,5,651,32"/>
+<area shape="poly" title=" " alt="" coords="472,53,531,35,532,40,474,58"/>
+<area shape="poly" title=" " alt="" coords="486,67,683,67,683,72,486,72"/>
+<area shape="poly" title=" " alt="" coords="635,30,688,48,686,53,634,35"/>
+<area shape="poly" title=" " alt="" coords="483,16,518,16,518,21,483,21"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__input_ga4b21609cf20aa6689e73976702f26bce_icgraph.png" border="0" usemap="#agroup__input_ga4b21609cf20aa6689e73976702f26bce_icgraph" alt=""/></div>
+<map name="agroup__input_ga4b21609cf20aa6689e73976702f26bce_icgraph" id="agroup__input_ga4b21609cf20aa6689e73976702f26bce_icgraph">
+<area shape="rect" title="Disables the mouse." alt="" coords="290,5,398,32"/>
+<area shape="rect" href="group__main.html#ga3260b4ca4b069d575595f76a611c21e8" title="Unsubscribes the interrupts from all devices and returns the screen to text mode." alt="" coords="162,5,242,32"/>
+<area shape="poly" title=" " alt="" coords="275,21,242,21,242,16,275,16"/>
+<area shape="rect" href="group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="5,5,114,32"/>
+<area shape="poly" title=" " alt="" coords="146,21,114,21,114,16,146,16"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -384,6 +589,22 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__input_ga14886abfecbdb576b89c3d78d7d5e6a4_icgraph.png" border="0" usemap="#agroup__input_ga14886abfecbdb576b89c3d78d7d5e6a4_icgraph" alt=""/></div>
+<map name="agroup__input_ga14886abfecbdb576b89c3d78d7d5e6a4_icgraph" id="agroup__input_ga14886abfecbdb576b89c3d78d7d5e6a4_icgraph">
+<area shape="rect" title="Fills the packet structure with mouse data." alt="" coords="666,5,791,32"/>
+<area shape="rect" href="group__input.html#ga182a99324a2f0f348d32603b05528735" title="Reads a packet of data from the mouse." alt="" coords="479,5,618,32"/>
+<area shape="poly" title=" " alt="" coords="650,21,618,21,618,16,650,16"/>
+<area shape="rect" href="group__ev__listener.html#ga2fd2cc82c3f815282a1b041ba2cab26b" title="General interrupt handler." alt="" coords="323,5,431,32"/>
+<area shape="poly" title=" " alt="" coords="464,21,432,21,432,16,464,16"/>
+<area shape="rect" href="group__ev__listener.html#ga955b5bc9310ba1d1d83fea434ad6da45" title="Handles general interrupts for the application." alt="" coords="162,5,275,32"/>
+<area shape="poly" title=" " alt="" coords="307,21,275,21,275,16,307,16"/>
+<area shape="rect" href="group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="5,5,114,32"/>
+<area shape="poly" title=" " alt="" coords="146,21,114,21,114,16,146,16"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -404,6 +625,36 @@ Functions</h2></td></tr>
 
 <p>Returns the current mouse information. </p>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the structure containing the mouse information. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__input_ga951843dd85f1419664c540d5ff0819d3_icgraph.png" border="0" usemap="#agroup__input_ga951843dd85f1419664c540d5ff0819d3_icgraph" alt=""/></div>
+<map name="agroup__input_ga951843dd85f1419664c540d5ff0819d3_icgraph" id="agroup__input_ga951843dd85f1419664c540d5ff0819d3_icgraph">
+<area shape="rect" title="Returns the current mouse information." alt="" coords="584,107,697,133"/>
+<area shape="rect" href="group__cursor.html#ga08a50f2b8e06a5ccd6164311d26a19e8" title="Checks if the cursor collides with a given rectangular box." alt="" coords="398,5,531,32"/>
+<area shape="poly" title=" " alt="" coords="607,100,535,53,498,35,500,30,538,48,610,95"/>
+<area shape="rect" href="group__ev__listener.html#ga440c6c7cbaa7a4aca8e09d35eaa71e61" title="Handles interrupts in the game betting state." alt="" coords="5,56,150,83"/>
+<area shape="poly" title=" " alt="" coords="569,116,150,78,151,73,569,111"/>
+<area shape="rect" href="group__cursor.html#gaa467c36c513252fe3004310865700962" title="Checks if the cursor collides with a given sprite." alt="" coords="392,157,536,184"/>
+<area shape="poly" title=" " alt="" coords="578,141,514,159,513,154,576,136"/>
+<area shape="rect" href="group__ev__listener.html#ga2fd2cc82c3f815282a1b041ba2cab26b" title="General interrupt handler." alt="" coords="410,259,518,285"/>
+<area shape="poly" title=" " alt="" coords="614,145,483,260,479,256,611,141"/>
+<area shape="poly" title=" " alt="" coords="383,30,198,53,150,60,149,55,197,48,382,25"/>
+<area shape="rect" href="group__ev__listener.html#gae44c52c33fbd52a450014d58bd15ab2a" title="Handles bet value input." alt="" coords="211,107,331,133"/>
+<area shape="poly" title=" " alt="" coords="395,155,324,137,325,131,397,150"/>
+<area shape="rect" href="group__ev__listener.html#gabeab42a878a73b55decd954a69ec1be7" title="Handles interrupts in the game over state." alt="" coords="207,157,335,184"/>
+<area shape="poly" title=" " alt="" coords="377,173,335,173,335,168,377,168"/>
+<area shape="rect" href="group__ev__listener.html#gaac3b528525094a9c64495cc99154b2c2" title="Handles interrupts in the game playing state." alt="" coords="198,208,344,235"/>
+<area shape="poly" title=" " alt="" coords="397,191,325,210,324,205,395,186"/>
+<area shape="rect" href="group__ev__listener.html#gaf39362208e047dd8c2fdac3802d35a25" title="Handles interrupts in the main menu state." alt="" coords="204,259,338,285"/>
+<area shape="poly" title=" " alt="" coords="433,196,392,223,345,249,318,260,316,256,343,244,389,218,430,191"/>
+<area shape="poly" title=" " alt="" coords="202,105,131,86,132,81,203,100"/>
+<area shape="rect" href="group__ev__listener.html#ga955b5bc9310ba1d1d83fea434ad6da45" title="Handles general interrupts for the application." alt="" coords="214,309,328,336"/>
+<area shape="poly" title=" " alt="" coords="397,292,325,311,324,306,395,287"/>
+<area shape="rect" href="group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="23,309,132,336"/>
+<area shape="poly" title=" " alt="" coords="199,325,132,325,132,320,199,320"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -423,6 +674,35 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Handles interruprions from mouse. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__input_ga834b6d7efe311484d6da234db333cb97_cgraph.png" border="0" usemap="#agroup__input_ga834b6d7efe311484d6da234db333cb97_cgraph" alt=""/></div>
+<map name="agroup__input_ga834b6d7efe311484d6da234db333cb97_cgraph" id="agroup__input_ga834b6d7efe311484d6da234db333cb97_cgraph">
+<area shape="rect" title="Handles interruprions from mouse." alt="" coords="5,31,83,57"/>
+<area shape="rect" href="group__input.html#gab90a9774eaabd0949d73b61e9f3fba88" title="Reads value from the keyboard controller (KBC)." alt="" coords="131,31,248,57"/>
+<area shape="poly" title=" " alt="" coords="83,41,115,41,115,47,83,47"/>
+<area shape="rect" href="dvr__kbc_8c.html#a9546f355fcf070b152b392ef21543bd8" title=" " alt="" coords="296,5,413,32"/>
+<area shape="poly" title=" " alt="" coords="248,32,280,27,281,33,249,38"/>
+<area shape="rect" href="group__driver__utils.html#ga2b56f50ba159e9d5115ed1a75eff15d9" title="Reads the information in a register and converts it to a 8&#45;bit unsigned integer." alt="" coords="461,31,552,57"/>
+<area shape="poly" title=" " alt="" coords="248,41,446,41,446,47,248,47"/>
+<area shape="poly" title=" " alt="" coords="414,26,447,31,446,37,413,31"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__input_ga834b6d7efe311484d6da234db333cb97_icgraph.png" border="0" usemap="#agroup__input_ga834b6d7efe311484d6da234db333cb97_icgraph" alt=""/></div>
+<map name="agroup__input_ga834b6d7efe311484d6da234db333cb97_icgraph" id="agroup__input_ga834b6d7efe311484d6da234db333cb97_icgraph">
+<area shape="rect" title="Handles interruprions from mouse." alt="" coords="479,5,557,32"/>
+<area shape="rect" href="group__ev__listener.html#ga2fd2cc82c3f815282a1b041ba2cab26b" title="General interrupt handler." alt="" coords="323,5,431,32"/>
+<area shape="poly" title=" " alt="" coords="464,21,432,21,432,16,464,16"/>
+<area shape="rect" href="group__ev__listener.html#ga955b5bc9310ba1d1d83fea434ad6da45" title="Handles general interrupts for the application." alt="" coords="162,5,275,32"/>
+<area shape="poly" title=" " alt="" coords="307,21,275,21,275,16,307,16"/>
+<area shape="rect" href="group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="5,5,114,32"/>
+<area shape="poly" title=" " alt="" coords="146,21,114,21,114,16,146,16"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -449,6 +729,39 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 if successful, 1 otherwise. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__input_ga94fafb2ceb49ddd6a2ecc54920db9693_cgraph.png" border="0" usemap="#agroup__input_ga94fafb2ceb49ddd6a2ecc54920db9693_cgraph" alt=""/></div>
+<map name="agroup__input_ga94fafb2ceb49ddd6a2ecc54920db9693_cgraph" id="agroup__input_ga94fafb2ceb49ddd6a2ecc54920db9693_cgraph">
+<area shape="rect" title="Initializes mouse." alt="" coords="5,81,90,108"/>
+<area shape="rect" href="group__input.html#gac081a634a260ce39d0e06a8ab595df8a" title="Writes a command to the keyboard controller (KBC)." alt="" coords="172,56,248,83"/>
+<area shape="poly" title=" " alt="" coords="90,86,156,75,157,80,90,91"/>
+<area shape="rect" href="group__input.html#ga9da18257ff113b686bb826d154bfaa87" title="Subscribes to mouse interrupts." alt="" coords="138,107,282,133"/>
+<area shape="poly" title=" " alt="" coords="90,99,123,104,122,109,90,104"/>
+<area shape="rect" href="group__input.html#gab90a9774eaabd0949d73b61e9f3fba88" title="Reads value from the keyboard controller (KBC)." alt="" coords="330,56,447,83"/>
+<area shape="poly" title=" " alt="" coords="249,67,315,67,315,72,249,72"/>
+<area shape="rect" href="group__driver__utils.html#ga2b56f50ba159e9d5115ed1a75eff15d9" title="Reads the information in a register and converts it to a 8&#45;bit unsigned integer." alt="" coords="661,56,751,83"/>
+<area shape="poly" title=" " alt="" coords="249,77,330,92,416,96,501,93,645,77,645,82,502,98,416,102,330,97,248,82"/>
+<area shape="rect" href="group__input.html#ga2823114f828bc7248a230685772dafbb" title="Writes a value to the keyboard controller (KBC)." alt="" coords="333,5,444,32"/>
+<area shape="poly" title=" " alt="" coords="248,56,324,34,325,39,249,61"/>
+<area shape="rect" href="dvr__kbc_8c.html#a9546f355fcf070b152b392ef21543bd8" title=" " alt="" coords="495,5,613,32"/>
+<area shape="poly" title=" " alt="" coords="434,53,493,35,494,40,436,58"/>
+<area shape="poly" title=" " alt="" coords="448,67,645,67,645,72,448,72"/>
+<area shape="poly" title=" " alt="" coords="597,30,650,48,648,53,596,35"/>
+<area shape="poly" title=" " alt="" coords="445,16,480,16,480,21,445,21"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__input_ga94fafb2ceb49ddd6a2ecc54920db9693_icgraph.png" border="0" usemap="#agroup__input_ga94fafb2ceb49ddd6a2ecc54920db9693_icgraph" alt=""/></div>
+<map name="agroup__input_ga94fafb2ceb49ddd6a2ecc54920db9693_icgraph" id="agroup__input_ga94fafb2ceb49ddd6a2ecc54920db9693_icgraph">
+<area shape="rect" title="Initializes mouse." alt="" coords="162,5,246,32"/>
+<area shape="rect" href="group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="5,5,114,32"/>
+<area shape="poly" title=" " alt="" coords="146,21,114,21,114,16,146,16"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -469,6 +782,30 @@ Functions</h2></td></tr>
 
 <p>Reads a packet of data from the mouse. </p>
 <dl class="section return"><dt>Returns</dt><dd>0 if successful, 1 otherwise. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__input_ga182a99324a2f0f348d32603b05528735_cgraph.png" border="0" usemap="#agroup__input_ga182a99324a2f0f348d32603b05528735_cgraph" alt=""/></div>
+<map name="agroup__input_ga182a99324a2f0f348d32603b05528735_cgraph" id="agroup__input_ga182a99324a2f0f348d32603b05528735_cgraph">
+<area shape="rect" title="Reads a packet of data from the mouse." alt="" coords="5,5,144,32"/>
+<area shape="rect" href="group__input.html#ga14886abfecbdb576b89c3d78d7d5e6a4" title="Fills the packet structure with mouse data." alt="" coords="192,5,317,32"/>
+<area shape="poly" title=" " alt="" coords="144,16,176,16,176,21,144,21"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__input_ga182a99324a2f0f348d32603b05528735_icgraph.png" border="0" usemap="#agroup__input_ga182a99324a2f0f348d32603b05528735_icgraph" alt=""/></div>
+<map name="agroup__input_ga182a99324a2f0f348d32603b05528735_icgraph" id="agroup__input_ga182a99324a2f0f348d32603b05528735_icgraph">
+<area shape="rect" title="Reads a packet of data from the mouse." alt="" coords="479,5,618,32"/>
+<area shape="rect" href="group__ev__listener.html#ga2fd2cc82c3f815282a1b041ba2cab26b" title="General interrupt handler." alt="" coords="323,5,431,32"/>
+<area shape="poly" title=" " alt="" coords="464,21,432,21,432,16,464,16"/>
+<area shape="rect" href="group__ev__listener.html#ga955b5bc9310ba1d1d83fea434ad6da45" title="Handles general interrupts for the application." alt="" coords="162,5,275,32"/>
+<area shape="poly" title=" " alt="" coords="307,21,275,21,275,16,307,16"/>
+<area shape="rect" href="group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="5,5,114,32"/>
+<area shape="poly" title=" " alt="" coords="146,21,114,21,114,16,146,16"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -495,6 +832,18 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 if successful, 1 otherwise. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__input_ga9da18257ff113b686bb826d154bfaa87_icgraph.png" border="0" usemap="#agroup__input_ga9da18257ff113b686bb826d154bfaa87_icgraph" alt=""/></div>
+<map name="agroup__input_ga9da18257ff113b686bb826d154bfaa87_icgraph" id="agroup__input_ga9da18257ff113b686bb826d154bfaa87_icgraph">
+<area shape="rect" title="Subscribes to mouse interrupts." alt="" coords="294,5,438,32"/>
+<area shape="rect" href="group__input.html#ga94fafb2ceb49ddd6a2ecc54920db9693" title="Initializes mouse." alt="" coords="162,5,246,32"/>
+<area shape="poly" title=" " alt="" coords="278,21,246,21,246,16,278,16"/>
+<area shape="rect" href="group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="5,5,114,32"/>
+<area shape="poly" title=" " alt="" coords="146,21,114,21,114,16,146,16"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -515,6 +864,20 @@ Functions</h2></td></tr>
 
 <p>Unsubscribes mouse interruptions. </p>
 <dl class="section return"><dt>Returns</dt><dd>0 if successful, 1 otherwise. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__input_ga685ad2706aca36d9869a30a19b9f446a_icgraph.png" border="0" usemap="#agroup__input_ga685ad2706aca36d9869a30a19b9f446a_icgraph" alt=""/></div>
+<map name="agroup__input_ga685ad2706aca36d9869a30a19b9f446a_icgraph" id="agroup__input_ga685ad2706aca36d9869a30a19b9f446a_icgraph">
+<area shape="rect" title="Unsubscribes mouse interruptions." alt="" coords="446,5,605,32"/>
+<area shape="rect" href="group__input.html#ga4b21609cf20aa6689e73976702f26bce" title="Disables the mouse." alt="" coords="290,5,398,32"/>
+<area shape="poly" title=" " alt="" coords="431,21,399,21,399,16,431,16"/>
+<area shape="rect" href="group__main.html#ga3260b4ca4b069d575595f76a611c21e8" title="Unsubscribes the interrupts from all devices and returns the screen to text mode." alt="" coords="162,5,242,32"/>
+<area shape="poly" title=" " alt="" coords="275,21,242,21,242,16,275,16"/>
+<area shape="rect" href="group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="5,5,114,32"/>
+<area shape="poly" title=" " alt="" coords="146,21,114,21,114,16,146,16"/>
+</map>
+</div>
 
 </div>
 </div>

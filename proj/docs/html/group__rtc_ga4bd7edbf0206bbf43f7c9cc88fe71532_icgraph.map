@@ -1,0 +1,12 @@
+<map id="rtc_set_alarm_int" name="rtc_set_alarm_int">
+<area shape="rect" id="Node000001" title=" " alt="" coords="472,31,594,57"/>
+<area shape="rect" id="Node000002" href="$group__rtc.html#ga99c770b400026bc59e3c80a22615ad50" title=" " alt="" coords="164,5,240,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="456,41,240,24,240,19,457,36"/>
+<area shape="rect" id="Node000004" href="$group__rtc.html#gab8f17bf5280c908c8b199a90fefcc758" title=" " alt="" coords="290,56,424,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="457,58,425,62,424,57,457,52"/>
+<area shape="rect" id="Node000003" href="$group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="5,31,114,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="149,31,115,37,114,32,148,25"/>
+<area shape="rect" id="Node000005" href="$group__main.html#ga3260b4ca4b069d575595f76a611c21e8" title="Unsubscribes the interrupts from all devices and returns the screen to text mode." alt="" coords="162,56,242,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="275,72,242,72,242,67,275,67"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="146,62,113,56,114,51,147,57"/>
+</map>

@@ -1,0 +1,18 @@
+<map id="player_destroy" name="player_destroy">
+<area shape="rect" id="Node000001" title="Destroys the player, freeing all allocated resources." alt="" coords="530,107,637,133"/>
+<area shape="rect" id="Node000002" href="$group__game.html#ga803c43aec649e1f97a9f1e7999ac0b0a" title="Destroys the game, freeing all allocated resources." alt="" coords="379,107,482,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="515,123,483,123,483,117,515,117"/>
+<area shape="rect" id="Node000003" href="$group__app.html#gab081435b68a0e159fb04347bb88ad79d" title="Frees the memory allocated for the application and its components." alt="" coords="213,5,305,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="402,99,369,72,330,46,304,35,306,30,332,42,372,67,405,95"/>
+<area shape="rect" id="Node000005" href="$group__game.html#ga38ace932203d6d4ffab3ae71486a930b" title="Initializes the game." alt="" coords="220,56,298,83"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="368,104,297,83,299,78,369,99"/>
+<area shape="rect" id="Node000006" href="$group__ev__listener.html#gaf39362208e047dd8c2fdac3802d35a25" title="Handles interrupts in the main menu state." alt="" coords="5,81,139,108"/>
+<area shape="poly" id="edge8_Node000002_Node000006" title=" " alt="" coords="363,118,139,102,139,97,364,113"/>
+<area shape="rect" id="Node000007" href="$group__ev__listener.html#ga440c6c7cbaa7a4aca8e09d35eaa71e61" title="Handles interrupts in the game betting state." alt="" coords="187,157,331,184"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="369,141,307,159,306,154,368,136"/>
+<area shape="rect" id="Node000008" href="$group__ev__listener.html#gabeab42a878a73b55decd954a69ec1be7" title="Handles interrupts in the game over state." alt="" coords="195,208,323,235"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="405,145,372,173,332,198,307,210,305,205,330,194,369,168,402,141"/>
+<area shape="rect" id="Node000004" href="$group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="18,5,126,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="197,21,127,21,127,16,197,16"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="205,79,140,88,139,83,205,74"/>
+</map>

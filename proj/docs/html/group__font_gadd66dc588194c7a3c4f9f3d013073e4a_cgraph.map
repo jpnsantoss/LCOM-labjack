@@ -1,0 +1,18 @@
+<map id="font_print_number" name="font_print_number">
+<area shape="rect" id="Node000001" title="Prints a number at the specified coordinates with a specified color." alt="" coords="5,56,130,83"/>
+<area shape="rect" id="Node000002" href="$group__font.html#ga2abd04209b05b96660ad789fb6916bde" title="Prints a string at the specified coordinates with a specified color." alt="" coords="178,56,274,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,67,162,67,162,72,130,72"/>
+<area shape="rect" id="Node000003" href="$group__font.html#ga49d2405ed21c9f3e00b309135982a447" title="Prints a single character at the specified coordinates with a specified color." alt="" coords="322,56,428,83"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="274,67,307,67,307,72,274,72"/>
+<area shape="rect" id="Node000004" href="$group__queue__t.html#ga589f94630961aefb1184e683512b31f6" title="Returns the element at a specific position inside the queue." alt="" coords="518,5,592,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="425,53,502,31,504,36,426,58"/>
+<area shape="rect" id="Node000005" href="$group__sprite.html#ga30edeaca91adff5e6630287576b10618" title="Draws the sprite on the screen with forced color." alt="" coords="476,56,634,83"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="429,67,461,67,461,72,429,72"/>
+<area shape="rect" id="Node000008" href="$group__sprite.html#ga5272f5d91c76d187c107346a66638b1e" title="Moves the sprite to a new position." alt="" coords="510,107,600,133"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="426,81,496,101,494,106,425,86"/>
+<area shape="rect" id="Node000006" href="$group__graphics.html#ga6f895de9725f9f231f9a7f74b6087f60" title="Draws a pixel on the screen." alt="" coords="682,56,783,83"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="634,67,666,67,666,72,634,72"/>
+<area shape="rect" id="Node000007" href="$group__graphics.html#gab52043147d41e2f66a892043455a8515" title="Gets the graphics information." alt="" coords="690,107,775,133"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="605,81,676,101,674,106,604,86"/>
+<area shape="poly" id="edge8_Node000008_Node000007" title=" " alt="" coords="600,117,674,117,674,123,600,123"/>
+</map>

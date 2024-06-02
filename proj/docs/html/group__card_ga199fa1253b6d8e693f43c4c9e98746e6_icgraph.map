@@ -1,0 +1,26 @@
+<map id="card_destroy" name="card_destroy">
+<area shape="rect" id="Node000001" title="Destroys a card." alt="" coords="932,157,1028,184"/>
+<area shape="rect" id="Node000002" href="$group__card.html#ga2d17b23e643b88a94a08dd97ef502747" title="Destroys a card in the queue." alt="" coords="746,157,884,184"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="916,173,885,173,885,168,916,168"/>
+<area shape="rect" id="Node000003" href="$group__game.html#ga803c43aec649e1f97a9f1e7999ac0b0a" title="Destroys the game, freeing all allocated resources." alt="" coords="410,107,513,133"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="740,156,697,148,599,135,513,127,513,121,600,130,698,143,741,151"/>
+<area shape="rect" id="Node000010" href="$ev__game__over_8c.html#af1badb6a4c069c6c94e156b4606564c4" title=" " alt="" coords="379,208,543,235"/>
+<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="741,190,698,199,544,217,544,212,697,193,740,185"/>
+<area shape="rect" id="Node000011" href="$group__player.html#ga3e022dfe5f6c73df82be5acf948387f4" title="Destroys the player, freeing all allocated resources." alt="" coords="591,157,698,184"/>
+<area shape="poly" id="edge12_Node000002_Node000011" title=" " alt="" coords="730,173,698,173,698,168,730,168"/>
+<area shape="rect" id="Node000004" href="$group__app.html#gab081435b68a0e159fb04347bb88ad79d" title="Frees the memory allocated for the application and its components." alt="" coords="213,5,305,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="425,100,381,73,330,46,302,35,304,30,332,42,383,68,428,96"/>
+<area shape="rect" id="Node000006" href="$group__game.html#ga38ace932203d6d4ffab3ae71486a930b" title="Initializes the game." alt="" coords="220,56,298,83"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="394,106,297,81,298,76,395,101"/>
+<area shape="rect" id="Node000007" href="$group__ev__listener.html#gaf39362208e047dd8c2fdac3802d35a25" title="Handles interrupts in the main menu state." alt="" coords="5,81,139,108"/>
+<area shape="poly" id="edge9_Node000003_Node000007" title=" " alt="" coords="394,118,139,102,139,96,394,113"/>
+<area shape="rect" id="Node000008" href="$group__ev__listener.html#ga440c6c7cbaa7a4aca8e09d35eaa71e61" title="Handles interrupts in the game betting state." alt="" coords="187,157,331,184"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="395,139,316,159,315,154,394,134"/>
+<area shape="rect" id="Node000009" href="$group__ev__listener.html#gabeab42a878a73b55decd954a69ec1be7" title="Handles interrupts in the game over state." alt="" coords="195,208,323,235"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="428,144,383,172,332,198,304,210,302,205,330,194,381,167,425,140"/>
+<area shape="rect" id="Node000005" href="$group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="18,5,126,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="197,21,127,21,127,16,197,16"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="205,79,140,88,139,83,205,74"/>
+<area shape="poly" id="edge11_Node000010_Node000009" title=" " alt="" coords="363,224,324,224,324,219,363,219"/>
+<area shape="poly" id="edge13_Node000011_Node000003" title=" " alt="" coords="578,155,511,137,513,131,579,150"/>
+</map>

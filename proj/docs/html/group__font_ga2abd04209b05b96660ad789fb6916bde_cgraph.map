@@ -1,0 +1,16 @@
+<map id="font_print_str" name="font_print_str">
+<area shape="rect" id="Node000001" title="Prints a string at the specified coordinates with a specified color." alt="" coords="5,56,102,83"/>
+<area shape="rect" id="Node000002" href="$group__font.html#ga49d2405ed21c9f3e00b309135982a447" title="Prints a single character at the specified coordinates with a specified color." alt="" coords="150,56,256,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,67,134,67,134,72,102,72"/>
+<area shape="rect" id="Node000003" href="$group__queue__t.html#ga589f94630961aefb1184e683512b31f6" title="Returns the element at a specific position inside the queue." alt="" coords="346,5,420,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="252,53,330,31,331,36,254,58"/>
+<area shape="rect" id="Node000004" href="$group__sprite.html#ga30edeaca91adff5e6630287576b10618" title="Draws the sprite on the screen with forced color." alt="" coords="304,56,461,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="256,67,289,67,289,72,256,72"/>
+<area shape="rect" id="Node000007" href="$group__sprite.html#ga5272f5d91c76d187c107346a66638b1e" title="Moves the sprite to a new position." alt="" coords="338,107,428,133"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="254,81,323,101,322,106,252,86"/>
+<area shape="rect" id="Node000005" href="$group__graphics.html#ga6f895de9725f9f231f9a7f74b6087f60" title="Draws a pixel on the screen." alt="" coords="509,56,611,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="462,67,494,67,494,72,462,72"/>
+<area shape="rect" id="Node000006" href="$group__graphics.html#gab52043147d41e2f66a892043455a8515" title="Gets the graphics information." alt="" coords="517,107,603,133"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="433,81,504,101,502,106,431,86"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="428,117,502,117,502,123,428,123"/>
+</map>

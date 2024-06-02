@@ -1,0 +1,16 @@
+<map id="uart_set_bit_rate" name="uart_set_bit_rate">
+<area shape="rect" id="Node000001" title="Sets the transmission bit rate between devices." alt="" coords="5,81,124,108"/>
+<area shape="rect" id="Node000002" href="$group__serial__port.html#gacca863d491db0d03c224579debbbe3de" title="Activates/Deactivates Data Latch access." alt="" coords="172,5,287,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,78,184,36,186,41,97,83"/>
+<area shape="rect" id="Node000005" href="$group__serial__port.html#gab80ab00eda611877adb95cf0df656257" title="Writes a content to a specific offset of the uart base address." alt="" coords="335,56,412,83"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="124,87,319,71,320,76,124,92"/>
+<area shape="rect" id="Node000006" href="$group__driver__utils.html#ga31ab374573517f8a5ba31c52a49a8606" title="Get the most least bit of a value." alt="" coords="182,107,277,133"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="124,101,167,108,166,113,124,106"/>
+<area shape="rect" id="Node000007" href="$group__driver__utils.html#gafc6ca7a9a39943ff1792d206da514a59" title="Get the most significant bit of a value." alt="" coords="180,157,279,184"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="96,106,173,143,184,148,182,153,171,148,93,111"/>
+<area shape="rect" id="Node000003" href="$group__serial__port.html#ga931f3462009af510083ef84d0b1ae7ef" title="Reads the content from a specific offset of the uart base address." alt="" coords="336,5,411,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="287,16,320,16,320,21,287,21"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="271,30,321,48,319,53,269,35"/>
+<area shape="rect" id="Node000004" href="$group__driver__utils.html#ga2b56f50ba159e9d5115ed1a75eff15d9" title="Reads the information in a register and converts it to a 8&#45;bit unsigned integer." alt="" coords="460,5,551,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="412,16,445,16,445,21,412,21"/>
+</map>

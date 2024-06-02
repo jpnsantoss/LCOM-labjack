@@ -1,0 +1,57 @@
+<map id="add_hit_animation" name="add_hit_animation">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,309,132,336"/>
+<area shape="rect" id="Node000002" href="$group__animation.html#ga079d535391b5fbff3ecd4fae614e18f1" title="Adds a frame to the animation." alt="" coords="544,259,689,285"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,313,308,295,528,276,529,281,308,300,132,318"/>
+<area shape="rect" id="Node000006" href="$group__animation.html#ga08d98778bffe43b6cb8b1e9f1546db2a" title="Creates an animation." alt="" coords="556,360,677,387"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="132,327,308,345,541,365,540,370,308,351,132,332"/>
+<area shape="rect" id="Node000010" href="$group__ev__listener.html#ga7dcb92c73210c18e4e4b66f2d6591587" title="Handles a hit event triggered by hit button during gameplay." alt="" coords="180,183,260,209"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="84,307,189,218,192,222,87,311"/>
+<area shape="rect" id="Node000013" href="$group__sprite.html#ga647e1492c9ac657b437388cde60c8fbe" title="Creates a sprite from an XPM map." alt="" coords="568,411,665,437"/>
+<area shape="poly" id="edge31_Node000001_Node000013" title=" " alt="" coords="128,334,180,345,385,383,553,412,553,417,384,389,179,351,127,339"/>
+<area shape="rect" id="Node000003" href="$group__queue__t.html#ga89bb8cf14f8a833ded72fca1fb6d8636" title="Pushes an element to the end of a queue." alt="" coords="769,208,860,235"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="671,255,753,234,754,239,672,261"/>
+<area shape="rect" id="Node000004" href="$group__queue__t.html#ga2a0ac508b8a3e94d7d50de284cc9b898" title="Checks if a queue is empty." alt="" coords="1072,157,1172,184"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="860,215,937,207,1024,193,1058,186,1059,191,1025,199,938,212,861,220"/>
+<area shape="rect" id="Node000005" href="$group__queue__t.html#ga48ca9da7d179448a59262595a0dfcdce" title="Checks if the queue is full." alt="" coords="943,259,1022,285"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="861,232,929,253,927,258,860,238"/>
+<area shape="rect" id="Node000007" href="$group__queue__t.html#ga496024ec829b39d9a93d6f37391d5a18" title="Creates an empty queue." alt="" coords="765,309,864,336"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="671,357,749,337,750,342,672,362"/>
+<area shape="rect" id="Node000008" href="$group__queue__t.html#ga0488f00c2aa08e55eab9286564c6e676" title="Queue destroyer. Frees all allocated memory inside the queue, including the content still stored insi..." alt="" coords="761,360,868,387"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="677,371,746,371,746,376,677,376"/>
+<area shape="rect" id="Node000009" href="$group__queue__t.html#gaf924b822f95bb5b6c5bbe2988d17be91" title="Can be used in the queue_destroy() function to prevent it from deleting the content still inside the ..." alt="" coords="737,411,892,437"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="672,385,745,404,744,409,671,390"/>
+<area shape="rect" id="Node000011" href="$group__ev__listener.html#gaa4578a943cde28fb6b4e266b53738dbb" title="Adds a single animation for the dealer&#39;s turning up first card." alt="" coords="308,309,496,336"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="242,208,371,298,368,303,239,212"/>
+<area shape="rect" id="Node000014" href="$group__com__manager.html#ga7625a73ca782d45e2763af4453795f8d" title="Sends a message to another pc via Serial Port." alt="" coords="346,56,459,83"/>
+<area shape="poly" id="edge15_Node000010_Node000014" title=" " alt="" coords="227,181,258,137,280,113,307,92,329,81,332,86,309,97,284,117,262,141,231,184"/>
+<area shape="rect" id="Node000021" href="$group__game.html#ga3a164b78364e61d619392c67389c6cda" title="Calculates the total value of the cards in a queue." alt="" coords="326,208,479,235"/>
+<area shape="poly" id="edge25_Node000010_Node000021" title=" " alt="" coords="261,199,310,206,309,211,260,204"/>
+<area shape="rect" id="Node000023" href="$group__game.html#gaffaedf6d9dba0337a5224b02c84f6108" title="Gives a card from the deck to a receiver queue." alt="" coords="559,157,674,184"/>
+<area shape="poly" id="edge27_Node000010_Node000023" title=" " alt="" coords="260,191,544,173,544,178,261,196"/>
+<area shape="rect" id="Node000024" href="$group__graphics.html#ga3a0d84e943447c67a7a9932cf0fd20ea" title="Sets the flag indicating that a redraw is needed." alt="" coords="351,107,454,133"/>
+<area shape="poly" id="edge30_Node000010_Node000024" title=" " alt="" coords="245,180,307,150,341,136,343,141,309,154,247,185"/>
+<area shape="poly" id="edge12_Node000011_Node000002" title=" " alt="" coords="461,306,542,287,543,292,463,311"/>
+<area shape="poly" id="edge13_Node000011_Node000006" title=" " alt="" coords="463,334,543,353,542,358,461,339"/>
+<area shape="rect" id="Node000012" href="$ev__game__dealer__turn_8c.html#a246a0bb8996ce0256e43e0edf0c621ce" title=" " alt="" coords="548,309,685,336"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="497,320,533,320,533,325,497,325"/>
+<area shape="poly" id="edge14_Node000011_Node000013" title=" " alt="" coords="428,334,481,364,545,396,560,402,558,407,543,401,478,369,425,339"/>
+<area shape="rect" id="Node000015" href="$group__serial__port.html#ga00a2984ead2b73e2871dfda7c1ac49e3" title="Adds a byte to the transmitter queue." alt="" coords="561,81,672,108"/>
+<area shape="poly" id="edge16_Node000014_Node000015" title=" " alt="" coords="459,73,546,84,546,89,459,79"/>
+<area shape="poly" id="edge17_Node000015_Node000003" title=" " alt="" coords="641,106,781,197,778,202,638,111"/>
+<area shape="rect" id="Node000016" href="$group__serial__port.html#ga947056d01d461376d5bbcd9f69bdff4f" title="Writes a byte to the UART FIFO." alt="" coords="764,81,865,108"/>
+<area shape="poly" id="edge18_Node000015_Node000016" title=" " alt="" coords="672,92,748,92,748,97,672,97"/>
+<area shape="poly" id="edge19_Node000016_Node000004" title=" " alt="" coords="866,104,1025,143,1058,151,1056,156,1024,148,864,109"/>
+<area shape="rect" id="Node000017" href="$group__queue__t.html#gab55dbf8ea466f45a1377b90ac804abd3" title="Removes an element from the queue and returns it." alt="" coords="940,157,1024,184"/>
+<area shape="poly" id="edge20_Node000016_Node000017" title=" " alt="" coords="847,106,938,148,936,153,845,111"/>
+<area shape="rect" id="Node000018" href="$group__serial__port.html#ga931f3462009af510083ef84d0b1ae7ef" title="Reads the content from a specific offset of the uart base address." alt="" coords="945,56,1020,83"/>
+<area shape="poly" id="edge22_Node000016_Node000018" title=" " alt="" coords="864,84,929,75,930,80,865,90"/>
+<area shape="rect" id="Node000020" href="$group__serial__port.html#gab80ab00eda611877adb95cf0df656257" title="Writes a content to a specific offset of the uart base address." alt="" coords="944,5,1021,32"/>
+<area shape="poly" id="edge24_Node000016_Node000020" title=" " alt="" coords="845,78,936,36,938,41,847,83"/>
+<area shape="poly" id="edge21_Node000017_Node000004" title=" " alt="" coords="1025,168,1057,168,1057,173,1025,173"/>
+<area shape="rect" id="Node000019" href="$group__driver__utils.html#ga2b56f50ba159e9d5115ed1a75eff15d9" title="Reads the information in a register and converts it to a 8&#45;bit unsigned integer." alt="" coords="1077,56,1167,83"/>
+<area shape="poly" id="edge23_Node000018_Node000019" title=" " alt="" coords="1020,67,1062,67,1062,72,1020,72"/>
+<area shape="rect" id="Node000022" href="$group__queue__t.html#ga589f94630961aefb1184e683512b31f6" title="Returns the element at a specific position inside the queue." alt="" coords="579,208,654,235"/>
+<area shape="poly" id="edge26_Node000021_Node000022" title=" " alt="" coords="479,219,564,219,564,224,479,224"/>
+<area shape="poly" id="edge29_Node000023_Node000003" title=" " alt="" coords="672,182,754,203,753,209,671,187"/>
+<area shape="poly" id="edge28_Node000023_Node000017" title=" " alt="" coords="674,168,925,168,925,173,674,173"/>
+</map>

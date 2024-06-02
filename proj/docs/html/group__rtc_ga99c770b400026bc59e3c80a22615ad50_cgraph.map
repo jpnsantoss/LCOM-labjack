@@ -1,0 +1,32 @@
+<map id="rtc_setup" name="rtc_setup">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,187,81,214"/>
+<area shape="rect" id="Node000002" href="$group__rtc.html#ga6028be0c2f6834191783cd629f324a2b" title=" " alt="" coords="132,111,226,138"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="67,185,139,144,142,148,70,189"/>
+<area shape="rect" id="Node000003" href="$group__rtc.html#gaa09d96578f0f0aad40b6beea97e1605a" title=" " alt="" coords="460,175,529,202"/>
+<area shape="poly" id="edge7_Node000001_Node000003" title=" " alt="" coords="51,185,82,143,127,97,165,68,196,48,231,34,276,21,347,4,378,6,413,21,445,50,467,87,482,126,491,160,486,161,477,128,463,90,441,54,410,26,376,11,347,9,278,26,232,39,199,53,168,73,130,101,86,147,55,188"/>
+<area shape="rect" id="Node000007" href="$group__rtc.html#ga0a6fd09353e9e32173333e7a32997c88" title=" " alt="" coords="129,238,229,265"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="82,212,128,230,126,235,80,217"/>
+<area shape="rect" id="Node000010" href="$group__rtc.html#ga4bd7edbf0206bbf43f7c9cc88fe71532" title=" " alt="" coords="284,339,405,366"/>
+<area shape="poly" id="edge14_Node000001_Node000010" title=" " alt="" coords="58,213,89,243,130,275,201,308,271,332,269,337,199,313,127,279,85,247,54,216"/>
+<area shape="rect" id="Node000011" href="$group__rtc.html#ga83f2682c45a821f4922410747f8da1ce" title=" " alt="" coords="277,187,411,214"/>
+<area shape="poly" id="edge17_Node000001_Node000011" title=" " alt="" coords="81,198,261,198,261,203,81,203"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="226,114,266,109,314,107,364,111,412,122,445,140,472,162,469,166,442,144,410,127,363,116,313,113,267,114,226,119"/>
+<area shape="rect" id="Node000005" href="$group__rtc.html#gad5efc0412ba4199ff6b5ecb663d6a7e5" title=" " alt="" coords="305,35,383,62"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="209,108,298,67,301,71,211,113"/>
+<area shape="rect" id="Node000006" href="$group__rtc.html#ga1616eba91a73b03ecba145c8a91ebc11" title=" " alt="" coords="311,137,377,163"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="226,129,296,140,295,145,226,135"/>
+<area shape="rect" id="Node000004" href="$group__driver__utils.html#ga2b56f50ba159e9d5115ed1a75eff15d9" title="Reads the information in a register and converts it to a 8&#45;bit unsigned integer." alt="" coords="578,175,668,202"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="529,186,562,186,562,191,529,191"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="379,156,446,174,445,179,377,161"/>
+<area shape="poly" id="edge12_Node000007_Node000006" title=" " alt="" coords="193,236,229,205,276,173,295,164,297,168,278,178,233,209,197,240"/>
+<area shape="rect" id="Node000008" href="$group__rtc.html#ga0ac2f7b9a8194d3811fb3ef622024773" title=" " alt="" coords="280,238,408,265"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="229,249,265,249,265,254,229,254"/>
+<area shape="rect" id="Node000009" href="$group__rtc.html#ga87e4ef947b464068568304d39b119fa5" title=" " alt="" coords="459,251,530,278"/>
+<area shape="poly" id="edge13_Node000007_Node000009" title=" " alt="" coords="224,263,277,274,344,279,411,274,444,271,444,276,412,279,344,284,277,279,223,268"/>
+<area shape="poly" id="edge10_Node000008_Node000003" title=" " alt="" coords="382,235,410,224,449,207,451,212,412,229,384,240"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="409,255,444,258,444,263,409,260"/>
+<area shape="poly" id="edge15_Node000010_Node000003" title=" " alt="" coords="356,337,469,212,473,216,360,341"/>
+<area shape="poly" id="edge16_Node000010_Node000009" title=" " alt="" coords="375,337,410,319,461,285,464,290,413,323,377,341"/>
+<area shape="poly" id="edge18_Node000011_Node000003" title=" " alt="" coords="412,193,444,190,445,195,412,198"/>
+<area shape="poly" id="edge19_Node000011_Node000009" title=" " alt="" coords="384,212,412,224,452,242,450,247,410,229,382,217"/>
+</map>

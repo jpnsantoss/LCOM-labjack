@@ -1,0 +1,5 @@
+<map id="Serial Port (UART)" name="Serial Port (UART)">
+<area shape="rect" id="Node000002" href="$group__drivers.html" title=" " alt="" coords="5,5,66,32"/>
+<area shape="rect" id="Node000001" title="Driver for a UART (Universal Asynchronous Receiver/Transmitter) device." alt="" coords="114,5,242,32"/>
+<area shape="rect" id="Node000003" href="$group__serial__port__i_u_a_r_t.html" title="Constants for the UART device." alt="" coords="290,5,348,32"/>
+</map>

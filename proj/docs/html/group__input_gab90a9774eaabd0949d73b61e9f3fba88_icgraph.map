@@ -1,0 +1,24 @@
+<map id="kbc_read_output" name="kbc_read_output">
+<area shape="rect" id="Node000001" title="Reads value from the keyboard controller (KBC)." alt="" coords="605,56,722,83"/>
+<area shape="rect" id="Node000002" href="$group__input.html#gab9e6ed7960d60aa4834f2038247d4536" title="Handles keyboard interruptions." alt="" coords="488,5,548,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="607,53,547,31,549,26,609,48"/>
+<area shape="rect" id="Node000006" href="$group__input.html#gac081a634a260ce39d0e06a8ab595df8a" title="Writes a command to the keyboard controller (KBC)." alt="" coords="480,107,556,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="609,91,557,109,556,104,608,86"/>
+<area shape="rect" id="Node000010" href="$group__input.html#ga834b6d7efe311484d6da234db333cb97" title="Handles interruprions from mouse." alt="" coords="479,56,557,83"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="589,72,557,72,557,67,589,67"/>
+<area shape="rect" id="Node000003" href="$group__ev__listener.html#ga2fd2cc82c3f815282a1b041ba2cab26b" title="General interrupt handler." alt="" coords="323,31,431,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="473,29,432,37,432,32,472,24"/>
+<area shape="rect" id="Node000004" href="$group__ev__listener.html#ga955b5bc9310ba1d1d83fea434ad6da45" title="Handles general interrupts for the application." alt="" coords="162,31,275,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="307,47,275,47,275,41,307,41"/>
+<area shape="rect" id="Node000005" href="$group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="5,81,114,108"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="160,65,105,83,103,78,159,60"/>
+<area shape="rect" id="Node000007" href="$group__input.html#ga4b21609cf20aa6689e73976702f26bce" title="Disables the mouse." alt="" coords="323,81,431,108"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="464,113,431,107,432,102,465,108"/>
+<area shape="rect" id="Node000009" href="$group__input.html#ga94fafb2ceb49ddd6a2ecc54920db9693" title="Initializes mouse." alt="" coords="176,132,261,159"/>
+<area shape="poly" id="edge9_Node000006_Node000009" title=" " alt="" coords="465,127,261,144,261,139,464,122"/>
+<area shape="rect" id="Node000008" href="$group__main.html#ga3260b4ca4b069d575595f76a611c21e8" title="Unsubscribes the interrupts from all devices and returns the screen to text mode." alt="" coords="178,81,259,108"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="308,97,259,97,259,92,308,92"/>
+<area shape="poly" id="edge8_Node000008_Node000005" title=" " alt="" coords="162,97,114,97,114,92,162,92"/>
+<area shape="poly" id="edge10_Node000009_Node000005" title=" " alt="" coords="161,130,103,111,104,106,162,125"/>
+<area shape="poly" id="edge12_Node000010_Node000003" title=" " alt="" coords="463,62,431,56,432,51,464,57"/>
+</map>

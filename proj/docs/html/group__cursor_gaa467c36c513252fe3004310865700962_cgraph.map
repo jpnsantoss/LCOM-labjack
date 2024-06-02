@@ -1,0 +1,11 @@
+<map id="cursor_sprite_colides" name="cursor_sprite_colides">
+<area shape="rect" id="Node000001" title="Checks if the cursor collides with a given sprite." alt="" coords="5,56,150,83"/>
+<area shape="rect" id="Node000002" href="$group__input.html#ga951843dd85f1419664c540d5ff0819d3" title="Returns the current mouse information." alt="" coords="198,5,310,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,53,189,34,191,39,127,58"/>
+<area shape="rect" id="Node000003" href="$group__sprite.html#ga86e601963315c247dedf3a04cc6cf4b8" title="Checks if two sprites collide." alt="" coords="203,56,305,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="150,67,188,67,188,72,150,72"/>
+<area shape="rect" id="Node000004" href="$group__sprite.html#ga5272f5d91c76d187c107346a66638b1e" title="Moves the sprite to a new position." alt="" coords="209,107,299,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="127,81,194,100,193,105,126,86"/>
+<area shape="rect" id="Node000005" href="$group__graphics.html#gab52043147d41e2f66a892043455a8515" title="Gets the graphics information." alt="" coords="358,107,443,133"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="300,117,343,117,343,123,300,123"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="player_init" name="player_init">
+<area shape="rect" id="Node000001" title="Initializes the player." alt="" coords="312,5,392,32"/>
+<area shape="rect" id="Node000002" href="$group__game.html#ga38ace932203d6d4ffab3ae71486a930b" title="Initializes the game." alt="" coords="187,5,264,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="296,21,264,21,264,16,296,16"/>
+<area shape="rect" id="Node000003" href="$group__ev__listener.html#gaf39362208e047dd8c2fdac3802d35a25" title="Handles interrupts in the main menu state." alt="" coords="5,5,139,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="171,21,139,21,139,16,171,16"/>
+</map>

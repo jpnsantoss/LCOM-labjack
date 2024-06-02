@@ -1,0 +1,12 @@
+<map id="util_get_MSB" name="util_get_MSB">
+<area shape="rect" id="Node000001" title="Get the most significant bit of a value." alt="" coords="514,31,614,57"/>
+<area shape="rect" id="Node000002" href="$group__timer.html#gaca1506be74dfc71c6f90772ca269c619" title="Sets the frequency of a timer (and by consequence the number of interrupts per second)." alt="" coords="162,5,300,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="499,42,300,27,300,21,499,36"/>
+<area shape="rect" id="Node000004" href="$group__serial__port.html#gad781bc2716293adeb864f67904062eca" title="Sets the transmission bit rate between devices." alt="" coords="348,56,466,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="499,57,467,62,466,57,499,52"/>
+<area shape="rect" id="Node000003" href="$group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="5,31,114,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="147,34,115,39,114,33,146,28"/>
+<area shape="rect" id="Node000005" href="$group__serial__port.html#ga929dc5f42a9f930150913fbfa02ec73c" title="Setups the device and activates interrupts." alt="" coords="197,56,265,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="332,72,265,72,265,67,332,67"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="182,65,114,55,115,49,182,60"/>
+</map>

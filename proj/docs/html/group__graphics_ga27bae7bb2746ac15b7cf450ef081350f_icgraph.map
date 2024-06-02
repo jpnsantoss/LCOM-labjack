@@ -1,0 +1,25 @@
+<map id="vg_get_height" name="vg_get_height">
+<area shape="rect" id="Node000001" title="Gets the height of the screen." alt="" coords="918,77,1019,104"/>
+<area shape="rect" id="Node000002" href="$group__app.html#ga7cca950bbf3cf06fb45d033e3e7cde48" title="Initializes the application." alt="" coords="631,27,697,53"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="943,68,911,40,869,17,824,9,778,11,734,19,698,30,697,25,733,14,777,6,825,4,871,12,914,35,947,64"/>
+<area shape="rect" id="Node000004" href="$group__cursor.html#ga4c5ef91c2ff49824f46e2a2aa9cb3d47" title="Initializes the cursor." alt="" coords="772,27,853,53"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="910,75,852,56,854,51,911,70"/>
+<area shape="rect" id="Node000005" href="$group__cursor.html#gadb51642f3770713345e06bc3dc0e82f5" title="Moves the cursor to the specified coordinates." alt="" coords="479,77,574,104"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="903,93,574,93,574,88,903,88"/>
+<area shape="rect" id="Node000008" href="$group__drawer.html#ga02baa6bb4bfc1a8620a61d42e32db33c" title="Draws a set of buttons on the screen." alt="" coords="754,128,870,155"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="911,112,857,130,855,125,910,107"/>
+<area shape="rect" id="Node000009" href="$group__drawer.html#gad4613fc8c5dbe034d87386a01ab6d3a7" title="Draws the current state of the application." alt="" coords="622,128,706,155"/>
+<area shape="poly" id="edge13_Node000001_Node000009" title=" " alt="" coords="947,117,914,146,871,169,826,178,780,176,736,168,700,158,702,153,738,163,780,171,826,173,869,164,911,142,943,113"/>
+<area shape="rect" id="Node000003" href="$group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="5,52,114,79"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="615,45,114,66,114,61,615,39"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="756,43,698,43,698,37,756,37"/>
+<area shape="rect" id="Node000006" href="$group__ev__listener.html#ga2fd2cc82c3f815282a1b041ba2cab26b" title="General interrupt handler." alt="" coords="323,77,431,104"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="464,93,432,93,432,88,464,88"/>
+<area shape="rect" id="Node000007" href="$group__ev__listener.html#ga955b5bc9310ba1d1d83fea434ad6da45" title="Handles general interrupts for the application." alt="" coords="162,77,275,104"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="307,93,275,93,275,88,307,88"/>
+<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="146,82,114,77,115,71,147,77"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="739,144,706,144,706,139,739,139"/>
+<area shape="rect" id="Node000010" href="$group__drawer.html#gae6e049740fc99af73d456e49c9fe2b26" title="Draws the entire screen." alt="" coords="479,128,574,155"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="606,144,574,144,574,139,606,139"/>
+<area shape="poly" id="edge12_Node000010_Node000006" title=" " alt="" coords="470,125,418,107,420,102,472,120"/>
+</map>

@@ -1,0 +1,29 @@
+<map id="handle_game_over_rebet" name="handle_game_over_rebet">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,132,170,159"/>
+<area shape="rect" id="Node000002" href="$group__card.html#ga2d17b23e643b88a94a08dd97ef502747" title="Destroys a card in the queue." alt="" coords="218,19,356,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,129,216,67,246,51,248,55,219,72,113,134"/>
+<area shape="rect" id="Node000004" href="$group__game.html#ga0d56ac73692d6b836f9890cd66ea3bce" title="Adds a deck of cards to the game, optionally shuffling it." alt="" coords="229,81,345,108"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="142,129,216,110,217,115,144,134"/>
+<area shape="rect" id="Node000012" href="$group__queue__t.html#ga496024ec829b39d9a93d6f37391d5a18" title="Creates an empty queue." alt="" coords="237,132,337,159"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="170,143,221,143,221,148,170,148"/>
+<area shape="rect" id="Node000013" href="$group__queue__t.html#ga0488f00c2aa08e55eab9286564c6e676" title="Queue destroyer. Frees all allocated memory inside the queue, including the content still stored insi..." alt="" coords="234,183,340,209"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="144,157,219,176,218,181,142,162"/>
+<area shape="rect" id="Node000014" href="$group__graphics.html#ga3a0d84e943447c67a7a9932cf0fd20ea" title="Sets the flag indicating that a redraw is needed." alt="" coords="235,233,339,260"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="111,157,159,187,219,219,232,225,229,229,216,224,157,192,108,161"/>
+<area shape="rect" id="Node000003" href="$group__card.html#ga199fa1253b6d8e693f43c4c9e98746e6" title="Destroys a card." alt="" coords="406,5,502,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="356,24,390,21,391,26,357,29"/>
+<area shape="rect" id="Node000005" href="$group__card.html#ga81ea1a299f20c143fee5a3c67d4951d7" title="Creates a card with the specified value and type." alt="" coords="410,56,499,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="345,83,394,76,395,81,346,89"/>
+<area shape="rect" id="Node000006" href="$group__queue__t.html#ga89bb8cf14f8a833ded72fca1fb6d8636" title="Pushes an element to the end of a queue." alt="" coords="409,107,500,133"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="346,101,394,108,393,113,345,106"/>
+<area shape="rect" id="Node000009" href="$group__queue__t.html#gadb51dd354cbb706eb420cb0a29b70626" title="Shuffles the content inside a queue." alt="" coords="404,157,504,184"/>
+<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="329,106,357,118,405,143,414,147,411,152,403,148,355,122,327,111"/>
+<area shape="rect" id="Node000007" href="$group__queue__t.html#ga2a0ac508b8a3e94d7d50de284cc9b898" title="Checks if a queue is empty." alt="" coords="552,56,652,83"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="495,104,546,86,547,91,496,109"/>
+<area shape="rect" id="Node000008" href="$group__queue__t.html#ga48ca9da7d179448a59262595a0dfcdce" title="Checks if the queue is full." alt="" coords="562,107,642,133"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="500,117,546,117,546,123,500,123"/>
+<area shape="rect" id="Node000010" href="$group__queue__t.html#ga589f94630961aefb1184e683512b31f6" title="Returns the element at a specific position inside the queue." alt="" coords="565,157,639,184"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="505,168,549,168,549,173,505,173"/>
+<area shape="rect" id="Node000011" href="$group__queue__t.html#ga658e853ad3c402311cb4ad82bf6cd6bc" title="Returns a pointer to the place where the element at a specific position is stored inside the queue...." alt="" coords="554,208,650,235"/>
+<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="496,182,547,200,546,205,495,187"/>
+</map>

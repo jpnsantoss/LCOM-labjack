@@ -1,0 +1,41 @@
+<map id="queue_destroy_nothing" name="queue_destroy_nothing">
+<area shape="rect" id="Node000001" title="Can be used in the queue_destroy() function to prevent it from deleting the content still inside the ..." alt="" coords="1020,278,1175,305"/>
+<area shape="rect" id="Node000002" href="$group__animation.html#ga08d98778bffe43b6cb8b1e9f1546db2a" title="Creates an animation." alt="" coords="848,228,969,254"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1030,276,960,257,962,252,1031,271"/>
+<area shape="rect" id="Node000014" href="$group__animation.html#ga20212c585ef755ed071f904caf6e2997" title="Destroys the animation." alt="" coords="845,304,972,330"/>
+<area shape="poly" id="edge17_Node000001_Node000014" title=" " alt="" coords="1005,307,973,311,972,306,1005,301"/>
+<area shape="rect" id="Node000003" href="$ev__game__dealer__turn_8c.html#a55be134935874090b543418f696e0089" title=" " alt="" coords="629,278,776,305"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="837,261,760,280,759,275,836,256"/>
+<area shape="rect" id="Node000005" href="$group__ev__listener.html#gaa4578a943cde28fb6b4e266b53738dbb" title="Adds a single animation for the dealer&#39;s turning up first card." alt="" coords="608,126,797,153"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="865,223,730,156,733,151,867,218"/>
+<area shape="rect" id="Node000010" href="$ev__game__play_8c.html#a020af6c7bc31cc4fe47cb488ca38a3f4" title=" " alt="" coords="200,126,350,153"/>
+<area shape="poly" id="edge15_Node000002_Node000010" title=" " alt="" coords="833,256,741,266,630,267,571,263,511,254,453,239,397,218,380,206,371,193,363,180,348,167,326,156,329,151,352,163,367,176,375,190,384,203,399,213,454,234,512,249,571,258,630,262,741,260,832,251"/>
+<area shape="rect" id="Node000013" href="$ev__game__play_8c.html#ac6edc031198fe7099c690c7cafc29e56" title=" " alt="" coords="212,25,338,52"/>
+<area shape="poly" id="edge16_Node000002_Node000013" title=" " alt="" coords="888,217,848,167,823,140,795,116,735,76,685,49,631,32,560,16,499,9,437,10,379,17,330,27,329,22,378,12,437,5,499,3,561,10,632,26,687,45,738,71,798,112,827,136,852,163,892,213"/>
+<area shape="rect" id="Node000004" href="$group__ev__listener.html#gad15caf2d5bda57970cde01330a905649" title="Handles interrupts during the dealer&#39;s turn." alt="" coords="414,278,544,305"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="613,294,545,294,545,289,613,289"/>
+<area shape="rect" id="Node000006" href="$group__ev__listener.html#gaf04c38e4884c97e63526bc86ff62a97f" title="Checks and handles the bet value." alt="" coords="398,177,560,204"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="626,160,542,179,541,174,625,154"/>
+<area shape="rect" id="Node000009" href="$ev__game__play_8c.html#a64657fc798aca485951079d72b7676c2" title=" " alt="" coords="427,126,531,153"/>
+<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="593,142,532,142,532,137,593,137"/>
+<area shape="rect" id="Node000011" href="$group__ev__listener.html#gaac3b528525094a9c64495cc99154b2c2" title="Handles interrupts in the game playing state." alt="" coords="5,76,152,102"/>
+<area shape="poly" id="edge11_Node000005_Node000011" title=" " alt="" coords="618,126,560,117,337,99,152,93,152,87,338,94,561,112,619,120"/>
+<area shape="rect" id="Node000012" href="$group__ev__listener.html#ga7dcb92c73210c18e4e4b66f2d6591587" title="Handles a hit event triggered by hit button during gameplay." alt="" coords="439,25,519,52"/>
+<area shape="poly" id="edge12_Node000005_Node000012" title=" " alt="" coords="660,121,559,73,516,55,518,50,561,68,662,116"/>
+<area shape="rect" id="Node000007" href="$group__ev__listener.html#gae44c52c33fbd52a450014d58bd15ab2a" title="Handles bet value input." alt="" coords="215,177,335,204"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="382,193,336,193,336,188,382,188"/>
+<area shape="rect" id="Node000008" href="$group__ev__listener.html#ga440c6c7cbaa7a4aca8e09d35eaa71e61" title="Handles interrupts in the game betting state." alt="" coords="6,177,151,204"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="199,193,151,193,151,188,199,188"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="411,142,350,142,350,137,411,137"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="205,124,132,105,134,100,206,119"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="423,41,338,41,338,36,423,36"/>
+<area shape="poly" id="edge14_Node000013_Node000011" title=" " alt="" coords="206,59,134,78,132,72,205,54"/>
+<area shape="rect" id="Node000015" href="$group__animation.html#gaa555c1bf59971c71e605cc44d9ca147f" title="Runs the animation." alt="" coords="651,329,754,356"/>
+<area shape="poly" id="edge18_Node000014_Node000015" title=" " alt="" coords="830,329,754,339,753,333,829,324"/>
+<area shape="rect" id="Node000016" href="$group__ev__listener.html#ga2fd2cc82c3f815282a1b041ba2cab26b" title="General interrupt handler." alt="" coords="425,329,533,356"/>
+<area shape="poly" id="edge19_Node000015_Node000016" title=" " alt="" coords="636,345,534,345,534,340,636,340"/>
+<area shape="rect" id="Node000017" href="$group__ev__listener.html#ga955b5bc9310ba1d1d83fea434ad6da45" title="Handles general interrupts for the application." alt="" coords="218,329,332,356"/>
+<area shape="poly" id="edge20_Node000016_Node000017" title=" " alt="" coords="410,345,332,345,332,340,410,340"/>
+<area shape="rect" id="Node000018" href="$group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="24,329,133,356"/>
+<area shape="poly" id="edge21_Node000017_Node000018" title=" " alt="" coords="203,345,133,345,133,340,203,340"/>
+</map>

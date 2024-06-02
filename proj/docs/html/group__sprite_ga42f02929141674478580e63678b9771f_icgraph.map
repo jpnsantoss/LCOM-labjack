@@ -1,0 +1,15 @@
+<map id="sprite_queue_destroy" name="sprite_queue_destroy">
+<area shape="rect" id="Node000001" title="Destroys a sprite from a queue." alt="" coords="442,21,588,48"/>
+<area shape="rect" id="Node000002" href="$group__app.html#gab081435b68a0e159fb04347bb88ad79d" title="Frees the memory allocated for the application and its components." alt="" coords="162,21,254,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="445,20,394,12,348,8,302,12,251,23,250,18,302,6,348,3,395,6,446,15"/>
+<area shape="rect" id="Node000004" href="$group__font.html#gace7b106acf084f479f5dcd2c7d2c9a06" title="Destroys the font and frees its resources." alt="" coords="302,21,394,48"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="427,37,395,37,395,32,427,32"/>
+<area shape="rect" id="Node000005" href="$group__font.html#ga368309c58e051e585f1f8e65d92a46d0" title="Initializes the font by loading sprites for letters, numbers, and special characters." alt="" coords="315,72,381,98"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="455,55,382,78,381,73,453,50"/>
+<area shape="rect" id="Node000003" href="$group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="5,46,114,73"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="147,48,115,53,114,48,146,42"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="286,37,255,37,255,32,286,32"/>
+<area shape="rect" id="Node000006" href="$group__app.html#ga7cca950bbf3cf06fb45d033e3e7cde48" title="Initializes the application." alt="" coords="175,72,241,98"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="300,88,241,88,241,82,300,82"/>
+<area shape="poly" id="edge7_Node000006_Node000003" title=" " alt="" coords="159,80,114,72,115,66,160,74"/>
+</map>

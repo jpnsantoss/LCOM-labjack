@@ -1,0 +1,10 @@
+<map id="kbc_ih" name="kbc_ih">
+<area shape="rect" id="Node000001" title="Handles keyboard interruptions." alt="" coords="5,31,65,57"/>
+<area shape="rect" id="Node000002" href="$group__input.html#gab90a9774eaabd0949d73b61e9f3fba88" title="Reads value from the keyboard controller (KBC)." alt="" coords="113,31,230,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,41,97,41,97,47,65,47"/>
+<area shape="rect" id="Node000003" href="$dvr__kbc_8c.html#a9546f355fcf070b152b392ef21543bd8" title=" " alt="" coords="278,5,395,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="230,32,262,27,263,33,231,38"/>
+<area shape="rect" id="Node000004" href="$group__driver__utils.html#ga2b56f50ba159e9d5115ed1a75eff15d9" title="Reads the information in a register and converts it to a 8&#45;bit unsigned integer." alt="" coords="443,31,534,57"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="230,41,428,41,428,47,230,47"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="396,26,429,31,428,37,395,31"/>
+</map>

@@ -1,0 +1,109 @@
+<map id="util_sys_inb" name="util_sys_inb">
+<area shape="rect" id="Node000001" title="Reads the information in a register and converts it to a 8&#45;bit unsigned integer." alt="" coords="1449,487,1539,513"/>
+<area shape="rect" id="Node000002" href="$group__input.html#gab90a9774eaabd0949d73b61e9f3fba88" title="Reads value from the keyboard controller (KBC)." alt="" coords="1110,563,1227,589"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1462,524,1433,540,1402,553,1357,565,1311,572,1228,579,1227,573,1310,567,1356,559,1400,548,1431,535,1459,520"/>
+<area shape="rect" id="Node000007" href="$group__input.html#gac081a634a260ce39d0e06a8ab595df8a" title="Writes a command to the keyboard controller (KBC)." alt="" coords="948,512,1024,539"/>
+<area shape="poly" id="edge18_Node000001_Node000007" title=" " alt="" coords="1434,499,1283,494,1192,496,1102,503,1025,518,1024,512,1101,497,1192,491,1283,489,1434,493"/>
+<area shape="rect" id="Node000012" href="$dvr__kbc_8c.html#a9546f355fcf070b152b392ef21543bd8" title=" " alt="" coords="1284,512,1401,539"/>
+<area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="1434,513,1402,518,1401,513,1433,507"/>
+<area shape="rect" id="Node000014" href="$group__rtc.html#gaa09d96578f0f0aad40b6beea97e1605a" title=" " alt="" coords="1308,208,1377,235"/>
+<area shape="poly" id="edge19_Node000001_Node000014" title=" " alt="" coords="1476,474,1349,236,1353,234,1481,472"/>
+<area shape="rect" id="Node000025" href="$group__timer.html#gafafc1891c876602d55b894103b1841a7" title="Returns current timer configuration." alt="" coords="1289,411,1396,437"/>
+<area shape="poly" id="edge42_Node000001_Node000025" title=" " alt="" coords="1451,482,1370,440,1372,435,1453,477"/>
+<area shape="rect" id="Node000027" href="$group__serial__port.html#ga931f3462009af510083ef84d0b1ae7ef" title="Reads the content from a specific offset of the uart base address." alt="" coords="1131,715,1206,741"/>
+<area shape="poly" id="edge45_Node000001_Node000027" title=" " alt="" coords="1468,526,1403,579,1287,659,1195,716,1192,712,1284,654,1399,575,1465,522"/>
+<area shape="rect" id="Node000003" href="$group__input.html#gab9e6ed7960d60aa4834f2038247d4536" title="Handles keyboard interruptions." alt="" coords="782,563,842,589"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1095,579,842,579,842,573,1095,573"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="1102,560,1024,538,1026,533,1104,555"/>
+<area shape="rect" id="Node000011" href="$group__input.html#ga834b6d7efe311484d6da234db333cb97" title="Handles interruprions from mouse." alt="" coords="948,613,1025,640"/>
+<area shape="poly" id="edge12_Node000002_Node000011" title=" " alt="" coords="1104,597,1026,619,1024,614,1102,592"/>
+<area shape="rect" id="Node000004" href="$group__ev__listener.html#ga2fd2cc82c3f815282a1b041ba2cab26b" title="General interrupt handler." alt="" coords="590,563,699,589"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="767,579,699,579,699,573,767,573"/>
+<area shape="rect" id="Node000005" href="$group__ev__listener.html#ga955b5bc9310ba1d1d83fea434ad6da45" title="Handles general interrupts for the application." alt="" coords="411,531,524,557"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="575,566,523,557,524,552,576,561"/>
+<area shape="rect" id="Node000006" href="$group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="221,411,329,437"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="430,524,297,440,300,436,433,520"/>
+<area shape="rect" id="Node000008" href="$group__input.html#ga4b21609cf20aa6689e73976702f26bce" title="Disables the mouse." alt="" coords="758,461,866,488"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="932,513,859,491,861,486,934,507"/>
+<area shape="rect" id="Node000010" href="$group__input.html#ga94fafb2ceb49ddd6a2ecc54920db9693" title="Initializes mouse." alt="" coords="602,489,687,516"/>
+<area shape="poly" id="edge10_Node000007_Node000010" title=" " alt="" coords="932,525,687,508,687,503,933,519"/>
+<area shape="rect" id="Node000009" href="$group__main.html#ga3260b4ca4b069d575595f76a611c21e8" title="Unsubscribes the interrupts from all devices and returns the screen to text mode." alt="" coords="604,360,685,387"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="774,455,667,389,670,385,776,451"/>
+<area shape="poly" id="edge9_Node000009_Node000006" title=" " alt="" coords="589,380,499,388,398,401,330,414,329,409,398,396,499,383,588,375"/>
+<area shape="poly" id="edge11_Node000010_Node000006" title=" " alt="" coords="587,493,329,438,330,433,588,488"/>
+<area shape="poly" id="edge13_Node000011_Node000004" title=" " alt="" coords="932,625,847,617,752,604,698,593,699,587,753,599,848,612,932,620"/>
+<area shape="poly" id="edge15_Node000012_Node000002" title=" " alt="" coords="1280,546,1218,565,1216,560,1278,541"/>
+<area shape="rect" id="Node000013" href="$group__input.html#ga2823114f828bc7248a230685772dafbb" title="Writes a value to the keyboard controller (KBC)." alt="" coords="1113,512,1224,539"/>
+<area shape="poly" id="edge16_Node000012_Node000013" title=" " alt="" coords="1268,528,1225,528,1225,523,1268,523"/>
+<area shape="poly" id="edge17_Node000013_Node000007" title=" " alt="" coords="1097,528,1025,528,1025,523,1097,523"/>
+<area shape="rect" id="Node000015" href="$group__rtc.html#ga6028be0c2f6834191783cd629f324a2b" title=" " alt="" coords="940,259,1033,285"/>
+<area shape="poly" id="edge20_Node000014_Node000015" title=" " alt="" coords="1294,237,1236,249,1127,264,1034,272,1033,267,1127,258,1235,244,1293,232"/>
+<area shape="rect" id="Node000016" href="$group__rtc.html#ga57f7116af216e3779ad9d6e98351d329" title=" " alt="" coords="785,360,839,387"/>
+<area shape="poly" id="edge25_Node000014_Node000016" title=" " alt="" coords="1328,250,1292,300,1266,324,1237,344,1183,365,1126,380,1069,388,1012,392,910,389,838,380,839,375,911,383,1012,386,1068,383,1125,375,1181,360,1234,339,1263,320,1288,296,1324,247"/>
+<area shape="rect" id="Node000017" href="$group__rtc.html#ga99c770b400026bc59e3c80a22615ad50" title=" " alt="" coords="774,157,850,184"/>
+<area shape="poly" id="edge36_Node000014_Node000017" title=" " alt="" coords="1326,196,1290,142,1264,117,1235,97,1180,80,1124,74,1066,78,1010,90,957,106,909,125,839,159,836,154,907,120,955,101,1008,85,1065,73,1124,69,1182,74,1237,92,1268,112,1294,139,1330,193"/>
+<area shape="rect" id="Node000018" href="$group__rtc.html#ga4bd7edbf0206bbf43f7c9cc88fe71532" title=" " alt="" coords="1108,107,1229,133"/>
+<area shape="poly" id="edge26_Node000014_Node000018" title=" " alt="" coords="1312,200,1276,174,1234,148,1210,136,1212,132,1237,143,1279,169,1315,196"/>
+<area shape="rect" id="Node000020" href="$group__rtc.html#ga83f2682c45a821f4922410747f8da1ce" title=" " alt="" coords="1101,5,1236,32"/>
+<area shape="poly" id="edge30_Node000014_Node000020" title=" " alt="" coords="1327,195,1291,125,1265,87,1234,53,1206,35,1209,30,1237,49,1269,84,1296,122,1332,192"/>
+<area shape="rect" id="Node000021" href="$group__rtc.html#ga0ac2f7b9a8194d3811fb3ef622024773" title=" " alt="" coords="1104,157,1233,184"/>
+<area shape="poly" id="edge32_Node000014_Node000021" title=" " alt="" coords="1292,210,1216,187,1218,182,1294,205"/>
+<area shape="rect" id="Node000023" href="$group__rtc.html#ga5171a9c0f54940fe60f7500896afcc86" title=" " alt="" coords="584,284,705,311"/>
+<area shape="poly" id="edge37_Node000014_Node000023" title=" " alt="" coords="1304,244,1236,272,1164,290,1089,302,1014,310,941,314,807,313,705,306,705,301,807,308,941,308,1014,305,1089,297,1163,285,1235,267,1302,239"/>
+<area shape="rect" id="Node000024" href="$group__rtc.html#ga1616eba91a73b03ecba145c8a91ebc11" title=" " alt="" coords="1135,208,1202,235"/>
+<area shape="poly" id="edge39_Node000014_Node000024" title=" " alt="" coords="1292,224,1202,224,1202,219,1292,219"/>
+<area shape="poly" id="edge21_Node000015_Node000016" title=" " alt="" coords="951,296,872,344,840,362,837,357,870,339,948,292"/>
+<area shape="poly" id="edge23_Node000015_Node000017" title=" " alt="" coords="929,255,918,249,868,217,828,187,831,182,871,213,920,244,931,250"/>
+<area shape="poly" id="edge22_Node000016_Node000004" title=" " alt="" coords="792,401,755,451,732,491,707,530,668,564,664,560,703,526,728,488,750,448,788,397"/>
+<area shape="poly" id="edge24_Node000017_Node000006" title=" " alt="" coords="760,188,596,245,496,286,399,334,339,375,293,412,290,408,336,370,397,330,494,281,594,240,758,183"/>
+<area shape="poly" id="edge27_Node000018_Node000017" title=" " alt="" coords="1093,128,1009,136,919,148,851,163,850,158,919,143,1009,130,1092,122"/>
+<area shape="rect" id="Node000019" href="$group__rtc.html#gab8f17bf5280c908c8b199a90fefcc758" title=" " alt="" coords="919,157,1053,184"/>
+<area shape="poly" id="edge28_Node000018_Node000019" title=" " alt="" coords="1104,141,1038,159,1036,154,1102,136"/>
+<area shape="poly" id="edge29_Node000019_Node000009" title=" " alt="" coords="932,193,920,198,844,241,771,287,666,362,663,357,768,283,841,237,918,194,930,188"/>
+<area shape="poly" id="edge31_Node000020_Node000017" title=" " alt="" coords="1086,18,1003,26,960,36,920,53,887,76,860,105,823,159,818,155,856,102,884,72,918,48,959,31,1002,20,1086,12"/>
+<area shape="poly" id="edge35_Node000021_Node000019" title=" " alt="" coords="1089,173,1054,173,1054,168,1089,168"/>
+<area shape="rect" id="Node000022" href="$group__rtc.html#ga0a6fd09353e9e32173333e7a32997c88" title=" " alt="" coords="936,208,1036,235"/>
+<area shape="poly" id="edge33_Node000021_Node000022" title=" " alt="" coords="1104,191,1038,210,1036,205,1102,186"/>
+<area shape="poly" id="edge34_Node000022_Node000017" title=" " alt="" coords="922,206,849,184,851,179,924,201"/>
+<area shape="poly" id="edge38_Node000023_Node000006" title=" " alt="" coords="577,318,492,343,399,374,307,413,305,408,397,370,490,338,576,313"/>
+<area shape="poly" id="edge40_Node000024_Node000015" title=" " alt="" coords="1121,237,1034,262,1032,257,1120,232"/>
+<area shape="poly" id="edge41_Node000024_Node000022" title=" " alt="" coords="1120,224,1037,224,1037,219,1120,219"/>
+<area shape="rect" id="Node000026" href="$group__timer.html#gaca1506be74dfc71c6f90772ca269c619" title="Sets the frequency of a timer (and by consequence the number of interrupts per second)." alt="" coords="398,411,536,437"/>
+<area shape="poly" id="edge43_Node000025_Node000026" title=" " alt="" coords="1274,427,988,427,811,427,537,427,537,421,811,421,988,421,1274,421"/>
+<area shape="poly" id="edge44_Node000026_Node000006" title=" " alt="" coords="382,427,330,427,330,421,382,421"/>
+<area shape="rect" id="Node000028" href="$group__serial__port.html#gacca863d491db0d03c224579debbbe3de" title="Activates/Deactivates Data Latch access." alt="" coords="929,816,1044,843"/>
+<area shape="poly" id="edge46_Node000027_Node000028" title=" " alt="" coords="1139,753,1099,780,1055,806,1029,818,1027,813,1052,802,1097,775,1136,749"/>
+<area shape="rect" id="Node000031" href="$group__serial__port.html#ga6561744a71f80b6eb1768a5d3ff8c9fb" title="Reads a byte from the UART FIFO." alt="" coords="937,715,1035,741"/>
+<area shape="poly" id="edge50_Node000027_Node000031" title=" " alt="" coords="1115,731,1036,731,1036,725,1115,725"/>
+<area shape="rect" id="Node000032" href="$group__serial__port.html#gae8bb6dd0800878b35fe69a422773b8db" title="Interrupt handler." alt="" coords="782,664,842,691"/>
+<area shape="poly" id="edge66_Node000027_Node000032" title=" " alt="" coords="1115,718,1053,705,936,690,842,682,843,677,937,685,1054,700,1116,713"/>
+<area shape="rect" id="Node000033" href="$group__serial__port.html#ga947056d01d461376d5bbcd9f69bdff4f" title="Writes a byte to the UART FIFO." alt="" coords="936,765,1036,792"/>
+<area shape="poly" id="edge54_Node000027_Node000033" title=" " alt="" coords="1116,745,1038,767,1036,762,1115,740"/>
+<area shape="rect" id="Node000029" href="$group__serial__port.html#gad781bc2716293adeb864f67904062eca" title="Sets the transmission bit rate between devices." alt="" coords="753,816,871,843"/>
+<area shape="poly" id="edge47_Node000028_Node000029" title=" " alt="" coords="913,832,872,832,872,827,913,827"/>
+<area shape="rect" id="Node000030" href="$group__serial__port.html#ga929dc5f42a9f930150913fbfa02ec73c" title="Setups the device and activates interrupts." alt="" coords="611,715,678,741"/>
+<area shape="poly" id="edge48_Node000029_Node000030" title=" " alt="" coords="758,810,751,806,736,793,727,780,717,768,703,756,677,742,679,737,706,751,721,764,731,777,740,789,754,802,761,806"/>
+<area shape="poly" id="edge49_Node000030_Node000006" title=" " alt="" coords="602,709,505,652,449,614,396,571,361,536,329,499,283,439,288,436,333,496,365,533,400,567,452,609,508,647,604,705"/>
+<area shape="poly" id="edge53_Node000031_Node000030" title=" " alt="" coords="921,731,679,731,679,725,921,725"/>
+<area shape="poly" id="edge51_Node000031_Node000032" title=" " alt="" coords="922,712,842,689,843,683,924,707"/>
+<area shape="poly" id="edge52_Node000032_Node000004" title=" " alt="" coords="770,658,751,648,665,592,668,588,754,643,772,654"/>
+<area shape="poly" id="edge55_Node000033_Node000032" title=" " alt="" coords="929,761,918,756,868,724,828,693,831,689,871,719,920,751,931,756"/>
+<area shape="rect" id="Node000034" href="$group__serial__port.html#ga00a2984ead2b73e2871dfda7c1ac49e3" title="Adds a byte to the transmitter queue." alt="" coords="757,765,867,792"/>
+<area shape="poly" id="edge56_Node000033_Node000034" title=" " alt="" coords="921,781,867,781,867,776,921,776"/>
+<area shape="rect" id="Node000035" href="$group__com__manager.html#ga7625a73ca782d45e2763af4453795f8d" title="Sends a message to another pc via Serial Port." alt="" coords="588,765,701,792"/>
+<area shape="poly" id="edge57_Node000034_Node000035" title=" " alt="" coords="741,781,701,781,701,776,741,776"/>
+<area shape="rect" id="Node000036" href="$group__ev__listener.html#gad15caf2d5bda57970cde01330a905649" title="Handles interrupts during the dealer&#39;s turn." alt="" coords="402,689,532,716"/>
+<area shape="poly" id="edge58_Node000035_Node000036" title=" " alt="" coords="595,761,583,756,535,730,507,719,509,714,537,726,586,751,597,756"/>
+<area shape="rect" id="Node000037" href="$ev__game__play_8c.html#a64657fc798aca485951079d72b7676c2" title=" " alt="" coords="415,841,519,868"/>
+<area shape="poly" id="edge59_Node000035_Node000037" title=" " alt="" coords="598,801,501,843,499,838,596,796"/>
+<area shape="rect" id="Node000039" href="$group__ev__listener.html#gaac3b528525094a9c64495cc99154b2c2" title="Handles interrupts in the game playing state." alt="" coords="5,791,152,817"/>
+<area shape="poly" id="edge62_Node000035_Node000039" title=" " alt="" coords="573,785,152,803,152,798,572,779"/>
+<area shape="rect" id="Node000040" href="$group__ev__listener.html#ga7dcb92c73210c18e4e4b66f2d6591587" title="Handles a hit event triggered by hit button during gameplay." alt="" coords="427,740,507,767"/>
+<area shape="poly" id="edge63_Node000035_Node000040" title=" " alt="" coords="572,771,507,762,508,756,573,766"/>
+<area shape="rect" id="Node000038" href="$ev__game__play_8c.html#a020af6c7bc31cc4fe47cb488ca38a3f4" title=" " alt="" coords="200,841,350,868"/>
+<area shape="poly" id="edge60_Node000037_Node000038" title=" " alt="" coords="399,857,350,857,350,852,399,852"/>
+<area shape="poly" id="edge61_Node000038_Node000039" title=" " alt="" coords="205,839,132,821,134,815,206,834"/>
+<area shape="rect" id="Node000041" href="$ev__game__play_8c.html#ac6edc031198fe7099c690c7cafc29e56" title=" " alt="" coords="212,740,338,767"/>
+<area shape="poly" id="edge64_Node000040_Node000041" title=" " alt="" coords="411,756,339,756,339,751,411,751"/>
+<area shape="poly" id="edge65_Node000041_Node000039" title=" " alt="" coords="206,774,134,793,132,787,205,769"/>
+</map>

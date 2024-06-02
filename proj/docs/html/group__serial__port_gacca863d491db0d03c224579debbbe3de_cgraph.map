@@ -1,0 +1,9 @@
+<map id="uart_DL_access" name="uart_DL_access">
+<area shape="rect" id="Node000001" title="Activates/Deactivates Data Latch access." alt="" coords="5,31,121,57"/>
+<area shape="rect" id="Node000002" href="$group__serial__port.html#ga931f3462009af510083ef84d0b1ae7ef" title="Reads the content from a specific offset of the uart base address." alt="" coords="170,5,245,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,31,154,25,154,31,122,36"/>
+<area shape="rect" id="Node000004" href="$group__serial__port.html#gab80ab00eda611877adb95cf0df656257" title="Writes a content to a specific offset of the uart base address." alt="" coords="169,56,246,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="122,52,154,57,153,63,121,57"/>
+<area shape="rect" id="Node000003" href="$group__driver__utils.html#ga2b56f50ba159e9d5115ed1a75eff15d9" title="Reads the information in a register and converts it to a 8&#45;bit unsigned integer." alt="" coords="294,5,384,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="245,16,279,16,279,21,245,21"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Timer" name="Timer">
+<area shape="rect" id="Node000002" href="$group__drivers.html" title=" " alt="" coords="5,5,66,32"/>
+<area shape="rect" id="Node000001" title="Driver for the i8254 timer device." alt="" coords="114,5,167,32"/>
+<area shape="rect" id="Node000003" href="$group__timer__i8254.html" title="Constants for the i8254 timer device." alt="" coords="215,5,267,32"/>
+</map>

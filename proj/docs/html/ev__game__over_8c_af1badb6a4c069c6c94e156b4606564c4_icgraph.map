@@ -1,0 +1,5 @@
+<map id="handle_game_over_rebet" name="handle_game_over_rebet">
+<area shape="rect" id="Node000001" title=" " alt="" coords="182,5,346,32"/>
+<area shape="rect" id="Node000002" href="$group__ev__listener.html#gabeab42a878a73b55decd954a69ec1be7" title="Handles interrupts in the game over state." alt="" coords="5,5,134,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,21,134,21,134,16,166,16"/>
+</map>

@@ -25,7 +25,7 @@
 var NAVTREE =
 [
   [ "LabJack", "index.html", [
-    [ "Modules", "modules.html", "modules" ],
+    [ "Topics", "topics.html", "topics" ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],
@@ -52,8 +52,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "animation_8c.html",
-"font_8h.html#ad7a6dc9ab1f6c8d9c64a7d323a8e5e3f",
-"player_8h.html"
+"group__ev__listener.html#gae44c52c33fbd52a450014d58bd15ab2a",
+"group__serial__port__i_u_a_r_t.html#gae03762d343a54226f72b603801e7bc79"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

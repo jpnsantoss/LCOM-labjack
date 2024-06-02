@@ -1,0 +1,5 @@
+<map id="Input" name="Input">
+<area shape="rect" id="Node000002" href="$group__drivers.html" title=" " alt="" coords="5,5,66,32"/>
+<area shape="rect" id="Node000001" title="Driver for input devices: keyboard and mouse." alt="" coords="114,5,163,32"/>
+<area shape="rect" id="Node000003" href="$group__i8042.html" title="Constants for the i8042 keyboard and mouse controller." alt="" coords="211,5,263,32"/>
+</map>

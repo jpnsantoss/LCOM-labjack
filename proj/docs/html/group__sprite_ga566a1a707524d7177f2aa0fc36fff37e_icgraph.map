@@ -1,0 +1,18 @@
+<map id="sprite_draw_rotate" name="sprite_draw_rotate">
+<area shape="rect" id="Node000001" title="Draws the sprite on the screen with rotation." alt="" coords="913,31,1041,57"/>
+<area shape="rect" id="Node000002" href="$group__animation.html#gab21a107c5ce3e38887940bdf400f721f" title="Draws the current frame of the animation." alt="" coords="754,5,865,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="898,35,865,30,866,24,898,29"/>
+<area shape="rect" id="Node000008" href="$group__player.html#ga5af00e8a8b2fc96d6e24db15e46efa8f" title="Draws the player&#39;s cards on the screen." alt="" coords="765,56,855,83"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="898,59,856,65,855,60,897,53"/>
+<area shape="rect" id="Node000003" href="$group__drawer.html#gad4613fc8c5dbe034d87386a01ab6d3a7" title="Draws the current state of the application." alt="" coords="622,31,706,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="739,34,707,39,706,34,738,28"/>
+<area shape="rect" id="Node000004" href="$group__drawer.html#gae6e049740fc99af73d456e49c9fe2b26" title="Draws the entire screen." alt="" coords="479,31,574,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="606,47,574,47,574,41,606,41"/>
+<area shape="rect" id="Node000005" href="$group__ev__listener.html#ga2fd2cc82c3f815282a1b041ba2cab26b" title="General interrupt handler." alt="" coords="323,31,431,57"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="464,47,432,47,432,41,464,41"/>
+<area shape="rect" id="Node000006" href="$group__ev__listener.html#ga955b5bc9310ba1d1d83fea434ad6da45" title="Handles general interrupts for the application." alt="" coords="162,31,275,57"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="307,47,275,47,275,41,307,41"/>
+<area shape="rect" id="Node000007" href="$group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="5,31,114,57"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="146,47,114,47,114,41,146,41"/>
+<area shape="poly" id="edge8_Node000008_Node000003" title=" " alt="" coords="749,62,706,54,707,49,750,56"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="sprite_queue_destroy" name="sprite_queue_destroy">
+<area shape="rect" id="Node000001" title="Destroys a sprite from a queue." alt="" coords="5,5,151,32"/>
+<area shape="rect" id="Node000002" href="$group__sprite.html#ga1f0f379ec6f2b2cd0985ec0770cb1a2c" title="Destroys a sprite, freeing all allocated resources." alt="" coords="199,5,302,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,16,183,16,183,21,151,21"/>
+</map>

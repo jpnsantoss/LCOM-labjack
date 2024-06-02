@@ -1,0 +1,5 @@
+<map id="com_packet_t" name="com_packet_t">
+<area shape="rect" id="Node000001" title="Structure representing a message received via serial port." alt="" coords="16,96,120,123"/>
+<area shape="rect" id="Node000002" href="$structproto__msg__type__t.html" title="Defines the type of message communicated." alt="" coords="5,5,131,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="71,48,71,95,65,95,65,48"/>
+</map>

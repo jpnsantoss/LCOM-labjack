@@ -1,11 +1,11 @@
 var dvr__timer_8c =
 [
-    [ "timer_display_conf", "dvr__timer_8c.html#a140d8f092c0913cabdca949c4a1cc650", null ],
-    [ "timer_get_conf", "dvr__timer_8c.html#a703c60b40c8c49607d6ecb6fef82d27a", null ],
-    [ "timer_int_handler", "dvr__timer_8c.html#a91a2072306c68353712a6b771287dc2c", null ],
-    [ "timer_set_frequency", "dvr__timer_8c.html#af2c04fa8e97ffa748fd3f612886a92a7", null ],
-    [ "timer_subscribe_int", "dvr__timer_8c.html#ac57a7e1140a7e00ad95ac5488d2a671b", null ],
-    [ "timer_unsubscribe_int", "dvr__timer_8c.html#afabd21de449be154dd65d5fdb2d8045d", null ],
+    [ "timer_display_conf", "group__timer.html#ga2f6a1c71f61dce5b3b6eecba83e7d7e9", null ],
+    [ "timer_get_conf", "group__timer.html#gafafc1891c876602d55b894103b1841a7", null ],
+    [ "timer_int_handler", "group__timer.html#ga10fc9c867b15c7da6649311c9987cd17", null ],
+    [ "timer_set_frequency", "group__timer.html#gaca1506be74dfc71c6f90772ca269c619", null ],
+    [ "timer_subscribe_int", "group__timer.html#ga6f786481e80308348d629d605ffa2d84", null ],
+    [ "timer_unsubscribe_int", "group__timer.html#gab9eea51549744bca5c5c923b388bb4ee", null ],
     [ "hook_id_timer", "dvr__timer_8c.html#a7f3d11d35385878045b6b6a2ec438ba8", null ],
     [ "timer_counter", "dvr__timer_8c.html#a0f08eb193e0aedb134a1481913b6a823", null ]
 ];

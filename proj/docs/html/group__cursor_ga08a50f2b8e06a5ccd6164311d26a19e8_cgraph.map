@@ -1,0 +1,9 @@
+<map id="cursor_box_colides" name="cursor_box_colides">
+<area shape="rect" id="Node000001" title="Checks if the cursor collides with a given rectangular box." alt="" coords="5,31,139,57"/>
+<area shape="rect" id="Node000002" href="$group__input.html#ga951843dd85f1419664c540d5ff0819d3" title="Returns the current mouse information." alt="" coords="187,5,299,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,31,171,27,171,32,140,37"/>
+<area shape="rect" id="Node000003" href="$group__sprite.html#ga5272f5d91c76d187c107346a66638b1e" title="Moves the sprite to a new position." alt="" coords="198,56,288,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="140,51,183,58,182,63,139,57"/>
+<area shape="rect" id="Node000004" href="$group__graphics.html#gab52043147d41e2f66a892043455a8515" title="Gets the graphics information." alt="" coords="347,56,432,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="289,67,332,67,332,72,289,72"/>
+</map>

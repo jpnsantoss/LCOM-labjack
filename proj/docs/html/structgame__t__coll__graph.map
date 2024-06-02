@@ -1,0 +1,13 @@
+<map id="game_t" name="game_t">
+<area shape="rect" id="Node000001" title="Structure to represent the state of the game." alt="" coords="125,256,190,283"/>
+<area shape="rect" id="Node000002" href="$structsprite__t.html" title="Structure to represent a sprite." alt="" coords="5,147,70,173"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="34,189,33,211,41,230,58,246,80,257,125,265,124,271,78,262,55,251,37,234,28,212,28,189"/>
+<area shape="rect" id="Node000003" href="$structqueue__t.html" title="Structure to represent a FIFO fixed&#45;size container." alt="" coords="192,5,259,32"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="203,45,166,89,149,116,136,145,132,175,136,205,153,255,148,256,131,207,127,175,131,143,144,113,162,86,199,41"/>
+<area shape="rect" id="Node000004" href="$structanimation__t.html" title="Structure to represent an animation." alt="" coords="181,147,270,173"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="228,47,228,146,223,146,223,47"/>
+<area shape="rect" id="Node000005" href="$structplayer__t.html" title="Structure to represent a player." alt="" coords="293,147,361,173"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="260,39,276,54,307,103,325,145,320,147,302,105,271,58,256,43"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="212,188,168,257,163,254,207,185"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="313,188,292,212,267,234,229,253,191,264,189,259,227,248,264,230,289,208,308,185"/>
+</map>

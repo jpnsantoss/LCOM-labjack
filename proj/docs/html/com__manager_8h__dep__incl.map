@@ -1,0 +1,21 @@
+<map id="src/model/com_manager/com_manager.h" name="src/model/com_manager/com_manager.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="522,5,686,48"/>
+<area shape="rect" id="Node000002" href="$ev__listener_8h.html" title=" " alt="" coords="461,96,582,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="577,61,543,98,539,94,573,58"/>
+<area shape="rect" id="Node000010" href="$com__manager_8c.html" title=" " alt="" coords="606,96,770,139"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="636,58,671,94,667,98,632,61"/>
+<area shape="rect" id="Node000003" href="$ev__game__bet_8c.html" title=" " alt="" coords="5,187,126,229"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="446,133,304,157,139,189,127,192,126,187,138,184,303,151,446,127"/>
+<area shape="rect" id="Node000004" href="$ev__game__dealer__turn_8c.html" title=" " alt="" coords="150,187,293,229"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="447,143,292,189,291,184,446,138"/>
+<area shape="rect" id="Node000005" href="$ev__game__over_8c.html" title=" " alt="" coords="317,187,438,229"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="476,150,412,188,410,184,473,145"/>
+<area shape="rect" id="Node000006" href="$ev__game__play_8c.html" title=" " alt="" coords="461,187,582,229"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="524,154,524,186,519,186,519,154"/>
+<area shape="rect" id="Node000007" href="$ev__listener_8c.html" title=" " alt="" coords="605,187,726,229"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="570,145,633,184,631,188,567,150"/>
+<area shape="rect" id="Node000008" href="$ev__main__menu_8c.html" title=" " alt="" coords="749,187,870,229"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="597,139,750,186,748,191,596,144"/>
+<area shape="rect" id="Node000009" href="$proj_8c.html" title=" " alt="" coords="893,195,969,221"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="598,137,678,150,742,157,805,166,882,184,904,192,902,197,881,189,804,171,741,163,677,156,597,142"/>
+</map>

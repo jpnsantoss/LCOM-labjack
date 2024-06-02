@@ -1,0 +1,11 @@
+<map id="animation_run" name="animation_run">
+<area shape="rect" id="Node000001" title="Runs the animation." alt="" coords="5,56,108,83"/>
+<area shape="rect" id="Node000002" href="$group__animation.html#ga20212c585ef755ed071f904caf6e2997" title="Destroys the animation." alt="" coords="156,31,283,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,59,140,54,141,59,108,64"/>
+<area shape="rect" id="Node000005" href="$group__graphics.html#ga3a0d84e943447c67a7a9932cf0fd20ea" title="Sets the flag indicating that a redraw is needed." alt="" coords="168,81,271,108"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="108,75,153,82,152,87,108,80"/>
+<area shape="rect" id="Node000003" href="$group__queue__t.html#ga0488f00c2aa08e55eab9286564c6e676" title="Queue destroyer. Frees all allocated memory inside the queue, including the content still stored insi..." alt="" coords="356,5,462,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="283,33,340,25,340,30,284,38"/>
+<area shape="rect" id="Node000004" href="$group__queue__t.html#gaf924b822f95bb5b6c5bbe2988d17be91" title="Can be used in the queue_destroy() function to prevent it from deleting the content still inside the ..." alt="" coords="331,56,486,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="284,50,316,54,316,60,283,55"/>
+</map>
