@@ -26,7 +26,7 @@
 <area shape="poly" id="edge27_Node000001_Node000018" title=" " alt="" coords="1017,377,1004,415,985,460,959,506,925,546,905,560,883,569,881,564,902,555,921,542,955,503,981,457,999,413,1012,376"/>
 <area shape="rect" id="Node000020" href="$group__ev__listener.html#gaf39362208e047dd8c2fdac3802d35a25" title="Handles interrupts in the main menu state." alt="" coords="774,613,908,640"/>
 <area shape="poly" id="edge30_Node000001_Node000020" title=" " alt="" coords="1021,377,1012,426,995,487,967,549,948,578,925,603,908,615,905,611,921,599,944,575,962,546,990,485,1007,425,1016,376"/>
-<area shape="rect" id="Node000021" href="$group__rtc.html#ga57f7116af216e3779ad9d6e98351d329" title=" " alt="" coords="603,5,656,32"/>
+<area shape="rect" id="Node000021" href="$group__rtc.html#ga57f7116af216e3779ad9d6e98351d329" title="RTC interrupt handler." alt="" coords="603,5,656,32"/>
 <area shape="poly" id="edge31_Node000001_Node000021" title=" " alt="" coords="1018,319,1013,263,998,193,986,156,969,121,948,89,921,62,890,41,855,27,818,17,781,12,711,11,657,17,656,12,711,6,781,7,819,12,857,22,893,37,925,58,952,86,974,119,991,154,1003,191,1018,262,1023,319"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="578,91,550,104,451,159,449,155,547,99,576,86"/>
 <area shape="rect" id="Node000004" href="$group__ev__listener.html#ga955b5bc9310ba1d1d83fea434ad6da45" title="Handles general interrupts for the application." alt="" coords="177,157,291,184"/>

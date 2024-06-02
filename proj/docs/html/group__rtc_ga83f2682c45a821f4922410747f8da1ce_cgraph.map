@@ -1,8 +1,8 @@
 <map id="rtc_set_periodic_int" name="rtc_set_periodic_int">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,140,57"/>
-<area shape="rect" id="Node000002" href="$group__rtc.html#gaa09d96578f0f0aad40b6beea97e1605a" title=" " alt="" coords="189,5,257,32"/>
+<area shape="rect" id="Node000001" title="Sets the periodic interrupt of the RTC." alt="" coords="5,31,140,57"/>
+<area shape="rect" id="Node000002" href="$group__rtc.html#gaa09d96578f0f0aad40b6beea97e1605a" title="Reads a value from an RTC register." alt="" coords="189,5,257,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,30,172,24,173,30,141,35"/>
-<area shape="rect" id="Node000004" href="$group__rtc.html#ga87e4ef947b464068568304d39b119fa5" title=" " alt="" coords="188,56,258,83"/>
+<area shape="rect" id="Node000004" href="$group__rtc.html#ga87e4ef947b464068568304d39b119fa5" title="Writes a value to an RTC register." alt="" coords="188,56,258,83"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="141,53,173,58,172,64,140,58"/>
 <area shape="rect" id="Node000003" href="$group__driver__utils.html#ga2b56f50ba159e9d5115ed1a75eff15d9" title="Reads the information in a register and converts it to a 8&#45;bit unsigned integer." alt="" coords="306,5,396,32"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="257,16,290,16,290,21,257,21"/>

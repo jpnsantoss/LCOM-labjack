@@ -69,12 +69,14 @@ int (rtc_subscribe_int)(uint8_t* bit_no);
 
 /**
  * @brief Unsubscribes RTC interrupts.
+ * 
  * @return 0 if sucessful, 1 otherwise.
 */
 int (rtc_unsubscribe_int)();
 
 /**
  * @brief Sets up RTC.
+ * 
  * @return 0 if sucessful, 1 otherwise.
 */
 int rtc_setup();
@@ -97,8 +99,6 @@ int rtc_get_time();
 
 /**
  * @brief Sets the RTC alarm.
- * 
-
  */
 int rtc_set_alarm();
 
@@ -124,12 +124,12 @@ int rtc_write(uint8_t cmd, uint8_t content);
  * @brief Waits for the RTC to be ready.
  */
 void rtc_wait();
+
 /**
  * @brief RTC interrupt handler.
  * 
  * @return 0 if sucessful, 1 otherwise.
  */
-
 int (rtc_ih)();
 
 /**

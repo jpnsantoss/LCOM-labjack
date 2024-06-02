@@ -1,8 +1,8 @@
 <map id="rtc_get_time" name="rtc_get_time">
-<area shape="rect" id="Node000001" title=" " alt="" coords="581,31,674,57"/>
-<area shape="rect" id="Node000002" href="$group__rtc.html#ga57f7116af216e3779ad9d6e98351d329" title=" " alt="" coords="479,5,533,32"/>
+<area shape="rect" id="Node000001" title="Reads the current date and time from the RTC." alt="" coords="581,31,674,57"/>
+<area shape="rect" id="Node000002" href="$group__rtc.html#ga57f7116af216e3779ad9d6e98351d329" title="RTC interrupt handler." alt="" coords="479,5,533,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="565,34,533,27,534,22,566,28"/>
-<area shape="rect" id="Node000006" href="$group__rtc.html#ga99c770b400026bc59e3c80a22615ad50" title=" " alt="" coords="340,56,415,83"/>
+<area shape="rect" id="Node000006" href="$group__rtc.html#ga99c770b400026bc59e3c80a22615ad50" title="Sets up RTC." alt="" coords="340,56,415,83"/>
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="565,53,416,68,415,63,565,48"/>
 <area shape="rect" id="Node000003" href="$group__ev__listener.html#ga2fd2cc82c3f815282a1b041ba2cab26b" title="General interrupt handler." alt="" coords="323,5,431,32"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="464,21,432,21,432,16,464,16"/>

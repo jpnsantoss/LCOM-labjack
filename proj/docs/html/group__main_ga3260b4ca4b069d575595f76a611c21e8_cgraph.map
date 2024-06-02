@@ -4,7 +4,7 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="57,123,89,92,132,60,143,55,145,59,135,65,93,96,61,127"/>
 <area shape="rect" id="Node000003" href="$group__input.html#ga4b21609cf20aa6689e73976702f26bce" title="Disables the mouse." alt="" coords="154,75,262,101"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="85,123,147,104,149,109,87,129"/>
-<area shape="rect" id="Node000010" href="$group__rtc.html#gab8f17bf5280c908c8b199a90fefcc758" title=" " alt="" coords="141,125,275,152"/>
+<area shape="rect" id="Node000010" href="$group__rtc.html#gab8f17bf5280c908c8b199a90fefcc758" title="Unsubscribes RTC interrupts." alt="" coords="141,125,275,152"/>
 <area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="86,136,125,136,125,141,86,141"/>
 <area shape="rect" id="Node000015" href="$group__timer.html#gab9eea51549744bca5c5c923b388bb4ee" title="Unsubscribes interruptions from Timer 0." alt="" coords="134,176,282,203"/>
 <area shape="poly" id="edge20_Node000001_Node000015" title=" " alt="" coords="87,148,149,168,147,173,85,154"/>
@@ -25,13 +25,13 @@
 <area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="654,39,852,55,851,60,654,44"/>
 <area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="819,75,852,70,852,75,820,81"/>
 <area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="651,85,686,85,686,91,651,91"/>
-<area shape="rect" id="Node000011" href="$group__rtc.html#ga4bd7edbf0206bbf43f7c9cc88fe71532" title=" " alt="" coords="349,125,470,152"/>
+<area shape="rect" id="Node000011" href="$group__rtc.html#ga4bd7edbf0206bbf43f7c9cc88fe71532" title="Sets the alarm interrupt of the RTC." alt="" coords="349,125,470,152"/>
 <area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="275,136,333,136,333,141,275,141"/>
-<area shape="rect" id="Node000014" href="$group__rtc.html#ga0ac2f7b9a8194d3811fb3ef622024773" title=" " alt="" coords="345,176,473,203"/>
+<area shape="rect" id="Node000014" href="$group__rtc.html#ga0ac2f7b9a8194d3811fb3ef622024773" title="Sets the update interrupt of the RTC." alt="" coords="345,176,473,203"/>
 <area shape="poly" id="edge17_Node000010_Node000014" title=" " alt="" coords="265,150,339,169,338,174,263,155"/>
-<area shape="rect" id="Node000012" href="$group__rtc.html#gaa09d96578f0f0aad40b6beea97e1605a" title=" " alt="" coords="561,176,629,203"/>
+<area shape="rect" id="Node000012" href="$group__rtc.html#gaa09d96578f0f0aad40b6beea97e1605a" title="Reads a value from an RTC register." alt="" coords="561,176,629,203"/>
 <area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="462,150,547,173,545,179,460,155"/>
-<area shape="rect" id="Node000013" href="$group__rtc.html#ga87e4ef947b464068568304d39b119fa5" title=" " alt="" coords="560,125,630,152"/>
+<area shape="rect" id="Node000013" href="$group__rtc.html#ga87e4ef947b464068568304d39b119fa5" title="Writes a value to an RTC register." alt="" coords="560,125,630,152"/>
 <area shape="poly" id="edge16_Node000011_Node000013" title=" " alt="" coords="470,136,544,136,544,141,470,141"/>
 <area shape="poly" id="edge15_Node000012_Node000007" title=" " alt="" coords="629,177,715,150,818,111,874,82,877,86,820,116,717,155,630,182"/>
 <area shape="poly" id="edge18_Node000014_Node000012" title=" " alt="" coords="474,187,545,187,545,192,474,192"/>

@@ -24,7 +24,7 @@
 <area shape="poly" id="edge64_Node000001_Node000047" title=" " alt="" coords="73,683,110,725,135,749,163,770,179,778,176,783,160,774,132,753,106,729,69,686"/>
 <area shape="rect" id="Node000048" href="$group__input.html#ga182a99324a2f0f348d32603b05528735" title="Reads a packet of data from the mouse." alt="" coords="162,885,300,912"/>
 <area shape="poly" id="edge66_Node000001_Node000048" title=" " alt="" coords="67,684,77,721,96,771,125,825,143,849,163,871,168,875,164,879,160,875,139,853,120,828,91,773,72,723,61,685"/>
-<area shape="rect" id="Node000050" href="$group__rtc.html#ga57f7116af216e3779ad9d6e98351d329" title=" " alt="" coords="204,360,258,387"/>
+<area shape="rect" id="Node000050" href="$group__rtc.html#ga57f7116af216e3779ad9d6e98351d329" title="RTC interrupt handler." alt="" coords="204,360,258,387"/>
 <area shape="poly" id="edge68_Node000001_Node000050" title=" " alt="" coords="66,655,212,399,217,402,71,658"/>
 <area shape="rect" id="Node000055" href="$group__timer.html#ga10fc9c867b15c7da6649311c9987cd17" title="Handles timer interruptions and updates the internal interruption counter." alt="" coords="171,936,291,963"/>
 <area shape="poly" id="edge73_Node000001_Node000055" title=" " alt="" coords="65,684,73,729,90,793,119,862,139,894,164,922,167,925,164,929,160,926,135,897,114,864,85,794,68,730,60,685"/>
@@ -116,9 +116,9 @@
 <area shape="rect" id="Node000049" href="$group__input.html#ga14886abfecbdb576b89c3d78d7d5e6a4" title="Fills the packet structure with mouse data." alt="" coords="364,885,489,912"/>
 <area shape="poly" id="edge67_Node000048_Node000049" title=" " alt="" coords="301,896,348,896,348,901,301,901"/>
 <area shape="poly" id="edge72_Node000050_Node000006" title=" " alt="" coords="257,359,347,321,393,309,430,303,464,293,503,270,518,252,526,233,534,213,551,194,563,186,566,191,554,198,538,216,531,235,523,255,506,274,466,298,431,308,394,314,349,327,259,364"/>
-<area shape="rect" id="Node000051" href="$group__rtc.html#ga6028be0c2f6834191783cd629f324a2b" title=" " alt="" coords="380,385,473,412"/>
+<area shape="rect" id="Node000051" href="$group__rtc.html#ga6028be0c2f6834191783cd629f324a2b" title="Reads the current date and time from the RTC." alt="" coords="380,385,473,412"/>
 <area shape="poly" id="edge69_Node000050_Node000051" title=" " alt="" coords="258,374,365,388,364,393,258,379"/>
-<area shape="rect" id="Node000052" href="$group__rtc.html#gaa09d96578f0f0aad40b6beea97e1605a" title=" " alt="" coords="596,208,664,235"/>
+<area shape="rect" id="Node000052" href="$group__rtc.html#gaa09d96578f0f0aad40b6beea97e1605a" title="Reads a value from an RTC register." alt="" coords="596,208,664,235"/>
 <area shape="poly" id="edge71_Node000050_Node000052" title=" " alt="" coords="258,371,307,370,370,362,439,345,472,331,503,314,519,298,526,281,534,263,551,245,580,230,582,234,554,249,539,266,531,283,523,301,506,318,474,336,441,350,371,367,307,375,258,377"/>
 <area shape="poly" id="edge70_Node000051_Node000052" title=" " alt="" coords="472,384,488,376,502,365,514,350,520,335,525,306,530,275,538,260,551,245,580,228,582,233,554,249,542,263,535,277,530,307,526,337,519,353,506,369,491,380,475,389"/>
 <area shape="rect" id="Node000057" href="$group__queue__t.html#gab55dbf8ea466f45a1377b90ac804abd3" title="Removes an element from the queue and returns it." alt="" coords="588,1171,672,1197"/>

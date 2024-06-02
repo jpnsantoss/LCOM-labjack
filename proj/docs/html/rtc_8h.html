@@ -212,6 +212,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdatetime__t.html">datetime_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure to store date and time.  <a href="structdatetime__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -270,30 +271,43 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga5171a9c0f54940fe60f7500896afcc86" id="r_ga5171a9c0f54940fe60f7500896afcc86"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga5171a9c0f54940fe60f7500896afcc86">rtc_subscribe_int</a> (uint8_t *bit_no)</td></tr>
+<tr class="memdesc:ga5171a9c0f54940fe60f7500896afcc86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribes to RTC interrupts.  <br /></td></tr>
 <tr class="separator:ga5171a9c0f54940fe60f7500896afcc86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab8f17bf5280c908c8b199a90fefcc758" id="r_gab8f17bf5280c908c8b199a90fefcc758"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#gab8f17bf5280c908c8b199a90fefcc758">rtc_unsubscribe_int</a> ()</td></tr>
+<tr class="memdesc:gab8f17bf5280c908c8b199a90fefcc758"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsubscribes RTC interrupts.  <br /></td></tr>
 <tr class="separator:gab8f17bf5280c908c8b199a90fefcc758"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga99c770b400026bc59e3c80a22615ad50" id="r_ga99c770b400026bc59e3c80a22615ad50"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga99c770b400026bc59e3c80a22615ad50">rtc_setup</a> ()</td></tr>
+<tr class="memdesc:ga99c770b400026bc59e3c80a22615ad50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up RTC.  <br /></td></tr>
 <tr class="separator:ga99c770b400026bc59e3c80a22615ad50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad5efc0412ba4199ff6b5ecb663d6a7e5" id="r_gad5efc0412ba4199ff6b5ecb663d6a7e5"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#gad5efc0412ba4199ff6b5ecb663d6a7e5">rtc_to_bin</a> (uint8_t inbcd)</td></tr>
+<tr class="memdesc:gad5efc0412ba4199ff6b5ecb663d6a7e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a BCD value to binary.  <br /></td></tr>
 <tr class="separator:gad5efc0412ba4199ff6b5ecb663d6a7e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6028be0c2f6834191783cd629f324a2b" id="r_ga6028be0c2f6834191783cd629f324a2b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga6028be0c2f6834191783cd629f324a2b">rtc_get_time</a> ()</td></tr>
+<tr class="memdesc:ga6028be0c2f6834191783cd629f324a2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the current date and time from the RTC.  <br /></td></tr>
 <tr class="separator:ga6028be0c2f6834191783cd629f324a2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0a6fd09353e9e32173333e7a32997c88" id="r_ga0a6fd09353e9e32173333e7a32997c88"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga0a6fd09353e9e32173333e7a32997c88">rtc_set_alarm</a> ()</td></tr>
+<tr class="memdesc:ga0a6fd09353e9e32173333e7a32997c88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the RTC alarm.  <br /></td></tr>
 <tr class="separator:ga0a6fd09353e9e32173333e7a32997c88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa09d96578f0f0aad40b6beea97e1605a" id="r_gaa09d96578f0f0aad40b6beea97e1605a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#gaa09d96578f0f0aad40b6beea97e1605a">rtc_read</a> (uint8_t cmd, uint8_t *<a class="el" href="dvr__mouse_8c.html#ae9690d841a9bc6e3df9b44ac00ee070e">output</a>)</td></tr>
+<tr class="memdesc:gaa09d96578f0f0aad40b6beea97e1605a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a value from an RTC register.  <br /></td></tr>
 <tr class="separator:gaa09d96578f0f0aad40b6beea97e1605a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga87e4ef947b464068568304d39b119fa5" id="r_ga87e4ef947b464068568304d39b119fa5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga87e4ef947b464068568304d39b119fa5">rtc_write</a> (uint8_t cmd, uint8_t content)</td></tr>
+<tr class="memdesc:ga87e4ef947b464068568304d39b119fa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a value to an RTC register.  <br /></td></tr>
 <tr class="separator:ga87e4ef947b464068568304d39b119fa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1616eba91a73b03ecba145c8a91ebc11" id="r_ga1616eba91a73b03ecba145c8a91ebc11"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga1616eba91a73b03ecba145c8a91ebc11">rtc_wait</a> ()</td></tr>
+<tr class="memdesc:ga1616eba91a73b03ecba145c8a91ebc11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Waits for the RTC to be ready.  <br /></td></tr>
 <tr class="separator:ga1616eba91a73b03ecba145c8a91ebc11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga57f7116af216e3779ad9d6e98351d329" id="r_ga57f7116af216e3779ad9d6e98351d329"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga57f7116af216e3779ad9d6e98351d329">rtc_ih</a> ()</td></tr>
+<tr class="memdesc:ga57f7116af216e3779ad9d6e98351d329"><td class="mdescLeft">&#160;</td><td class="mdescRight">RTC interrupt handler.  <br /></td></tr>
 <tr class="separator:ga57f7116af216e3779ad9d6e98351d329"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga83f2682c45a821f4922410747f8da1ce" id="r_ga83f2682c45a821f4922410747f8da1ce"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga83f2682c45a821f4922410747f8da1ce">rtc_set_periodic_int</a> (bool enable)</td></tr>
+<tr class="memdesc:ga83f2682c45a821f4922410747f8da1ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the periodic interrupt of the RTC.  <br /></td></tr>
 <tr class="separator:ga83f2682c45a821f4922410747f8da1ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0ac2f7b9a8194d3811fb3ef622024773" id="r_ga0ac2f7b9a8194d3811fb3ef622024773"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga0ac2f7b9a8194d3811fb3ef622024773">rtc_set_update_int</a> (bool enable)</td></tr>
+<tr class="memdesc:ga0ac2f7b9a8194d3811fb3ef622024773"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the update interrupt of the RTC.  <br /></td></tr>
 <tr class="separator:ga0ac2f7b9a8194d3811fb3ef622024773"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4bd7edbf0206bbf43f7c9cc88fe71532" id="r_ga4bd7edbf0206bbf43f7c9cc88fe71532"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtc.html#ga4bd7edbf0206bbf43f7c9cc88fe71532">rtc_set_alarm_int</a> (bool enable)</td></tr>
+<tr class="memdesc:ga4bd7edbf0206bbf43f7c9cc88fe71532"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the alarm interrupt of the RTC.  <br /></td></tr>
 <tr class="separator:ga4bd7edbf0206bbf43f7c9cc88fe71532"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->

@@ -1,12 +1,12 @@
 <map id="rtc_wait" name="rtc_wait">
-<area shape="rect" id="Node000001" title=" " alt="" coords="751,31,817,57"/>
-<area shape="rect" id="Node000002" href="$group__rtc.html#ga6028be0c2f6834191783cd629f324a2b" title=" " alt="" coords="606,5,700,32"/>
+<area shape="rect" id="Node000001" title="Waits for the RTC to be ready." alt="" coords="751,31,817,57"/>
+<area shape="rect" id="Node000002" href="$group__rtc.html#ga6028be0c2f6834191783cd629f324a2b" title="Reads the current date and time from the RTC." alt="" coords="606,5,700,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="735,37,699,30,700,25,736,32"/>
-<area shape="rect" id="Node000008" href="$group__rtc.html#ga0a6fd09353e9e32173333e7a32997c88" title=" " alt="" coords="603,56,703,83"/>
+<area shape="rect" id="Node000008" href="$group__rtc.html#ga0a6fd09353e9e32173333e7a32997c88" title="Sets the RTC alarm." alt="" coords="603,56,703,83"/>
 <area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="736,56,704,62,703,57,735,51"/>
-<area shape="rect" id="Node000003" href="$group__rtc.html#ga57f7116af216e3779ad9d6e98351d329" title=" " alt="" coords="490,5,544,32"/>
+<area shape="rect" id="Node000003" href="$group__rtc.html#ga57f7116af216e3779ad9d6e98351d329" title="RTC interrupt handler." alt="" coords="490,5,544,32"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="591,21,544,21,544,16,591,16"/>
-<area shape="rect" id="Node000007" href="$group__rtc.html#ga99c770b400026bc59e3c80a22615ad50" title=" " alt="" coords="479,56,555,83"/>
+<area shape="rect" id="Node000007" href="$group__rtc.html#ga99c770b400026bc59e3c80a22615ad50" title="Sets up RTC." alt="" coords="479,56,555,83"/>
 <area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="602,41,556,58,554,53,600,36"/>
 <area shape="rect" id="Node000004" href="$group__ev__listener.html#ga2fd2cc82c3f815282a1b041ba2cab26b" title="General interrupt handler." alt="" coords="323,5,431,32"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="475,21,431,21,431,16,475,16"/>
