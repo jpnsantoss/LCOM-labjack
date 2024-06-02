@@ -141,7 +141,6 @@ int uart_get_byte(uint8_t *byte) {
 
 int (uart_ih)() {
   uint8_t response;
-  uint8_t status;
 
   if (uart_read(UART_COM1, UART_IIR, &response))
     return 0;
@@ -159,9 +158,6 @@ int (uart_ih)() {
     case UART_IIR_INT_CHAR_TIMEOUT:
       uart_fifo_read(UART_COM1);
       return 1;
-    case UART_IIR_INT_LSR_STATUS:
-      uart_read(UART_COM1, UART_LSR, &status);
-      return 0;
     default:
       return 0;
   }
@@ -192,7 +188,7 @@ int uart_init(uint8_t *bit_no, int bit_rate) {
   if (uart_write(UART_COM1, UART_FCR, cmd))
     return 1;
 
-  cmd = UART_IER_ENABLE_INT_DATA | UART_IER_ENABLE_INT_LSR | UART_IER_ENABLE_INT_THR;
+  cmd = UART_IER_ENABLE_INT_DATA | UART_IER_ENABLE_INT_THR;
   if (uart_write(UART_COM1, UART_IER, cmd))
     return 1;
 
