@@ -46,33 +46,114 @@
 
 /** @} */
 
+
+/**
+ * @brief Structure to store date and time.
+ */
 typedef struct {
-    uint8_t hours;
-    uint8_t minutes;
-    uint8_t seconds;
-    uint8_t year;
-    uint8_t month;
-    uint8_t day;
+    uint8_t hours;    /**< Hours */
+    uint8_t minutes;  /**< Minutes */
+    uint8_t seconds;  /**< Seconds */
+    uint8_t year;     /**< Year */
+    uint8_t month;    /**< Month */
+    uint8_t day;      /**< Day */
 } datetime_t;
 
+/**
+ * @brief Subscribes to RTC interrupts.
+ *
+ * @param bit_no Pointer where the bit number signaling the interruption will be saved
+ * @return 0 if successful, 1 otherwise.
+ */
 int (rtc_subscribe_int)(uint8_t* bit_no);
+
+/**
+ * @brief Unsubscribes RTC interrupts.
+ * @return 0 if sucessful, 1 otherwise.
+*/
 int (rtc_unsubscribe_int)();
 
+/**
+ * @brief Sets up RTC.
+ * @return 0 if sucessful, 1 otherwise.
+*/
 int rtc_setup();
 
+/**
+ * @brief Converts a BCD value to binary.
+ * 
+ * @param inbcd BCD value to convert.
+ * @return uint8_t Binary representation of the input BCD value.
+ */
+
 uint8_t rtc_to_bin(uint8_t inbcd);
+
+/**
+ * @brief Reads the current date and time from the RTC.
+ * 
+ * @return 0 if sucessful, 1 otherwise.
+ */
 int rtc_get_time();
 
+/**
+ * @brief Sets the RTC alarm.
+ * 
+
+ */
 int rtc_set_alarm();
 
+/**
+ * @brief Reads a value from an RTC register.
+ * 
+ * @param cmd Command to specify the register to read.
+ * @param output Pointer to store the read value.
+ * @return 0 if sucessful, 1 otherwise.
+ */
 int rtc_read(uint8_t cmd, uint8_t *output);
+
+/**
+ * @brief Writes a value to an RTC register.
+ * 
+ * @param cmd Command to specify the register to write.
+ * @param content Value to write to the register.
+ * @return 0 if sucessful, 1 otherwise.
+ */
 int rtc_write(uint8_t cmd, uint8_t content);
+
+/**
+ * @brief Waits for the RTC to be ready.
+ */
 void rtc_wait();
+/**
+ * @brief RTC interrupt handler.
+ * 
+ * @return 0 if sucessful, 1 otherwise.
+ */
 
 int (rtc_ih)();
 
+/**
+ * @brief Sets the periodic interrupt of the RTC.
+ * 
+ * @param enable Boolean to enable or disable the periodic interrupt.
+ * @return 0 if sucessful, 1 otherwise.
+ */
 int rtc_set_periodic_int(bool enable);
+
+/**
+ * @brief Sets the update interrupt of the RTC.
+ * 
+ * @param enable Boolean to enable or disable the update interrupt.
+ * @return 0 if sucessful, 1 otherwise.
+ */
 int rtc_set_update_int(bool enable);
+
+/**
+ * @brief Sets the alarm interrupt of the RTC.
+ * 
+ * @param enable Boolean to enable or disable the alarm interrupt.
+ * @return 0 if sucessful, 1 otherwise.
+ */
 int rtc_set_alarm_int(bool enable);
 
 /** @} */
