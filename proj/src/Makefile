@@ -17,6 +17,7 @@
 .PATH: ${.CURDIR}/model/cursor
 .PATH: ${.CURDIR}/model/font
 .PATH: ${.CURDIR}/model/banner
+.PATH: ${.CURDIR}/model/com_manager
 .PATH: ${.CURDIR}/drawer
 
 # name of the program (Minix service)
@@ -29,7 +30,7 @@ SRCS += dvr_graphics.c dvr_kbc.c dvr_keyboard.c dvr_mouse.c dvr_timer.c dvr_rtc.
 # data_structs
 SRCS += queue.c stack.c
 # models
-SRCS += sprite.c app.c player.c card.c game.c cursor.c animation.c font.c banner.c
+SRCS += sprite.c app.c player.c card.c game.c cursor.c animation.c font.c banner.c com_manager.c
 #listeners
 SRCS += ev_listener.c ev_game_bet.c ev_game_dealer_turn.c ev_game_over.c ev_game_play.c ev_main_menu.c
 #others
@@ -37,7 +38,7 @@ SRCS += drawer.c
 
 # additional compilation flags
 # "-Wall -Wextra -Werror -I . -std=c11 -Wno-unused-parameter" are already set
-CFLAGS += -pedantic #-D__LCOM_OPTIMIZED__
+CFLAGS += -pedantic -D__LCOM_OPTIMIZED__
 
 # list of library dependencies (for Lab 2, only LCF library)
 DPADD += ${LIBLCF}

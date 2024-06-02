@@ -1,0 +1,15 @@
+<map id="sprite_colides" name="sprite_colides">
+<area shape="rect" id="Node000001" title="Checks if two sprites collide." alt="" coords="584,81,686,108"/>
+<area shape="rect" id="Node000002" href="$group__cursor.html#gaa467c36c513252fe3004310865700962" title="Checks if the cursor collides with a given sprite." alt="" coords="392,81,536,108"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="569,97,536,97,536,92,569,92"/>
+<area shape="rect" id="Node000003" href="$group__ev__listener.html#gae44c52c33fbd52a450014d58bd15ab2a" title="Handles bet value input." alt="" coords="211,5,331,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="417,77,343,46,312,35,314,30,345,42,419,72"/>
+<area shape="rect" id="Node000005" href="$group__ev__listener.html#gabeab42a878a73b55decd954a69ec1be7" title="Handles interrupts in the game over state." alt="" coords="207,56,335,83"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="376,86,335,80,335,75,377,81"/>
+<area shape="rect" id="Node000006" href="$group__ev__listener.html#gaac3b528525094a9c64495cc99154b2c2" title="Handles interrupts in the game playing state." alt="" coords="198,107,344,133"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="377,109,345,113,344,108,376,103"/>
+<area shape="rect" id="Node000007" href="$group__ev__listener.html#gaf39362208e047dd8c2fdac3802d35a25" title="Handles interrupts in the main menu state." alt="" coords="204,157,338,184"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="419,117,345,148,314,159,312,154,343,143,417,112"/>
+<area shape="rect" id="Node000004" href="$group__ev__listener.html#ga440c6c7cbaa7a4aca8e09d35eaa71e61" title="Handles interrupts in the game betting state." alt="" coords="5,5,150,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="195,21,150,21,150,16,195,16"/>
+</map>

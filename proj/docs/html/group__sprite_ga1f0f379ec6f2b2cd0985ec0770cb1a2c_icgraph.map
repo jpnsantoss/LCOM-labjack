@@ -1,0 +1,38 @@
+<map id="sprite_destroy" name="sprite_destroy">
+<area shape="rect" id="Node000001" title="Destroys a sprite, freeing all allocated resources." alt="" coords="728,183,831,209"/>
+<area shape="rect" id="Node000002" href="$group__app.html#gab081435b68a0e159fb04347bb88ad79d" title="Frees the memory allocated for the application and its components." alt="" coords="213,208,305,235"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="712,183,643,170,559,161,468,160,423,165,380,173,356,184,332,198,303,210,301,205,330,194,353,180,378,168,423,160,468,155,559,156,643,165,713,177"/>
+<area shape="rect" id="Node000004" href="$group__card.html#ga03f71f970e17949d6382639bf049e710" title="Destroys all loaded card sprites." alt="" coords="541,81,673,108"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="747,175,678,129,642,111,644,106,681,124,750,171"/>
+<area shape="rect" id="Node000010" href="$group__cursor.html#ga32bf35d9146323c25e2952be498dbb5d" title="Destroys the cursor and frees its resources." alt="" coords="379,183,486,209"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="712,199,487,199,487,193,712,193"/>
+<area shape="rect" id="Node000011" href="$group__cursor.html#ga4c5ef91c2ff49824f46e2a2aa9cb3d47" title="Initializes the cursor." alt="" coords="566,360,648,387"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="756,223,624,361,620,358,752,219"/>
+<area shape="rect" id="Node000013" href="$group__sprite.html#ga42f02929141674478580e63678b9771f" title="Destroys a sprite from a queue." alt="" coords="534,259,680,285"/>
+<area shape="poly" id="edge16_Node000001_Node000013" title=" " alt="" coords="734,219,640,261,638,256,732,214"/>
+<area shape="rect" id="Node000003" href="$group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="18,259,126,285"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="198,240,124,261,123,256,197,235"/>
+<area shape="rect" id="Node000005" href="$group__game.html#ga803c43aec649e1f97a9f1e7999ac0b0a" title="Destroys the game, freeing all allocated resources." alt="" coords="381,81,484,108"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="526,97,485,97,485,92,526,92"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="393,119,381,129,366,147,358,164,349,181,333,198,307,212,304,208,329,194,345,178,354,161,362,144,377,125,389,115"/>
+<area shape="rect" id="Node000006" href="$group__game.html#ga38ace932203d6d4ffab3ae71486a930b" title="Initializes the game." alt="" coords="220,56,298,83"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="365,88,298,78,298,72,366,82"/>
+<area shape="rect" id="Node000007" href="$group__ev__listener.html#gaf39362208e047dd8c2fdac3802d35a25" title="Handles interrupts in the main menu state." alt="" coords="5,81,139,108"/>
+<area shape="poly" id="edge10_Node000005_Node000007" title=" " alt="" coords="365,97,139,97,139,92,365,92"/>
+<area shape="rect" id="Node000008" href="$group__ev__listener.html#ga440c6c7cbaa7a4aca8e09d35eaa71e61" title="Handles interrupts in the game betting state." alt="" coords="187,157,331,184"/>
+<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="387,117,292,159,290,154,385,112"/>
+<area shape="rect" id="Node000009" href="$group__ev__listener.html#gabeab42a878a73b55decd954a69ec1be7" title="Handles interrupts in the game over state." alt="" coords="195,5,323,32"/>
+<area shape="poly" id="edge9_Node000005_Node000009" title=" " alt="" coords="392,76,330,46,301,35,303,30,332,42,394,71"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="205,79,140,88,139,83,205,74"/>
+<area shape="poly" id="edge12_Node000010_Node000002" title=" " alt="" coords="364,209,306,217,305,212,364,203"/>
+<area shape="rect" id="Node000012" href="$group__app.html#ga7cca950bbf3cf06fb45d033e3e7cde48" title="Initializes the application." alt="" coords="226,335,292,361"/>
+<area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="551,379,470,381,379,376,292,359,293,354,379,371,470,375,551,374"/>
+<area shape="poly" id="edge15_Node000012_Node000003" title=" " alt="" coords="210,331,106,288,108,283,212,326"/>
+<area shape="poly" id="edge17_Node000013_Node000002" title=" " alt="" coords="519,283,450,283,378,275,327,258,284,238,286,233,329,253,380,269,450,278,519,277"/>
+<area shape="rect" id="Node000014" href="$group__font.html#gace7b106acf084f479f5dcd2c7d2c9a06" title="Destroys the font and frees its resources." alt="" coords="387,233,479,260"/>
+<area shape="poly" id="edge18_Node000013_Node000014" title=" " alt="" coords="519,262,479,256,479,251,519,257"/>
+<area shape="rect" id="Node000015" href="$group__font.html#ga368309c58e051e585f1f8e65d92a46d0" title="Initializes the font by loading sprites for letters, numbers, and special characters." alt="" coords="400,335,466,361"/>
+<area shape="poly" id="edge20_Node000013_Node000015" title=" " alt="" coords="561,295,466,337,464,332,559,290"/>
+<area shape="poly" id="edge19_Node000014_Node000002" title=" " alt="" coords="371,240,305,231,306,225,372,235"/>
+<area shape="poly" id="edge21_Node000015_Node000012" title=" " alt="" coords="384,351,292,351,292,345,384,345"/>
+</map>

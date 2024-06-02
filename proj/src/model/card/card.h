@@ -70,4 +70,4 @@ card_t	*card_create(int value, card_type_t type);
 
 /** @} */
 
-#endif
+#endif /* _LCOM_EV_CARD_H_ */

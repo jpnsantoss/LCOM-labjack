@@ -1,0 +1,8 @@
+<map id="src/drivers/timer/timer.h" name="src/drivers/timer/timer.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,163,32"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="45,155,123,181"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="84,33,77,80,78,111,81,139,76,140,72,111,72,80,79,32"/>
+<area shape="rect" id="Node000003" href="$i8254_8h.html" title=" " alt="" coords="87,80,150,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="92,31,109,65,104,67,88,34"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="115,108,99,142,94,139,110,106"/>
+</map>

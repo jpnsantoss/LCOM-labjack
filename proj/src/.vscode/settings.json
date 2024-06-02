@@ -40,6 +40,9 @@
 		"serial_port.h": "c",
 		"animation.h": "c",
 		"com_manager.h": "c",
-		"protocol.h": "c"
+		"protocol.h": "c",
+		"input.h": "c",
+		"rtc.h": "c",
+		"sysutil.h": "c"
 	},
 }

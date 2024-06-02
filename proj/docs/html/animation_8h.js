@@ -1,9 +1,9 @@
 var animation_8h =
 [
-    [ "animation_t", "structanimation__t.html", "structanimation__t" ],
-    [ "animation_add_frame", "animation_8h.html#aff085b5759c8a71d319cf3fdd28dc603", null ],
-    [ "animation_create", "animation_8h.html#a0b0db5e2841c87a01ef6052ff34c4f19", null ],
-    [ "animation_destroy", "animation_8h.html#a20212c585ef755ed071f904caf6e2997", null ],
-    [ "animation_draw", "animation_8h.html#ab21a107c5ce3e38887940bdf400f721f", null ],
-    [ "animation_run", "animation_8h.html#a8249fbb3a96829f4a13a2a9a0177669a", null ]
+    [ "animation_add_frame", "group__animation.html#ga079d535391b5fbff3ecd4fae614e18f1", null ],
+    [ "animation_create", "group__animation.html#ga08d98778bffe43b6cb8b1e9f1546db2a", null ],
+    [ "animation_destroy", "group__animation.html#ga20212c585ef755ed071f904caf6e2997", null ],
+    [ "animation_draw", "group__animation.html#gab21a107c5ce3e38887940bdf400f721f", null ],
+    [ "animation_run", "group__animation.html#gaa555c1bf59971c71e605cc44d9ca147f", null ],
+    [ "animation_running", "group__animation.html#ga0abab1d77047f6f710e2f6dba14381a3", null ]
 ];

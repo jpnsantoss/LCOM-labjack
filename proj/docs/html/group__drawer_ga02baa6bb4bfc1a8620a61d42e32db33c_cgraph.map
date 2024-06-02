@@ -1,0 +1,18 @@
+<map id="draw_button_set" name="draw_button_set">
+<area shape="rect" id="Node000001" title="Draws a set of buttons on the screen." alt="" coords="5,107,122,133"/>
+<area shape="rect" id="Node000002" href="$group__queue__t.html#ga589f94630961aefb1184e683512b31f6" title="Returns the element at a specific position inside the queue." alt="" coords="183,5,257,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,104,168,42,176,37,179,42,171,46,84,108"/>
+<area shape="rect" id="Node000003" href="$group__sprite.html#gac5fbc907f8ab180c9825285e76d84fd4" title="Draws the sprite on the screen." alt="" coords="176,56,264,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="106,103,161,85,163,90,108,109"/>
+<area shape="rect" id="Node000006" href="$group__sprite.html#ga5272f5d91c76d187c107346a66638b1e" title="Moves the sprite to a new position." alt="" coords="175,107,265,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="122,117,159,117,159,123,122,123"/>
+<area shape="rect" id="Node000007" href="$group__graphics.html#ga27bae7bb2746ac15b7cf450ef081350f" title="Gets the height of the screen." alt="" coords="170,157,270,184"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="108,131,163,150,161,155,106,137"/>
+<area shape="rect" id="Node000008" href="$group__graphics.html#ga0053bc870d8f61c8ff96cb89e9c7d02d" title="Gets the width of the screen." alt="" coords="172,208,268,235"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="84,132,171,194,179,198,176,203,168,198,81,136"/>
+<area shape="rect" id="Node000004" href="$group__graphics.html#ga6f895de9725f9f231f9a7f74b6087f60" title="Draws a pixel on the screen." alt="" coords="318,56,419,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="264,67,303,67,303,72,264,72"/>
+<area shape="rect" id="Node000005" href="$group__graphics.html#gab52043147d41e2f66a892043455a8515" title="Gets the graphics information." alt="" coords="326,107,411,133"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="262,81,314,99,312,104,261,86"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="265,117,311,117,311,123,265,123"/>
+</map>

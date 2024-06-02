@@ -1,0 +1,12 @@
+<map id="rtc_get_time" name="rtc_get_time">
+<area shape="rect" id="Node000001" title="Reads the current date and time from the RTC." alt="" coords="5,21,99,48"/>
+<area shape="rect" id="Node000002" href="$group__rtc.html#gaa09d96578f0f0aad40b6beea97e1605a" title="Reads a value from an RTC register." alt="" coords="273,21,341,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,18,146,6,186,3,225,6,259,14,257,19,225,12,186,8,147,12,96,23"/>
+<area shape="rect" id="Node000004" href="$group__rtc.html#gad5efc0412ba4199ff6b5ecb663d6a7e5" title="Converts a BCD value to binary." alt="" coords="147,21,225,48"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="99,32,131,32,131,37,99,37"/>
+<area shape="rect" id="Node000005" href="$group__rtc.html#ga1616eba91a73b03ecba145c8a91ebc11" title="Waits for the RTC to be ready." alt="" coords="153,72,219,98"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="90,46,139,65,137,70,89,51"/>
+<area shape="rect" id="Node000003" href="$group__driver__utils.html#ga2b56f50ba159e9d5115ed1a75eff15d9" title="Reads the information in a register and converts it to a 8&#45;bit unsigned integer." alt="" coords="389,21,480,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="342,32,374,32,374,37,342,37"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="219,69,258,52,261,57,221,74"/>
+</map>

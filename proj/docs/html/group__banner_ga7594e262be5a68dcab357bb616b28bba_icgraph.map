@@ -1,0 +1,22 @@
+<map id="banner_set_message" name="banner_set_message">
+<area shape="rect" id="Node000001" title="Sets a message for the banner to display with a specified timeout." alt="" coords="733,107,878,133"/>
+<area shape="rect" id="Node000002" href="$group__com__manager.html#gaee8d7297b19aec42e71d97ca9bc1b6b6" title="Processes the fully received packet." alt="" coords="535,5,672,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="768,101,683,53,642,35,644,30,686,48,771,96"/>
+<area shape="rect" id="Node000003" href="$group__ev__listener.html#ga2fd2cc82c3f815282a1b041ba2cab26b" title="General interrupt handler." alt="" coords="360,31,468,57"/>
+<area shape="poly" id="edge10_Node000001_Node000003" title=" " alt="" coords="724,106,684,97,468,56,469,51,685,92,725,100"/>
+<area shape="rect" id="Node000006" href="$group__ev__listener.html#gaf04c38e4884c97e63526bc86ff62a97f" title="Checks and handles the bet value." alt="" coords="522,107,685,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="717,123,685,123,685,117,717,117"/>
+<area shape="rect" id="Node000009" href="$group__ev__listener.html#gabeab42a878a73b55decd954a69ec1be7" title="Handles interrupts in the game over state." alt="" coords="539,157,668,184"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="735,140,660,159,659,154,734,135"/>
+<area shape="rect" id="Node000010" href="$group__ev__listener.html#gaac3b528525094a9c64495cc99154b2c2" title="Handles interrupts in the game playing state." alt="" coords="530,208,677,235"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="775,145,734,172,686,198,656,210,654,205,684,194,731,168,772,140"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="520,33,469,39,468,34,519,27"/>
+<area shape="rect" id="Node000004" href="$group__ev__listener.html#ga955b5bc9310ba1d1d83fea434ad6da45" title="Handles general interrupts for the application." alt="" coords="177,31,291,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="344,47,291,47,291,41,344,41"/>
+<area shape="rect" id="Node000005" href="$group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="5,31,114,57"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="162,47,114,47,114,41,162,41"/>
+<area shape="rect" id="Node000007" href="$group__ev__listener.html#gae44c52c33fbd52a450014d58bd15ab2a" title="Handles bet value input." alt="" coords="354,107,474,133"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="507,123,475,123,475,117,507,117"/>
+<area shape="rect" id="Node000008" href="$group__ev__listener.html#ga440c6c7cbaa7a4aca8e09d35eaa71e61" title="Handles interrupts in the game betting state." alt="" coords="162,107,306,133"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="338,123,306,123,306,117,338,117"/>
+</map>

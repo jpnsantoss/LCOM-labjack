@@ -142,4 +142,4 @@ int		app_buttons_game_over_init(queue_t **queue);
 
 /** @} */
 
-#endif
+#endif /* _LCOM_EV_APP_H_ */

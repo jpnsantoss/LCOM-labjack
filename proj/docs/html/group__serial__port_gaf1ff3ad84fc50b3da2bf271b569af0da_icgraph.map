@@ -1,0 +1,9 @@
+<map id="uart_unsubscribe_int" name="uart_unsubscribe_int">
+<area shape="rect" id="Node000001" title="Unsubscribes interruptions from COM1." alt="" coords="429,5,571,32"/>
+<area shape="rect" id="Node000002" href="$group__serial__port.html#ga954b450471faa8a148790f27f75edbca" title="Deletes allocated memory by the UART device driver and unsubscribes interrupts." alt="" coords="290,5,381,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="413,21,382,21,382,16,413,16"/>
+<area shape="rect" id="Node000003" href="$group__main.html#ga3260b4ca4b069d575595f76a611c21e8" title="Unsubscribes the interrupts from all devices and returns the screen to text mode." alt="" coords="162,5,242,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="274,21,242,21,242,16,274,16"/>
+<area shape="rect" id="Node000004" href="$group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="5,5,114,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="146,21,114,21,114,16,146,16"/>
+</map>

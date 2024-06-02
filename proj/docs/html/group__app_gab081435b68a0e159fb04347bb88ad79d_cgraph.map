@@ -1,0 +1,31 @@
+<map id="app_destroy" name="app_destroy">
+<area shape="rect" id="Node000001" title="Frees the memory allocated for the application and its components." alt="" coords="5,118,98,144"/>
+<area shape="rect" id="Node000002" href="$group__cursor.html#ga32bf35d9146323c25e2952be498dbb5d" title="Destroys the cursor and frees its resources." alt="" coords="146,42,253,68"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="78,115,157,73,159,78,81,119"/>
+<area shape="rect" id="Node000003" href="$group__sprite.html#ga1f0f379ec6f2b2cd0985ec0770cb1a2c" title="Destroys a sprite, freeing all allocated resources." alt="" coords="512,67,615,94"/>
+<area shape="poly" id="edge17_Node000001_Node000003" title=" " alt="" coords="58,116,91,70,115,45,145,27,194,11,246,4,298,4,350,9,445,32,519,58,517,63,443,37,349,15,298,9,246,9,195,16,147,32,119,50,95,73,62,119"/>
+<area shape="rect" id="Node000004" href="$group__font.html#gace7b106acf084f479f5dcd2c7d2c9a06" title="Destroys the font and frees its resources." alt="" coords="153,143,246,170"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="98,136,139,143,138,148,98,141"/>
+<area shape="rect" id="Node000005" href="$group__queue__t.html#ga0488f00c2aa08e55eab9286564c6e676" title="Queue destroyer. Frees all allocated memory inside the queue, including the content still stored insi..." alt="" coords="510,270,617,296"/>
+<area shape="poly" id="edge16_Node000001_Node000005" title=" " alt="" coords="77,142,147,179,239,213,333,239,422,258,495,271,494,276,421,263,332,244,237,218,145,184,74,147"/>
+<area shape="rect" id="Node000006" href="$group__sprite.html#ga42f02929141674478580e63678b9771f" title="Destroys a sprite from a queue." alt="" coords="301,92,446,119"/>
+<area shape="poly" id="edge18_Node000001_Node000006" title=" " alt="" coords="98,125,285,110,286,115,98,130"/>
+<area shape="rect" id="Node000007" href="$group__game.html#ga803c43aec649e1f97a9f1e7999ac0b0a" title="Destroys the game, freeing all allocated resources." alt="" coords="148,295,251,322"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="61,144,94,204,118,241,148,274,159,284,156,288,144,278,114,244,89,207,57,146"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="254,56,496,73,496,78,253,61"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="246,150,289,150,341,153,395,162,447,179,476,195,503,215,544,256,540,260,499,219,473,199,445,184,394,167,340,158,289,155,246,156"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="245,140,310,121,311,126,247,145"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="446,93,496,86,497,92,447,98"/>
+<area shape="poly" id="edge15_Node000007_Node000005" title=" " alt="" coords="251,302,495,285,495,290,251,307"/>
+<area shape="rect" id="Node000008" href="$group__card.html#ga03f71f970e17949d6382639bf049e710" title="Destroys all loaded card sprites." alt="" coords="308,194,439,220"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="223,292,335,226,337,231,226,297"/>
+<area shape="rect" id="Node000009" href="$group__card.html#ga2d17b23e643b88a94a08dd97ef502747" title="Destroys a card in the queue." alt="" coords="494,371,633,398"/>
+<area shape="poly" id="edge10_Node000007_Node000009" title=" " alt="" coords="214,320,251,353,275,369,302,382,346,393,392,397,479,395,479,400,392,403,345,398,300,387,273,374,248,357,211,324"/>
+<area shape="rect" id="Node000011" href="$group__player.html#ga3e022dfe5f6c73df82be5acf948387f4" title="Destroys the player, freeing all allocated resources." alt="" coords="321,346,427,372"/>
+<area shape="poly" id="edge12_Node000007_Node000011" title=" " alt="" coords="249,320,311,338,310,343,247,325"/>
+<area shape="poly" id="edge9_Node000008_Node000003" title=" " alt="" coords="394,191,528,100,531,105,397,195"/>
+<area shape="rect" id="Node000010" href="$group__card.html#ga199fa1253b6d8e693f43c4c9e98746e6" title="Destroys a card." alt="" coords="681,371,777,398"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="633,382,665,382,665,387,633,387"/>
+<area shape="poly" id="edge14_Node000011_Node000005" title=" " alt="" coords="408,342,513,300,515,305,410,347"/>
+<area shape="poly" id="edge13_Node000011_Node000009" title=" " alt="" coords="427,363,480,370,479,376,427,369"/>
+</map>

@@ -1,0 +1,15 @@
+<map id="queue_at_ref" name="queue_at_ref">
+<area shape="rect" id="Node000001" title="Returns a pointer to the place where the element at a specific position is stored inside the queue...." alt="" coords="712,31,807,57"/>
+<area shape="rect" id="Node000002" href="$group__queue__t.html#gadb51dd354cbb706eb420cb0a29b70626" title="Shuffles the content inside a queue." alt="" coords="563,31,664,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="696,47,664,47,664,41,696,41"/>
+<area shape="rect" id="Node000003" href="$group__game.html#ga0d56ac73692d6b836f9890cd66ea3bce" title="Adds a deck of cards to the game, optionally shuffling it." alt="" coords="399,31,515,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="548,47,516,47,516,41,548,41"/>
+<area shape="rect" id="Node000004" href="$group__game.html#ga38ace932203d6d4ffab3ae71486a930b" title="Initializes the game." alt="" coords="230,5,308,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="383,37,308,26,308,21,384,32"/>
+<area shape="rect" id="Node000006" href="$ev__game__over_8c.html#af1badb6a4c069c6c94e156b4606564c4" title=" " alt="" coords="187,56,351,83"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="384,57,352,61,351,56,383,51"/>
+<area shape="rect" id="Node000005" href="$group__ev__listener.html#gaf39362208e047dd8c2fdac3802d35a25" title="Handles interrupts in the main menu state." alt="" coords="5,5,139,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="214,21,139,21,139,16,214,16"/>
+<area shape="rect" id="Node000007" href="$group__ev__listener.html#gabeab42a878a73b55decd954a69ec1be7" title="Handles interrupts in the game over state." alt="" coords="8,56,136,83"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="171,72,137,72,137,67,171,67"/>
+</map>

@@ -7,9 +7,11 @@
 #include "../model/game/game.h"
 #include "../model/app/app.h"
 #include "../model/animation/animation.h"
+#include "../model/com_manager/com_manager.h"
+#include <math.h>
+
 #include "../assets/cards/rotate1.xpm"
 #include "../assets/cards/rotate2.xpm"
-#include <math.h>
 
 /**
  * @defgroup ev_listener Event Listener

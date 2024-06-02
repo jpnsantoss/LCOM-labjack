@@ -1,6 +1,5 @@
 #include "ev_listener.h"
 
-uint8_t uart_response = 0xff;
 extern uint8_t scancode;
 extern int timer_counter;
 extern datetime_t curr_time;
@@ -15,13 +14,12 @@ handler listeners[] = {
   NULL
 };
 
-void handle_interrupt(app_t *app, interrupt_type_t interrupt)
-{
+void handle_interrupt(app_t *app, interrupt_type_t interrupt) {
   handle_general(app, interrupt);
   handler hd = listeners[app->state];
-  if (hd == NULL) return;
-  if (state_changed)
-	{
+  if (hd == NULL)
+    return;
+  if (state_changed) {
     state_changed = 0;
     return;
   }
@@ -29,23 +27,20 @@ void handle_interrupt(app_t *app, interrupt_type_t interrupt)
   hd(app, interrupt);
 }
 
-void handle_general(app_t *app, interrupt_type_t interrupt)
-{
-  switch (interrupt)
-	{
+void handle_general(app_t *app, interrupt_type_t interrupt) {
+	uint8_t byte;
+
+  switch (interrupt) {
     case KEYBOARD:
       kbc_ih();
-
-			if (scancode == KB_9) banner_set_message(&app->banner, "aaa", 600);
-			
       break;
     case MOUSE:
       mouse_ih();
 
-      if (mouse_read_packet())
-			{
+      if (mouse_read_packet()) {
         mouse_info_t *info = mouse_get_info();
-        if (info == NULL) return;
+        if (info == NULL)
+          return;
 
         uint32_t new_x = app->cursor.x + info->delta_x;
         uint32_t new_y = app->cursor.y - info->delta_y;
@@ -57,39 +52,25 @@ void handle_general(app_t *app, interrupt_type_t interrupt)
       }
       break;
     case UART:
-      if (uart_ih())
-			{
-        if (uart_get_byte(&uart_response)) uart_response = 0xff;
-
-				switch (uart_response)
-				{
-					case PLAYER_WIN:
-						banner_set_message(&app->banner, "A player has won.", 120);
-						break;
-					case PLAYER_LOSS:
-						banner_set_message(&app->banner, "A player has lost.", 120);
-						break;
-					case PLAYER_DRAW:
-						banner_set_message(&app->banner, "A player has draw.", 120);
-						break;
-					default:
-						break;
+      if (uart_ih()) {
+        while (!uart_get_byte(&byte)) {
+					com_add_byte(byte);
+					com_handle_packet(app);
 				}
       }
       break;
     case TIMER:
       timer_int_handler();
-			banner_update_timeout(&app->banner);
-      if (app->state != MAIN_MENU) 
+      banner_update_timeout(&app->banner);
+      if (app->state != MAIN_MENU)
         animation_run(&app->game.curr_anim, app);
       draw_screen(app);
       break;
     case RTC:
       rtc_ih();
-      if (curr_time.seconds == 0 && curr_time.minutes % 5 == 0 && app->game.dealer != NULL)
-      {
-         banner_set_message(&app->banner, "You received a bonus ~50", 120);
-         app->game.main_player.coins += 50;
+      if (curr_time.seconds == 0 && curr_time.minutes % 5 == 0 && app->game.dealer != NULL) {
+        banner_set_message(&app->banner, "You received a bonus ~50", 120);
+        app->game.main_player.coins += 50;
       }
       break;
   }

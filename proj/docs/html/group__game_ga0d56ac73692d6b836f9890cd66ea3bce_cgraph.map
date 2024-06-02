@@ -1,0 +1,17 @@
+<map id="game_add_deck" name="game_add_deck">
+<area shape="rect" id="Node000001" title="Adds a deck of cards to the game, optionally shuffling it." alt="" coords="5,56,122,83"/>
+<area shape="rect" id="Node000002" href="$group__card.html#ga81ea1a299f20c143fee5a3c67d4951d7" title="Creates a card with the specified value and type." alt="" coords="175,5,265,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,53,161,35,163,40,108,58"/>
+<area shape="rect" id="Node000003" href="$group__queue__t.html#ga89bb8cf14f8a833ded72fca1fb6d8636" title="Pushes an element to the end of a queue." alt="" coords="174,56,266,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="122,67,158,67,158,72,122,72"/>
+<area shape="rect" id="Node000006" href="$group__queue__t.html#gadb51dd354cbb706eb420cb0a29b70626" title="Shuffles the content inside a queue." alt="" coords="170,107,270,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="108,81,163,99,161,104,106,86"/>
+<area shape="rect" id="Node000004" href="$group__queue__t.html#ga2a0ac508b8a3e94d7d50de284cc9b898" title="Checks if a queue is empty." alt="" coords="318,5,417,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="260,53,311,35,313,40,262,58"/>
+<area shape="rect" id="Node000005" href="$group__queue__t.html#ga48ca9da7d179448a59262595a0dfcdce" title="Checks if the queue is full." alt="" coords="328,56,407,83"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="266,67,312,67,312,72,266,72"/>
+<area shape="rect" id="Node000007" href="$group__queue__t.html#ga589f94630961aefb1184e683512b31f6" title="Returns the element at a specific position inside the queue." alt="" coords="331,107,405,133"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="270,117,315,117,315,123,270,123"/>
+<area shape="rect" id="Node000008" href="$group__queue__t.html#ga658e853ad3c402311cb4ad82bf6cd6bc" title="Returns a pointer to the place where the element at a specific position is stored inside the queue...." alt="" coords="320,157,415,184"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="262,131,313,149,311,154,260,136"/>
+</map>

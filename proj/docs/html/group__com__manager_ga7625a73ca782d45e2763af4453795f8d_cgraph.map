@@ -1,0 +1,23 @@
+<map id="com_send_msg" name="com_send_msg">
+<area shape="rect" id="Node000001" title="Sends a message to another pc via Serial Port." alt="" coords="5,76,119,103"/>
+<area shape="rect" id="Node000002" href="$group__serial__port.html#ga00a2984ead2b73e2871dfda7c1ac49e3" title="Adds a byte to the transmitter queue." alt="" coords="167,76,277,103"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,87,151,87,151,92,119,92"/>
+<area shape="rect" id="Node000003" href="$group__queue__t.html#ga89bb8cf14f8a833ded72fca1fb6d8636" title="Pushes an element to the end of a queue." alt="" coords="330,25,421,52"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="264,73,317,55,319,60,266,78"/>
+<area shape="rect" id="Node000006" href="$group__serial__port.html#ga947056d01d461376d5bbcd9f69bdff4f" title="Writes a byte to the UART FIFO." alt="" coords="325,127,425,153"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="266,101,319,119,317,124,264,106"/>
+<area shape="rect" id="Node000004" href="$group__queue__t.html#ga2a0ac508b8a3e94d7d50de284cc9b898" title="Checks if a queue is empty." alt="" coords="606,76,705,103"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="410,22,442,12,479,5,519,3,559,11,601,34,634,63,630,67,598,38,557,16,519,9,480,10,443,18,411,27"/>
+<area shape="rect" id="Node000005" href="$group__queue__t.html#ga48ca9da7d179448a59262595a0dfcdce" title="Checks if the queue is full." alt="" coords="476,25,555,52"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="421,36,460,36,460,41,421,41"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="424,124,473,112,590,94,591,99,474,117,426,129"/>
+<area shape="rect" id="Node000007" href="$group__queue__t.html#gab55dbf8ea466f45a1377b90ac804abd3" title="Removes an element from the queue and returns it." alt="" coords="473,127,558,153"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="426,137,458,137,458,143,426,143"/>
+<area shape="rect" id="Node000008" href="$group__serial__port.html#ga931f3462009af510083ef84d0b1ae7ef" title="Reads the content from a specific offset of the uart base address." alt="" coords="478,177,553,204"/>
+<area shape="poly" id="edge9_Node000006_Node000008" title=" " alt="" coords="415,152,464,169,462,174,414,157"/>
+<area shape="rect" id="Node000010" href="$group__serial__port.html#gab80ab00eda611877adb95cf0df656257" title="Writes a content to a specific offset of the uart base address." alt="" coords="477,228,554,255"/>
+<area shape="poly" id="edge11_Node000006_Node000010" title=" " alt="" coords="395,152,475,214,480,217,477,222,472,218,391,156"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="554,124,601,106,603,111,556,129"/>
+<area shape="rect" id="Node000009" href="$group__driver__utils.html#ga2b56f50ba159e9d5115ed1a75eff15d9" title="Reads the information in a register and converts it to a 8&#45;bit unsigned integer." alt="" coords="610,177,701,204"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="554,188,595,188,595,193,554,193"/>
+</map>

@@ -38,5 +38,5 @@ var searchData=
   ['transmitter_35',['transmitter',['../dvr__uart_8c.html#ac0eebb41354c1b1085957efc55f7aa4a',1,'dvr_uart.c']]],
   ['two_5fdots_36',['two_dots',['../structfont__t.html#a0b0b2d79a5fa4e49f30dcfc86ffee962',1,'font_t']]],
   ['twobits_37',['TWOBITS',['../group__i8042.html#ga838964cffa4adc5d99fab25f6647c774',1,'i8042.h']]],
-  ['type_38',['type',['../structcard__t.html#a55bf0a2c38d5ed91898187a79708f124',1,'card_t']]]
+  ['type_38',['type',['../structcard__t.html#a55bf0a2c38d5ed91898187a79708f124',1,'card_t::type'],['../structcom__packet__t.html#aa133388cd70d8aa057d89260fb9b285f',1,'com_packet_t::type']]]
 ];

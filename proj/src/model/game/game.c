@@ -4,7 +4,8 @@ int game_add_deck(queue_t *cards, bool shuffle) {
   for (int type = 0; type < CARD_TYPE_NUM; type++) {
     for (int value = 0; value < CARD_VALUE_NUM; value++) {
       card_t *card = card_create(value, type);
-      if (card == NULL) return 1;
+      if (card == NULL)
+        return 1;
 
       if (queue_push(cards, card)) {
         free(card);
@@ -27,14 +28,8 @@ int game_init(game_t *game) {
     return 1;
   }
 
-  game->card_played_count = 0;
-  game->extra_deck_count = 0;
-  game->multiplayer = 0;
   game->input_select = 0;
   game->dealer_turn = 0;
-  game->playing_id = 0;
-  game->card_theme = 0;
-  game->round_count = 0;
   game->dealer_ignore_last = 0;
   game->curr_anim = NULL;
 
@@ -88,7 +83,8 @@ int game_give_card(queue_t *deck, queue_t *receiver) {
     return 1;
 
   card_t *card = queue_pop(deck);
-  if (card == NULL) return 1;
+  if (card == NULL)
+    return 1;
 
   return queue_push(receiver, card);
 }
@@ -121,9 +117,10 @@ int game_draw_dealer(game_t *game, font_t *font) {
 
     if (i == 0)
       card_value = card->value;
-    
-    if (i > 0 && game->dealer_ignore_last) break;
-    
+
+    if (i > 0 && game->dealer_ignore_last)
+      break;
+
     sprite = (i == 0 || game->dealer_turn) ? card->sprite_base : game->card_back;
 
     sprite_move(sprite, 500 + i * sprite->img.width * 0.5, 240);

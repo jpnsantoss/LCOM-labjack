@@ -1,0 +1,9 @@
+<map id="font_destroy" name="font_destroy">
+<area shape="rect" id="Node000001" title="Destroys the font and frees its resources." alt="" coords="5,31,98,57"/>
+<area shape="rect" id="Node000002" href="$group__queue__t.html#ga0488f00c2aa08e55eab9286564c6e676" title="Queue destroyer. Frees all allocated memory inside the queue, including the content still stored insi..." alt="" coords="165,5,272,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,34,149,26,150,32,99,40"/>
+<area shape="rect" id="Node000003" href="$group__sprite.html#ga42f02929141674478580e63678b9771f" title="Destroys a sprite from a queue." alt="" coords="146,56,291,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="99,48,131,53,130,59,98,54"/>
+<area shape="rect" id="Node000004" href="$group__sprite.html#ga1f0f379ec6f2b2cd0985ec0770cb1a2c" title="Destroys a sprite, freeing all allocated resources." alt="" coords="339,56,442,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="292,67,323,67,323,72,292,72"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="player_t" name="player_t">
+<area shape="rect" id="Node000001" title="Structure to represent a player." alt="" coords="5,96,73,123"/>
+<area shape="rect" id="Node000002" href="$structqueue__t.html" title="Structure to represent a FIFO fixed&#45;size container." alt="" coords="5,5,73,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="42,48,42,95,36,95,36,48"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="sprite_draw_force_color" name="sprite_draw_force_color">
+<area shape="rect" id="Node000001" title="Draws the sprite on the screen with forced color." alt="" coords="5,31,163,57"/>
+<area shape="rect" id="Node000002" href="$group__graphics.html#ga6f895de9725f9f231f9a7f74b6087f60" title="Draws a pixel on the screen." alt="" coords="211,5,312,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,30,195,25,196,31,163,35"/>
+<area shape="rect" id="Node000003" href="$group__graphics.html#gab52043147d41e2f66a892043455a8515" title="Gets the graphics information." alt="" coords="219,56,304,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="163,53,203,58,203,64,163,58"/>
+</map>

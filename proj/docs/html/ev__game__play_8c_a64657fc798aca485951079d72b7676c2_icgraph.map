@@ -1,0 +1,7 @@
+<map id="handle_double" name="handle_double">
+<area shape="rect" id="Node000001" title=" " alt="" coords="398,5,502,32"/>
+<area shape="rect" id="Node000002" href="$ev__game__play_8c.html#a020af6c7bc31cc4fe47cb488ca38a3f4" title=" " alt="" coords="200,5,350,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="382,21,351,21,351,16,382,16"/>
+<area shape="rect" id="Node000003" href="$group__ev__listener.html#gaac3b528525094a9c64495cc99154b2c2" title="Handles interrupts in the game playing state." alt="" coords="5,5,152,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="184,21,152,21,152,16,184,16"/>
+</map>

@@ -1,0 +1,25 @@
+<map id="mouse_get_info" name="mouse_get_info">
+<area shape="rect" id="Node000001" title="Returns the current mouse information." alt="" coords="584,107,697,133"/>
+<area shape="rect" id="Node000002" href="$group__cursor.html#ga08a50f2b8e06a5ccd6164311d26a19e8" title="Checks if the cursor collides with a given rectangular box." alt="" coords="398,5,531,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="607,100,535,53,498,35,500,30,538,48,610,95"/>
+<area shape="rect" id="Node000003" href="$group__ev__listener.html#ga440c6c7cbaa7a4aca8e09d35eaa71e61" title="Handles interrupts in the game betting state." alt="" coords="5,56,150,83"/>
+<area shape="poly" id="edge9_Node000001_Node000003" title=" " alt="" coords="569,116,150,78,151,73,569,111"/>
+<area shape="rect" id="Node000004" href="$group__cursor.html#gaa467c36c513252fe3004310865700962" title="Checks if the cursor collides with a given sprite." alt="" coords="392,157,536,184"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="578,141,514,159,513,154,576,136"/>
+<area shape="rect" id="Node000009" href="$group__ev__listener.html#ga2fd2cc82c3f815282a1b041ba2cab26b" title="General interrupt handler." alt="" coords="410,259,518,285"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="614,145,483,260,479,256,611,141"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="383,30,198,53,150,60,149,55,197,48,382,25"/>
+<area shape="rect" id="Node000005" href="$group__ev__listener.html#gae44c52c33fbd52a450014d58bd15ab2a" title="Handles bet value input." alt="" coords="211,107,331,133"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="395,155,324,137,325,131,397,150"/>
+<area shape="rect" id="Node000006" href="$group__ev__listener.html#gabeab42a878a73b55decd954a69ec1be7" title="Handles interrupts in the game over state." alt="" coords="207,157,335,184"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="377,173,335,173,335,168,377,168"/>
+<area shape="rect" id="Node000007" href="$group__ev__listener.html#gaac3b528525094a9c64495cc99154b2c2" title="Handles interrupts in the game playing state." alt="" coords="198,208,344,235"/>
+<area shape="poly" id="edge7_Node000004_Node000007" title=" " alt="" coords="397,191,325,210,324,205,395,186"/>
+<area shape="rect" id="Node000008" href="$group__ev__listener.html#gaf39362208e047dd8c2fdac3802d35a25" title="Handles interrupts in the main menu state." alt="" coords="204,259,338,285"/>
+<area shape="poly" id="edge8_Node000004_Node000008" title=" " alt="" coords="433,196,392,223,345,249,318,260,316,256,343,244,389,218,430,191"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="202,105,131,86,132,81,203,100"/>
+<area shape="rect" id="Node000010" href="$group__ev__listener.html#ga955b5bc9310ba1d1d83fea434ad6da45" title="Handles general interrupts for the application." alt="" coords="214,309,328,336"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="397,292,325,311,324,306,395,287"/>
+<area shape="rect" id="Node000011" href="$group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="23,309,132,336"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="199,325,132,325,132,320,199,320"/>
+</map>

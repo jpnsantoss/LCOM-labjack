@@ -119,6 +119,64 @@ Functions</h2></td></tr>
 
 <p>Unsubscribes the interrupts from all devices and returns the screen to text mode. </p>
 <dl class="section return"><dt>Returns</dt><dd>0 if successful, non-zero otherwise. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__main_ga3260b4ca4b069d575595f76a611c21e8_cgraph.png" border="0" usemap="#agroup__main_ga3260b4ca4b069d575595f76a611c21e8_cgraph" alt=""/></div>
+<map name="agroup__main_ga3260b4ca4b069d575595f76a611c21e8_cgraph" id="agroup__main_ga3260b4ca4b069d575595f76a611c21e8_cgraph">
+<area shape="rect" title="Unsubscribes the interrupts from all devices and returns the screen to text mode." alt="" coords="5,125,86,152"/>
+<area shape="rect" href="group__input.html#ga5bdf6cfb570c375192b0d87913b65c57" title="Unsubscribes interruptions from keyboard." alt="" coords="138,24,278,51"/>
+<area shape="poly" title=" " alt="" coords="57,123,89,92,132,60,143,55,145,59,135,65,93,96,61,127"/>
+<area shape="rect" href="group__input.html#ga4b21609cf20aa6689e73976702f26bce" title="Disables the mouse." alt="" coords="154,75,262,101"/>
+<area shape="poly" title=" " alt="" coords="85,123,147,104,149,109,87,129"/>
+<area shape="rect" href="group__rtc.html#gab8f17bf5280c908c8b199a90fefcc758" title="Unsubscribes RTC interrupts." alt="" coords="141,125,275,152"/>
+<area shape="poly" title=" " alt="" coords="86,136,125,136,125,141,86,141"/>
+<area shape="rect" href="group__timer.html#gab9eea51549744bca5c5c923b388bb4ee" title="Unsubscribes interruptions from Timer 0." alt="" coords="134,176,282,203"/>
+<area shape="poly" title=" " alt="" coords="87,148,149,168,147,173,85,154"/>
+<area shape="rect" href="group__serial__port.html#ga954b450471faa8a148790f27f75edbca" title="Deletes allocated memory by the UART device driver and unsubscribes interrupts." alt="" coords="162,227,254,253"/>
+<area shape="poly" title=" " alt="" coords="61,150,93,181,135,212,149,219,147,224,132,217,89,185,57,154"/>
+<area shape="rect" href="group__input.html#gac081a634a260ce39d0e06a8ab595df8a" title="Writes a command to the keyboard controller (KBC)." alt="" coords="371,24,447,51"/>
+<area shape="poly" title=" " alt="" coords="262,72,355,48,357,53,263,77"/>
+<area shape="rect" href="group__input.html#ga685ad2706aca36d9869a30a19b9f446a" title="Unsubscribes mouse interruptions." alt="" coords="330,75,488,101"/>
+<area shape="poly" title=" " alt="" coords="262,85,315,85,315,91,262,91"/>
+<area shape="rect" href="group__input.html#gab90a9774eaabd0949d73b61e9f3fba88" title="Reads value from the keyboard controller (KBC)." alt="" coords="536,24,654,51"/>
+<area shape="poly" title=" " alt="" coords="448,35,520,35,520,40,448,40"/>
+<area shape="rect" href="group__driver__utils.html#ga2b56f50ba159e9d5115ed1a75eff15d9" title="Reads the information in a register and converts it to a 8&#45;bit unsigned integer." alt="" coords="867,49,957,76"/>
+<area shape="poly" title=" " alt="" coords="447,25,536,9,616,3,679,5,741,14,820,31,859,41,857,46,818,36,740,19,678,10,616,9,537,14,448,30"/>
+<area shape="rect" href="group__input.html#ga2823114f828bc7248a230685772dafbb" title="Writes a value to the keyboard controller (KBC)." alt="" coords="539,75,651,101"/>
+<area shape="poly" title=" " alt="" coords="448,45,529,67,528,72,447,50"/>
+<area shape="rect" href="dvr__kbc_8c.html#a9546f355fcf070b152b392ef21543bd8" title=" " alt="" coords="702,75,819,101"/>
+<area shape="poly" title=" " alt="" coords="642,49,701,67,699,72,640,54"/>
+<area shape="poly" title=" " alt="" coords="654,39,852,55,851,60,654,44"/>
+<area shape="poly" title=" " alt="" coords="819,75,852,70,852,75,820,81"/>
+<area shape="poly" title=" " alt="" coords="651,85,686,85,686,91,651,91"/>
+<area shape="rect" href="group__rtc.html#ga4bd7edbf0206bbf43f7c9cc88fe71532" title="Sets the alarm interrupt of the RTC." alt="" coords="349,125,470,152"/>
+<area shape="poly" title=" " alt="" coords="275,136,333,136,333,141,275,141"/>
+<area shape="rect" href="group__rtc.html#ga0ac2f7b9a8194d3811fb3ef622024773" title="Sets the update interrupt of the RTC." alt="" coords="345,176,473,203"/>
+<area shape="poly" title=" " alt="" coords="265,150,339,169,338,174,263,155"/>
+<area shape="rect" href="group__rtc.html#gaa09d96578f0f0aad40b6beea97e1605a" title="Reads a value from an RTC register." alt="" coords="561,176,629,203"/>
+<area shape="poly" title=" " alt="" coords="462,150,547,173,545,179,460,155"/>
+<area shape="rect" href="group__rtc.html#ga87e4ef947b464068568304d39b119fa5" title="Writes a value to an RTC register." alt="" coords="560,125,630,152"/>
+<area shape="poly" title=" " alt="" coords="470,136,544,136,544,141,470,141"/>
+<area shape="poly" title=" " alt="" coords="629,177,715,150,818,111,874,82,877,86,820,116,717,155,630,182"/>
+<area shape="poly" title=" " alt="" coords="474,187,545,187,545,192,474,192"/>
+<area shape="poly" title=" " alt="" coords="460,173,544,149,546,155,462,178"/>
+<area shape="rect" href="group__queue__t.html#ga0488f00c2aa08e55eab9286564c6e676" title="Queue destroyer. Frees all allocated memory inside the queue, including the content still stored insi..." alt="" coords="356,227,462,253"/>
+<area shape="poly" title=" " alt="" coords="254,237,341,237,341,243,254,243"/>
+<area shape="rect" href="group__serial__port.html#gaf1ff3ad84fc50b3da2bf271b569af0da" title="Unsubscribes interruptions from COM1." alt="" coords="339,277,480,304"/>
+<area shape="poly" title=" " alt="" coords="254,249,339,270,338,275,253,254"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__main_ga3260b4ca4b069d575595f76a611c21e8_icgraph.png" border="0" usemap="#agroup__main_ga3260b4ca4b069d575595f76a611c21e8_icgraph" alt=""/></div>
+<map name="agroup__main_ga3260b4ca4b069d575595f76a611c21e8_icgraph" id="agroup__main_ga3260b4ca4b069d575595f76a611c21e8_icgraph">
+<area shape="rect" title="Unsubscribes the interrupts from all devices and returns the screen to text mode." alt="" coords="162,5,242,32"/>
+<area shape="rect" href="group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="5,5,114,32"/>
+<area shape="poly" title=" " alt="" coords="146,21,114,21,114,16,146,16"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -151,6 +209,141 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 if successful, non-zero otherwise. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="group__main_gaf244d65e69677cf312af1950452ec256_cgraph.png" border="0" usemap="#agroup__main_gaf244d65e69677cf312af1950452ec256_cgraph" alt=""/></div>
+<map name="agroup__main_gaf244d65e69677cf312af1950452ec256_cgraph" id="agroup__main_gaf244d65e69677cf312af1950452ec256_cgraph">
+<area shape="rect" title="The main loop for the project." alt="" coords="5,1399,114,1425"/>
+<area shape="rect" href="group__app.html#gab081435b68a0e159fb04347bb88ad79d" title="Frees the memory allocated for the application and its components." alt="" coords="183,157,275,184"/>
+<area shape="poly" title=" " alt="" coords="60,1398,159,626,221,199,226,200,164,627,65,1398"/>
+<area shape="rect" href="group__app.html#ga7cca950bbf3cf06fb45d033e3e7cde48" title="Initializes the application." alt="" coords="196,639,262,665"/>
+<area shape="poly" title=" " alt="" coords="61,1398,219,680,224,681,66,1399"/>
+<area shape="rect" href="group__main.html#ga3260b4ca4b069d575595f76a611c21e8" title="Unsubscribes the interrupts from all devices and returns the screen to text mode." alt="" coords="189,1247,269,1273"/>
+<area shape="poly" title=" " alt="" coords="74,1397,199,1282,203,1286,77,1400"/>
+<area shape="rect" href="group__ev__listener.html#ga955b5bc9310ba1d1d83fea434ad6da45" title="Handles general interrupts for the application." alt="" coords="172,1525,286,1552"/>
+<area shape="poly" title=" " alt="" coords="73,1424,111,1467,136,1490,163,1511,171,1516,169,1521,160,1516,132,1494,107,1470,69,1428"/>
+<area shape="rect" href="group__input.html#gaa7a491d4d95eab5ca5326c4000ad67f8" title="Subscribes to keyboard interrupts." alt="" coords="166,1576,292,1603"/>
+<area shape="poly" title=" " alt="" coords="69,1425,103,1490,130,1528,163,1562,169,1566,166,1570,160,1566,126,1532,98,1493,64,1427"/>
+<area shape="rect" href="group__input.html#ga94fafb2ceb49ddd6a2ecc54920db9693" title="Initializes mouse." alt="" coords="187,1373,271,1400"/>
+<area shape="poly" title=" " alt="" coords="114,1401,171,1393,172,1398,114,1407"/>
+<area shape="rect" href="group__rtc.html#ga99c770b400026bc59e3c80a22615ad50" title="Sets up RTC." alt="" coords="408,1475,483,1501"/>
+<area shape="poly" title=" " alt="" coords="115,1420,393,1475,392,1480,114,1425"/>
+<area shape="rect" href="group__rtc.html#ga5171a9c0f54940fe60f7500896afcc86" title="Subscribes to RTC interrupts." alt="" coords="169,1475,289,1501"/>
+<area shape="poly" title=" " alt="" coords="93,1424,184,1465,182,1470,90,1428"/>
+<area shape="rect" href="group__timer.html#gaca1506be74dfc71c6f90772ca269c619" title="Sets the frequency of a timer (and by consequence the number of interrupts per second)." alt="" coords="377,1120,515,1147"/>
+<area shape="poly" title=" " alt="" coords="63,1398,75,1365,95,1321,123,1274,160,1233,207,1199,258,1174,311,1156,361,1143,362,1149,313,1161,261,1179,209,1204,163,1237,128,1277,100,1323,80,1367,68,1399"/>
+<area shape="rect" href="group__timer.html#ga6f786481e80308348d629d605ffa2d84" title="Subscribes the program to interruptions from Timer 0." alt="" coords="162,1627,296,1653"/>
+<area shape="poly" title=" " alt="" coords="67,1425,77,1462,96,1512,125,1566,143,1591,163,1613,168,1616,164,1620,160,1617,139,1594,120,1569,91,1515,72,1464,61,1427"/>
+<area shape="rect" href="group__serial__port.html#ga929dc5f42a9f930150913fbfa02ec73c" title="Setups the device and activates interrupts." alt="" coords="195,968,263,995"/>
+<area shape="poly" title=" " alt="" coords="64,1397,214,1008,219,1010,69,1399"/>
+<area shape="rect" href="group__graphics.html#ga6664487029a8e9a963af275d0d7490b1" title="Initializes the video graphics mode." alt="" coords="181,1677,277,1704"/>
+<area shape="poly" title=" " alt="" coords="65,1425,73,1470,90,1534,119,1603,139,1635,164,1663,169,1668,166,1672,160,1667,135,1638,114,1605,85,1536,68,1471,60,1426"/>
+<area shape="rect" href="group__cursor.html#ga32bf35d9146323c25e2952be498dbb5d" title="Destroys the cursor and frees its resources." alt="" coords="614,5,722,32"/>
+<area shape="poly" title=" " alt="" coords="236,155,277,101,307,72,343,48,408,25,476,13,542,8,599,9,599,15,542,14,477,18,409,30,345,53,310,76,281,105,241,158"/>
+<area shape="rect" href="group__sprite.html#ga1f0f379ec6f2b2cd0985ec0770cb1a2c" title="Destroys a sprite, freeing all allocated resources." alt="" coords="789,81,892,108"/>
+<area shape="poly" title=" " alt="" coords="256,154,296,136,343,121,461,101,579,91,687,88,773,89,773,94,687,93,579,97,461,107,345,127,298,141,258,159"/>
+<area shape="rect" href="group__font.html#gace7b106acf084f479f5dcd2c7d2c9a06" title="Destroys the font and frees its resources." alt="" coords="400,157,492,184"/>
+<area shape="poly" title=" " alt="" coords="276,168,384,168,384,173,276,173"/>
+<area shape="rect" href="group__queue__t.html#ga0488f00c2aa08e55eab9286564c6e676" title="Queue destroyer. Frees all allocated memory inside the queue, including the content still stored insi..." alt="" coords="615,335,721,361"/>
+<area shape="poly" title=" " alt="" coords="276,178,439,216,548,244,577,261,603,281,646,321,642,325,600,286,574,266,546,249,438,221,275,184"/>
+<area shape="rect" href="group__sprite.html#ga42f02929141674478580e63678b9771f" title="Destroys a sprite from a queue." alt="" coords="595,132,741,159"/>
+<area shape="poly" title=" " alt="" coords="275,156,344,143,467,136,580,138,580,143,468,141,344,148,276,161"/>
+<area shape="rect" href="group__game.html#ga803c43aec649e1f97a9f1e7999ac0b0a" title="Destroys the game, freeing all allocated resources." alt="" coords="394,259,497,285"/>
+<area shape="poly" title=" " alt="" coords="251,182,293,210,345,238,380,251,378,256,343,242,291,214,248,187"/>
+<area shape="poly" title=" " alt="" coords="702,30,795,72,793,77,699,35"/>
+<area shape="poly" title=" " alt="" coords="493,177,522,186,549,200,582,228,611,260,654,320,649,323,607,263,579,232,546,205,520,191,492,182"/>
+<area shape="poly" title=" " alt="" coords="492,163,580,153,580,158,492,168"/>
+<area shape="poly" title=" " alt="" coords="715,129,777,110,779,115,717,134"/>
+<area shape="poly" title=" " alt="" coords="499,281,548,295,624,325,622,330,546,300,497,286"/>
+<area shape="rect" href="group__app.html#ga9114036db13b81cdcbdbdea9c039a42e" title="Initializes the game over buttons." alt="" coords="353,613,538,640"/>
+<area shape="poly" title=" " alt="" coords="262,646,337,637,338,642,263,651"/>
+<area shape="rect" href="group__sprite.html#ga647e1492c9ac657b437388cde60c8fbe" title="Creates a sprite from an XPM map." alt="" coords="620,664,716,691"/>
+<area shape="poly" title=" " alt="" coords="255,664,296,684,345,700,413,708,483,707,549,700,604,690,605,695,549,705,483,713,413,714,343,705,294,689,252,668"/>
+<area shape="rect" href="group__app.html#ga6327409b45810a61f34f682f25691dc9" title="Initializes the game playing buttons." alt="" coords="344,563,547,589"/>
+<area shape="poly" title=" " alt="" coords="257,636,343,599,367,591,369,596,345,604,259,641"/>
+<area shape="rect" href="group__app.html#ga46d4719abd8f7376666063e0b6c70c4b" title="Initializes the main menu buttons." alt="" coords="351,664,541,691"/>
+<area shape="poly" title=" " alt="" coords="263,653,335,662,334,667,262,658"/>
+<area shape="rect" href="group__banner.html#gad0a696393c1bab46d0e8a6b374230a13" title="Initializes a banner." alt="" coords="404,309,488,336"/>
+<area shape="poly" title=" " alt="" coords="228,638,235,584,252,505,267,462,286,420,311,380,342,346,364,332,387,325,389,330,366,337,346,350,315,384,291,422,272,464,257,507,240,585,234,639"/>
+<area shape="rect" href="group__cursor.html#ga4c5ef91c2ff49824f46e2a2aa9cb3d47" title="Initializes the cursor." alt="" coords="405,816,486,843"/>
+<area shape="poly" title=" " alt="" coords="240,664,279,727,310,764,346,795,367,807,391,816,389,821,365,812,342,800,306,767,275,730,235,667"/>
+<area shape="rect" href="group__graphics.html#ga27bae7bb2746ac15b7cf450ef081350f" title="Gets the height of the screen." alt="" coords="618,841,718,868"/>
+<area shape="poly" title=" " alt="" coords="235,665,246,705,267,757,299,811,320,834,345,852,376,867,409,877,479,884,546,880,604,869,605,875,547,885,479,890,408,882,374,872,343,857,317,838,295,814,262,760,241,706,230,666"/>
+<area shape="rect" href="group__font.html#ga368309c58e051e585f1f8e65d92a46d0" title="Initializes the font by loading sprites for letters, numbers, and special characters." alt="" coords="413,512,479,539"/>
+<area shape="poly" title=" " alt="" coords="240,636,282,593,311,569,343,548,370,537,397,530,398,535,371,542,345,553,314,573,286,597,244,640"/>
+<area shape="rect" href="group__sprite.html#ga5272f5d91c76d187c107346a66638b1e" title="Moves the sprite to a new position." alt="" coords="401,360,491,387"/>
+<area shape="poly" title=" " alt="" coords="230,638,240,593,261,530,294,463,316,431,342,403,362,390,384,381,386,386,365,395,346,407,320,434,298,465,265,532,245,595,235,639"/>
+<area shape="rect" href="group__queue__t.html#ga496024ec829b39d9a93d6f37391d5a18" title="Creates an empty queue." alt="" coords="618,613,718,640"/>
+<area shape="poly" title=" " alt="" coords="539,624,602,624,602,629,539,629"/>
+<area shape="poly" title=" " alt="" coords="508,638,605,660,604,666,507,643"/>
+<area shape="poly" title=" " alt="" coords="508,587,604,609,602,615,507,593"/>
+<area shape="poly" title=" " alt="" coords="523,588,549,599,564,612,574,625,583,637,597,650,607,656,604,660,594,654,579,641,569,628,561,615,546,604,521,592"/>
+<area shape="poly" title=" " alt="" coords="507,661,602,639,604,644,508,666"/>
+<area shape="poly" title=" " alt="" coords="541,675,604,675,604,680,541,680"/>
+<area shape="poly" title=" " alt="" coords="486,822,544,810,613,788,648,772,682,752,712,729,738,701,763,655,783,587,799,506,812,418,828,246,835,123,841,123,834,246,817,419,805,507,788,589,768,657,743,704,716,733,685,757,651,777,615,793,545,815,487,827"/>
+<area shape="poly" title=" " alt="" coords="486,819,516,809,546,795,576,774,603,749,646,701,649,705,607,753,579,778,549,800,518,814,488,824"/>
+<area shape="poly" title=" " alt="" coords="487,831,603,845,602,850,486,837"/>
+<area shape="poly" title=" " alt="" coords="479,520,513,513,546,498,580,470,609,437,651,373,655,376,613,440,584,474,549,502,514,518,480,525"/>
+<area shape="poly" title=" " alt="" coords="479,523,514,516,531,509,546,498,563,478,573,458,581,419,582,375,593,322,624,239,652,172,657,174,628,241,598,323,588,375,586,419,578,460,567,481,549,502,534,513,516,521,480,528"/>
+<area shape="poly" title=" " alt="" coords="480,528,514,536,548,548,597,574,639,602,636,606,595,579,546,553,512,541,479,533"/>
+<area shape="poly" title=" " alt="" coords="480,524,515,531,549,549,561,561,568,574,575,600,580,626,586,638,597,650,607,658,604,662,594,654,582,641,575,627,569,601,563,576,557,564,546,553,513,536,479,529"/>
+<area shape="rect" href="group__input.html#ga5bdf6cfb570c375192b0d87913b65c57" title="Unsubscribes interruptions from keyboard." alt="" coords="376,1221,516,1248"/>
+<area shape="poly" title=" " alt="" coords="269,1253,360,1242,360,1247,270,1258"/>
+<area shape="rect" href="group__input.html#ga4b21609cf20aa6689e73976702f26bce" title="Disables the mouse." alt="" coords="392,1272,500,1299"/>
+<area shape="poly" title=" " alt="" coords="270,1262,376,1275,376,1280,269,1267"/>
+<area shape="rect" href="group__rtc.html#gab8f17bf5280c908c8b199a90fefcc758" title="Unsubscribes RTC interrupts." alt="" coords="379,1323,513,1349"/>
+<area shape="poly" title=" " alt="" coords="259,1271,345,1308,369,1316,367,1321,343,1313,257,1276"/>
+<area shape="rect" href="group__timer.html#gab9eea51549744bca5c5c923b388bb4ee" title="Unsubscribes interruptions from Timer 0." alt="" coords="372,1171,520,1197"/>
+<area shape="poly" title=" " alt="" coords="257,1244,343,1207,367,1199,369,1204,345,1212,259,1249"/>
+<area shape="rect" href="group__serial__port.html#ga954b450471faa8a148790f27f75edbca" title="Deletes allocated memory by the UART device driver and unsubscribes interrupts." alt="" coords="400,461,491,488"/>
+<area shape="poly" title=" " alt="" coords="232,1246,261,1147,293,1006,298,956,299,893,297,744,299,669,306,599,319,541,329,517,342,498,361,483,384,475,386,480,364,488,346,502,334,520,324,543,311,600,304,669,302,744,304,893,303,957,299,1007,266,1148,237,1247"/>
+<area shape="rect" href="group__input.html#gac081a634a260ce39d0e06a8ab595df8a" title="Writes a command to the keyboard controller (KBC)." alt="" coords="630,1272,706,1299"/>
+<area shape="poly" title=" " alt="" coords="500,1283,614,1283,614,1288,500,1288"/>
+<area shape="rect" href="group__rtc.html#ga4bd7edbf0206bbf43f7c9cc88fe71532" title="Sets the alarm interrupt of the RTC." alt="" coords="607,1323,729,1349"/>
+<area shape="poly" title=" " alt="" coords="513,1333,592,1333,592,1339,513,1339"/>
+<area shape="rect" href="group__rtc.html#gaa09d96578f0f0aad40b6beea97e1605a" title="Reads a value from an RTC register." alt="" coords="806,1424,875,1451"/>
+<area shape="poly" title=" " alt="" coords="717,1348,742,1359,782,1385,815,1412,812,1416,778,1389,739,1364,714,1352"/>
+<area shape="poly" title=" " alt="" coords="491,462,546,440,598,406,640,370,644,374,601,410,549,445,493,467"/>
+<area shape="rect" href="group__ev__listener.html#ga2fd2cc82c3f815282a1b041ba2cab26b" title="General interrupt handler." alt="" coords="392,1627,500,1653"/>
+<area shape="poly" title=" " alt="" coords="275,1550,297,1562,312,1573,322,1585,331,1595,345,1606,378,1620,376,1625,343,1610,328,1599,318,1588,309,1577,295,1566,272,1555"/>
+<area shape="poly" title=" " alt="" coords="272,1390,329,1394,399,1393,474,1383,511,1373,546,1359,561,1348,570,1336,579,1322,594,1308,614,1298,616,1303,597,1313,583,1326,574,1339,565,1352,549,1364,513,1378,475,1388,399,1398,328,1399,271,1395"/>
+<area shape="rect" href="group__input.html#ga9da18257ff113b686bb826d154bfaa87" title="Subscribes to mouse interrupts." alt="" coords="374,1424,518,1451"/>
+<area shape="poly" title=" " alt="" coords="272,1394,371,1417,370,1422,271,1399"/>
+<area shape="poly" title=" " alt="" coords="483,1484,516,1476,546,1461,557,1449,563,1437,569,1412,575,1386,582,1372,593,1359,598,1356,602,1360,597,1363,586,1375,580,1388,575,1413,568,1439,561,1452,549,1465,518,1481,484,1489"/>
+<area shape="poly" title=" " alt="" coords="484,1484,599,1477,740,1460,790,1449,792,1454,741,1465,599,1482,484,1489"/>
+<area shape="rect" href="group__rtc.html#ga6028be0c2f6834191783cd629f324a2b" title="Reads the current date and time from the RTC." alt="" coords="621,1373,715,1400"/>
+<area shape="poly" title=" " alt="" coords="483,1481,515,1474,546,1460,561,1449,569,1436,579,1423,594,1410,606,1403,608,1408,597,1414,583,1427,574,1439,564,1452,549,1465,517,1479,484,1486"/>
+<area shape="rect" href="group__rtc.html#ga0a6fd09353e9e32173333e7a32997c88" title="Sets the RTC alarm." alt="" coords="618,1525,718,1552"/>
+<area shape="poly" title=" " alt="" coords="484,1494,603,1521,602,1526,483,1499"/>
+<area shape="rect" href="group__rtc.html#ga83f2682c45a821f4922410747f8da1ce" title="Sets the periodic interrupt of the RTC." alt="" coords="601,1424,735,1451"/>
+<area shape="poly" title=" " alt="" coords="483,1477,591,1452,592,1457,484,1482"/>
+<area shape="poly" title=" " alt="" coords="716,1398,792,1421,791,1426,714,1403"/>
+<area shape="poly" title=" " alt="" coords="735,1435,791,1435,791,1440,735,1440"/>
+<area shape="poly" title=" " alt="" coords="278,1499,386,1528,520,1557,588,1567,650,1573,702,1571,740,1562,768,1542,792,1517,825,1463,829,1466,796,1520,771,1546,742,1566,702,1577,649,1578,587,1573,519,1562,384,1533,277,1504"/>
+<area shape="rect" href="group__timer.html#gafafc1891c876602d55b894103b1841a7" title="Returns current timer configuration." alt="" coords="615,1171,721,1197"/>
+<area shape="poly" title=" " alt="" coords="508,1145,600,1166,599,1171,507,1150"/>
+<area shape="rect" href="group__driver__utils.html#ga31ab374573517f8a5ba31c52a49a8606" title="Get the most least bit of a value." alt="" coords="620,1069,716,1096"/>
+<area shape="poly" title=" " alt="" coords="507,1117,604,1094,606,1099,508,1122"/>
+<area shape="rect" href="group__driver__utils.html#gafc6ca7a9a39943ff1792d206da514a59" title="Get the most significant bit of a value." alt="" coords="618,1120,718,1147"/>
+<area shape="poly" title=" " alt="" coords="515,1131,603,1131,603,1136,515,1136"/>
+<area shape="poly" title=" " alt="" coords="231,967,293,677,299,641,300,609,298,553,300,527,307,501,320,475,342,447,366,427,390,415,413,409,437,407,487,407,515,404,547,396,623,366,625,371,548,401,516,409,488,412,437,413,414,414,392,420,369,431,346,451,324,478,312,503,306,528,304,553,305,609,304,642,299,678,236,968"/>
+<area shape="poly" title=" " alt="" coords="234,966,272,891,304,844,342,802,369,781,395,766,443,748,491,732,517,719,546,701,560,688,569,675,578,663,594,650,603,645,606,649,597,654,582,666,573,678,564,691,549,705,520,724,493,737,444,753,397,771,372,785,346,806,308,847,277,894,238,969"/>
+<area shape="rect" href="group__serial__port.html#ga6561744a71f80b6eb1768a5d3ff8c9fb" title="Reads a byte from the UART FIFO." alt="" coords="397,917,495,944"/>
+<area shape="poly" title=" " alt="" coords="263,971,381,943,382,948,264,976"/>
+<area shape="rect" href="group__serial__port.html#gad781bc2716293adeb864f67904062eca" title="Sets the transmission bit rate between devices." alt="" coords="387,1069,505,1096"/>
+<area shape="poly" title=" " alt="" coords="251,993,293,1020,345,1048,379,1062,377,1066,343,1053,291,1025,248,997"/>
+<area shape="rect" href="group__serial__port.html#gab80ab00eda611877adb95cf0df656257" title="Writes a content to a specific offset of the uart base address." alt="" coords="629,1019,707,1045"/>
+<area shape="poly" title=" " alt="" coords="263,987,344,1004,490,1020,614,1027,613,1033,490,1025,344,1009,262,992"/>
+<area shape="rect" href="group__serial__port.html#gac0d5ac077c28fa582ed60b1c3d977d83" title="Subscribes the program to interruptions from COM1." alt="" coords="382,968,509,995"/>
+<area shape="poly" title=" " alt="" coords="263,979,367,979,367,984,263,984"/>
+<area shape="poly" title=" " alt="" coords="505,1080,605,1080,605,1085,505,1085"/>
+<area shape="poly" title=" " alt="" coords="506,1094,604,1116,603,1121,505,1099"/>
+<area shape="poly" title=" " alt="" coords="505,1067,613,1042,615,1047,506,1072"/>
+<area shape="rect" href="group__graphics.html#ga034d06f984cff1406df71cc9a0897589" title="Enters the specified graphic mode." alt="" coords="367,1677,524,1704"/>
+<area shape="poly" title=" " alt="" coords="277,1688,351,1688,351,1693,277,1693"/>
+</map>
+</div>
 
 </div>
 </div>

@@ -1,0 +1,16 @@
+<map id="vg_draw_rectangle" name="vg_draw_rectangle">
+<area shape="rect" id="Node000001" title="Draws a rectangle on the screen." alt="" coords="896,31,1024,57"/>
+<area shape="rect" id="Node000002" href="$group__banner.html#gae085e9f906e711a21ee403bb0cca50e8" title="Draws the banner with the current message using the specified font." alt="" coords="754,5,848,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="881,34,848,29,849,24,882,29"/>
+<area shape="rect" id="Node000003" href="$group__drawer.html#gad4613fc8c5dbe034d87386a01ab6d3a7" title="Draws the current state of the application." alt="" coords="622,31,706,57"/>
+<area shape="poly" id="edge7_Node000001_Node000003" title=" " alt="" coords="880,47,706,47,706,41,880,41"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="739,33,707,39,706,34,738,28"/>
+<area shape="rect" id="Node000004" href="$group__drawer.html#gae6e049740fc99af73d456e49c9fe2b26" title="Draws the entire screen." alt="" coords="479,31,574,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="606,47,574,47,574,41,606,41"/>
+<area shape="rect" id="Node000005" href="$group__ev__listener.html#ga2fd2cc82c3f815282a1b041ba2cab26b" title="General interrupt handler." alt="" coords="323,31,431,57"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="464,47,432,47,432,41,464,41"/>
+<area shape="rect" id="Node000006" href="$group__ev__listener.html#ga955b5bc9310ba1d1d83fea434ad6da45" title="Handles general interrupts for the application." alt="" coords="162,31,275,57"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="307,47,275,47,275,41,307,41"/>
+<area shape="rect" id="Node000007" href="$group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="5,31,114,57"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="146,47,114,47,114,41,146,41"/>
+</map>

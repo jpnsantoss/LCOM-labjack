@@ -1,0 +1,14 @@
+<map id="kbc_write_input" name="kbc_write_input">
+<area shape="rect" id="Node000001" title="Writes a value to the keyboard controller (KBC)." alt="" coords="575,31,686,57"/>
+<area shape="rect" id="Node000002" href="$group__input.html#gac081a634a260ce39d0e06a8ab595df8a" title="Writes a command to the keyboard controller (KBC)." alt="" coords="450,31,527,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="559,47,527,47,527,41,559,41"/>
+<area shape="rect" id="Node000003" href="$group__input.html#ga4b21609cf20aa6689e73976702f26bce" title="Disables the mouse." alt="" coords="294,5,402,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="435,37,402,31,403,26,435,32"/>
+<area shape="rect" id="Node000006" href="$group__input.html#ga94fafb2ceb49ddd6a2ecc54920db9693" title="Initializes mouse." alt="" coords="162,56,246,83"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="435,51,247,68,246,63,434,46"/>
+<area shape="rect" id="Node000004" href="$group__main.html#ga3260b4ca4b069d575595f76a611c21e8" title="Unsubscribes the interrupts from all devices and returns the screen to text mode." alt="" coords="164,5,244,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="278,21,244,21,244,16,278,16"/>
+<area shape="rect" id="Node000005" href="$group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="5,31,114,57"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="149,31,114,37,113,32,148,26"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="146,62,114,56,115,51,147,57"/>
+</map>

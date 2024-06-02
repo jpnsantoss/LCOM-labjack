@@ -1,0 +1,7 @@
+<map id="uart_get_byte" name="uart_get_byte">
+<area shape="rect" id="Node000001" title="Get a byte from the receiver queue." alt="" coords="5,5,106,32"/>
+<area shape="rect" id="Node000002" href="$group__queue__t.html#gab55dbf8ea466f45a1377b90ac804abd3" title="Removes an element from the queue and returns it." alt="" coords="154,5,238,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,16,138,16,138,21,106,21"/>
+<area shape="rect" id="Node000003" href="$group__queue__t.html#ga2a0ac508b8a3e94d7d50de284cc9b898" title="Checks if a queue is empty." alt="" coords="286,5,385,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="238,16,270,16,270,21,238,21"/>
+</map>

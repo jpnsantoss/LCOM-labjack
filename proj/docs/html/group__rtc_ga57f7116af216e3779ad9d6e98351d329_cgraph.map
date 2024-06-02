@@ -1,0 +1,17 @@
+<map id="rtc_ih" name="rtc_ih">
+<area shape="rect" id="Node000001" title="RTC interrupt handler." alt="" coords="5,126,59,152"/>
+<area shape="rect" id="Node000002" href="$group__rtc.html#ga6028be0c2f6834191783cd629f324a2b" title="Reads the current date and time from the RTC." alt="" coords="112,50,205,76"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="55,123,120,82,123,87,57,127"/>
+<area shape="rect" id="Node000003" href="$group__rtc.html#gaa09d96578f0f0aad40b6beea97e1605a" title="Reads a value from an RTC register." alt="" coords="384,75,453,102"/>
+<area shape="poly" id="edge7_Node000001_Node000003" title=" " alt="" coords="59,136,179,131,257,123,336,111,369,103,370,108,337,116,258,128,180,136,59,141"/>
+<area shape="rect" id="Node000007" href="$group__graphics.html#ga3a0d84e943447c67a7a9932cf0fd20ea" title="Sets the flag indicating that a redraw is needed." alt="" coords="107,176,210,203"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="60,147,110,167,108,172,58,152"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="178,47,209,29,249,12,293,3,315,4,337,10,373,32,400,60,396,64,370,36,335,15,315,9,293,8,250,17,211,33,181,51"/>
+<area shape="rect" id="Node000005" href="$group__rtc.html#gad5efc0412ba4199ff6b5ecb663d6a7e5" title="Converts a BCD value to binary." alt="" coords="258,24,336,51"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="205,52,242,45,243,50,206,57"/>
+<area shape="rect" id="Node000006" href="$group__rtc.html#ga1616eba91a73b03ecba145c8a91ebc11" title="Waits for the RTC to be ready." alt="" coords="264,75,330,102"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="206,69,249,77,248,82,205,74"/>
+<area shape="rect" id="Node000004" href="$group__driver__utils.html#ga2b56f50ba159e9d5115ed1a75eff15d9" title="Reads the information in a register and converts it to a 8&#45;bit unsigned integer." alt="" coords="501,75,591,102"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="453,86,485,86,485,91,453,91"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="331,86,369,86,369,91,331,91"/>
+</map>

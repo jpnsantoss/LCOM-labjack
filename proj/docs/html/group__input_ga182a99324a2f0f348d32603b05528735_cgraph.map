@@ -1,0 +1,5 @@
+<map id="mouse_read_packet" name="mouse_read_packet">
+<area shape="rect" id="Node000001" title="Reads a packet of data from the mouse." alt="" coords="5,5,144,32"/>
+<area shape="rect" id="Node000002" href="$group__input.html#ga14886abfecbdb576b89c3d78d7d5e6a4" title="Fills the packet structure with mouse data." alt="" coords="192,5,317,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,16,176,16,176,21,144,21"/>
+</map>

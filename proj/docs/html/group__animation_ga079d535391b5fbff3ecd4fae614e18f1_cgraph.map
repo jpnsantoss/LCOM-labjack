@@ -1,0 +1,9 @@
+<map id="animation_add_frame" name="animation_add_frame">
+<area shape="rect" id="Node000001" title="Adds a frame to the animation." alt="" coords="5,31,150,57"/>
+<area shape="rect" id="Node000002" href="$group__queue__t.html#ga89bb8cf14f8a833ded72fca1fb6d8636" title="Pushes an element to the end of a queue." alt="" coords="198,31,289,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,41,182,41,182,47,150,47"/>
+<area shape="rect" id="Node000003" href="$group__queue__t.html#ga2a0ac508b8a3e94d7d50de284cc9b898" title="Checks if a queue is empty." alt="" coords="337,5,436,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="289,33,321,28,322,33,290,39"/>
+<area shape="rect" id="Node000004" href="$group__queue__t.html#ga48ca9da7d179448a59262595a0dfcdce" title="Checks if the queue is full." alt="" coords="347,56,426,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="290,49,332,57,331,62,289,55"/>
+</map>

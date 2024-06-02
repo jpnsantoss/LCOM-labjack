@@ -1,0 +1,14 @@
+<map id="uart_fifo_read" name="uart_fifo_read">
+<area shape="rect" id="Node000001" title="Reads a byte from the UART FIFO." alt="" coords="588,31,686,57"/>
+<area shape="rect" id="Node000002" href="$group__serial__port.html#gae8bb6dd0800878b35fe69a422773b8db" title="Interrupt handler." alt="" coords="479,5,540,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="572,34,540,27,541,22,573,29"/>
+<area shape="rect" id="Node000006" href="$group__serial__port.html#ga929dc5f42a9f930150913fbfa02ec73c" title="Setups the device and activates interrupts." alt="" coords="344,56,411,83"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="572,53,411,69,411,63,572,48"/>
+<area shape="rect" id="Node000003" href="$group__ev__listener.html#ga2fd2cc82c3f815282a1b041ba2cab26b" title="General interrupt handler." alt="" coords="323,5,431,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="463,21,432,21,432,16,463,16"/>
+<area shape="rect" id="Node000004" href="$group__ev__listener.html#ga955b5bc9310ba1d1d83fea434ad6da45" title="Handles general interrupts for the application." alt="" coords="162,5,275,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="307,21,275,21,275,16,307,16"/>
+<area shape="rect" id="Node000005" href="$group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="5,31,114,57"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="147,33,115,38,114,33,146,28"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="328,68,114,51,114,46,328,63"/>
+</map>

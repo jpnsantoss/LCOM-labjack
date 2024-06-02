@@ -1,0 +1,5 @@
+<map id="handle_bet_value" name="handle_bet_value">
+<area shape="rect" id="Node000001" title="Handles bet value input." alt="" coords="198,5,318,32"/>
+<area shape="rect" id="Node000002" href="$group__ev__listener.html#ga440c6c7cbaa7a4aca8e09d35eaa71e61" title="Handles interrupts in the game betting state." alt="" coords="5,5,150,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="182,21,150,21,150,16,182,16"/>
+</map>

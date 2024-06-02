@@ -1,0 +1,7 @@
+<map id="font_destroy" name="font_destroy">
+<area shape="rect" id="Node000001" title="Destroys the font and frees its resources." alt="" coords="302,5,394,32"/>
+<area shape="rect" id="Node000002" href="$group__app.html#gab081435b68a0e159fb04347bb88ad79d" title="Frees the memory allocated for the application and its components." alt="" coords="162,5,254,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="286,21,255,21,255,16,286,16"/>
+<area shape="rect" id="Node000003" href="$group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="5,5,114,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="146,21,114,21,114,16,146,16"/>
+</map>

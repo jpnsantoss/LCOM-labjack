@@ -1,0 +1,5 @@
+<map id="cursor_t" name="cursor_t">
+<area shape="rect" id="Node000001" title="Structure representing a cursor." alt="" coords="5,112,74,139"/>
+<area shape="rect" id="Node000002" href="$structsprite__t.html" title="Structure to represent a sprite." alt="" coords="7,5,72,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="42,47,42,112,37,112,37,47"/>
+</map>

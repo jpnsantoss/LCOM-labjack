@@ -1,0 +1,5 @@
+<map id="game_get_cards_value" name="game_get_cards_value">
+<area shape="rect" id="Node000001" title="Calculates the total value of the cards in a queue." alt="" coords="5,5,159,32"/>
+<area shape="rect" id="Node000002" href="$group__queue__t.html#ga589f94630961aefb1184e683512b31f6" title="Returns the element at a specific position inside the queue." alt="" coords="207,5,281,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="159,16,191,16,191,21,159,21"/>
+</map>

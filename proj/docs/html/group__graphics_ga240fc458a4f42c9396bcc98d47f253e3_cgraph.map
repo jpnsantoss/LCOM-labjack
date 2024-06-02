@@ -1,0 +1,5 @@
+<map id="vg_draw_vline" name="vg_draw_vline">
+<area shape="rect" id="Node000001" title="Draws a vertical line on the screen." alt="" coords="5,5,105,32"/>
+<area shape="rect" id="Node000002" href="$group__graphics.html#ga6f895de9725f9f231f9a7f74b6087f60" title="Draws a pixel on the screen." alt="" coords="153,5,254,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,16,137,16,137,21,105,21"/>
+</map>

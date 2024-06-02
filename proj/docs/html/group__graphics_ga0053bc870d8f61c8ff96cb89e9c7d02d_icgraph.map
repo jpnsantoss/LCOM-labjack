@@ -1,0 +1,27 @@
+<map id="vg_get_width" name="vg_get_width">
+<area shape="rect" id="Node000001" title="Gets the width of the screen." alt="" coords="918,91,1014,117"/>
+<area shape="rect" id="Node000002" href="$group__banner.html#gae085e9f906e711a21ee403bb0cca50e8" title="Draws the banner with the current message using the specified font." alt="" coords="765,91,859,117"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="903,107,860,107,860,101,903,101"/>
+<area shape="rect" id="Node000003" href="$group__drawer.html#gad4613fc8c5dbe034d87386a01ab6d3a7" title="Draws the current state of the application." alt="" coords="622,91,706,117"/>
+<area shape="poly" id="edge14_Node000001_Node000003" title=" " alt="" coords="908,125,871,132,812,137,754,132,704,121,706,115,754,127,812,132,870,127,907,119"/>
+<area shape="rect" id="Node000008" href="$group__cursor.html#ga4c5ef91c2ff49824f46e2a2aa9cb3d47" title="Initializes the cursor." alt="" coords="772,192,853,219"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="936,130,872,176,841,194,838,189,869,171,933,125"/>
+<area shape="rect" id="Node000010" href="$group__cursor.html#gadb51642f3770713345e06bc3dc0e82f5" title="Moves the cursor to the specified coordinates." alt="" coords="479,15,574,41"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="942,82,910,53,869,31,831,20,791,13,709,8,635,13,574,21,573,16,634,8,709,3,791,7,832,14,871,26,913,49,945,78"/>
+<area shape="rect" id="Node000011" href="$group__drawer.html#ga02baa6bb4bfc1a8620a61d42e32db33c" title="Draws a set of buttons on the screen." alt="" coords="754,40,870,67"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="908,88,854,70,856,65,909,83"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="749,107,706,107,706,101,749,101"/>
+<area shape="rect" id="Node000004" href="$group__drawer.html#gae6e049740fc99af73d456e49c9fe2b26" title="Draws the entire screen." alt="" coords="479,91,574,117"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="606,107,574,107,574,101,606,101"/>
+<area shape="rect" id="Node000005" href="$group__ev__listener.html#ga2fd2cc82c3f815282a1b041ba2cab26b" title="General interrupt handler." alt="" coords="323,91,431,117"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="464,107,432,107,432,101,464,101"/>
+<area shape="rect" id="Node000006" href="$group__ev__listener.html#ga955b5bc9310ba1d1d83fea434ad6da45" title="Handles general interrupts for the application." alt="" coords="162,97,275,124"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="307,110,276,111,275,106,307,104"/>
+<area shape="rect" id="Node000007" href="$group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="5,135,114,161"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="147,130,115,138,114,133,146,125"/>
+<area shape="rect" id="Node000009" href="$group__app.html#ga7cca950bbf3cf06fb45d033e3e7cde48" title="Initializes the application." alt="" coords="344,185,410,212"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="756,207,410,202,411,197,756,202"/>
+<area shape="poly" id="edge9_Node000009_Node000007" title=" " alt="" coords="328,194,114,159,115,154,329,189"/>
+<area shape="poly" id="edge11_Node000010_Node000005" title=" " alt="" coords="486,51,406,93,404,88,484,47"/>
+<area shape="poly" id="edge13_Node000011_Node000003" title=" " alt="" coords="757,75,706,93,704,88,755,70"/>
+</map>

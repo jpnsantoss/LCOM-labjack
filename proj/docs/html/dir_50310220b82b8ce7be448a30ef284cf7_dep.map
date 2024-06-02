@@ -1,0 +1,10 @@
+<map id="src/model/cursor" name="src/model/cursor">
+<area shape="rect" id="node1" href="dir_5e923ca31b20826e0554132d9360ba84.html" title="sprite" alt="" coords="29,128,83,155"/>
+<area shape="rect" id="node2" href="dir_50310220b82b8ce7be448a30ef284cf7.html" title="cursor" alt="" coords="27,53,85,80"/>
+<area shape="poly" id="edge1" href="dir_000005_000019.html" alt="" coords="59,81,59,112,53,112,53,81"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000005_000019.html" title="1" alt="" coords="61,101,68,117"/>
+<area shape="rect" id="node3" href="dir_c718a368270b13c54d94892d20736f45.html" title="drivers" alt="" coords="107,128,165,155"/>
+<area shape="poly" id="edge2" href="dir_000005_000008.html" alt="" coords="72,79,113,116,109,120,68,83"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000005_000008.html" title="1" alt="" coords="111,101,118,117"/>
+<area shape="rect" id="clust1" href="dir_5dd65160827af56e6353642206b80129.html" title="model" alt="" coords="16,16,96,165"/>
+</map>

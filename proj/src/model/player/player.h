@@ -26,7 +26,8 @@ typedef enum {
 	NOT_ENDED,  /**< Game is not finished. */
 	PLAYER_WIN, /**< Player has won. */
 	PLAYER_LOSS, /**< Player has lost. */
-	PLAYER_DRAW /**< Game is a draw. */
+	PLAYER_DRAW, /**< Game is a draw. */
+	PLAYER_SURRENDER /**< Player has surrended. */
 } game_over_state_t;
 
 /**

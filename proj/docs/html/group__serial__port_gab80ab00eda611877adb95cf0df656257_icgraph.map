@@ -1,0 +1,40 @@
+<map id="uart_write" name="uart_write">
+<area shape="rect" id="Node000001" title="Writes a content to a specific offset of the uart base address." alt="" coords="1067,81,1145,108"/>
+<area shape="rect" id="Node000002" href="$group__serial__port.html#gacca863d491db0d03c224579debbbe3de" title="Activates/Deactivates Data Latch access." alt="" coords="904,5,1019,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1064,76,988,35,990,30,1067,71"/>
+<area shape="rect" id="Node000003" href="$group__serial__port.html#gad781bc2716293adeb864f67904062eca" title="Sets the transmission bit rate between devices." alt="" coords="738,56,856,83"/>
+<area shape="poly" id="edge21_Node000001_Node000003" title=" " alt="" coords="1052,93,856,77,857,71,1052,88"/>
+<area shape="rect" id="Node000004" href="$group__serial__port.html#ga929dc5f42a9f930150913fbfa02ec73c" title="Setups the device and activates interrupts." alt="" coords="599,88,667,115"/>
+<area shape="poly" id="edge20_Node000001_Node000004" title=" " alt="" coords="1052,98,667,104,667,98,1052,93"/>
+<area shape="rect" id="Node000006" href="$group__serial__port.html#ga947056d01d461376d5bbcd9f69bdff4f" title="Writes a byte to the UART FIFO." alt="" coords="912,157,1012,184"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="1067,118,990,159,988,154,1064,113"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="902,40,844,58,842,53,900,35"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="723,86,668,97,667,92,722,81"/>
+<area shape="rect" id="Node000005" href="$group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="221,113,329,140"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="584,107,330,126,329,120,583,102"/>
+<area shape="rect" id="Node000007" href="$group__serial__port.html#gae8bb6dd0800878b35fe69a422773b8db" title="Interrupt handler." alt="" coords="767,157,827,184"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="896,173,827,173,827,168,896,168"/>
+<area shape="rect" id="Node000010" href="$group__serial__port.html#ga00a2984ead2b73e2871dfda7c1ac49e3" title="Adds a byte to the transmitter queue." alt="" coords="742,215,852,241"/>
+<area shape="poly" id="edge10_Node000006_Node000010" title=" " alt="" coords="908,192,839,217,837,212,906,187"/>
+<area shape="rect" id="Node000008" href="$group__ev__listener.html#ga2fd2cc82c3f815282a1b041ba2cab26b" title="General interrupt handler." alt="" coords="579,151,687,177"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="751,172,687,169,688,164,751,166"/>
+<area shape="rect" id="Node000009" href="$group__ev__listener.html#ga955b5bc9310ba1d1d83fea434ad6da45" title="Handles general interrupts for the application." alt="" coords="407,139,520,165"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="563,162,520,159,520,153,563,156"/>
+<area shape="poly" id="edge9_Node000009_Node000005" title=" " alt="" coords="391,145,329,137,330,131,392,140"/>
+<area shape="rect" id="Node000011" href="$group__com__manager.html#ga7625a73ca782d45e2763af4453795f8d" title="Sends a message to another pc via Serial Port." alt="" coords="576,240,690,267"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="727,242,691,247,690,242,726,236"/>
+<area shape="rect" id="Node000012" href="$group__ev__listener.html#gad15caf2d5bda57970cde01330a905649" title="Handles interrupts during the dealer&#39;s turn." alt="" coords="398,189,528,216"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="571,238,510,219,511,214,572,233"/>
+<area shape="rect" id="Node000013" href="$ev__game__play_8c.html#a64657fc798aca485951079d72b7676c2" title=" " alt="" coords="411,240,515,267"/>
+<area shape="poly" id="edge13_Node000011_Node000013" title=" " alt="" coords="561,256,516,256,516,251,561,251"/>
+<area shape="rect" id="Node000015" href="$group__ev__listener.html#gaac3b528525094a9c64495cc99154b2c2" title="Handles interrupts in the game playing state." alt="" coords="5,291,152,317"/>
+<area shape="poly" id="edge16_Node000011_Node000015" title=" " alt="" coords="568,274,529,281,427,293,324,301,152,307,152,301,324,296,426,288,528,276,567,268"/>
+<area shape="rect" id="Node000016" href="$group__ev__listener.html#ga7dcb92c73210c18e4e4b66f2d6591587" title="Handles a hit event triggered by hit button during gameplay." alt="" coords="423,341,503,368"/>
+<area shape="poly" id="edge17_Node000011_Node000016" title=" " alt="" coords="602,278,530,325,495,343,493,338,527,320,599,273"/>
+<area shape="rect" id="Node000014" href="$ev__game__play_8c.html#a020af6c7bc31cc4fe47cb488ca38a3f4" title=" " alt="" coords="200,240,350,267"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="395,256,351,256,351,251,395,251"/>
+<area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="206,274,134,293,132,287,205,269"/>
+<area shape="rect" id="Node000017" href="$ev__game__play_8c.html#ac6edc031198fe7099c690c7cafc29e56" title=" " alt="" coords="212,341,338,368"/>
+<area shape="poly" id="edge18_Node000016_Node000017" title=" " alt="" coords="407,357,338,357,338,352,407,352"/>
+<area shape="poly" id="edge19_Node000017_Node000015" title=" " alt="" coords="205,339,132,321,134,315,206,334"/>
+</map>

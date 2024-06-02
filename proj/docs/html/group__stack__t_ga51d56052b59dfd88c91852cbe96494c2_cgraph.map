@@ -1,0 +1,5 @@
+<map id="stack_pop" name="stack_pop">
+<area shape="rect" id="Node000001" title="Removes an element from top of the stack and returns it." alt="" coords="5,5,87,32"/>
+<area shape="rect" id="Node000002" href="$group__stack__t.html#ga018df7e34d40cc86369a9922cb84e498" title="Checks if a stack is empty." alt="" coords="135,5,231,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,16,119,16,119,21,87,21"/>
+</map>

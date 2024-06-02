@@ -1,0 +1,9 @@
+<map id="Drivers" name="Drivers">
+<area shape="rect" id="Node000007" href="$group__driver__utils.html" title="Utility functions." alt="" coords="154,5,202,32"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,132,66,159"/>
+<area shape="rect" id="Node000002" href="$group__graphics.html" title="Functions and data structures related to graphics handling." alt="" coords="141,56,215,83"/>
+<area shape="rect" id="Node000003" href="$group__input.html" title="Driver for input devices: keyboard and mouse." alt="" coords="153,107,203,133"/>
+<area shape="rect" id="Node000004" href="$group__rtc.html" title=" " alt="" coords="155,157,201,184"/>
+<area shape="rect" id="Node000005" href="$group__serial__port.html" title="Driver for a UART (Universal Asynchronous Receiver/Transmitter) device." alt="" coords="114,208,242,235"/>
+<area shape="rect" id="Node000006" href="$group__timer.html" title="Driver for the i8254 timer device." alt="" coords="151,259,205,285"/>
+</map>

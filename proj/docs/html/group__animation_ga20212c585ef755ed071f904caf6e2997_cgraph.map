@@ -1,0 +1,7 @@
+<map id="animation_destroy" name="animation_destroy">
+<area shape="rect" id="Node000001" title="Destroys the animation." alt="" coords="5,31,133,57"/>
+<area shape="rect" id="Node000002" href="$group__queue__t.html#ga0488f00c2aa08e55eab9286564c6e676" title="Queue destroyer. Frees all allocated memory inside the queue, including the content still stored insi..." alt="" coords="205,5,312,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,33,189,25,190,30,133,38"/>
+<area shape="rect" id="Node000003" href="$group__queue__t.html#gaf924b822f95bb5b6c5bbe2988d17be91" title="Can be used in the queue_destroy() function to prevent it from deleting the content still inside the ..." alt="" coords="181,56,336,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="133,50,166,54,165,60,133,55"/>
+</map>

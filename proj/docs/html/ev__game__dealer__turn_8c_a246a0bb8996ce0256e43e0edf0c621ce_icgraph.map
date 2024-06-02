@@ -1,0 +1,23 @@
+<map id="activate_dealer_turn" name="activate_dealer_turn">
+<area shape="rect" id="Node000001" title=" " alt="" coords="845,81,981,108"/>
+<area shape="rect" id="Node000002" href="$group__ev__listener.html#gaa4578a943cde28fb6b4e266b53738dbb" title="Adds a single animation for the dealer&#39;s turning up first card." alt="" coords="608,81,797,108"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="829,97,797,97,797,92,829,92"/>
+<area shape="rect" id="Node000003" href="$group__ev__listener.html#gaf04c38e4884c97e63526bc86ff62a97f" title="Checks and handles the bet value." alt="" coords="398,5,560,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="649,78,559,47,525,35,526,30,561,41,650,73"/>
+<area shape="rect" id="Node000006" href="$ev__game__play_8c.html#a64657fc798aca485951079d72b7676c2" title=" " alt="" coords="427,56,531,83"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="593,85,532,78,532,73,594,80"/>
+<area shape="rect" id="Node000008" href="$group__ev__listener.html#gaac3b528525094a9c64495cc99154b2c2" title="Handles interrupts in the game playing state." alt="" coords="5,107,152,133"/>
+<area shape="poly" id="edge8_Node000002_Node000008" title=" " alt="" coords="593,102,152,120,152,114,593,96"/>
+<area shape="rect" id="Node000009" href="$group__ev__listener.html#ga7dcb92c73210c18e4e4b66f2d6591587" title="Handles a hit event triggered by hit button during gameplay." alt="" coords="439,157,519,184"/>
+<area shape="poly" id="edge9_Node000002_Node000009" title=" " alt="" coords="647,116,521,160,519,155,645,111"/>
+<area shape="rect" id="Node000004" href="$group__ev__listener.html#gae44c52c33fbd52a450014d58bd15ab2a" title="Handles bet value input." alt="" coords="215,5,335,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="382,21,336,21,336,16,382,16"/>
+<area shape="rect" id="Node000005" href="$group__ev__listener.html#ga440c6c7cbaa7a4aca8e09d35eaa71e61" title="Handles interrupts in the game betting state." alt="" coords="6,5,151,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="199,21,151,21,151,16,199,16"/>
+<area shape="rect" id="Node000007" href="$ev__game__play_8c.html#a020af6c7bc31cc4fe47cb488ca38a3f4" title=" " alt="" coords="200,56,350,83"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="411,72,350,72,350,67,411,67"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="206,90,134,109,132,103,205,85"/>
+<area shape="rect" id="Node000010" href="$ev__game__play_8c.html#ac6edc031198fe7099c690c7cafc29e56" title=" " alt="" coords="212,157,338,184"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="423,173,338,173,338,168,423,168"/>
+<area shape="poly" id="edge11_Node000010_Node000008" title=" " alt="" coords="205,155,132,137,134,131,206,150"/>
+</map>

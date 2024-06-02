@@ -1,0 +1,14 @@
+<map id="kbc_write" name="kbc_write">
+<area shape="rect" id="Node000001" title="Writes a command to the keyboard controller (KBC)." alt="" coords="5,56,82,83"/>
+<area shape="rect" id="Node000002" href="$group__input.html#gab90a9774eaabd0949d73b61e9f3fba88" title="Reads value from the keyboard controller (KBC)." alt="" coords="130,56,247,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,67,114,67,114,72,82,72"/>
+<area shape="rect" id="Node000004" href="$group__driver__utils.html#ga2b56f50ba159e9d5115ed1a75eff15d9" title="Reads the information in a register and converts it to a 8&#45;bit unsigned integer." alt="" coords="460,56,551,83"/>
+<area shape="poly" id="edge7_Node000001_Node000004" title=" " alt="" coords="83,80,130,92,215,99,301,96,380,88,445,78,446,84,381,94,301,101,215,104,129,97,82,86"/>
+<area shape="rect" id="Node000005" href="$group__input.html#ga2823114f828bc7248a230685772dafbb" title="Writes a value to the keyboard controller (KBC)." alt="" coords="133,5,244,32"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="81,54,133,35,135,40,83,59"/>
+<area shape="rect" id="Node000003" href="$dvr__kbc_8c.html#a9546f355fcf070b152b392ef21543bd8" title=" " alt="" coords="295,5,412,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="234,53,292,35,294,40,235,58"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="247,67,445,67,445,72,247,72"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="397,30,450,48,448,53,395,35"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="244,16,279,16,279,21,244,21"/>
+</map>

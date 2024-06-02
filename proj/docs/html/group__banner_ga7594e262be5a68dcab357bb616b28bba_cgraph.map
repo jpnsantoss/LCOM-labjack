@@ -1,0 +1,5 @@
+<map id="banner_set_message" name="banner_set_message">
+<area shape="rect" id="Node000001" title="Sets a message for the banner to display with a specified timeout." alt="" coords="5,5,151,32"/>
+<area shape="rect" id="Node000002" href="$group__graphics.html#ga3a0d84e943447c67a7a9932cf0fd20ea" title="Sets the flag indicating that a redraw is needed." alt="" coords="199,5,302,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,16,183,16,183,21,151,21"/>
+</map>

@@ -1,0 +1,14 @@
+<map id="uart_fifo_write" name="uart_fifo_write">
+<area shape="rect" id="Node000001" title="Writes a byte to the UART FIFO." alt="" coords="5,56,106,83"/>
+<area shape="rect" id="Node000002" href="$group__queue__t.html#ga2a0ac508b8a3e94d7d50de284cc9b898" title="Checks if a queue is empty." alt="" coords="286,5,385,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,53,110,33,153,16,213,8,271,9,271,14,214,13,154,21,112,37,78,58"/>
+<area shape="rect" id="Node000003" href="$group__queue__t.html#gab55dbf8ea466f45a1377b90ac804abd3" title="Removes an element from the queue and returns it." alt="" coords="154,31,238,57"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="106,58,138,52,139,57,107,63"/>
+<area shape="rect" id="Node000004" href="$group__serial__port.html#ga931f3462009af510083ef84d0b1ae7ef" title="Reads the content from a specific offset of the uart base address." alt="" coords="158,81,234,108"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="107,76,143,83,142,88,106,81"/>
+<area shape="rect" id="Node000006" href="$group__serial__port.html#gab80ab00eda611877adb95cf0df656257" title="Writes a content to a specific offset of the uart base address." alt="" coords="157,132,235,159"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="83,81,158,122,155,127,81,86"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="238,34,270,28,271,33,239,39"/>
+<area shape="rect" id="Node000005" href="$group__driver__utils.html#ga2b56f50ba159e9d5115ed1a75eff15d9" title="Reads the information in a register and converts it to a 8&#45;bit unsigned integer." alt="" coords="291,81,381,108"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="234,92,275,92,275,97,234,97"/>
+</map>

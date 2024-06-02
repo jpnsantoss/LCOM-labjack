@@ -1,0 +1,17 @@
+<map id="com_send_msg" name="com_send_msg">
+<area shape="rect" id="Node000001" title="Sends a message to another pc via Serial Port." alt="" coords="576,81,690,108"/>
+<area shape="rect" id="Node000002" href="$group__ev__listener.html#gad15caf2d5bda57970cde01330a905649" title="Handles interrupts during the dealer&#39;s turn." alt="" coords="398,5,528,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="590,76,527,46,500,35,502,30,529,42,592,71"/>
+<area shape="rect" id="Node000003" href="$ev__game__play_8c.html#a64657fc798aca485951079d72b7676c2" title=" " alt="" coords="411,56,515,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="561,87,516,80,516,74,562,81"/>
+<area shape="rect" id="Node000005" href="$group__ev__listener.html#gaac3b528525094a9c64495cc99154b2c2" title="Handles interrupts in the game playing state." alt="" coords="5,107,152,133"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="561,101,152,119,152,114,561,95"/>
+<area shape="rect" id="Node000006" href="$group__ev__listener.html#ga7dcb92c73210c18e4e4b66f2d6591587" title="Handles a hit event triggered by hit button during gameplay." alt="" coords="423,157,503,184"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="588,117,496,159,494,154,586,113"/>
+<area shape="rect" id="Node000004" href="$ev__game__play_8c.html#a020af6c7bc31cc4fe47cb488ca38a3f4" title=" " alt="" coords="200,56,350,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="395,72,351,72,351,67,395,67"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="206,90,134,109,132,103,205,85"/>
+<area shape="rect" id="Node000007" href="$ev__game__play_8c.html#ac6edc031198fe7099c690c7cafc29e56" title=" " alt="" coords="212,157,338,184"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="407,173,338,173,338,168,407,168"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="205,155,132,137,134,131,206,150"/>
+</map>

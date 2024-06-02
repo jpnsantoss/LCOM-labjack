@@ -1,0 +1,13 @@
+<map id="game_draw_deck" name="game_draw_deck">
+<area shape="rect" id="Node000001" title="Draws the game deck on the screen." alt="" coords="754,5,876,32"/>
+<area shape="rect" id="Node000002" href="$group__drawer.html#gad4613fc8c5dbe034d87386a01ab6d3a7" title="Draws the current state of the application." alt="" coords="622,5,706,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="738,21,706,21,706,16,738,16"/>
+<area shape="rect" id="Node000003" href="$group__drawer.html#gae6e049740fc99af73d456e49c9fe2b26" title="Draws the entire screen." alt="" coords="479,5,574,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="606,21,574,21,574,16,606,16"/>
+<area shape="rect" id="Node000004" href="$group__ev__listener.html#ga2fd2cc82c3f815282a1b041ba2cab26b" title="General interrupt handler." alt="" coords="323,5,431,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="464,21,432,21,432,16,464,16"/>
+<area shape="rect" id="Node000005" href="$group__ev__listener.html#ga955b5bc9310ba1d1d83fea434ad6da45" title="Handles general interrupts for the application." alt="" coords="162,5,275,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="307,21,275,21,275,16,307,16"/>
+<area shape="rect" id="Node000006" href="$group__main.html#gaf244d65e69677cf312af1950452ec256" title="The main loop for the project." alt="" coords="5,5,114,32"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="146,21,114,21,114,16,146,16"/>
+</map>

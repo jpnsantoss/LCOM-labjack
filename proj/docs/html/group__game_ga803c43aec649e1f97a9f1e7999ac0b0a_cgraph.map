@@ -1,0 +1,17 @@
+<map id="game_destroy" name="game_destroy">
+<area shape="rect" id="Node000001" title="Destroys the game, freeing all allocated resources." alt="" coords="5,81,109,108"/>
+<area shape="rect" id="Node000002" href="$group__card.html#ga03f71f970e17949d6382639bf049e710" title="Destroys all loaded card sprites." alt="" coords="157,5,288,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,78,177,36,179,41,89,83"/>
+<area shape="rect" id="Node000004" href="$group__card.html#ga2d17b23e643b88a94a08dd97ef502747" title="Destroys a card in the queue." alt="" coords="336,68,474,95"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="109,90,320,82,320,87,109,95"/>
+<area shape="rect" id="Node000006" href="$group__player.html#ga3e022dfe5f6c73df82be5acf948387f4" title="Destroys the player, freeing all allocated resources." alt="" coords="169,107,276,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="109,100,154,107,154,112,109,105"/>
+<area shape="rect" id="Node000007" href="$group__queue__t.html#ga0488f00c2aa08e55eab9286564c6e676" title="Queue destroyer. Frees all allocated memory inside the queue, including the content still stored insi..." alt="" coords="352,144,458,171"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="80,106,115,126,157,143,203,152,250,157,337,159,337,164,250,163,202,157,156,148,113,131,77,111"/>
+<area shape="rect" id="Node000003" href="$group__sprite.html#ga1f0f379ec6f2b2cd0985ec0770cb1a2c" title="Destroys a sprite, freeing all allocated resources." alt="" coords="354,5,457,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="288,16,338,16,338,21,288,21"/>
+<area shape="rect" id="Node000005" href="$group__card.html#ga199fa1253b6d8e693f43c4c9e98746e6" title="Destroys a card." alt="" coords="522,68,619,95"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="475,79,507,79,507,84,475,84"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="275,106,324,96,325,101,276,111"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="276,128,337,141,336,146,275,133"/>
+</map>

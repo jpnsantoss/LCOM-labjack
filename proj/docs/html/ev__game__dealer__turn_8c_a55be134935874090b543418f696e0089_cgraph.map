@@ -1,0 +1,29 @@
+<map id="add_dealer_animation" name="add_dealer_animation">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,118,153,145"/>
+<area shape="rect" id="Node000002" href="$group__animation.html#ga079d535391b5fbff3ecd4fae614e18f1" title="Adds a frame to the animation." alt="" coords="201,17,345,43"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,115,231,49,233,53,108,120"/>
+<area shape="rect" id="Node000006" href="$group__animation.html#ga08d98778bffe43b6cb8b1e9f1546db2a" title="Creates an animation." alt="" coords="213,93,333,119"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="153,119,197,113,198,119,154,124"/>
+<area shape="rect" id="Node000010" href="$ev__game__dealer__turn_8c.html#aa00747ebe55f8d74d5a6616b3577b082" title=" " alt="" coords="206,143,340,170"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="154,138,191,143,190,149,153,144"/>
+<area shape="rect" id="Node000013" href="$group__sprite.html#ga647e1492c9ac657b437388cde60c8fbe" title="Creates a sprite from an XPM map." alt="" coords="225,194,321,221"/>
+<area shape="poly" id="edge14_Node000001_Node000013" title=" " alt="" coords="113,143,202,180,218,186,216,191,200,185,111,148"/>
+<area shape="rect" id="Node000003" href="$group__queue__t.html#ga89bb8cf14f8a833ded72fca1fb6d8636" title="Pushes an element to the end of a queue." alt="" coords="596,143,688,170"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="329,14,378,6,435,3,494,9,522,16,550,28,578,48,601,74,632,128,627,131,597,78,574,52,547,32,521,21,493,14,434,8,378,11,329,19"/>
+<area shape="rect" id="Node000004" href="$group__queue__t.html#ga2a0ac508b8a3e94d7d50de284cc9b898" title="Checks if a queue is empty." alt="" coords="736,194,835,221"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="683,168,732,186,730,191,681,173"/>
+<area shape="rect" id="Node000005" href="$group__queue__t.html#ga48ca9da7d179448a59262595a0dfcdce" title="Checks if the queue is full." alt="" coords="746,143,825,170"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="688,154,730,154,730,159,688,159"/>
+<area shape="rect" id="Node000007" href="$group__queue__t.html#ga496024ec829b39d9a93d6f37391d5a18" title="Creates an empty queue." alt="" coords="421,42,520,69"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="327,90,405,69,406,75,329,95"/>
+<area shape="rect" id="Node000008" href="$group__queue__t.html#ga0488f00c2aa08e55eab9286564c6e676" title="Queue destroyer. Frees all allocated memory inside the queue, including the content still stored insi..." alt="" coords="418,93,524,119"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="333,103,402,103,402,109,333,109"/>
+<area shape="rect" id="Node000009" href="$group__queue__t.html#gaf924b822f95bb5b6c5bbe2988d17be91" title="Can be used in the queue_destroy() function to prevent it from deleting the content still inside the ..." alt="" coords="393,143,548,170"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="329,118,402,136,400,142,327,123"/>
+<area shape="rect" id="Node000011" href="$group__game.html#gaffaedf6d9dba0337a5224b02c84f6108" title="Gives a card from the deck to a receiver queue." alt="" coords="414,194,528,221"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="329,168,402,187,400,192,327,173"/>
+<area shape="poly" id="edge13_Node000011_Node000003" title=" " alt="" coords="518,191,581,172,582,177,519,196"/>
+<area shape="rect" id="Node000012" href="$group__queue__t.html#gab55dbf8ea466f45a1377b90ac804abd3" title="Removes an element from the queue and returns it." alt="" coords="600,194,684,221"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="528,205,584,205,584,210,528,210"/>
+<area shape="poly" id="edge12_Node000012_Node000004" title=" " alt="" coords="685,205,720,205,720,210,685,210"/>
+</map>

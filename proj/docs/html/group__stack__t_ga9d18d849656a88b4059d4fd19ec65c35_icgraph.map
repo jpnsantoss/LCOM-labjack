@@ -1,0 +1,5 @@
+<map id="stack_full" name="stack_full">
+<area shape="rect" id="Node000001" title="Checks if the stack is full." alt="" coords="142,5,218,32"/>
+<area shape="rect" id="Node000002" href="$group__stack__t.html#gaa82959b4989b4ea3a71483fea3325f0c" title="Pushes an element to the top of a stack." alt="" coords="5,5,94,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,21,94,21,94,16,126,16"/>
+</map>

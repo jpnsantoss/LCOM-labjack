@@ -1,0 +1,18 @@
+<map id="animation_draw" name="animation_draw">
+<area shape="rect" id="Node000001" title="Draws the current frame of the animation." alt="" coords="5,81,117,108"/>
+<area shape="rect" id="Node000002" href="$group__queue__t.html#ga589f94630961aefb1184e683512b31f6" title="Returns the element at a specific position inside the queue." alt="" coords="191,5,266,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,78,164,42,177,36,179,41,166,46,90,83"/>
+<area shape="rect" id="Node000003" href="$group__sprite.html#gac5fbc907f8ab180c9825285e76d84fd4" title="Draws the sprite on the screen." alt="" coords="185,56,272,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="117,84,169,76,170,81,118,89"/>
+<area shape="rect" id="Node000006" href="$group__sprite.html#ga566a1a707524d7177f2aa0fc36fff37e" title="Draws the sprite on the screen with rotation." alt="" coords="165,107,292,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="118,100,150,105,149,111,117,106"/>
+<area shape="rect" id="Node000007" href="$group__sprite.html#ga5272f5d91c76d187c107346a66638b1e" title="Moves the sprite to a new position." alt="" coords="183,157,274,184"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="90,106,166,143,179,149,177,153,164,148,88,111"/>
+<area shape="rect" id="Node000004" href="$group__graphics.html#ga6f895de9725f9f231f9a7f74b6087f60" title="Draws a pixel on the screen." alt="" coords="340,56,441,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="272,67,325,67,325,72,272,72"/>
+<area shape="rect" id="Node000005" href="$group__graphics.html#gab52043147d41e2f66a892043455a8515" title="Gets the graphics information." alt="" coords="348,107,433,133"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="273,80,334,100,333,105,272,85"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="273,103,331,85,332,90,275,109"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="292,117,332,117,332,123,292,123"/>
+<area shape="poly" id="edge9_Node000007_Node000005" title=" " alt="" coords="273,154,332,135,334,140,275,159"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="handle_hit" name="handle_hit">
+<area shape="rect" id="Node000001" title="Handles a hit event triggered by hit button during gameplay." alt="" coords="374,5,454,32"/>
+<area shape="rect" id="Node000002" href="$ev__game__play_8c.html#ac6edc031198fe7099c690c7cafc29e56" title=" " alt="" coords="200,5,326,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="358,21,326,21,326,16,358,16"/>
+<area shape="rect" id="Node000003" href="$group__ev__listener.html#gaac3b528525094a9c64495cc99154b2c2" title="Handles interrupts in the game playing state." alt="" coords="5,5,152,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="184,21,152,21,152,16,184,16"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="game_give_card" name="game_give_card">
+<area shape="rect" id="Node000001" title="Gives a card from the deck to a receiver queue." alt="" coords="5,31,120,57"/>
+<area shape="rect" id="Node000002" href="$group__queue__t.html#gab55dbf8ea466f45a1377b90ac804abd3" title="Removes an element from the queue and returns it." alt="" coords="171,5,256,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,32,156,26,156,31,121,37"/>
+<area shape="rect" id="Node000004" href="$group__queue__t.html#ga89bb8cf14f8a833ded72fca1fb6d8636" title="Pushes an element to the end of a queue." alt="" coords="168,56,259,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="121,51,153,56,152,62,120,56"/>
+<area shape="rect" id="Node000003" href="$group__queue__t.html#ga2a0ac508b8a3e94d7d50de284cc9b898" title="Checks if a queue is empty." alt="" coords="307,5,406,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="256,16,292,16,292,21,256,21"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="253,53,301,35,303,40,254,58"/>
+<area shape="rect" id="Node000005" href="$group__queue__t.html#ga48ca9da7d179448a59262595a0dfcdce" title="Checks if the queue is full." alt="" coords="317,56,396,83"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="260,67,301,67,301,72,260,72"/>
+</map>

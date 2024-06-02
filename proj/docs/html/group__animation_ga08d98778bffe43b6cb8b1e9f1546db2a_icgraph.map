@@ -1,0 +1,29 @@
+<map id="animation_create" name="animation_create">
+<area shape="rect" id="Node000001" title="Creates an animation." alt="" coords="845,81,965,108"/>
+<area shape="rect" id="Node000002" href="$ev__game__dealer__turn_8c.html#a55be134935874090b543418f696e0089" title=" " alt="" coords="629,5,776,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="856,77,796,53,745,35,747,30,798,48,858,72"/>
+<area shape="rect" id="Node000004" href="$group__ev__listener.html#gaa4578a943cde28fb6b4e266b53738dbb" title="Adds a single animation for the dealer&#39;s turning up first card." alt="" coords="608,208,797,235"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="870,119,727,210,724,205,867,114"/>
+<area shape="rect" id="Node000009" href="$ev__game__play_8c.html#a020af6c7bc31cc4fe47cb488ca38a3f4" title=" " alt="" coords="200,208,350,235"/>
+<area shape="poly" id="edge14_Node000001_Node000009" title=" " alt="" coords="829,98,721,102,596,111,480,125,433,135,399,148,384,159,376,171,367,185,352,198,329,210,326,205,348,194,363,181,371,168,381,155,397,143,432,130,479,120,595,105,720,97,829,93"/>
+<area shape="rect" id="Node000012" href="$ev__game__play_8c.html#ac6edc031198fe7099c690c7cafc29e56" title=" " alt="" coords="212,157,338,184"/>
+<area shape="poly" id="edge15_Node000001_Node000012" title=" " alt="" coords="829,87,741,79,632,76,514,83,456,91,399,104,369,115,341,129,295,159,292,154,338,125,367,110,397,99,455,86,514,77,632,71,741,74,830,82"/>
+<area shape="rect" id="Node000003" href="$group__ev__listener.html#gad15caf2d5bda57970cde01330a905649" title="Handles interrupts during the dealer&#39;s turn." alt="" coords="414,5,544,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="613,21,545,21,545,16,613,16"/>
+<area shape="rect" id="Node000005" href="$group__ev__listener.html#gaf04c38e4884c97e63526bc86ff62a97f" title="Checks and handles the bet value." alt="" coords="398,309,560,336"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="662,245,561,293,518,311,516,306,559,288,660,240"/>
+<area shape="rect" id="Node000008" href="$ev__game__play_8c.html#a64657fc798aca485951079d72b7676c2" title=" " alt="" coords="427,208,531,235"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="593,224,532,224,532,219,593,219"/>
+<area shape="rect" id="Node000010" href="$group__ev__listener.html#gaac3b528525094a9c64495cc99154b2c2" title="Handles interrupts in the game playing state." alt="" coords="5,208,152,235"/>
+<area shape="poly" id="edge10_Node000004_Node000010" title=" " alt="" coords="623,241,561,249,459,258,380,261,301,258,199,249,133,238,134,233,200,244,301,253,380,256,459,252,560,244,622,235"/>
+<area shape="rect" id="Node000011" href="$group__ev__listener.html#ga7dcb92c73210c18e4e4b66f2d6591587" title="Handles a hit event triggered by hit button during gameplay." alt="" coords="439,157,519,184"/>
+<area shape="poly" id="edge11_Node000004_Node000011" title=" " alt="" coords="625,207,519,182,520,177,626,201"/>
+<area shape="rect" id="Node000006" href="$group__ev__listener.html#gae44c52c33fbd52a450014d58bd15ab2a" title="Handles bet value input." alt="" coords="215,309,335,336"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="382,325,336,325,336,320,382,320"/>
+<area shape="rect" id="Node000007" href="$group__ev__listener.html#ga440c6c7cbaa7a4aca8e09d35eaa71e61" title="Handles interrupts in the game betting state." alt="" coords="6,309,151,336"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="199,325,151,325,151,320,199,320"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="411,224,350,224,350,219,411,219"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="184,224,152,224,152,219,184,219"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="423,173,338,173,338,168,423,168"/>
+<area shape="poly" id="edge13_Node000012_Node000010" title=" " alt="" coords="206,191,134,210,132,205,205,186"/>
+</map>

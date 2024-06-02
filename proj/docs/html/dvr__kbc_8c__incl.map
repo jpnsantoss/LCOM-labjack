@@ -1,0 +1,10 @@
+<map id="src/drivers/input/dvr_kbc.c" name="src/drivers/input/dvr_kbc.c">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,138,48"/>
+<area shape="rect" id="Node000002" href="$input_8h.html" title=" " alt="" coords="41,96,102,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="74,49,74,80,69,80,69,49"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="33,245,110,272"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="72,123,65,171,65,201,69,230,63,230,60,202,60,170,66,123"/>
+<area shape="rect" id="Node000004" href="$i8042_8h.html" title=" " alt="" coords="75,171,138,197"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="80,122,96,155,91,158,75,124"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="103,199,86,232,82,230,98,197"/>
+</map>

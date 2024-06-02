@@ -1,0 +1,5 @@
+<map id="Data Structures" name="Data Structures">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,118,57"/>
+<area shape="rect" id="Node000002" href="$group__queue__t.html" title="Container which follows the FIFO (First in, First out) principle." alt="" coords="166,5,225,32"/>
+<area shape="rect" id="Node000003" href="$group__stack__t.html" title="Container which follows the LIFO (Last in, First out) principle." alt="" coords="168,56,223,83"/>
+</map>

@@ -1,8 +1,9 @@
-# LCOM Project
+# LCOM Project - LabJack
 
-LCOM Project for group T05-G03.
+LCOM Project for group T05-G03.<br>
+A Black Jack game implementation in C using "user drivers" targetting MINIX.
 
-Group members:
+Group members: 
 
 1. Sara Cortez     (up202205636@fe.up.pt)
 2. Marta Silva     (up202208258@fe.up.pt)
