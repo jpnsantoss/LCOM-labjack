@@ -191,7 +191,7 @@ void handle_game_playing(app_t *app, interrupt_type_t interrupt) {
 
       app->game.main_player.won_coins = app->game.main_player.bet / 2;
       app->game.main_player.coins += app->game.main_player.won_coins;
-      app->game.main_player.game_over_state = PLAYER_WIN;
+      app->game.main_player.game_over_state = PLAYER_SURRENDER;
       app->state = GAME_OVER;
       com_send_msg((proto_msg_type_t) app->game.main_player.game_over_state, app->game.main_player.won_coins);
     }
