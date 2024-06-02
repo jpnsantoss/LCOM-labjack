@@ -88,7 +88,7 @@
 
 #define UART_IIR_INT_MASK					(BIT(1) | BIT(2) | BIT(3)) /**< @brief IIR - Interruption mask */
 #define UART_IIR_INT_THR_EMPTY		BIT(1) /**< @brief IIR - Transmitter Holding Register Empty interrupt */
-#define UART_IIR_INT_RBR_FULL 		BIT(2) /**< @brief IIR - Reived Data Available interrupt */
+#define UART_IIR_INT_RBR_FULL 		BIT(2) /**< @brief IIR - Received Data Available interrupt */
 #define UART_IIR_INT_CHAR_TIMEOUT	(BIT(2) | BIT(3)) /**< @brief IIR - Character Timeout (FIFO) interrupt */
 #define UART_IIR_INT_LSR_STATUS		(BIT(1) | BIT(2)) /**< @brief IIR - Receiver Line Status interrupt */
 
