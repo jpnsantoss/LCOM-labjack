@@ -12,4 +12,4 @@ Group members:
 
 Demo:
 
-[![DEMO](https://i3.ytimg.com/vi/J7PhnhxABgM/hqdefault.jpg)](https://www.youtube.com/watch?v=StTqXEQ2l-Y "Everything Is AWESOME")
+[![DEMO](https://i3.ytimg.com/vi/J7PhnhxABgM/hqdefault.jpg)](https://www.youtube.com/watch?v=J7PhnhxABgM "Everything Is AWESOME")
